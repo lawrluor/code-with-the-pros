@@ -1,38 +1,59 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
+
+.lesson-container {
+  color: #ffffff;
+  background-color: #1e1e1e;
+  font-family: 'Roboto', sans-serif;
+  padding: 20px;
+  border-radius: 8px;
+  max-width: 800px;
+  margin: auto;
+}
+
+h1, h2 {
+  color: #f72585; /* Bright pink accent similar to the name 'Lawrence' */
+}
+
+h1 {
+  font-size: 2.5em;
   text-align: center;
+  margin-bottom: 0.5em;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h2 {
+  font-size: 1.5em;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+p, li {
+  color: #ffffff;
+  line-height: 1.6;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+pre {
+  background-color: #262626; /* Slightly lighter than the container for contrast */
+  color: #9ef01a; /* Bright green accent for code blocks */
+  padding: 15px;
+  border-radius: 8px;
+  overflow-x: auto;
+  font-family: 'Courier New', monospace;
 }
 
-.App-link {
-  color: #61dafb;
+.inline {
+  display: inline; /* Ensures full width code blocks */
+  white-space: pre; /* Maintains spacing and formatting */
+  background-color: #2F2F2F;
+  padding: 2px 4px;
+  border-radius: 5px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+ul {
+  padding-left: 20px;
 }
+
+section {
+  margin-bottom: 2em;
+}
+
+/* Add any additional styling for buttons, links, etc. here */
