@@ -4,7 +4,7 @@ import CodeBlock from '../components/CodeBlock';
 const PythonInput = () => {
     return (
         <div className="lesson-container">
-            <h1>Understanding the <code className="inline">input()</code> Function in Python</h1>
+            <h1>The <code className="inline">input()</code> Function</h1>
 
             <section>
                 <h2>Why User Input Matters</h2>
@@ -12,7 +12,7 @@ const PythonInput = () => {
                     Up to this point, we’ve mainly been using values that have been fixed or “hard-coded”.
                     For example, a simple calculator that only knows how to add <code className="inline">10 + 5</code> doesn't offer much flexibility.
                     With user input, you can ask the user exactly which numbers they'd like to calculate. Similarly, a program that always
-                    says "Hello, world!" is not very useful. By accepting user input with the <code className="inline">input()</code> method, our program could ask for a name and say "Hello, [name]!".
+                    says <code className="inline">"Hello, world!"</code> is not very useful. By accepting user input with the <code className="inline">input()</code> method, our program could ask for a name and say <code className="inline">"Hello, NAME!"</code>.
                 </p>
 
                 <h2>What Is <code className="inline">input()</code>?</h2>
