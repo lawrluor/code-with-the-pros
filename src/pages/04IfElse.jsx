@@ -4,11 +4,11 @@ import CodeBlock from '../components/CodeBlock';
 const IfElse = () => {
     return (
         <div className="lesson-container">
-            <h1>If-Else Statements in Python</h1>
+            <h1>Conditional (If-Else) Statementn</h1>
 
             <section>
                 <h2>Making Decisions</h2>
-                <p>Up to this point, your Python code has followed one path from start to finish. But what if you want your program to make decisions based on user input or other conditions? That's where <code class="inline">if-else</code> statements come in.</p>
+                <p>Up to this point, your Python code has followed one path from start to finish. But what if you want your program to make decisions based on user input or specific conditions? That's where <code class="inline">if-else</code> statements come in.</p>
                 <p>Consider writing a program that acts as a virtual assistant for planning your day. Without <code class="inline">if-else</code> statements, it might always suggest reading a book, regardless of the weather outside. By using <code class="inline">if-else</code> logic, the program can make a more suitable suggestion: if it's raining, it suggests staying in to read a book; else, if it's sunny, it suggests going for a walk. This way, <code class="inline">if-else</code> statements empower your program to offer choices that adapt to changing conditions, making it smarter and more responsive to your needs.</p>
             </section>
 
@@ -96,7 +96,7 @@ if age >= 18:
             <section>
                 <h2>Nested <code class="inline">if</code> Statements in Python</h2>
                 <p>Nested <code class="inline">if</code> statements are <code class="inline">if</code> statements within <code class="inline">if</code> statements.</p>
-                <p>Think of nested <code class="inline">if</code> statements in Python like a map or a flowchart. Imagine you're at an intersection in a maze, and each decision you make takes you down a different path. That's what these statements do in your code. Each <code class="inline">if</code> statement is like coming to a new intersection and having to decide which way to go based on specific conditions. When you add more <code class="inline">if</code> statements inside each other, it's like adding more turns to the map, making the journey through your code more interesting and complex.</p>
+                <p>Think of nested <code class="inline">if</code> statements in Python like a map or a flowchart. Imagine you're at an intersection in a maze, and each decision you make takes you down a different path. That's what these statements do in your code. Each <code class="inline">if</code> statement is like coming to a new intersection and having to decide which way to go based on specific conditions, and the way you got there was dependent on decisions you made earlier in the maze. When you add more <code class="inline">if</code> statements inside each other, it's like adding more turns to the map, making the journey through your code more interesting and complex.</p>
                 <p>Here's an example of a nested <code class="inline">if</code> statement in action:</p>
                 <CodeBlock codeString={`age = 19
 registered_voter = True

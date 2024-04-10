@@ -4,24 +4,45 @@ import CodeBlock from '../components/CodeBlock';
 const Booleans = () => {
     return (
         <div className="lesson-container">
-            <h1>Understanding Booleans in Python</h1>
+            <h1>The Boolean Data Type</h1>
 
             <section>
                 <h2>What Are Booleans?</h2>
                 <p>
-                    At the heart of every decision-making process in programming, there are Booleans. Booleans represent one of two values: <code className="inline">True</code> or <code className="inline">False</code>.
+                    At the heart of every decision-making process in programming, there are Booleans. Booleans are a special data type that can be one of two values: <code className="inline">True</code> or <code className="inline">False</code>. Like other data types such as <code className="inline">int</code> and <code className="inline">float</code>, they can be stored in variables and used in expressions.
 
                     They are named after George Boole, a 19th-century mathematician who pioneered the field of algebraic logic.
                 </p>
 
-                <p>
-                    Understanding booleans is essential for understanding the conditions within if-else statements. The conditions in these statements *must* evaluate to either <code className="inline">True</code> or <code className="inline">False</code> for the computer to decide which block of code to execute.
-                </p>
+                <p>Here are some examples of how you might use booleans. Note that in Python, <code className="inline">True</code> and <code className="inline">False</code> are case-sensitive!</p>
+                <CodeBlock codeString={`True
+False
+is_sunny = True
+is_rainy = False
+
+true   # NOT interpreted as a boolean
+false  # NOT interpreted as a boolean`}></CodeBlock>
+
             </section>
 
             <section>
-                <h2>Arithmetic Comparison Operators</h2>
-                <p>Arithmetic comparisons are not just simple checks; they are powerful operators that compare two values and return either <code className="inline">True</code> or <code className="inline">False</code>. These operators are fundamental to programming, allowing us to make decisions and control the flow of our programs based on specific conditions. The main comparison operators are:</p>
+                <h2>Boolean Expressions</h2>
+
+                <p>In our discussion of if-else statements, we referred to the code after the <code className="inline">if</code> keyword as the <strong>condition</strong>.</p>
+                <CodeBlock codeString={`age = 19
+if age >= 18:  # (age >= 18) is the condition of this if statement
+    print("You are eligible to vote")`}></CodeBlock>
+
+                <p>The condition of an <code className="inline">if</code> statement can also be described as a <strong>boolean expression</strong> - an expression that evaluates to either <code className="inline">True</code> or <code className="inline">False</code>. The computer can use the result of the boolean expression in the condition of an <code className="inline">if</code> statement to decide which block of code to execute.</p>
+                <p>Let's take a closer look at how this condition can be analyzed as a boolean expression.</p>
+                <CodeBlock codeString={`age >= 18  # a boolean expression`}></CodeBlock>
+                <p>Here, <code className="inline">age &gt;= 18</code> is a boolean expression because it evaluates to either <code className="inline">True</code> or <code className="inline">False</code> depending on the value of <code className="inline">age</code>.</p>
+
+            </section>
+
+            <section>
+                <h2>Comparison Operators</h2>
+                <p>The comparison operators are boolean expressions that compare the relative values of data. Though the comparison operators have a specific syntax in Python, we actually use comparisons like these in our daily lives. The comparison operators include:</p>
                 <ul>
                     <li><code className="inline">==</code> tests for equality, evaluating to <code className="inline">True</code> if two values are equal and <code className="inline">False</code> otherwise.</li>
                     <li><code className="inline">!=</code> tests for inequality, evaluating to <code className="inline">True</code> if two values are not equal and <code className="inline">False</code> otherwise.</li>
@@ -30,19 +51,20 @@ const Booleans = () => {
                     <li><code className="inline">&gt;=</code> (greater than or equal to)</li>
                     <li><code className="inline">&lt;=</code> (less than or equal to)</li>
                 </ul>
-                <p>Here are some examples of arithmetic comparisons at work:</p>
-                <CodeBlock codeString={`5 == 5  # True
+
+                <p>Here are some examples of comparison operators at work:</p>
+                <CodeBlock codeString={`5 == 5   # True
 10 > 20  # False
-7 != 3  # True
+7 != 3   # True
 x >= 4
 temperature <= 1
 `} />
-                <p>These comparisons which result in either <code className="inline">True</code> or <code className="inline">False</code> are known as <strong>boolean expressions</strong>. Understanding boolean expressions and how to evaluate them is crucial for programming logic. They serve as the building blocks for decision-making within the programs we write.</p>
+                <p>The comparison operators are not just simple checks; they are powerful operators that compare two values and return either <code className="inline">True</code> or <code className="inline">False</code>. These operators are fundamental to programming, allowing us to make decisions and control the flow of our programs based on specific conditions.</p>
             </section>
 
             <section>
                 <h2>Logical Operators</h2>
-                <p>Logical Operators allow you to construct complex boolean expressions from simpler ones. There are three logical operators in Python:</p>
+                <p>Logical Operators allow you to construct complex boolean expressions from simpler ones. Like arithmetic comparison operators, using them also results in boolean expressions. There are three logical operators in Python:</p>
                 <ul>
                     <li><code className="inline">and</code>: Returns <code className="inline">True</code> if both operands are true, and <code className="inline">False</code> if otherwise.</li>
                     <li><code className="inline">or</code>: Returns <code className="inline">True</code> if at least one of the operands is true, and <code className="inline">False</code> if otherwise.</li>
@@ -160,15 +182,15 @@ bool('')  # False
 bool([1, 2, 3])  # True, because the list is not empty
 bool([])  # False, because the list is empty`} />
                 <p>Why does Python have truthy and falsy values? This feature enables you to write more readable and concise conditions. For example, instead of checking if a list's length is greater than zero to determine if it's not empty, you can directly use the list in a condition. This leverages Python's ability to treat non-empty collections as truthy:</p>
-                <CodeBlock codeString={`my_list = [1, 2, 3]
+                <CodeBlock codeString={`my_list = [1, 2, 3]  # truthy value
 if my_list:
-    print("The list is not empty!")  # This will execute`} />
-                <p>Understanding truthy and falsy values is crucial for effectively controlling the flow of your programs and writing Pythonic code that is both clear and concise.</p>
-            </section>
+    print("The line of code will execute")
 
-            <section>
-                <h2>Putting It All Together</h2>
-                <p>Mastering the use of Booleans and arithmetic comparisons is essential for programming. They help your code make decisions and react differently under various circumstances, enhancing your applications' dynamism and responsiveness.</p>
+x = 0  # falsy value
+if x:
+    print("This line of code will not execute")
+            `} />
+                <p>Understanding truthy and falsy values is crucial for effectively controlling the flow of your programs and writing Pythonic code that is both clear and concise.</p>
             </section>
         </div>
     );
