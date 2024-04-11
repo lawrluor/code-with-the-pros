@@ -150,13 +150,13 @@ else:
 
                 <p>Here are the truth tables for these logical operators, which illustrate the result of each operation based on all possible input combinations:</p>
 
-                <CodeBlock codeString={`# AND Truth Table
+                <CodeBlock codeString={`# and Truth Table
 print("True and True =", True and True)   # True
 print("True and False =", True and False)  # False
 print("False and True =", False and True)  # False
 print("False and False =", False and False) # False
 
-# OR Truth Table
+# or Truth Table
 print("True or True =", True or True)    # True
 print("True or False =", True or False)   # True
 print("False or True =", False or True)   # True
@@ -204,10 +204,96 @@ if x:
             </section>
 
             <section>
-                <h2>DeMorgan's Laws (Optional)</h2>
-                <p>DeMorgan's Laws are a set of rules that describe how to negate logical expressions involving the <code className="inline">and</code> and <code className="inline">or</code> operators. These laws are named after British mathematician and logician Augustus De Morgan. These rules can be useful for simplifying boolean expressions. However, deciding whether to use the laws can be a matter of preference.</p>
+                <h2>Ordering and Grouping Logical Operators</h2>
+                <p>You might remember the acronym "PEMDAS" from math class, a useful mnemonic for memorizing the order of arithmetic operators. Like arithmetic operators, logical operators also follow a specific order of precedence when evaluating expressions. This order is crucial for understanding how complex boolean expressions are resolved. The basic order of precedence from highest to lowest is: <code className="inline">not</code>, <code className="inline">and</code>, and <code className="inline">or</code>.</p>
+                <CodeBlock codeString={`# 'not' has the highest precedence
+not False and True  # Evaluates to True
 
+# 'and' is evaluated next
+True and False or True  # Evaluates to True
+
+# 'or' has the lowest precedence
+False or True and False  # Evaluates to False
+`} />
+                <h3>Combining Arithmetic Operators with Logical Operators</h3>
+                <p>Arithmetic operators have higher precedence than logical ones. This means that in expressions involving both types of operators, the arithmetic operations will be evaluated first, followed by the logical operations. This hierarchy ensures that numerical calculations are completed before logical comparisons are made.</p>
+
+                <CodeBlock codeString={`# Arithmetic operation is performed first, then logical
+print(2 + 3 * 4 == 14 and True)  # Evaluates to True`} />
+                <p>Here, multiplication is performed, followed by addition, then the equality check, and finally the logical <code className="inline">and</code>.</p>
+
+                <h3>Using Parentheses <code className="inline">()</code></h3>
+                <p>In addition to the above rules, parentheses <code className="inline">()</code> can be used to explicitly define the evaluation order, overriding the default precedence rules. This is particularly useful for making complex expressions clearer and ensuring they evaluate as intended.</p>
+
+                <p>Let's see how using parentheses affects our code. In each example, the second result will use parentheses, thereby changing the final result of the expression.</p>
+                <CodeBlock codeString={`# Example 1
+result = False or True and not False
+# Evaluates to True
+
+result = (False or True) and not False
+# After grouping with parentheses, evaluates to True
+
+
+# Example 2
+result2 = False and False or True
+# Evaluates to True
+
+result2 = False and (False or True)
+# After grouping with parentheses, evaluates to False
+`} />
+                <p>By thoughtfully using parentheses, you can ensure your boolean expressions are evaluated in the exact order you intend, avoiding potential logic errors in your code.</p>
             </section>
+
+
+            <section>
+                <h2>DeMorgan's Laws and Simplifying Boolean Expressions (Optional)</h2>
+                <p>DeMorgan's Laws consist of two transformation rules that help in rephrasing boolean expressions involving <code className="inline">and</code> (conjunction) and <code className="inline">or</code> (disjunction), making complex logic more accessible. Here's how they work:</p>
+                <CodeBlock codeString={`# DeMorgan's Laws Examples
+# not (a and b) is equivalent to (not a) or  (not b)
+# not (a or b)  is equivalent to (not a) and (not b)
+`} />
+                <p>Here are the laws more formally expressed.</p>
+                <ul>
+                    <li><strong>Law 1:</strong> Negating a conjunction (<code className="inline">and</code>) statement is the same as negating each part separately and joining them with <code className="inline">or</code>.</li>
+                    <li><strong>Law 2:</strong> Negating a disjunction (<code className="inline">or</code>) statement equates to negating each component and combining them with <code className="inline">and</code>.</li>
+                </ul>
+
+                <p><strong>Benefits of DeMorgan's Laws:</strong></p>
+                <ul>
+                    <li><strong>Simplification:</strong> These laws allow for the rewriting of complex boolean expressions into simpler forms.</li>
+                    <li><strong>Efficiency:</strong> Simplified expressions can sometimes be executed more efficiently, depending on the programming environment.</li>
+                    <li><strong>Flexibility:</strong> By offering alternative ways to express conditions, DeMorgan's Laws enhance the versatility of your logical operations.</li>
+                </ul>
+
+                <p><strong>Example:</strong></p>
+                <p>Consider a scenario where someone is eligible to vote if they are at least 18 years old (<code className="inline">age >= 18</code>) and a citizen (<code className="inline">isCitizen</code> is <code className="inline">True</code>). This is represented with an <code className="inline">and</code> condition:</p>
+
+                <CodeBlock codeString={`# Original eligibility check
+isCitizen = True
+if age >= 18 and isCitizen:
+    print("Eligible to vote")
+
+# Applying DeMorgan's Law 1 to express the inverse logic step by step:
+
+# Step 1: Apply NOT to the whole condition
+not (age >= 18 and isCitizen)
+
+# Step 2: Distribute NOT across the AND condition, flipping AND to OR
+(not (age >= 18)) or (not isCitizen)
+
+# Step 3: Simplify the expressions
+(age < 18) or (not isCitizen)
+
+# Final inverted condition check for ineligibility
+if (age < 18) or (not isCitizen):
+    print("Not eligible to vote")
+
+# We can also eliminate the parentheses due to the natural precedence of the operators
+if age < 18 or not isCitizen:
+    print("Not eligible to vote")
+`} />
+            </section>
+
         </div>
     );
 };
