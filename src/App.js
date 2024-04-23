@@ -1,9 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './App.css';
-import PythonInput from './pages/02PythonInput';
+import Input from './pages/02Input';
 import IfElse from './pages/03IfElse';
 import Booleans from './pages/04Booleans';
+import ForLoops from './pages/07ForLoops';
+import WhileLoops from './pages/06WhileLoops';
 
 function App() {
   return (
@@ -13,22 +15,30 @@ function App() {
           {/* Navigation Links */}
           <ul>
             <li>
-              <Link to="/input">PythonInput</Link>
+              <Link to="/input">Input</Link>
             </li>
             <li>
-              <Link to="/ifelse">IfElse</Link>
+              <Link to="/ifelse">Conditionals</Link>
             </li>
             <li>
               <Link to="/booleans">Booleans</Link>
+            </li>
+            <li>
+              <Link to="/whileLoops">While Loops</Link>
+            </li>
+            <li>
+              <Link to="/forLoops">For Loops</Link>
             </li>
           </ul>
         </nav>
 
         {/* New Route Configuration for React Router v6 */}
         <Routes>
-          <Route path="/ifelse" element={<IfElse />} />
-          <Route path="/input" element={<PythonInput />} />
+          <Route path="/input" element={<Input />} />
+          <Route path="/conditionals" element={<IfElse />} />
           <Route path="/booleans" element={<Booleans />} />
+          <Route path="/whileLoops" element={<WhileLoops />} />
+          <Route path="/forLoops" element={<ForLoops />} />
         </Routes>
       </div>
     </Router>

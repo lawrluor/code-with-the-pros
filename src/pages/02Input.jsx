@@ -1,7 +1,7 @@
 import React from 'react';
 import CodeBlock from '../components/CodeBlock';
 
-const PythonInput = () => {
+const Input = () => {
     return (
         <div className="lesson-container">
             <h1>The <code className="inline">input()</code> Function</h1>
@@ -77,4 +77,4 @@ print(total)`}></CodeBlock>
     );
 };
 
-export default PythonInput;
+export default Input;
