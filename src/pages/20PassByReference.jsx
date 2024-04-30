@@ -1,10 +1,10 @@
 import React from 'react';
 import CodeBlock from '../components/CodeBlock';
 
-const ReferenceTypes = () => {
+const PassByReference = () => {
     return (
         <div className="lesson-container">
-            <h1>Understanding Passing Lists by Reference in Python</h1>
+            <h1>Passing Lists by Reference in Python</h1>
 
             <section>
                 <h2>Introduction to Passing by Reference</h2>
@@ -30,12 +30,21 @@ print(my_list)`}></CodeBlock>
                 <h2>Common Mistake: Reassignment Inside Functions</h2>
                 <p>Reassigning a list inside a function does not affect the original list:</p>
                 <CodeBlock codeString={`def reassign_list(lst):
-    lst = [4, 5, 6]  # This creates a new local list and does not affect the passed list
+    lst = [4, 5, 6]  # This creates a new *local* variable called lst and therefore does not affect the passed list
 
 original_list = [1, 2, 3]
 reassign_list(original_list)
-print(original_list)`}></CodeBlock>
-                <p>Despite the reassignment inside the function, <code className="inline">original_list</code> remains unchanged outside the function.</p>
+print(original_list)
+
+def reassign_list(lst):
+    lst = [4, 5, 6]  # Even with the same name, this still creates a new *local* variable called lst and therefore does not affect the original variable lst
+
+lst = [1, 2, 3]
+reassign_list(lst)
+print(original_list)
+`}></CodeBlock>
+                <p>Despite the reassignment inside the function, the original list variables remains unchanged outside the function.</p>
+                <CodeBlock codeString={``}></CodeBlock>
             </section>
 
             <section>
@@ -65,4 +74,4 @@ print(a_list)`}></CodeBlock>
     );
 };
 
-export default ReferenceTypes;
+export default PassByReference;
