@@ -52,6 +52,10 @@ ul {
   padding-left: 20px;
 }
 
+li.paragraph {
+  margin-bottom: 1em;
+}
+
 section {
   margin-bottom: 2em;
 }

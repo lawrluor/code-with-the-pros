@@ -50,25 +50,22 @@ for char in message:
 
                 <h3>Defining the Loop Variable</h3>
                 <p>Note that there is nothing special about the variable <code className="inline">char</code> - it is simply a variable name that we chose to represent the current letter of the string we are on. Oftentimes, programmers will abbreviate the name for the looping variable, like so:</p>
-                <CodeBlock codeString={`
-for x in message:
+                <CodeBlock codeString={`for x in message:
     print(x)
 
 for _ in message:
     print("Hi")
-    print("Hello")  # We can have any number of lines in the repeating block
-`} />
+    print("Hello")  # We can have any number of lines in the repeating block`} />
             </section>
 
             <section>
                 <h2>Index-Based For Loops</h2>
-                <p>Index-based for loops in Python allow you to access each element by its index. The index variable <code className="inline">i</code> changes values throughout the loop's execution.</p>
+                <p>What if we wanted to perform an action only on every other item in a sequence? Index-based for loops in Python allow you us to access each element by its index or position in a sequence. The index variable <code className="inline">i</code> changes values throughout the loop's execution.</p>
 
                 <CodeBlock codeString={`# Example of an index-based loop with dynamic index changes
 message = "Hello"
 for i in range(len(message)):
-    print(f'Character at position {i} is {message[i]}')
-`} />
+    print(f'Character at position {i} is {message[i]}')`} />
                 <p>In this loop, <code className="inline">i</code> starts at 0 and increases by one on each iteration until it reaches the end of the string. Here's the breakdown of how <code className="inline">i</code> changes:</p>
                 <ul>
                     <li>On the first iteration, <code className="inline">i</code> is 0, so <code className="inline">message[0]</code> points to 'H'.</li>
@@ -84,8 +81,7 @@ for i in range(len(message)):
                 <p>Don't worry about <code className="inline">list()</code>, as we haven't covered that yet. Focus on the idea that <code className="inline">range(n)</code> generates numbers from 0 to n - 1. Let's now revisit using the function in a <code className="inline">for</code> loop.</p>
 
                 <CodeBlock codeString={`for i in range(5):
-    print(i)
-`} />
+    print(i)`} />
                 <p>This will output the numbers 0, 1, 2, 3, and 4, each on a separate line. In other words, <code className="inline">range(5)</code> generates numbers from 0 to 4. Then, the loop iterates through this sequence, printing each one. </p>
             </section>
 
@@ -132,8 +128,7 @@ for char in original:
         new_string += "/"
     else:
         new_string += char
-print(new_string)
-`} />
+print(new_string)`} />
 
                 <h3>Accessing Specific Indices</h3>
                 <p>You may want to access or manipulate only the characters at specific indices in a string.</p>
