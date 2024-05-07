@@ -5,7 +5,6 @@ const ForLoops = () => {
     return (
         <div className="lesson-container">
             <h1>For Loops</h1>
-
             <section>
                 <h2>Introduction to For Loops</h2>
                 <p>
