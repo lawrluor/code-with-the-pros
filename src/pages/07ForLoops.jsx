@@ -16,7 +16,7 @@ const ForLoops = () => {
                 <h2>Why Are Loops Useful?</h2>
                 <p>A task like printing each character of a string individually can be incredibly tedious and inefficient. Without a loop, we must manually access each character by its index and writing a separate print statement for each one.</p>
 
-                <CodeBlock codeString={`# Example: Printing "Hello" without a loop
+                <CodeBlock language={"python"} codeString={`# Example: Printing "Hello" without a loop
 print("Hello"[0])  # Prints 'H'
 print("Hello"[1])  # Prints 'e'
 print("Hello"[2])  # Prints 'l'
@@ -26,7 +26,7 @@ print("Hello"[4])  # Prints 'o'`} />
 
                 <p>In contrast, using a <code className="inline">for</code> loop to complete the same task is a much simpler process.</p>
 
-                <CodeBlock codeString={`for char in "Hello":
+                <CodeBlock language={"python"} codeString={`for char in "Hello":
     print(char)`} />
                 <p>With a loop, no matter the length of the string, any number of characters will be handled, making your code more robust and flexible.</p>
                 <p>There are two general ways to write for loops: element-based and index-based.</p>
@@ -36,7 +36,7 @@ print("Hello"[4])  # Prints 'o'`} />
                 <h2>Element-Based For Loops</h2>
                 <p>Strings in Python are sequences of characters, and <code className="inline">for</code> loops provide a convenient way to iterate through each character in the string. These loops work by repeatedly executing a block of code for each element in the sequence.</p>
 
-                <CodeBlock codeString={`message = "Hello"
+                <CodeBlock language={"python"} codeString={`message = "Hello"
 for char in message:
     print(char)`} />
                 <p>The structure of an element-based <code className="inline">for</code> loop includes two key components:</p>
@@ -49,7 +49,7 @@ for char in message:
 
                 <h3>Defining the Loop Variable</h3>
                 <p>Note that there is nothing special about the variable <code className="inline">char</code> - it is simply a variable name that we chose to represent the current letter of the string we are on. Oftentimes, programmers will abbreviate the name for the looping variable, like so:</p>
-                <CodeBlock codeString={`for x in message:
+                <CodeBlock language={"python"} codeString={`for x in message:
     print(x)
 
 for _ in message:
@@ -61,7 +61,7 @@ for _ in message:
                 <h2>Index-Based For Loops</h2>
                 <p>What if we wanted to perform an action only on every other item in a sequence? Index-based for loops in Python allow you us to access each element by its index or position in a sequence. The index variable <code className="inline">i</code> changes values throughout the loop's execution.</p>
 
-                <CodeBlock codeString={`# Example of an index-based loop with dynamic index changes
+                <CodeBlock language={"python"} codeString={`# Example of an index-based loop with dynamic index changes
 message = "Hello"
 for i in range(len(message)):
     print(f'Character at position {i} is {message[i]}')`} />
@@ -76,10 +76,10 @@ for i in range(len(message)):
                 <h3><code className="inline">range()</code> explained</h3>
 
                 <p>The <code className="inline">range</code> function creates a simple sequence of integers.</p>
-                <CodeBlock codeString={`print(list(range(5))  # Output: [0, 1, 2, 3, 4]`} />
+                <CodeBlock language={"python"} codeString={`print(list(range(5))  # Output: [0, 1, 2, 3, 4]`} />
                 <p>Don't worry about <code className="inline">list()</code>, as we haven't covered that yet. Focus on the idea that <code className="inline">range(n)</code> generates numbers from 0 to n - 1. Let's now revisit using the function in a <code className="inline">for</code> loop.</p>
 
-                <CodeBlock codeString={`for i in range(5):
+                <CodeBlock language={"python"} codeString={`for i in range(5):
     print(i)`} />
                 <p>This will output the numbers 0, 1, 2, 3, and 4, each on a separate line. In other words, <code className="inline">range(5)</code> generates numbers from 0 to 4. Then, the loop iterates through this sequence, printing each one. </p>
             </section>
@@ -110,7 +110,7 @@ for i in range(len(message)):
                 <h2>Applications of For Loops</h2>
                 <h3>Counting</h3>
                 <p>We can count how many times a specific character appears in a string.</p>
-                <CodeBlock codeString={`# Example: Counting 'l' in "Hello"
+                <CodeBlock language={"python"} codeString={`# Example: Counting 'l' in "Hello"
 count = 0
 for char in "Hello":
     if char == 'l':
@@ -119,7 +119,7 @@ print("The letter 'l' appears", count, "times.")`} />
 
                 <h3>Creating New Strings</h3>
                 <p>Although strings in Python are immutable, meaning they cannot be changed after they are created, you can construct new strings as you iterate through them.</p>
-                <CodeBlock codeString={`# Example: Create a new string with slashes instead of periods
+                <CodeBlock language={"python"} codeString={`# Example: Create a new string with slashes instead of periods
 original = "12.31.2024"
 new_string = ""
 for char in original:
@@ -131,7 +131,7 @@ print(new_string)`} />
 
                 <h3>Accessing Specific Indices</h3>
                 <p>You may want to access or manipulate only the characters at specific indices in a string.</p>
-                <CodeBlock codeString={`# Example: Access and collect characters from even indices
+                <CodeBlock language={"python"} codeString={`# Example: Access and collect characters from even indices
 message = "Hello World"
 even_chars = ""
 for i in range(len(message)):

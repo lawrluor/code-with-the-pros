@@ -14,7 +14,7 @@ const WhileLoops = () => {
             <section>
                 <h2>Basic Syntax of a While Loop</h2>
                 <p>The basic structure of a <code className="inline">while</code> loop includes the loop condition and a block of code that executes repeatedly:</p>
-                <CodeBlock codeString={`# Example: Basic while loop
+                <CodeBlock language={"python"} codeString={`# Example: Basic while loop
 counter = 0
 while counter < 5:
     print("Counting:", counter)
@@ -26,7 +26,7 @@ while counter < 5:
             <section>
                 <h2>Using While Loops</h2>
                 <p>While loops can be used to process strings where you might need to examine each character until a certain condition is met, such as finding a specific character or processing until the end of the string.</p>
-                <CodeBlock codeString={`# Example: Iterate through a string with a while loop
+                <CodeBlock language={"python"} codeString={`# Example: Iterate through a string with a while loop
 message = "hello"
 index = 0
 while index < len(message):
@@ -35,7 +35,7 @@ while index < len(message):
 `} />
                 <p>In this example, the loop iterates through each character in the string "hello" using an <code className="inline">index</code>. The condition checks if the <code className="inline">index</code> is less than the length of <code className="inline">message</code>, ensuring the loop runs for each character in the string.</p>
 
-								<CodeBlock codeString={`# Example: Decrementing while loop
+								<CodeBlock language={"python"} codeString={`# Example: Decrementing while loop
 countdown = 10
 while countdown > 0:
 	print("Counting down:", countdown)
@@ -50,7 +50,7 @@ print("Lift off!")
 							<p>While loops can be thought of as repeated <code className="inline">if</code> statements. However, unlike an <code className="inline">if</code> statement that checks a condition once, a while loop will continually re-evaluate its condition after each iteration, making it ideal for ensuring a user's input is valid.</p>
 							<p>Let's look at an example comparing how an <code className="inline">if</code> statement and a while loop would handle user input:</p>
 
-							<CodeBlock codeString={`# If statement example: Checking input once
+							<CodeBlock language={"python"} codeString={`# If statement example: Checking input once
 user_input = input("Enter a number greater than 10: ")
 if int(user_input) <= 10:
 	print("That's not a valid number but I won't be able to check again.")
@@ -73,7 +73,7 @@ print("Thank you for entering a valid number!")
 
 						<p>The <code className="inline">break</code> keyword immediately terminates the loop, regardless of the loop's original condition. It provides a way to exit the loop from inside the loop body, typically under a conditional statement.</p>
 
-						<CodeBlock codeString={`# Example: Using break to exit a while loop early
+						<CodeBlock language={"python"} codeString={`# Example: Using break to exit a while loop early
 count = 0
 while count < 10:
 	print("Count is:", count)
@@ -87,7 +87,7 @@ while count < 10:
 						<h3>Using <code className="inline">break</code> for random numbers</h3>
 						<p>The previous example is unlikely to be a way that you use the <code className="inline">break</code> keyword, as a better method would be simply to set the looping condition to while <code className="inline">count &lt;= 5</code>. Here's a more realistic example of when you would use <code className="inline">break</code>.</p>
 
-						<CodeBlock codeString={`import random  # code for generating random numbers
+						<CodeBlock language={"python"} codeString={`import random  # code for generating random numbers
 
 while True:
 	number = random.randint(1, 10)  # Generate a random number between 1 and 10
@@ -108,7 +108,7 @@ while True:
 
 						<p>Here's an example of a common mistake that leads to an infinite loop:</p>
 
-						<CodeBlock codeString={`counter = 0
+						<CodeBlock language={"python"} codeString={`counter = 0
 while counter < 5:
 	print("Counting:", counter)
 `} />
@@ -118,7 +118,7 @@ while counter < 5:
 
 						<p>Sometimes we can write an "intentional" infinite loop that uses the <code className="inline">break</code> keyword instead of the initial looping condition to exit the loop safely. In this case, we write an infinite loops intentionally to keep a program running indefinitely until an external action occurs, such as user input or an error that breaks the loop.</p>
 
-						<CodeBlock codeString={`# Example: Infinite while loop with a break condition
+						<CodeBlock language={"python"} codeString={`# Example: Infinite while loop with a break condition
 while True:
 	response = input("Enter 'quit' to exit: ")
 	if response == 'quit':

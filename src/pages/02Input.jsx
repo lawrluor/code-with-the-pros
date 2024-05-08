@@ -28,7 +28,7 @@ const Input = () => {
             <section>
                 <h2>How To Use The <code className="inline">input()</code> Method</h2>
                 <p>Basic Syntax:</p>
-                <CodeBlock codeString={`name = input("What's your name? ")
+                <CodeBlock language={"python"} codeString={`name = input("What's your name? ")
 print(name)`}></CodeBlock>
                 <p>Breakdown:</p>
                 <ul>
@@ -42,19 +42,19 @@ print(name)`}></CodeBlock>
                 <h2>Storing Input In Variables</h2>
                 <p>In this example, the result of <code className="inline">input()</code> is assigned to the variable (name in the example).</p>
                 <p>Practice with different examples:</p>
-                <CodeBlock codeString={`# Task 1: Prompt the user to type their name and store their input into a variable.
+                <CodeBlock language={"python"} codeString={`# Task 1: Prompt the user to type their name and store their input into a variable.
 # Task 2: Prompt the user to type a city that they've visited and store their input into a variable.`}></CodeBlock>
             </section>
 
             <section>
                 <h2><code className="inline">input()</code> Always Gives You Strings</h2>
                 <p>Even if the user types a number, <code className="inline">input()</code> will always return a string.</p>
-                <CodeBlock codeString={`num1 = input("Enter a number: ")
+                <CodeBlock language={"python"} codeString={`num1 = input("Enter a number: ")
 num2 = input("Enter another number: ")
 print(num1 + num2)  # Will this add the numbers, or something else?`}></CodeBlock>
 
                 <p>Type conversion/casting may be needed if you intend to perform calculations.</p>
-                <CodeBlock codeString={`num1 = input("Enter a number: ")
+                <CodeBlock language={"python"} codeString={`num1 = input("Enter a number: ")
 num2 = input("Enter another number: ")
 
 # Convert the string inputs to integers

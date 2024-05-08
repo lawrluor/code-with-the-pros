@@ -15,7 +15,7 @@ const IfElse = () => {
             <section>
                 <h2>The <code class="inline">if</code> Statement</h2>
                 <p>The <code class="inline">if</code> statement in Python is essential for decision-making in code. Unlike some other computer languages that use brackets to define blocks of code, Python uses indentation.</p>
-                <CodeBlock codeString={`age = 19
+                <CodeBlock language={"python"} codeString={`age = 19
 if age >= 18:
     print("You are eligible to vote")`}></CodeBlock>
                 <ul>
@@ -28,7 +28,7 @@ if age >= 18:
             <section>
                 <h2>The Other Path: <code class="inline">else</code></h2>
                 <p>Use the <code class="inline">else</code> clause to specify what happens when the <code class="inline">if</code> condition was not met.</p>
-                <CodeBlock codeString={`age = 19
+                <CodeBlock language={"python"} codeString={`age = 19
 if age >= 18:
     print("You are eligible to vote")
 else:
@@ -40,7 +40,7 @@ else:
             <section>
                 <h2>Multiple Choices with <code class="inline">elif</code></h2>
                 <p>What if you need more than two options? <code class="inline">elif</code> (short for "else if") lets you chain multiple checks.</p>
-                <CodeBlock codeString={`grade = 85
+                <CodeBlock language={"python"} codeString={`grade = 85
 if grade >= 90:
     print("Excellent! You got an A")
 elif grade >= 80:
@@ -49,7 +49,7 @@ else:
     print("Keep studying, you can improve!")`}></CodeBlock>
             <p>You can interpret the statement in English as: "If the grade is greater than or equal to 90, print the message "You got an A". <strong>Else, if</strong> the grade is greater than or equal to 80, print the message "You got a B". In all other cases, print the message "Keep studying, you can improve!"</p>
             <p>Note that unlike <code class="inline">else</code>, <code class="inline">elif</code> <strong>does</strong> require a specific condition. You can create any number of additional <code class="inline">elif</code> clauses:</p>
-            <CodeBlock codeString={`grade = 85
+            <CodeBlock language={"python"} codeString={`grade = 85
 if grade >= 90:
     print("Excellent! You got an A")
 elif grade >= 80:
@@ -65,14 +65,14 @@ else:
             <section>
                 <h2>Order Matters in Elif Statements</h2>
                 <p>When chaining conditions using <code className="inline">elif</code>, the order in which you place these statements is crucial. An improperly ordered <code className="inline">elif</code> sequence can lead to scenarios where some conditions may never be evaluated. For example, if a more general condition is placed before a more specific one, the specific condition may never be reached.</p>
-                <CodeBlock codeString={`grade = 95
+                <CodeBlock language={"python"} codeString={`grade = 95
 if grade > 60:
     print("Pass")
 elif grade > 90:
     print("Excellent!")  # This line will never be reached regardless of the value of grade`} />
                 <p>In this scenario, because <code className="inline">grade &gt; 60</code> is true, "Pass" will be printed, and the program will not evaluate <code className="inline">grade &gt; 90</code>, even though it is true, because it comes after an already satisfied condition. Therefore, "Excellent!" will never be printed, no matter the grade.</p>
                 <p>To ensure that all relevant conditions are considered, <strong>start with the most specific conditions</strong> and proceed to the more general ones:</p>
-                <CodeBlock codeString={`grade = 95
+                <CodeBlock language={"python"} codeString={`grade = 95
 if grade > 90:
     print("Excellent!")
 elif grade > 60:
@@ -87,14 +87,14 @@ elif grade > 60:
                     You might wonder, couldn't I always just use two separate <code class="inline">if</code> statements instead of a single <code class="inline">if-else</code> structure?
                     While sometimes that might seem to work, there's a key difference in how they are handled by Python. Let's see an example:
                 </p>
-                <CodeBlock codeString={`temperature = 75
+                <CodeBlock language={"python"} codeString={`temperature = 75
 if temperature > 80:
     print("It's hot!")
 if temperature > 70:
     print("It's warm!")`} />
                 <p>With two separate <code class="inline">if</code> statements, both conditions are checked independently. This is because after an <code class="inline">if</code> statement executes, the rest of the code continues to execute from top to bottom as usual. In the example above, if <code class="inline">temperature</code> is <code class="inline">75</code>, <strong>both</strong> messages would be printed!</p>
                 <p>The following example uses the regular <code class="inline">if-else</code> structure:</p>
-                <CodeBlock codeString={`temperature = 65
+                <CodeBlock language={"python"} codeString={`temperature = 65
 if temperature > 80:
     print("It's hot!")
 else:
@@ -108,7 +108,7 @@ else:
                 <p>When we use <code className="inline">if</code> and <code className="inline">elif</code> statements in Python, there's an underlying concept known as the implicit <code className="inline">else</code>. This refers to the default action or outcome that occurs when none of the specified conditions in the <code className="inline">if</code> and <code className="inline">elif</code> statements are met. Even if an explicit <code className="inline">else</code> clause is not written out, the logic of <code className="inline">if</code>-<code className="inline">elif</code> constructs implies an <code className="inline">else</code> scenario.</p>
 
                 <p>Consider the following code. The absence of an explicit <code className="inline">else</code> doesn't halt the program; it simply means that if all conditions are false, the program continues line by line without executing any block of code associated with those conditions:</p>
-                <CodeBlock codeString={`have_homework = False
+                <CodeBlock language={"python"} codeString={`have_homework = False
 if have_homework:
     print("Guess I'll be studying this weekend.")
 
@@ -129,7 +129,7 @@ print("This line of code will execute no matter the result of the if statement")
 
                 <p>For example, in a game, if a player doesn't hit a target, you might want to explicitly reduce their score or give feedback, which is a perfect use for an <code className="inline">else</code> statement:</p>
 
-                <CodeBlock codeString={`score = 100
+                <CodeBlock language={"python"} codeString={`score = 100
 target_hit = False
 if target_hit:
     score += 10
@@ -139,7 +139,7 @@ else:
     print("Missed! Score decreased.")`} />
 
                 <p>However, in the following example without an explicit <code className="inline">else</code>, it is incorrect to subtract from the score as the default behavior, as that should only happen when the player misses their target. In other words, subtracting from the score should only happen <strong>explicitly</strong> when the user misses, not implicitly after any shot the user takes.</p>
-                <CodeBlock codeString={`score = 100
+                <CodeBlock language={"python"} codeString={`score = 100
 target_hit = False
 if target_hit:
     score += 10
@@ -157,13 +157,13 @@ print("Missed! Score decreased.")`} />
                 <h2>Understanding Indentation in Python</h2>
                 <p>Indentation is not just a part of Python's syntax; it's a core feature. Every block of code within a control structure, like an <code class="inline">if</code> statement, must be consistently indented to indicate the block's boundaries. Incorrect indentation can lead to <code class="inline">IndentationError</code>, which is a common mistake for beginners.</p>
                 <p>Here's an example of an indentation error:</p>
-                <CodeBlock codeString={`age = 19
+                <CodeBlock language={"python"} codeString={`age = 19
 if age >= 18:
 print("You are eligible to vote")  # This will cause an IndentationError`}></CodeBlock>
                 <p>The above code will raise an <code class="inline">IndentationError</code> because the <code class="inline">print</code> statement is not indented, and Python cannot determine if it's part of the <code class="inline">if</code> condition's block.</p>
                 <h3>Fixing Indentation Errors</h3>
                 <p>To correct an indentation error, ensure that all code intended to be executed within a block (like an <code class="inline">if</code> statement) is indented to the same level:</p>
-                <CodeBlock codeString={`age = 19
+                <CodeBlock language={"python"} codeString={`age = 19
 if age >= 18:
     print("You are eligible to vote")  # Correct indentation`}></CodeBlock>
                 <ul>
@@ -178,7 +178,7 @@ if age >= 18:
                 <p>Nested <code class="inline">if</code> statements are <code class="inline">if</code> statements within <code class="inline">if</code> statements.</p>
                 <p>Think of nested <code class="inline">if</code> statements in Python like a map or a flowchart. Imagine you're at an intersection in a maze, and each decision you make takes you down a different path. That's what these statements do in your code. Each <code class="inline">if</code> statement is like coming to a new intersection and having to decide which way to go based on specific conditions, and the way you got there was dependent on decisions you made earlier in the maze. When you add more <code class="inline">if</code> statements inside each other, it's like adding more turns to the map, making the journey through your code more interesting and complex.</p>
                 <p>Here's an example of a nested <code class="inline">if</code> statement in action:</p>
-                <CodeBlock codeString={`age = 19
+                <CodeBlock language={"python"} codeString={`age = 19
 registered_voter = True
 
 if age >= 18:

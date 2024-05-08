@@ -16,7 +16,7 @@ const PassByReference = () => {
             <section>
                 <h2>Example of Passing Lists by Reference</h2>
                 <p>Let's explore how passing by reference works with a simple function:</p>
-                <CodeBlock codeString={`def modify_list(lst):
+                <CodeBlock language={"python"} codeString={`def modify_list(lst):
     lst.append(4)
     return lst
 
@@ -29,7 +29,7 @@ print(my_list)`}></CodeBlock>
             <section>
                 <h2>Common Mistake: Reassignment Inside Functions</h2>
                 <p>Reassigning a list inside a function does not affect the original list:</p>
-                <CodeBlock codeString={`def reassign_list(lst):
+                <CodeBlock language={"python"} codeString={`def reassign_list(lst):
     lst = [4, 5, 6]  # This creates a new *local* variable called lst and therefore does not affect the passed list
 
 original_list = [1, 2, 3]
@@ -44,13 +44,13 @@ reassign_list(lst)
 print(original_list)
 `}></CodeBlock>
                 <p>Despite the reassignment inside the function, the original list variables remains unchanged outside the function.</p>
-                <CodeBlock codeString={``}></CodeBlock>
+                <CodeBlock language={"python"} codeString={``}></CodeBlock>
             </section>
 
             <section>
                 <h2>Modifying Elements of a List</h2>
                 <p>Directly modifying elements of a list inside a function will affect the original list:</p>
-                <CodeBlock codeString={`def change_element(lst):
+                <CodeBlock language={"python"} codeString={`def change_element(lst):
     lst[0] = 99  # This changes the first element of the passed list
 
 a_list = [1, 2, 3]

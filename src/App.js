@@ -7,7 +7,9 @@ import Booleans from './pages/04Booleans';
 import ForLoops from './pages/07ForLoops';
 import WhileLoops from './pages/06WhileLoops';
 import PassByReference from './pages/20PassByReference';
-import JavaPolymorphism from './pages/JavaPolymorphism';
+import JavaObjects from './pages/Java/JavaObjects';
+import JavaInheritance from './pages/Java/JavaInheritance';
+import JavaPolymorphism from './pages/Java/JavaPolymorphism';
 
 function App() {
   return (
@@ -37,9 +39,11 @@ function App() {
             <li>
               <Link to="/passByReference">Pass By Reference</Link>
             </li>
-            <li>
-              <Link to="/javaPolymorphism">Java Polymorphism</Link>
-            </li>
+
+            <h4>Java</h4>
+            <li><Link to="/javaObjects">Objects</Link></li>
+            <li><Link to="/javaInheritance">Inheritance</Link></li>
+            <li><Link to="/javaPolymorphism">Polymorphism</Link></li>
           </ul>
         </nav>
 
@@ -51,6 +55,8 @@ function App() {
           <Route path="/whileLoops" element={<WhileLoops />} />
           <Route path="/forLoops" element={<ForLoops />} />
           <Route path="/passByReference" element={<PassByReference />} />
+          <Route path="/javaObjects" element={<JavaObjects />} />
+          <Route path="/javaInheritance" element={<JavaInheritance />} />
           <Route path="/javaPolymorphism" element={<JavaPolymorphism />} />
         </Routes>
       </div>
