@@ -349,11 +349,12 @@ public class RandomObjectGenerator {
     <h3>What is Upcasting?</h3>
     <p>Upcasting occurs when an object of a subclass is treated as an object of its superclass. This form of casting is inherently safe and is performed implicitly by Java. It is particularly useful in polymorphism, enabling a subclass object to be accessed through a reference variable of a superclass type.</p>
 
-    <CodeBlock language={"java"} codeString={`class Thing {}
-class MoreThing extends Thing {}
+    <CodeBlock language={"java"} codeString={`
+class Thing {}                    // full implementation not shown
+class MoreThing extends Thing {}  // full implementation not shown
 
 MoreThing moreThing = new MoreThing();
-Thing thing = moreThing; // Upcasting is implicit`} />
+Thing thing = moreThing;  // Upcasting is implicit and done automatically`} />
 
     <h3>Why is Upcasting Safe?</h3>
     <ul>
@@ -361,11 +362,12 @@ Thing thing = moreThing; // Upcasting is implicit`} />
         <li><strong>Guaranteed Compatibility:</strong> A subclass object can always fulfill the contract of the superclass, making it compatible for reference through a superclass type.</li>
     </ul>
 
-    <h3>Understanding Downcasting</h3>
-    <p>Downcasting, in contrast, involves casting a superclass object to a subclass type. This operation is inherently risky and requires explicit casting. Downcasting can lead to runtime errors if the object being cast is not actually an instance of the subclass.</p>
+    <h3>Downcasting</h3>
+    <p>Downcasting, in contrast, involves casting a superclass object to a subclass type. This operation is inherently risky and requires explicit casting. In fact, attempting to downcast a superclass object to a subclass type without explicit casting will result in a compile-time error. Downcasting can lead to runtime errors if the object being cast is not actually an instance of the subclass.</p>
 
     <CodeBlock language={"java"} codeString={`Thing thing = new Thing(); // Superclass object
-MoreThing moreThing = (MoreThing) thing; // Downcasting, risky and may throw ClassCastException`} />
+MoreThing moreThing = thing;  // Non-explicit downcasting: will cause a compile-time error
+MoreThing moreThing = (MoreThing) thing;  // Downcasting, risky and may throw ClassCastException`} />
 
     <p>Downcasting needs to be handled with care because it assumes that the object has all the features of the subclass, which isn't always the case. An incorrect cast can result in a <code className="inline">ClassCastException</code> at runtime.</p>
 
@@ -509,16 +511,17 @@ dogs.add(new UnderDog());`}
 	<QuizQuestion question={
 		<div className="question">
             <p>Consider the class hierarchy where <code className="inline">Landscape</code> and <code className="inline">Portrait</code> extend <code className="inline">Picture</code>, and <code className="inline">Picture</code> extends <code className="inline">DigitalPicture</code>. Assume that both <code className="inline">DigitalPicture</code> and <code className="inline">Picture</code> have no-argument constructors, but <code className="inline">Landscape</code> and <code className="inline">Portrait</code> do not have any constructors defined. Which of the following declarations will compile?</p>
-            <CodeBlock language={"java"} codeString={`class DigitalPicture {}  // full implementation not shown
+            <CodeBlock language={"java"} codeString={`
+class DigitalPicture {}                  // full implementation not shown
 class Picture extends DigitalPicture {}  // full implementation not shown
 class Portrait extends Picture {}        // full implementation not shown
 class Landscape extends Picture {}       // full implementation not shown
 
 // The following lines are declared in the main method of another class
-DigitalPicture p = new Portrait();       // Line 1
-Landscape p = new Picture();             // Line 2
-DigitalPicture p = new DigitalPicture(); // Line 3`} />
-            <p>Which of the following lines will compile?</p>
+DigitalPicture p = new Portrait();        // Line 1
+Landscape p = new Picture();              // Line 2
+DigitalPicture p = new DigitalPicture();  // Line 3`} />
+            <p>Which of the three lines in the main method will compile?</p>
 		</div>
 	}
 
@@ -541,12 +544,12 @@ DigitalPicture p = new DigitalPicture(); // Line 3`} />
 <QuizQuestion question={
 		<div className="question">
 			<p>Identify the incorrect statement about subclass behavior in Java:</p>
-			<ol type="A">
-					<li>When two subclass methods share the same name but have different parameter lists, it is referred to as method overriding.</li>
-					<li>A superclass does not inherit any private methods defined within its subclasses.</li>
-					<li>If a subclass does not override any methods, it inherits all public methods from its superclass, which are then accessible in all further subclasses.</li>
-					<li>A public method defined in a subclass that does not exist in its superclass cannot be accessed by the superclass.</li>
-					<li>Identical methods of a superclass are inherited by all of its subclasses unless explicitly overridden.</li>
+			<ol>
+                <li>A superclass does not inherit any private methods defined within its subclasses.</li>
+                <li>If a subclass does not override any methods, it inherits all public methods from its superclass, which are then accessible in all further subclasses.</li>
+                <li>A public method defined in a subclass that does not exist in its superclass cannot be accessed by the superclass.</li>
+                <li>When two subclass methods share the same name but have different parameter lists, it is referred to as method overriding.</li>
+                <li>Identical methods of a superclass are inherited by all of its subclasses unless explicitly overridden.</li>
 			</ol>
 		</div>
 	}
@@ -556,11 +559,11 @@ DigitalPicture p = new DigitalPicture(); // Line 3`} />
 					<p>The incorrect statement is <strong>A</strong>.</p>
 					<p>Explanation:</p>
 					<ul>
-							<li><strong>A</strong>: This statement is false because when subclass methods have the same name but different parameters, it is called <strong>method overloading</strong>, not overriding. Method overriding occurs when a subclass method has the same name and parameter types as a method in its superclass.</li>
-							<li><strong>B</strong>: This is true. Superclasses cannot access private methods defined in their subclasses because private methods are only accessible within the class they are declared.</li>
-							<li><strong>C</strong>: This is true. If a subclass does not override the superclass methods, it inherits all of its public methods, which are then inherited by any of its own subclasses.</li>
-							<li><strong>D</strong>: This is true. Methods defined in a subclass are not accessible by its superclass as they are not part of the superclass's definition.</li>
-							<li><strong>E</strong>: This is true. All subclasses inherit the methods of their superclass unless those methods are overridden by the subclasses.</li>
+                        <li><strong>A</strong>: This is true. Superclasses cannot access private methods defined in their subclasses because private methods are only accessible within the class they are declared.</li>
+                        <li><strong>B</strong>: This is true. If a subclass does not override the superclass methods, it inherits all of its public methods, which are then inherited by any of its own subclasses.</li>
+                        <li><strong>C</strong>: This is true. Methods defined in a subclass are not accessible by its superclass as they are not part of the superclass's definition.</li>
+                        <li><strong>D</strong>: This statement is false because when subclass methods have the same name but different parameters, it is called <strong>method overloading</strong>, not overriding. Method overriding occurs when a subclass method has the same name and parameter types as a method in its superclass.</li>
+                        <li><strong>E</strong>: This is true. All subclasses inherit the methods of their superclass unless those methods are overridden by the subclasses.</li>
 					</ul>
 			</div>
 	}/>
@@ -610,7 +613,7 @@ Car c1 = new Car();`} />
 
 <QuizQuestion question={
     <div className="question">
-        <p>Given the class definitions and method declarations in the <code className="inline">BirdMain</code> class, and assuming that all classes have their own no-argument constructors, determine which of the following method calls will cause a compile-time error:</p>
+        <p>You are given the following class definitions and method declarations. Assume that each class has its own no-argument constructors.</p>
         <CodeBlock language={"java"} codeString={`
 class Bird {}                      // full implementation not shown
 class Parrot extends Bird {}       // full implementation not shown
@@ -624,13 +627,15 @@ class BirdMain {
     void printBirdCall(Parrot p) {
         System.out.println("Parrot call printed");
     }
-}
 
-Bird bird1 = new Bird();
-Bird bird2 = new Parrot();
-Parrot parrot1 = new Parrot();
-Parrot parrot2 = new Parakeet();`} />
-        <p>Method Calls:</p>
+    public static void main(String[] args) {
+        Bird bird1 = new Bird();
+        Bird bird2 = new Parrot();
+        Parrot parrot1 = new Parrot();
+        Parrot parrot2 = new Parakeet();
+    }
+}`} />
+        <p>Adding which of the the following method calls to the <code className="inline">main</code> method will cause a compile-time error?</p>
         <ol>
             <li><code className="inline">printBirdCall(bird2);</code></li>
             <li><code className="inline">printName(parrot2);</code></li>
@@ -638,7 +643,6 @@ Parrot parrot2 = new Parakeet();`} />
             <li><code className="inline">printBirdCall(parrot2);</code></li>
             <li><code className="inline">printBirdCall(parrot1);</code></li>
         </ol>
-        <p>Select the correct option.</p>
     </div>
 	}
 	answer={
