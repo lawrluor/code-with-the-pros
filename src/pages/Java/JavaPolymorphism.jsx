@@ -2,7 +2,40 @@ import React from 'react';
 import CodeBlock from '../../components/CodeBlock';
 import QuizQuestion from '../../components/QuizQuestion';
 
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+
 const JavaPolymorphism = () => {
+    const [questions, setQuestions] = React.useState([]);
+
+    React.useEffect(() => {
+        // Define the async function within the useEffect
+        const fetchData = async () => {
+            try {
+                const response = await fetch("https://codewiththepros-backend.onrender.com/api/data", {
+                    method: "GET",
+                    headers: {
+                        "Content-Type": "application/json"
+                    }
+                });
+
+                // Check if the request was successful
+                if (response.ok) {
+                    const data = await response.json();  // Parse JSON data from the response
+                    // first question
+                    setQuestions(data?.questions || []);  // Set questions to state, or empty array if undefined
+                } else {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+            } catch (error) {
+                console.error("Error fetching data:", error);
+                setQuestions([]); // Optionally reset to empty array on error
+            }
+        };
+
+        fetchData(); // Call the async function
+    }, []);
+
     return (
         <div className="lesson-container">
             <h1>Understanding Polymorphism in Java</h1>
@@ -471,272 +504,7 @@ dogs.add(new UnderDog());`}
 
 <section>
 	<h2>Quiz</h2>
-	<QuizQuestion question={
-		<div className="question">
-			<p>Consider a scenario where a <code className="inline">Circle</code> class extends a <code className="inline">Shape</code> class. Given the code snippet:</p>
-
-			<CodeBlock language={"java"} codeString={`Shape sh = new Circle();`}
-			/>
-
-			<p>What are the static and dynamic types of <code className="inline">sh</code>?</p>
-		</div>
-	}
-
-	answer={
-		<div className="answer">
-			<p>The static type of <code className="inline">sh</code> is <code className="inline">Shape</code>, but the dynamic type is <code className="inline">Circle</code>. The runtime type is also referred to as the dynamic type, the reference type is another name for static type.</p>
-		</div>
-	}/>
-
-	<QuizQuestion question={
-		<div className="question">
-			<p>Consider a scenario where a <code className="inline">Circle</code> class extends a <code className="inline">Shape</code> class. Given the code snippet:</p>
-
-			<CodeBlock language={"java"} codeString={`Circle sh = new Shape();`}
-			/>
-
-			<p>Why does this code not compile?</p>
-		</div>
-	}
-
-	answer={
-		<div className="answer">
-			<ul>
-				<li><strong>Incorrect Assignment:</strong> In Java, while a superclass reference can refer to a subclass object (upcasting), the reverse is not allowed directly. The statement attempts to perform downcasting implicitly, which is inherently unsafe and not permitted. The <code className="inline">Shape</code> class is a superclass and does not necessarily have all the characteristics (methods or properties) specific to its subclass, <code className="inline">Circle</code>.</li>
-				<li><strong>Type Mismatch:</strong> At compile time, the Java compiler checks the compatibility of types based on the assignment. Since <code className="inline">Shape</code> could be any shape, not necessarily a <code className="inline">Circle</code>, assigning a <code className="inline">Shape</code> object directly to a <code className="inline">Circle</code> reference would lead to potential runtime errors, as specific methods or properties of <code className="inline">Circle</code> might be accessed which aren't defined in <code className="inline">Shape</code>.</li>
-			</ul>
-		</div>
-	}/>
-
-	<QuizQuestion question={
-		<div className="question">
-            <p>Consider the class hierarchy where <code className="inline">Landscape</code> and <code className="inline">Portrait</code> extend <code className="inline">Picture</code>, and <code className="inline">Picture</code> extends <code className="inline">DigitalPicture</code>. Assume that both <code className="inline">DigitalPicture</code> and <code className="inline">Picture</code> have no-argument constructors, but <code className="inline">Landscape</code> and <code className="inline">Portrait</code> do not have any constructors defined. Which of the following declarations will compile?</p>
-            <CodeBlock language={"java"} codeString={`
-class DigitalPicture {}                  // full implementation not shown
-class Picture extends DigitalPicture {}  // full implementation not shown
-class Portrait extends Picture {}        // full implementation not shown
-class Landscape extends Picture {}       // full implementation not shown
-
-// The following lines are declared in the main method of another class
-DigitalPicture p = new Portrait();        // Line 1
-Landscape p = new Picture();              // Line 2
-DigitalPicture p = new DigitalPicture();  // Line 3`} />
-            <p>Which of the three lines in the main method will compile?</p>
-		</div>
-	}
-
-	answer={
-			<div className="answer">
-					<p>The correct option is: Line 1 and Line 3</p>
-					<p>Explanation:</p>
-					<ul>
-                        <li>Line 1 will compile because although <code className="inline">Portrait</code> does not have a defined constructor, its superclass <code className="inline">Picture</code> does have a no-argument constructor. If a class has no explicit constructors defined, Java will attempt to call the superclass' no-argument constructor.</li>
-                        <li>Line 2 will not compile because <code className="inline">Picture</code> cannot be instantiated and then assigned to a variable of type <code className="inline">Landscape</code> due to type mismatch; <code className="inline">Picture</code> is not a subtype of <code className="inline">Landscape</code>.</li>
-                        <li>Line 3 will compile as <code className="inline">DigitalPicture</code> has a no-argument constructor and is being instantiated directly.</li>
-					</ul>
-
-					<p>
-						To summarize, if a class extends another and does not explicitly call a superclass constructor, Java will automatically insert a call to the superclass's no-argument constructor. If the superclass doesn’t have a no-argument constructor and the subclass does not call another constructor explicitly, it will result in a compile-time error.
-					</p>
-			</div>
-	}/>
-
-<QuizQuestion question={
-		<div className="question">
-			<p>Identify the incorrect statement about subclass behavior in Java:</p>
-			<ol>
-                <li>A superclass does not inherit any private methods defined within its subclasses.</li>
-                <li>If a subclass does not override any methods, it inherits all public methods from its superclass, which are then accessible in all further subclasses.</li>
-                <li>A public method defined in a subclass that does not exist in its superclass cannot be accessed by the superclass.</li>
-                <li>When two subclass methods share the same name but have different parameter lists, it is referred to as method overriding.</li>
-                <li>Identical methods of a superclass are inherited by all of its subclasses unless explicitly overridden.</li>
-			</ol>
-		</div>
-	}
-
-	answer={
-			<div className="answer">
-					<p>The incorrect statement is <strong>A</strong>.</p>
-					<p>Explanation:</p>
-					<ul>
-                        <li><strong>A</strong>: This is true. Superclasses cannot access private methods defined in their subclasses because private methods are only accessible within the class they are declared.</li>
-                        <li><strong>B</strong>: This is true. If a subclass does not override the superclass methods, it inherits all of its public methods, which are then inherited by any of its own subclasses.</li>
-                        <li><strong>C</strong>: This is true. Methods defined in a subclass are not accessible by its superclass as they are not part of the superclass's definition.</li>
-                        <li><strong>D</strong>: This statement is false because when subclass methods have the same name but different parameters, it is called <strong>method overloading</strong>, not overriding. Method overriding occurs when a subclass method has the same name and parameter types as a method in its superclass.</li>
-                        <li><strong>E</strong>: This is true. All subclasses inherit the methods of their superclass unless those methods are overridden by the subclasses.</li>
-					</ul>
-			</div>
-	}/>
-
-<QuizQuestion question={
-    <div className="question">
-        <p>Given the Java class definitions and object declarations below, determine which method calls will cause a compile-time error:</p>
-        <CodeBlock language={"java"} codeString={`class Vehicle {
-    public void start() {
-        System.out.println("Vehicle is starting");
-    }
-}
-
-class Car extends Vehicle {
-    public void accelerate() {
-        System.out.println("Car is accelerating");
-    }
-}`}
-        />
-        <p>In the <code className="inline">main</code> method of another class:</p>
-				<CodeBlock language={"java"} codeString={`Vehicle v1 = new Vehicle();
-Vehicle v2 = new Car();
-Car c1 = new Car();`} />
-
-        <p>Which of the following method calls will cause an error?</p>
-        <ol>
-            <li><code className="inline">v1.accelerate();</code></li>
-            <li><code className="inline">v2.accelerate();</code></li>
-            <li><code className="inline">c1.start();</code></li>
-        </ol>
-    </div>
-	}
-	answer={
-			<div className="answer">
-					<p>The method calls that will cause an error are:</p>
-					<ol>
-							<li><code className="inline">v1.accelerate();</code> - This will cause an error because the <code className="inline">accelerate()</code> method is not defined in the <code className="inline">Vehicle</code> class.</li>
-							<li><code className="inline">v2.accelerate();</code> - Although <code className="inline">v2</code> is instantiated as a <code className="inline">Car</code>, it's declared as a <code className="inline">Vehicle</code>. Without casting to <code className="inline">Car</code>, the <code className="inline">accelerate()</code> method cannot be accessed using a <code className="inline">Vehicle</code> reference.</li>
-					</ol>
-					<p>The only method call that will not cause an error is:</p>
-					<ul>
-							<li><code className="inline">c1.start();</code> - This will not cause an error because <code className="inline">c1</code> is an instance of <code className="inline">Car</code>, which inherits the <code className="inline">start()</code> method from <code className="inline">Vehicle</code>.</li>
-					</ul>
-			</div>
-	}
-	/>
-
-<QuizQuestion question={
-    <div className="question">
-        <p>You are given the following class definitions and method declarations. Assume that each class has its own no-argument constructors.</p>
-        <CodeBlock language={"java"} codeString={`
-class Bird {}                      // full implementation not shown
-class Parrot extends Bird {}       // full implementation not shown
-class Parakeet extends Parrot {}   // full implementation not shown
-
-class BirdMain {
-    void printName(Bird b) {
-        System.out.println("Bird name printed");
-    }
-
-    void printBirdCall(Parrot p) {
-        System.out.println("Parrot call printed");
-    }
-
-    public static void main(String[] args) {
-        Bird bird1 = new Bird();
-        Bird bird2 = new Parrot();
-        Parrot parrot1 = new Parrot();
-        Parrot parrot2 = new Parakeet();
-    }
-}`} />
-        <p>Adding which of the the following method calls to the <code className="inline">main</code> method will cause a compile-time error?</p>
-        <ol>
-            <li><code className="inline">printBirdCall(bird2);</code></li>
-            <li><code className="inline">printName(parrot2);</code></li>
-            <li><code className="inline">printName(bird2);</code></li>
-            <li><code className="inline">printBirdCall(parrot2);</code></li>
-            <li><code className="inline">printBirdCall(parrot1);</code></li>
-        </ol>
-    </div>
-	}
-	answer={
-			<div className="answer">
-					<p>The method call that will cause an error is:</p>
-					<ul>
-							<li><code className="inline">printBirdCall(bird2);</code> - This will cause an error because <code className="inline">bird2</code> is declared as a <code className="inline">Bird</code>, and the <code className="inline">printBirdCall</code> method requires a <code className="inline">Parrot</code> or its subclass. Without explicit casting to <code className="inline">Parrot</code>, the type mismatch at compile time prevents this call from being valid. You can also read this as "bird2 is a Parrot" - which is false because the static type is <code className="inline">Bird</code>.</li>
-					</ul>
-					<p>All other method calls are valid:</p>
-					<ul>
-							<li><code className="inline">printName(parrot2);</code> and <code className="inline">printName(bird2);</code> are valid as they match the expected parameter type.</li>
-							<li><code className="inline">printBirdCall(parrot2);</code> and <code className="inline">printBirdCall(parrot1);</code> are also valid since both <code className="inline">parrot2</code> and <code className="inline">parrot1</code> meet the type requirement of being a <code className="inline">Parrot</code> or its subclass.</li>
-					</ul>
-			</div>
-	}
-	/>
-
-<QuizQuestion question={
-    <div className="question">
-        <p>Given the Java class definitions for <code className="inline">TextHandler</code> and its subclass <code className="inline">EnhancedTextHandler</code>, which involve overriding the <code className="inline">displayPart</code> method and the use of the <code className="inline">super</code> keyword:</p>
-        <CodeBlock language="java" codeString={`
-public class TextHandler {
-    public void displayPart(String text) {
-        String part = text.substring(3);
-        System.out.print(part);
-    }
-}
-
-public class EnhancedTextHandler extends TextHandler {
-    public void displayPart(String text) {
-        String part = text.substring(2);
-        super.displayPart(part);
-        System.out.print(part);
-    }
-}`}
-        />
-        <p>What will be the output if the following code is executed in a separate class?</p>
-        <CodeBlock language="java" codeString={`EnhancedTextHandler handler = new EnhancedTextHandler();
-handler.displayPart("abcdef");`}
-        />
-    </div>
-	}
-	answer={
-			<div className="answer">
-					<p>The output will be:</p>
-					<p><code className="inline">fcdef</code></p>
-					<p>Explanation:</p>
-					<ul>
-							<li>The <code className="inline">displayPart</code> method in <code className="inline">EnhancedTextHandler</code> first extracts the substring starting from index 2 of "abcdef", resulting in "cdef".</li>
-							<li>It then calls <code className="inline">super.displayPart(part)</code>, which invokes the <code className="inline">displayPart</code> method of <code className="inline">TextHandler</code> with "cdef".</li>
-							<li>The <code className="inline">displayPart</code> method in <code className="inline">TextHandler</code> extracts the substring starting from index 3 of "cdef", which results in "f", and prints it.</li>
-							<li>After the <code className="inline">super</code> method call, <code className="inline">EnhancedTextHandler</code>'s <code className="inline">displayPart</code> method prints "cdef" again.</li>
-					</ul>
-			</div>
-	}
-	/>
-
-<QuizQuestion question={
-    <div className="question">
-        <p>Consider the following Java class definitions:</p>
-        <CodeBlock language="java" codeString={`public class Vehicle {
-    public void adjustSpeed(int delta) {
-        delta -= 5;
-        System.out.print(delta);
-    }
-}
-
-public class Car extends Vehicle {
-    public void adjustSpeed(int delta) {
-        super.adjustSpeed(delta + 10);
-        delta *= 2;
-        System.out.print(delta);
-    }
-}`}
-        />
-        <p>Assuming the following code is executed in a separate class, what will be the output?</p>
-        <CodeBlock language="java" codeString={`Car myCar = new Car();
-myCar.adjustSpeed(20);`}/>
-    </div>
-	}
-	answer={
-			<div className="answer">
-					<p>The output will be:</p>
-					<p><code className="inline">2540</code></p>
-					<p>Explanation:</p>
-					<ul>
-                        <li>The <code className="inline">adjustSpeed</code> method in <code className="inline">Car</code> first calls <code className="inline">super.adjustSpeed(delta + 10);</code> - This modifies the initial <code className="inline">delta</code> value of 20 to 30 and passes it to the <code className="inline">Vehicle</code>'s method.</li>
-                        <li>In the <code className="inline">Vehicle</code> class, 5 is subtracted from the passed value of 30, resulting in 25, which is then printed.</li>
-                        <li>Control returns to the <code className="inline">Car</code> class where the original <code className="inline">delta</code> value of 20 is then doubled to 40, following the print statement in <code className="inline">Vehicle</code>. The doubled value (40) should be printed but due to the error in the original solution, 20 is printed.</li>
-					</ul>
-					<p>Note: The variable <code className="inline">delta</code> in <code className="inline">Vehicle.adjustSpeed</code> is a copy of the original variable due to Java's pass-by-value characteristic, so changes do not affect the original <code className="inline">delta</code> in <code className="inline">Car</code>.</p>
-			</div>
-		}
-	/>
+    {questions && questions?.map(question => <QuizQuestion key={question?.id} question={question?.question} answer={question?.answer} />)}
 </section>
 
 
