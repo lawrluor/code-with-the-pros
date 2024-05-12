@@ -2,9 +2,6 @@ import React from 'react';
 import CodeBlock from '../../components/CodeBlock';
 import QuizQuestion from '../../components/QuizQuestion';
 
-import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
-
 const JavaPolymorphism = () => {
     const [questions, setQuestions] = React.useState([]);
 
@@ -504,7 +501,7 @@ dogs.add(new UnderDog());`}
 
 <section>
 	<h2>Quiz</h2>
-    {questions && questions?.map((question, index) => <QuizQuestion key={index} index={index} question={question?.question} answer={question?.answer} />)}
+    {questions && questions?.map((question, index) => <QuizQuestion key={index} index={index} id={question?.id} question={question?.question} answer={question?.answer} />)}
 </section>
 
 
@@ -536,17 +533,17 @@ Dog fido = new UnderDog();
 fido.act();`} />
 
     <h3>Step-by-Step Execution</h3>
-    <p>Here's how the method calls unfold when `fido.act()` is executed:</p>
+    <p>Here's how the method calls unfold when <code className="inline">fido.act()</code> is executed:</p>
     <ol>
-        <li><strong>Call to `fido.act()`:</strong> Since `fido` is an instance of <code className="inline">UnderDog</code>, the `act()` method in <code className="inline">UnderDog</code> is invoked.</li>
-        <li><strong>UnderDog's `act()` method:</strong> This method first calls `super.act()`, which refers to the `act()` method in <code className="inline">Dog</code> (the superclass).</li>
-        <li><strong>Dog's `act()` method:</strong> Prints "run ", then calls `eat()`. However, due to polymorphism, `eat()` resolves to <code className="inline">UnderDog</code>'s overridden `eat()` method.</li>
-        <li><strong>UnderDog's `eat()` method:</strong> This method first calls `super.eat()`, invoking <code className="inline">Dog</code>'s `eat()` method, which prints "eat ". Afterwards, <code className="inline">UnderDog</code>'s `eat()` continues and prints "bark ".</li>
-        <li><strong>Completion of `super.act()`:</strong> Control returns to <code className="inline">UnderDog</code>'s `act()` method, which then prints "sleep ".</li>
+        <li><strong>Call to <code className="inline">fido.act()</code>:</strong> Since <code className="inline">fido</code> is an instance of <code className="inline">UnderDog</code>, the <code className="inline">act()</code> method in <code className="inline">UnderDog</code> is invoked.</li>
+        <li><strong>UnderDog's <code className="inline">act()</code> method:</strong> This method first calls <code className="inline">super.act()</code>, which refers to the <code className="inline">act()</code> method in <code className="inline">Dog</code> (the superclass).</li>
+        <li><strong>Dog's <code className="inline">act()</code> method:</strong> Prints "run ", then calls <code className="inline">eat()</code>. However, due to polymorphism, <code className="inline">eat()</code> resolves to <code className="inline">UnderDog</code>'s overridden <code className="inline">eat()</code> method.</li>
+        <li><strong>UnderDog's <code className="inline">eat()</code> method:</strong> This method first calls `super.eat()`, invoking <code className="inline">Dog</code>'s <code className="inline">eat()</code> method, which prints "eat ". Afterwards, <code className="inline">UnderDog</code>'s <code className="inline">eat()</code> continues and prints "bark ".</li>
+        <li><strong>Completion of <code className="inline">super.act()</code>:</strong> Control returns to <code className="inline">UnderDog</code>'s <code className="inline">act()</code> method, which then prints "sleep ".</li>
     </ol>
 
     <h3>Final Output</h3>
-    <p>Combining all the prints from the above sequence, the output on executing `fido.act()` will be:</p>
+    <p>Combining all the prints from the above sequence, the output on executing <code className="inline">fido.act()</code> will be:</p>
     <CodeBlock language={"java"} codeString={`run eat bark sleep `} />
 </section>
 
@@ -574,47 +571,43 @@ fido.act();`} />
 		/>
 
     <CodeBlock language={"java"} codeString={`public class NamedPoint extends Point {
-
-		// Incorrect constructor, will throw an error
-		public NamedPoint(int d1, int d2, String pointName)
-		{
-			x = d1;
-			y = d2;
-			name = pointName;
-		}
+    // Incorrect constructor, will throw an error
+    public NamedPoint(int d1, int d2, String pointName) {
+        x = d1;
+        y = d2;
+        name = pointName;
+    }
 }`} />
 		<p>This constructor for <code className="inline">NamedPoint</code> is incorrect because it attempts to directly set private variables of the superclass.</p>
 
 		<p>One way to fix the <code className="inline">NamedPoint</code> constructor:</p>
-		<CodeBlock language={"java"} codeString={`public NamedPoint(int d1, int d2, String pointName)
-		{
-			super(d1, d2);
-			name = pointName;
-		}`} />
-</section>
+		<CodeBlock language={"java"} codeString={`public NamedPoint(int d1, int d2, String pointName) {
+    super(d1, d2);
+    name = pointName;
+}`} />
+                    </section>
 
-						<section>
-							<h2>Projects</h2>
-							<p>Completing these challenges will help you apply what you've learned about polymorphism, method overloading, and overriding in real-world programming scenarios.</p>
-							<ul>
-									<li className='paragraph'>
-											<strong>Animal Sound Simulator:</strong> Implement a class hierarchy starting with a base class <code className="inline">Animal</code>. Create at least three subclasses (e.g., <code className="inline">Dog</code>, <code className="inline">Cat</code>, and <code className="inline">Bird</code>). Each subclass should override a <code className="inline">makeSound</code> method to emit a unique sound. Test these in a main method where polymorphism allows you to invoke the method on a collection of <code className="inline">Animal</code> objects, each declared as an <code className="inline">Animal</code> but instantiated as a specific subclass.
-									</li>
+                    <section>
+                        <h2>Projects</h2>
+                        <p>Completing these challenges will help you apply what you've learned about polymorphism, method overloading, and overriding in real-world programming scenarios.</p>
+                        <ul>
+                            <li className='paragraph'>
+                                    <strong>Animal Sound Simulator:</strong> Implement a class hierarchy starting with a base class <code className="inline">Animal</code>. Create at least three subclasses (e.g., <code className="inline">Dog</code>, <code className="inline">Cat</code>, and <code className="inline">Bird</code>). Each subclass should override a <code className="inline">makeSound</code> method to emit a unique sound. Test these in a main method where polymorphism allows you to invoke the method on a collection of <code className="inline">Animal</code> objects, each declared as an <code className="inline">Animal</code> but instantiated as a specific subclass.
+                            </li>
 
-									<li className='paragraph'>
-											<strong>Polymorphic Calculator:</strong> Create a <code className="inline">Calculator</code> class that uses method overloading and overriding to perform basic arithmetic operations (add, subtract, multiply, divide). Start with a base class that implements each operation with two integers and then create a subclass that overrides these methods to work with doubles. Include a method that uses overloading to handle an arbitrary number of integers for addition and multiplication.
-									</li>
+                            <li className='paragraph'>
+                                    <strong>Polymorphic Calculator:</strong> Create a <code className="inline">Calculator</code> class that uses method overloading and overriding to perform basic arithmetic operations (add, subtract, multiply, divide). Start with a base class that implements each operation with two integers and then create a subclass that overrides these methods to work with doubles. Include a method that uses overloading to handle an arbitrary number of integers for addition and multiplication.
+                            </li>
 
-									<li className='paragraph'>
-											<strong>Shape Area Calculator:</strong> Develop a polymorphic system for calculating the area of different shapes. Create an abstract base class <code className="inline">Shape</code> with an abstract method <code className="inline">calculateArea</code>. Subclasses should include <code className="inline">Circle</code>, <code className="inline">Rectangle</code>, and <code className="inline">Triangle</code>. Each subclass should provide its own implementation for <code className="inline">calculateArea</code>. Use a main method to create an array of <code className="inline">Shape</code> objects, calculate, and print the area of each shape using a loop.
-									</li>
+                            <li className='paragraph'>
+                                    <strong>Shape Area Calculator:</strong> Develop a polymorphic system for calculating the area of different shapes. Create an abstract base class <code className="inline">Shape</code> with an abstract method <code className="inline">calculateArea</code>. Subclasses should include <code className="inline">Circle</code>, <code className="inline">Rectangle</code>, and <code className="inline">Triangle</code>. Each subclass should provide its own implementation for <code className="inline">calculateArea</code>. Use a main method to create an array of <code className="inline">Shape</code> objects, calculate, and print the area of each shape using a loop.
+                            </li>
 
-									<li className='paragraph'>
-											<strong>Interface-based Polymorphism:</strong> Create an interface <code className="inline">Switchable</code> with methods <code className="inline">turnOn</code> and <code className="inline">turnOff</code>. Implement this interface in different classes such as <code className="inline">Light</code>, <code className="inline">Fan</code>, and <code className="inline">Computer</code>. Each class should have a unique implementation of the interface methods. Demonstrate polymorphism by creating a list of <code className="inline">Switchable</code> objects, iterating through the list, and invoking the methods polymorphically.
-									</li>
-							</ul>
+                            <li className='paragraph'>
+                                    <strong>Interface-based Polymorphism:</strong> Create an interface <code className="inline">Switchable</code> with methods <code className="inline">turnOn</code> and <code className="inline">turnOff</code>. Implement this interface in different classes such as <code className="inline">Light</code>, <code className="inline">Fan</code>, and <code className="inline">Computer</code>. Each class should have a unique implementation of the interface methods. Demonstrate polymorphism by creating a list of <code className="inline">Switchable</code> objects, iterating through the list, and invoking the methods polymorphically.
+                            </li>
+                        </ul>
 					</section>
-
         </div>
     );
 };

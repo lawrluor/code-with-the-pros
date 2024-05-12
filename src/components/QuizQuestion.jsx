@@ -6,7 +6,7 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { dark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 
-export default function QuizQuestion ({ index, question, answer }) {
+export default function QuizQuestion ({ index, id, question, answer }) {
 	const [isVisible, setIsVisible] = React.useState(false);
 
 	// const renderers = {
@@ -14,6 +14,28 @@ export default function QuizQuestion ({ index, question, answer }) {
 	// 		return <CodeBlock language={language} children={value} />
 	// 	}
 	// };
+
+	const getQuestion = async (id) => {
+		try {
+			const response = await fetch(`https://codewiththepros-backend.onrender.com/api/getQuestion/${id}`, {
+				method: "GET",
+				headers: {
+					"Content-Type": "application/json"
+				}
+			});
+
+			if (response.ok) {
+				const data = await response.json();  // Parse JSON data from the response
+				console.log(data);
+				return data;
+			} else {
+					throw new Error(`HTTP error! Status: ${response.status}`);
+			}
+		} catch (error) {
+			console.error("Error fetching data:", error);
+		}
+	}
+
 
 	return (
 		<div className="quizQuestion">
@@ -31,31 +53,38 @@ export default function QuizQuestion ({ index, question, answer }) {
             )
           }
         }}
-      />			<button onClick={() => setIsVisible(!isVisible)}>{isVisible ? 'Hide Answer' : 'Show Answer'}</button>
+      />
+
+			<button onClick={() => setIsVisible(!isVisible)}>{isVisible ? 'Hide Answer' : 'Show Answer'}</button>
+
 			{isVisible && <>
 				<h3>Answer</h3>
+
 				<ReactMarkdown
-        children={answer}
-        components={{
-          code({node, inline, className, children, ...props}) {
-            const match = /language-(\w+)/.exec(className || '')
-            return !inline && match ? (
-              <SyntaxHighlighter
-                style={dark}
-                language={match[1]}
-                PreTag="div"
-                {...props}
-              >
-                {String(children).replace(/\n$/, '')}
-              </SyntaxHighlighter>
-            ) : (
-              <code className={className} {...props}>
-                {children}
-              </code>
-            )
-          }
-        }}
-      />			</>}
+					children={answer}
+					components={{
+						code({node, inline, className, children, ...props}) {
+							const match = /language-(\w+)/.exec(className || '')
+							return !inline && match ? (
+								<SyntaxHighlighter
+									style={dark}
+									language={match[1]}
+									PreTag="div"
+									{...props}
+								>
+									{String(children).replace(/\n$/, '')}
+								</SyntaxHighlighter>
+							) : (
+								<code className={className} {...props}>
+									{children}
+								</code>
+							)
+						}
+					}}
+				/>
+			</>}
+
+			<button onClick={() => getQuestion(id)}>Give me a similar question</button>
 		</div>
 	)
 }
