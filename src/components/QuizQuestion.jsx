@@ -6,19 +6,19 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { dark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 
-export default function QuizQuestion ({ question, answer }) {
+export default function QuizQuestion ({ index, question, answer }) {
 	const [isVisible, setIsVisible] = React.useState(false);
 
-	const renderers = {
-		code: ({language, value}) => {
-			return <CodeBlock language={language} children={value} />
-		}
-	};
+	// const renderers = {
+	// 	code: ({language, value}) => {
+	// 		return <CodeBlock language={language} children={value} />
+	// 	}
+	// };
 
 	return (
 		<div className="quizQuestion">
 			<hr />
-			<h3>Question</h3>
+			<h3>Question {index + 1}</h3>
 			<ReactMarkdown
         children={question}
         components={{
