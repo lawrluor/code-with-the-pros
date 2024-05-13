@@ -9,6 +9,7 @@ export const generateQuestion = async (currentQuestions, id) => {
 
 		if (response.ok) {
 			const data = await response.json();
+			console.log(data);
 			let temp = currentQuestions.concat(JSON.parse(data.message));  // convert JSON serialized string to Question object
 			return temp;
 		} else {

@@ -30,7 +30,7 @@ export default function QuizQuestion ({ index, question }) {
 	return (
 		<div className="quizQuestion">
 			<hr />
-			<h3>Question {index + 1}</h3>
+			<h3>Question {index+1}</h3>
 			<ReactMarkdown
         children={questionText}
         components={{
@@ -74,7 +74,7 @@ export default function QuizQuestion ({ index, question }) {
 				/>
 			</>}
 
-			{loading ?  <button className="disabled" disabled>Loading question...</button> : <button onClick={() => appendQuestion(id)}>Give me a similar question</button>}
+			{loading ? <button className="disabled" disabled>Loading question...</button> : <button onClick={() => appendQuestion(id)}>Give me a similar question</button>}
 
 			{additionalQuestions && additionalQuestions.map((question, index) => (
 				<QuizQuestion key={index} index={index} question={question} />
