@@ -499,10 +499,17 @@ dogs.add(new UnderDog());`}
     <p>This approach maintains type safety, ensuring that the list can hold <code className="inline">Dog</code> and any of its subclasses, and each can be added without risking a type mismatch.</p>
 </section>
 
+{questions && questions.length > 0
+?
 <section>
 	<h2>Quiz</h2>
-    {questions && questions?.map((question, index) => <QuizQuestion key={index} index={index} question={question} />)}
+    {questions?.map((question, index) => <QuizQuestion key={index} index={index} question={question} />)}
 </section>
+:
+<section>
+    <h2>Loading Quiz...</h2>
+</section>
+}
 
 
 <section>

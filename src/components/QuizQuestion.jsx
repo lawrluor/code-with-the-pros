@@ -41,6 +41,7 @@ export default function QuizQuestion ({ index, question }) {
 			}
 		} catch (error) {
 			console.error("Error fetching data:", error);
+			alert("Error fetching question!");
 			setLoading(false);
 		}
 	}
