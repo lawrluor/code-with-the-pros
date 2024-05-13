@@ -6,8 +6,11 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { dark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 
-export default function QuizQuestion ({ index, id, question, answer }) {
+export default function QuizQuestion ({ index, question }) {
+	const { id, question: questionText, answer } = question;
+	const [additionalQuestions, setAdditionalQuestions] = React.useState([]);
 	const [isVisible, setIsVisible] = React.useState(false);
+	const [loading, setLoading] = React.useState(false);
 
 	// const renderers = {
 	// 	code: ({language, value}) => {
@@ -16,6 +19,8 @@ export default function QuizQuestion ({ index, id, question, answer }) {
 	// };
 
 	const getQuestion = async (id) => {
+		setLoading(true);
+
 		try {
 			const response = await fetch(`https://codewiththepros-backend.onrender.com/api/getQuestion/${id}`, {
 				method: "GET",
@@ -27,12 +32,16 @@ export default function QuizQuestion ({ index, id, question, answer }) {
 			if (response.ok) {
 				const data = await response.json();  // Parse JSON data from the response
 				console.log(data);
+				let temp = additionalQuestions.concat(JSON.parse(data.message));
+				setAdditionalQuestions(temp)
+				setLoading(false);
 				return data;
 			} else {
-					throw new Error(`HTTP error! Status: ${response.status}`);
+				throw new Error(`HTTP error! Status: ${response.status}`);
 			}
 		} catch (error) {
 			console.error("Error fetching data:", error);
+			setLoading(false);
 		}
 	}
 
@@ -42,7 +51,7 @@ export default function QuizQuestion ({ index, id, question, answer }) {
 			<hr />
 			<h3>Question {index + 1}</h3>
 			<ReactMarkdown
-        children={question}
+        children={questionText}
         components={{
           code({node, inline, className, children, ...props}) {
             const match = /language-(\w+)/.exec(className || '')
@@ -84,7 +93,11 @@ export default function QuizQuestion ({ index, id, question, answer }) {
 				/>
 			</>}
 
-			<button onClick={() => getQuestion(id)}>Give me a similar question</button>
+			{loading ?  <button className="disabled" disabled>Loading question...</button> : <button onClick={() => getQuestion(id)}>Give me a similar question</button>}
+
+			{additionalQuestions && additionalQuestions.map((question, index) => (
+				<QuizQuestion key={index} index={index} question={question} />
+			))}
 		</div>
 	)
 }

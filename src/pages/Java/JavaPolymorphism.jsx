@@ -501,7 +501,7 @@ dogs.add(new UnderDog());`}
 
 <section>
 	<h2>Quiz</h2>
-    {questions && questions?.map((question, index) => <QuizQuestion key={index} index={index} id={question?.id} question={question?.question} answer={question?.answer} />)}
+    {questions && questions?.map((question, index) => <QuizQuestion key={index} index={index} question={question} />)}
 </section>
 
 

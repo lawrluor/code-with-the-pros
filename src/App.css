@@ -58,6 +58,12 @@ pre {
   border-radius: 5px;
 }
 
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  /* background-color: #d5d3d3; */
+}
+
 ul {
   padding-left: 20px;
 }
