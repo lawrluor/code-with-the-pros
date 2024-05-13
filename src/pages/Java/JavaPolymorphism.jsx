@@ -5,7 +5,7 @@ import QuizQuestion from '../../components/QuizQuestion';
 import useGetQuestions from '../../hooks/useGetQuestions';
 
 const JavaPolymorphism = () => {
-    const questions = useGetQuestions();
+    const { questions, loading } = useGetQuestions();
 
     return (
         <div className="lesson-container">
@@ -473,7 +473,7 @@ dogs.add(new UnderDog());`}
     <p>This approach maintains type safety, ensuring that the list can hold <code className="inline">Dog</code> and any of its subclasses, and each can be added without risking a type mismatch.</p>
 </section>
 
-{questions && questions.length > 0
+{questions && questions.length > 0 && !loading
 ?
 <section>
 	<h2>Quiz</h2>

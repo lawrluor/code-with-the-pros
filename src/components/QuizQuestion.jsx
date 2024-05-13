@@ -5,6 +5,8 @@ import ReactMarkdown from 'react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { dark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
+import { generateQuestion } from '../api/functions';
+
 export default function QuizQuestion ({ index, question }) {
 	const { id, question: questionText, answer } = question;
 	const [additionalQuestions, setAdditionalQuestions] = React.useState([]);
@@ -17,31 +19,11 @@ export default function QuizQuestion ({ index, question }) {
 	// 	}
 	// };
 
-	const getQuestion = async (id) => {
+	const appendQuestion = async (id) => {
 		setLoading(true);
-
-		try {
-			const response = await fetch(`https://codewiththepros-backend.onrender.com/api/getQuestion/${id}`, {
-				method: "GET",
-				headers: {
-					"Content-Type": "application/json"
-				}
-			});
-
-			if (response.ok) {
-				const data = await response.json();
-				let temp = additionalQuestions.concat(JSON.parse(data.message));  // convert JSON serialized string to Question object
-				setAdditionalQuestions(temp)
-				setLoading(false);
-				return data;
-			} else {
-				throw new Error(`HTTP error! Status: ${response.status}`);
-			}
-		} catch (error) {
-			console.error("Error fetching data:", error);
-			alert("Error fetching question!");
-			setLoading(false);
-		}
+		let result = await generateQuestion(additionalQuestions, id)
+		setAdditionalQuestions(result);
+		setLoading(false);
 	}
 
 
@@ -92,7 +74,7 @@ export default function QuizQuestion ({ index, question }) {
 				/>
 			</>}
 
-			{loading ?  <button className="disabled" disabled>Loading question...</button> : <button onClick={() => getQuestion(id)}>Give me a similar question</button>}
+			{loading ?  <button className="disabled" disabled>Loading question...</button> : <button onClick={() => appendQuestion(id)}>Give me a similar question</button>}
 
 			{additionalQuestions && additionalQuestions.map((question, index) => (
 				<QuizQuestion key={index} index={index} question={question} />
