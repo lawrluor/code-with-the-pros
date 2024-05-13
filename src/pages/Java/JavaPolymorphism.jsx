@@ -2,10 +2,10 @@ import React from 'react';
 import CodeBlock from '../../components/CodeBlock';
 import QuizQuestion from '../../components/QuizQuestion';
 
-import useGetQuestions from '../../hooks/useGetQuestions';
+import useGetQuestionsByChapter from '../../hooks/useGetQuestionsByChapter';
 
 const JavaPolymorphism = () => {
-    const { questions, loading } = useGetQuestions();
+    const { questions, loading } = useGetQuestionsByChapter(1);
 
     return (
         <div className="lesson-container">

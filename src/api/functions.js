@@ -1,7 +1,7 @@
 // USER FACING
 export const generateQuestion = async (currentQuestions, id) => {
 	try {
-		const response = await fetch(`https://codewiththepros-backend.onrender.com/api/getQuestion/${id}`, {
+		const response = await fetch(`${process.env.REACT_APP_DATABASE_URL}/api/getQuestion/${id}`, {
 			method: "GET",
 			headers: {
 				"Content-Type": "application/json"
@@ -17,7 +17,8 @@ export const generateQuestion = async (currentQuestions, id) => {
 			throw new Error(`HTTP error! Status: ${response.status}`);
 		}
 	} catch (error) {
-		console.error("Error fetching data:", error);
+		console.error("Error fetching data");
+		console.error(error);
 		alert("Error fetching question!");
 	}
 
@@ -27,7 +28,7 @@ export const generateQuestion = async (currentQuestions, id) => {
 // ADMIN ONLY
 export const deleteQuestion = async (id) => {
 	try {
-		const response = await fetch(`https://codewiththepros-backend.onrender.com/api/deleteQuestion/${id}`, {
+		const response = await fetch(`${process.env.REACT_APP_DATABASE_URL}/api/deleteQuestion/${id}`, {
 			method: "DELETE",
 			headers: {
 				"Content-Type": "application/json"
@@ -42,7 +43,8 @@ export const deleteQuestion = async (id) => {
 			throw new Error(`HTTP error! Status: ${response.status}`);
 		}
 	} catch (error) {
-		console.error("Error deleting question:", error);
+		console.error("Error deleting question:");
+		console.error(error);
 		alert("Error deleting question!:", error);
 	}
 }
@@ -50,7 +52,7 @@ export const deleteQuestion = async (id) => {
 // ADMIN ONLY
 export const editQuestion = async (id, question) => {
 	try {
-		const response = await fetch(`https://codewiththepros-backend.onrender.com/api/editQuestion/${id}`, {
+		const response = await fetch(`${process.env.REACT_APP_DATABASE_URL}/api/editQuestion/${id}`, {
 			method: "PUT",
 			headers: {
 				"Content-Type": "application/json"
@@ -66,7 +68,8 @@ export const editQuestion = async (id, question) => {
 			throw new Error(`HTTP error! Status: ${response.status}`);
 		}
 	} catch(error) {
-		console.error("Error editing question:", error);
+		console.error("Error editing question:");
+		console.error(error);
 		alert("Error editing question", error)
 	}
 }
