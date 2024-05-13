@@ -1,17 +1,10 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './App.css';
-import Input from './pages/Python/02Input';
-import IfElse from './pages/Python/03IfElse';
-import Booleans from './pages/Python/04Booleans';
-import WhileLoops from './pages/Python/06WhileLoops';
-import ForLoops from './pages/Python/07ForLoops';
-import CaesarCipher from './pages/Python/07P_CaesarCipher';
-import PassByReference from './pages/Python/20PassByReference';
 
-import JavaObjects from './pages/Java/JavaObjects';
-import JavaInheritance from './pages/Java/JavaInheritance';
-import JavaPolymorphism from './pages/Java/JavaPolymorphism';
+// Import Lessons
+import { Input, IfElse, Booleans, WhileLoops, ForLoops, CaesarCipher, PassByReference } from './pages/Python';
+import { JavaObjects, JavaInheritance, JavaPolymorphism } from './pages/Java';
 
 function App() {
   return (
