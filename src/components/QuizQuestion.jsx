@@ -5,7 +5,6 @@ import ReactMarkdown from 'react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { dark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
-
 export default function QuizQuestion ({ index, question }) {
 	const { id, question: questionText, answer } = question;
 	const [additionalQuestions, setAdditionalQuestions] = React.useState([]);
@@ -30,9 +29,8 @@ export default function QuizQuestion ({ index, question }) {
 			});
 
 			if (response.ok) {
-				const data = await response.json();  // Parse JSON data from the response
-				console.log(data);
-				let temp = additionalQuestions.concat(JSON.parse(data.message));
+				const data = await response.json();
+				let temp = additionalQuestions.concat(JSON.parse(data.message));  // convert JSON serialized string to Question object
 				setAdditionalQuestions(temp)
 				setLoading(false);
 				return data;
