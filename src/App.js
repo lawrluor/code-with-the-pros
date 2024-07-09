@@ -10,7 +10,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <nav>
+        <nav style={{ display: 'none' }}>
           {/* Navigation Links */}
           <ul>
             <h4>Beginner Topics</h4>

@@ -174,16 +174,12 @@ print("age")  # no error`}/>
 
             <p>To avoid <code className="inline">NameError</code>, make sure all your variables are defined and accessible where you try to use them. Think of it as making sure all your ingredients are on the counter before you start cooking.</p>
 
-            <h2>Tips for Avoiding Common Errors</h2>
+            <h2>Avoiding Common Errors</h2>
             <ul>
                 <li><strong>Check Your Syntax:</strong> Always check that your lines end with the correct punctuation and that you're using Python's syntax correctly.</li>
                 <li><strong>Declare Variables Before Use:</strong> Make sure all your variables are declared and initialized before you use them.</li>
                 <li><strong>Use Comments Wisely:</strong> Commenting your code can help you keep track of what each part of your program is supposed to do, which can prevent both SyntaxErrors and NameErrors.</li>
             </ul>
-
-            <p>By understanding these common mistakes and learning how to prevent them, you'll be better equipped to write cleaner, error-free code. Remember, every error is a learning opportunity!</p>
-
-            <h2>Practice Challenges</h2>
         </div>
     );
 }
