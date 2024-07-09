@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 
 // Import Lessons
-import { Input, IfElse, Booleans, WhileLoops, ForLoops, CaesarCipher, PassByReference } from './pages/Python';
+import { Intro, Strings, Input, PigLatin, IfElse, Booleans, WhileLoops, ForLoops, CaesarCipher, PassByReference } from './pages/Python';
 import { JavaObjects, JavaInheritance, JavaPolymorphism } from './pages/Java';
 
 function App() {
@@ -14,24 +14,15 @@ function App() {
           {/* Navigation Links */}
           <ul>
             <h4>Beginner Topics</h4>
-            <li>
-              <Link to="/input">Input</Link>
-            </li>
-            <li>
-              <Link to="/ifelse">Conditionals</Link>
-            </li>
-            <li>
-              <Link to="/booleans">Booleans</Link>
-            </li>
-            <li>
-              <Link to="/whileLoops">While Loops</Link>
-            </li>
-            <li>
-              <Link to="/forLoops">For Loops</Link>
-            </li>
-            <li>
-              <Link to="/caesarCipher">Caesar Cipher</Link>
-            </li>
+            <li><Link to="/intro">Intro</Link></li>
+            <li><Link to="/strings">Strings</Link></li>
+            <li><Link to="/input">Input</Link></li>
+            <li><Link to="/pigLatin">Pig Latin</Link></li>
+            <li><Link to="/ifelse">Conditionals</Link></li>
+            <li><Link to="/booleans">Booleans</Link></li>
+            <li><Link to="/whileLoops">While Loops</Link></li>
+            <li><Link to="/forLoops">For Loops</Link></li>
+            <li><Link to="/caesarCipher">Caesar Cipher</Link></li>
 
             <h4>Intermediate Topics</h4>
             <li>
@@ -47,7 +38,10 @@ function App() {
 
         {/* New Route Configuration for React Router v6 */}
         <Routes>
+          <Route path="/intro" element={<Intro />} />
+          <Route path="/strings" element={<Strings />} />
           <Route path="/input" element={<Input />} />
+          <Route path="/pigLatin" element={<PigLatin />} />
           <Route path="/conditionals" element={<IfElse />} />
           <Route path="/booleans" element={<Booleans />} />
           <Route path="/whileLoops" element={<WhileLoops />} />
