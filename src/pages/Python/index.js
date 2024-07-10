@@ -7,6 +7,7 @@ import Booleans from './04Booleans';
 import WhileLoops from './06WhileLoops';
 import ForLoops from './07ForLoops';
 import CaesarCipher from './07P_CaesarCipher';
+import Lists from './08Lists';
 import PassByReference from './20PassByReference';
 
-export { Intro, Strings, Input, PigLatin, IfElse, Booleans, WhileLoops, ForLoops, CaesarCipher, PassByReference }
+export { Intro, Strings, Input, PigLatin, IfElse, Booleans, WhileLoops, ForLoops, CaesarCipher, Lists, PassByReference }

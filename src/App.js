@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 
 // Import Lessons
-import { Intro, Strings, Input, PigLatin, IfElse, Booleans, WhileLoops, ForLoops, CaesarCipher, PassByReference } from './pages/Python';
+import { Intro, Strings, Input, PigLatin, IfElse, Booleans, WhileLoops, ForLoops, CaesarCipher, Lists, PassByReference } from './pages/Python';
 import { JavaObjects, JavaInheritance, JavaPolymorphism } from './pages/Java';
 
 function App() {
@@ -23,6 +23,7 @@ function App() {
             <li><Link to="/whileLoops">While Loops</Link></li>
             <li><Link to="/forLoops">For Loops</Link></li>
             <li><Link to="/caesarCipher">Caesar Cipher</Link></li>
+            <li><Link to="/lists">Lists</Link></li>
 
             <h4>Intermediate Topics</h4>
             <li>
@@ -47,6 +48,7 @@ function App() {
           <Route path="/whileLoops" element={<WhileLoops />} />
           <Route path="/forLoops" element={<ForLoops />} />
           <Route path="/caesarCipher" element={<CaesarCipher />} />
+          <Route path="/lists" element={<Lists />} />
           <Route path="/passByReference" element={<PassByReference />} />
           <Route path="/javaObjects" element={<JavaObjects />} />
           <Route path="/javaInheritance" element={<JavaInheritance />} />

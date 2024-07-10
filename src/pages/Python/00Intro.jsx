@@ -161,7 +161,7 @@ x _ 10            # Defining a variable: should be x = 10`}/>
             <p>These errors are akin to forgetting a key ingredient in a recipe or using a teaspoon instead of a tablespoon — small mistakes that have big impacts.</p>
 
             <h3><code className="inline">NameError</code></h3>
-            <p>A <strong>NameError</strong> happens when Python does not recognize a name you reference. This usually occurs if you try to use a variable that has not been defined, similar to referencing a spice in your recipe that you forgot to list in your ingredients.</p>
+            <p>A <code className="inline">NameError</code> happens when Python does not recognize a name you reference. This usually occurs if you try to use a variable that has not been defined, similar to referencing a spice in your recipe that you forgot to list in your ingredients.</p>
 
             <CodeBlock language={"python"} codeString={`print(age)
 # Python is looking for a variable called age
@@ -174,9 +174,9 @@ print("age")  # no error`}/>
 
             <h2>Avoiding Common Errors</h2>
             <ul>
-                <li><strong>Check Your Syntax:</strong> Always check that opening brackets or opening quotation marks are matched with their closing counterpart.</li>
+                <li><strong>Double Check Syntax:</strong> Always check that opening brackets or opening quotation marks are matched with their closing counterpart.</li>
                 <li><strong>Declare Variables Before Use:</strong> Make sure all your variables are declared and initialized before you use or update them.</li>
-                <li><strong>Use Comments Wisely:</strong> Commenting your code can help you and others keep track of what each part of your program is supposed to do.</li>
+                <li><strong>Use Comments:</strong> Commenting your code can help you and others keep track of what each part of your program is supposed to do.</li>
             </ul>
         </div>
     );
