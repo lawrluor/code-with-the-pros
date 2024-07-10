@@ -42,7 +42,7 @@ print(fruits)  # Output: ['apple', 'mango', 'banana', 'orange', 'grape']`} />
             <CodeBlock language={"python"} codeString={`animal = "cat"
 name[0] = "b"  # TypeError: 'str' object does not support item assignment`}/>
 
-            <Collapsible title="View Challenge">
+            <Collapsible title={"View Challenge"}>
                 <p className="challenge">How would you change the above code to change the string as intended?</p>
             </Collapsible>
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import CodeBlock from '../../components/CodeBlock';
+import Collapsible from '../../components/Collapsible';
 
 const Intro = () => {
     return (
@@ -116,10 +117,13 @@ print(10 + 0)  # Error: it doesn't make sense to add a non-number!`}/>
 
 						<p>Like <code className="inline">print()</code>, casting also uses functions. Each performs the specific task of converting the data to the specified data type: <code className="inline">int()</code>, <code className="inline">float()</code>, <code className="inline">str()</code>.</p>
 
-						<p>Exercise: Use casting to convert data types: </p>
-						<CodeBlock language={"python"} codeString={`# 1. Integer to a float
+            <Collapsible title={"View Challenge"}>
+							<p>Exercise: Use casting to convert data types: </p>
+							<CodeBlock language={"python"} codeString={`# 1. Integer to a float
 # 2. Float to a string
 # 3. String to an integer`} />
+            </Collapsible>
+
 
 						<h2>Storing Information (Variables)</h2>
             <p>Variables are like containers in your kitchen. You can store data of any data type inside variables, and you can use them again later.</p>
