@@ -131,8 +131,6 @@ print(message)  # Displays 'Hello World'
 message = "Hello Again"
 print(message)  # Displays 'Hello Again'`} />
 
-						<p></p>
-
             <h3>Changing Variable Contents</h3>
             <p>Variables aren't just static; you can update their contents:</p>
             <CodeBlock language={"python"} codeString={`count = 10
@@ -149,15 +147,15 @@ print(count)  # Results in 12
 count = 0
 print(count)  # Results in 0
 `} />
-						<h2>Common errors in Python</h2>
-            <p>When learning Python, you're bound to encounter errors; they're part of the learning process. Understanding common errors can help you write your code more efficiently and avoid bugs in your code. Here are two of the most common errors you might come across: <strong>SyntaxError</strong> and <strong>NameError</strong>.</p>
+						<h2>Common Errors in Python</h2>
+            <p>When learning Python, you're bound to encounter errors; they're part of the learning process. Understanding common errors can help you write your code more efficiently and avoid bugs in your code. Two of the most common errors you might come across are <code className="inline">SyntaxError</code> and <code className="inline">NameError</code>.</p>
 
 						<h3><code className="inline">SyntaxError</code></h3>
             <p>A <code className="inline">SyntaxError</code> occurs when Python can't understand the written instructions that you have given it. The syntax, or grammatical rules of Python are strict, and breaking them is easy. A <code className="inline">SyntaxError</code> could arise due to missing punctuation, incorrect spacing, or misuse of the operators that Python relies on.</p>
 
             <CodeBlock language={"python"} codeString={`print("Hi there"  # Missing closing parenthesis
 print("Hi there)  # Missing closing quotation mark
-9 ++ 4           # Incorrect operator: should be 9 + 4
+9 ++ 4            # Incorrect operator: should be 9 + 4
 x _ 10            # Defining a variable: should be x = 10`}/>
 
             <p>These errors are akin to forgetting a key ingredient in a recipe or using a teaspoon instead of a tablespoon — small mistakes that have big impacts.</p>
@@ -176,9 +174,9 @@ print("age")  # no error`}/>
 
             <h2>Avoiding Common Errors</h2>
             <ul>
-                <li><strong>Check Your Syntax:</strong> Always check that your lines end with the correct punctuation and that you're using Python's syntax correctly.</li>
-                <li><strong>Declare Variables Before Use:</strong> Make sure all your variables are declared and initialized before you use them.</li>
-                <li><strong>Use Comments Wisely:</strong> Commenting your code can help you keep track of what each part of your program is supposed to do, which can prevent both SyntaxErrors and NameErrors.</li>
+                <li><strong>Check Your Syntax:</strong> Always check that opening brackets or opening quotation marks are matched with their closing counterpart.</li>
+                <li><strong>Declare Variables Before Use:</strong> Make sure all your variables are declared and initialized before you use or update them.</li>
+                <li><strong>Use Comments Wisely:</strong> Commenting your code can help you and others keep track of what each part of your program is supposed to do.</li>
             </ul>
         </div>
     );
