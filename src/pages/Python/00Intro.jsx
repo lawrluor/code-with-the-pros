@@ -5,8 +5,8 @@ import Collapsible from '../../components/Collapsible';
 const Intro = () => {
     return (
         <div className="lesson-container">
-            <h1>Intro to Python Programming</h1>
-            <p>Imagine you're learning to cook. Just as you need to know different ingredients and tools, in programming, you need to understand data types, operations, and how to store information. This lesson introduces you to these basic "ingredients" of Python programming.</p>
+            <h1>Intro to Python</h1>
+            <p>Imagine you're learning to cook. Just as you need to understand common ingredients and tools, in programming, you need to understand data types and operations in order to build useful programs. This lesson introduces you to these basic "ingredients" of Python programming.</p>
 
             <h2>What is Programming?</h2>
             <p>Programming is the act of creating instructions that a computer can follow. Just as you might follow a recipe to make a meal, a computer will follow a program to perform task such as printing a paper or loading your favorite app. A program contains code, the actual written instructions that the computer can understand.</p>
@@ -22,8 +22,7 @@ print("Hello, world!")`} />
 						<h2>Comments</h2>
             <p>Comments are notes in your code or labels that explain what your code does, created with the hashtag or pound <code className="inline">#</code> symbol. They are essential for explaining what your code does, making it easier for others (and yourself) to understand your code, but are basically ignored by your computer.</p>
 
-<CodeBlock language={"python"} codeString={`# Printing a message
-print("Python is fun!")  # Prints a sentence`} />
+<CodeBlock language={"python"} codeString={`print("Python is fun!")  # Displays a message`} />
 
 						<p>While code is the written instructions that the computer can follow, comments in the code are the one exception - the computer does not read them as instructions. In other words, the following code without comments leads to identical results as the code block above: </p>
 
@@ -34,18 +33,22 @@ print("Python is fun!")  # Prints a sentence`} />
             <CodeBlock language={"python"} codeString={`# Printing a single character
 print("a")
 
-# Printing a simple message
+# Printing a sentence
 print("Hello, world!")
 
 # Printing a number
 print(5)`} />
             <p>Each <code className="inline">print()</code> statement includes a new line (line break), so every print statement outputs to a new line on your screen. This is like pressing "enter" on your keyboard after typing each line.</p>
-						<CodeBlock language={"python"} codeString={`# The above code block results in:
+						<CodeBlock language={"python"} codeString={`# Three print statements
+print("a")
+print("Hello, world!")
+print(5)
+
+# The output of the above code:
 a
 Hello, world
 5`} />
-						<p>Technically, <code className="inline">print</code> is a function, meaning that it allows us to perform a specific action (in this case, output to the screen). Throughout our learning, we will come across many more useful functions in Python and even learn to create our own!</p>
-
+						<p><code className="inline">print()</code> is a type of <strong>function</strong>, meaning a piece of code that allows us to perform a specific action (in this case, display something on the screen). Throughout our learning, we will come across many more useful functions in Python and even learn to create our own!</p>
 
             <h2>Basic Math (Arithmetic Operators)</h2>
             <p>Computers were originally designed to do math (it's in the name "compute!"). So, it's no surprise that we can use Python for mathematical operations. Here are some of just the simplest operators that you can use to add, subtract, multiply, and divide numbers:</p>
@@ -73,7 +76,7 @@ print(-1000)
 print(10.5)
 print(0.0)
 
-# Strings (used to represent text, and are surrounded by quotation marks/symbols)
+# Strings (used to represent any type of text, and are surrounded by quotation marks/symbols)
 print("c")
 print("Hello World")
 print("I" + "Like" + "Python")
@@ -94,7 +97,7 @@ print(10 + "5")  # Error: Should add 10 + 5 as two integers
 print("I have " + 2 + " dogs")  # Error: we cannot add strings and integers directly
 
 # 3. Attempting arithmetic on None
-print(10 + None)  # Error: it doesn't make sense to add a non-number!
+print(10 + None)  # Error: it doesn't make sense to add anything to a non-number!
 `}/>
 
 						<h3>Converting Data Types (Casting)</h3>
@@ -126,14 +129,19 @@ print(10 + 0)  # Error: it doesn't make sense to add a non-number!`}/>
 
 
 						<h2>Storing Information (Variables)</h2>
-            <p>Variables are like containers in your kitchen. You can store data of any data type inside variables, and you can use them again later.</p>
+            <p>Variables are like containers in your kitchen. You can store data of any data type inside variables, and you can use them again later in your code.</p>
             <CodeBlock language={"python"} codeString={`# Storing a message
 message = "Hello World"
 print(message)  # Displays 'Hello World'
 
-# Changing the message
-message = "Hello Again"
-print(message)  # Displays 'Hello Again'`} />
+# Doing other stuff in your code
+print(5 + 5)
+print("Hi!")
+
+# Reusing the same variable that we created earlier
+print(message)  # Displays 'Hello World' again`} />
+
+            <p>In this case, the variable's name is <code className="inline">message</code> and stores the string <code className="inline">"Hello World"</code>. When defining or <strong>declaring</strong> variables, we always place the variable on the left side and the value assigned to it on the right side.</p>
 
             <h3>Changing Variable Contents</h3>
             <p>Variables aren't just static; you can update their contents:</p>
