@@ -6,17 +6,20 @@ import QuizQuestion from '../../components/QuizQuestion';
 import useGetQuestionsByChapter from '../../hooks/useGetQuestionsByChapter';
 
 const Intro = () => {
-  const { questions, loading } = useGetQuestionsByChapter("00Intro.py");
+  // const { questions, loading } = useGetQuestionsByChapter("00Intro.py");
 
-  useEffect(() => {
-     console.log(questions);
-  }, [questions])
+  // useEffect(() => {
+  //    console.log(questions);
+  // }, [questions])
 
   return (
         <div className="lesson-container">
+          <section>
             <h1>Intro to Python</h1>
             <p>Imagine you're learning to cook. Just as you need to understand common ingredients and tools, in programming, you need to understand data types and operations in order to build useful programs. This lesson introduces you to these basic "ingredients" of Python programming.</p>
+          </section>
 
+          <section>
             <h2>What is Programming?</h2>
             <p>Programming is the act of creating instructions that a computer can follow. Just as you might follow a recipe to make a meal, a computer will follow a program to perform task such as printing a paper or loading your favorite app. A program contains code, the actual written instructions that the computer can understand.</p>
 
@@ -27,7 +30,9 @@ const Intro = () => {
 print("Hello, world!")`} />
 
 						<p>What's happening here? We wrote out an instruction for the computer to follow: the <code className="inline">print()</code> function to send the message <code className="inline">"Hello, world!"</code> to the computer screen. You can try this in your own code editor if you'd like.</p>
+          </section>
 
+          <section>
 						<h2>Comments</h2>
             <p>Comments are notes in your code or labels that explain what your code does, created with the hashtag or pound <code className="inline">#</code> symbol. They are essential for explaining what your code does, making it easier for others (and yourself) to understand your code, but are basically ignored by your computer.</p>
 
@@ -36,7 +41,9 @@ print("Hello, world!")`} />
 						<p>While code is the written instructions that the computer can follow, comments in the code are the one exception - the computer does not read them as instructions. In other words, the following code without comments leads to identical results as the code block above: </p>
 
 						<CodeBlock language={"python"} codeString={`print("Python is fun!")`} />
+          </section>
 
+          <section>
             <h2>The <code className="inline">print()</code> Statement</h2>
             <p>When you use <code className="inline">print()</code>, you're telling Python to display whatever is inside the parentheses onto your screen. Almost anything in Python can be printed: </p>
             <CodeBlock language={"python"} codeString={`# Printing a single character
@@ -58,7 +65,9 @@ a
 Hello, world
 5`} />
 						<p><code className="inline">print()</code> is a type of <strong>function</strong>, meaning a piece of code that allows us to perform a specific action (in this case, display something on the screen). Throughout our learning, we will come across many more useful functions in Python and even learn to create our own!</p>
+          </section>
 
+          <section>
             <h2>Basic Math (Arithmetic Operators)</h2>
             <p>Computers were originally designed to do math (it's in the name "compute!"). So, it's no surprise that we can use Python for mathematical operations. Here are some of just the simplest operators that you can use to add, subtract, multiply, and divide numbers:</p>
             <CodeBlock language={"python"} codeString={`# Adding two numbers
@@ -72,7 +81,9 @@ print(10 * 5)  # Results in 50
 
 # Dividing one number by another
 print(10 / 2)  # Results in 5.0`} />
+          </section>
 
+          <section>
 						<h2>Data Types</h2>
 						<p>Note that in the above code block, the division of <code className="inline">10 / 2</code> resulted in a decimal value <code className="inline">5.0</code>. In Python, this number is considered to be of the <code className="inline">float</code> data type, a different data type than the numbers without decimal points (<code className="inline">integer</code>).</p>
 						<p>So, just as ingredients can be liquids, solids, or gases, information in Python can be integers, decimals, words, or other values. Here are some examples of the most common data types in Python:</p>
@@ -135,8 +146,9 @@ print(10 + 0)  # Error: it doesn't make sense to add a non-number!`}/>
 # 2. Float to a string
 # 3. String to an integer`} />
             </Collapsible>
+          </section>
 
-
+          <section>
 						<h2>Storing Information (Variables)</h2>
             <p>Variables are like containers in your kitchen. You can store data of any data type inside variables, and you can use them again later in your code.</p>
             <CodeBlock language={"python"} codeString={`# Storing a message
@@ -168,6 +180,9 @@ print(count)  # Results in 12
 count = 0
 print(count)  # Results in 0
 `} />
+          </section>
+
+          <section>
 						<h2>Common Errors in Python</h2>
             <p>When learning Python, you're bound to encounter errors; they're part of the learning process. Understanding common errors can help you write your code more efficiently and avoid bugs in your code. Two of the most common errors you might come across are <code className="inline">SyntaxError</code> and <code className="inline">NameError</code>.</p>
 
@@ -192,15 +207,18 @@ x _ 10            # Defining a variable: should be x = 10`}/>
 print("age")  # no error`}/>
 
             <p>To avoid <code className="inline">NameError</code>, make sure all your variables are defined and accessible where you try to use them. Think of it as making sure all your ingredients are on the counter before you start cooking.</p>
+          </section>
 
+          <section>
             <h2>Avoiding Common Errors</h2>
             <ul>
                 <li><strong>Double Check Syntax:</strong> Always check that opening brackets or opening quotation marks are matched with their closing counterpart.</li>
                 <li><strong>Declare Variables Before Use:</strong> Make sure all your variables are declared and initialized before you use or update them.</li>
                 <li><strong>Use Comments:</strong> Commenting your code can help you and others keep track of what each part of your program is supposed to do.</li>
             </ul>
+          </section>
 
-            {questions && questions.length > 0 && !loading
+            {/* {questions && questions.length > 0 && !loading
             ?
             <section>
                 <h2>Quiz</h2>
@@ -210,7 +228,7 @@ print("age")  # no error`}/>
             <section>
                 <h2>Loading Quiz...</h2>
             </section>
-            }
+            } */}
         </div>
     );
 }
