@@ -7,7 +7,7 @@ export default function useGetQuestions() {
 	React.useEffect(() => {
 			const fetchData = async () => {
 				try {
-						const response = await fetch("https://codewiththepros-backend.onrender.com/api/useGetQuestions", {
+						const response = await fetch(`${process.env.REACT_APP_DATABASE_URL}/api/useGetQuestions`, {
 								method: "GET",
 								headers: {
 										"Content-Type": "application/json"

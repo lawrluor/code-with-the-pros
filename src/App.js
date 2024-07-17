@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 
 // Import Lessons
-import { Intro, Strings, Input, PigLatin, IfElse, Booleans, Functions, WhileLoops, ForLoops, CaesarCipher, Lists, Dictionaries, PassByReference } from './pages/Python';
+import { Intro, Quiz00, Strings, Input, PigLatin, IfElse, Booleans, Functions, WhileLoops, ForLoops, CaesarCipher, Lists, Dictionaries, PassByReference } from './pages/Python';
 import { JavaObjects, JavaInheritance, JavaPolymorphism } from './pages/Java';
 
 function App() {
@@ -42,6 +42,7 @@ function App() {
         {/* New Route Configuration for React Router v6 */}
         <Routes>
           <Route path="/intro" element={<Intro />} />
+          <Route path="/quiz00" element={<Quiz00 />} />
           <Route path="/strings" element={<Strings />} />
           <Route path="/input" element={<Input />} />
           <Route path="/pigLatin" element={<PigLatin />} />

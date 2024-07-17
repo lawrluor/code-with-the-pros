@@ -5,7 +5,7 @@ import QuizQuestion from '../../components/QuizQuestion';
 import useGetQuestionsByChapter from '../../hooks/useGetQuestionsByChapter';
 
 const JavaPolymorphism = () => {
-    const { questions, loading } = useGetQuestionsByChapter(1);
+    const { questions, loading } = useGetQuestionsByChapter("JavaPolymorphism");
 
     return (
         <div className="lesson-container">

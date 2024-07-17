@@ -1,9 +1,18 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import CodeBlock from '../../components/CodeBlock';
 import Collapsible from '../../components/Collapsible';
+import QuizQuestion from '../../components/QuizQuestion';
+
+import useGetQuestionsByChapter from '../../hooks/useGetQuestionsByChapter';
 
 const Intro = () => {
-    return (
+  const { questions, loading } = useGetQuestionsByChapter("00Intro.py");
+
+  useEffect(() => {
+     console.log(questions);
+  }, [questions])
+
+  return (
         <div className="lesson-container">
             <h1>Intro to Python</h1>
             <p>Imagine you're learning to cook. Just as you need to understand common ingredients and tools, in programming, you need to understand data types and operations in order to build useful programs. This lesson introduces you to these basic "ingredients" of Python programming.</p>
@@ -190,6 +199,18 @@ print("age")  # no error`}/>
                 <li><strong>Declare Variables Before Use:</strong> Make sure all your variables are declared and initialized before you use or update them.</li>
                 <li><strong>Use Comments:</strong> Commenting your code can help you and others keep track of what each part of your program is supposed to do.</li>
             </ul>
+
+            {questions && questions.length > 0 && !loading
+            ?
+            <section>
+                <h2>Quiz</h2>
+                {questions?.map((question, index) => <QuizQuestion key={index} index={index} question={question} />)}
+            </section>
+            :
+            <section>
+                <h2>Loading Quiz...</h2>
+            </section>
+            }
         </div>
     );
 }

@@ -1,7 +1,16 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import CodeBlock from '../../components/CodeBlock';
+import QuizQuestion from '../../components/QuizQuestion';
+
+import useGetQuestionsByChapter from '../../hooks/useGetQuestionsByChapter';
 
 const StringsLesson = () => {
+    const { questions, loading } = useGetQuestionsByChapter(1);
+
+    useEffect(() => {
+       console.log(questions);
+    }, [questions])
+
     return (
         <div className="lesson-container">
             <h1>Strings</h1>
@@ -25,7 +34,7 @@ const StringsLesson = () => {
                 <p>The quotations must be matched, as in there must be a matching closing quotation for each opening quotation mark for the string to be valid.</p>
                 <CodeBlock language={"python"} codeString={`'hello"       # Mismatching marks
 'hi everyone  # Missing closing quotation
-name          # Interpreted as a variable instead of a string, as it is missing quotation marks`}/>
+name          # Interpreted as a variable instead of a string, as it is missing quote marks`}/>
 
                 <p>For paragraphs or text with multiple line breaks, use triple quotes (<code className='inline'>''' '''</code>) or (<code className='inline'>""" """</code>).</p>
 
@@ -211,6 +220,18 @@ print(reversed_greeting)  # Outputs: Everyone Hello`} />
                 <li><strong>Simple Chatbot</strong>: Create a program that asks for the user's name, age, and a favorite movie, and then prints a personalized message back to them.</li>
                 <li><strong>Text Analyzer</strong>: Develop a script that counts the number of words, the frequency of each word, and other statistics in a given text.</li>
             </section>
+
+            {questions && questions.length > 0 && !loading
+            ?
+            <section>
+                <h2>Quiz</h2>
+                {questions?.map((question, index) => <QuizQuestion key={index} index={index} question={question} />)}
+            </section>
+            :
+            <section>
+                <h2>Loading Quiz...</h2>
+            </section>
+            }
         </div>
     );
 };

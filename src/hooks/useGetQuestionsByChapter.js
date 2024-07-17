@@ -1,13 +1,16 @@
 import React from 'react';
 
-export default function useGetQuestionsByChapter(chapterId) {
+export default function useGetQuestionsByChapterName(chapterName) {
 	const [questions, setQuestions] = React.useState([]);
 	const [loading, setLoading] = React.useState(true);
 
 	React.useEffect(() => {
 			const fetchData = async () => {
 				try {
-						const response = await fetch(`${process.env.REACT_APP_DATABASE_URL}/api/getQuestionsByChapter/${chapterId}`, {
+						const url = `${process.env.REACT_APP_DATABASE_URL}/api/getQuestionsByChapterName/${chapterName}`;
+						console.log(url);
+
+						const response = await fetch(`${process.env.REACT_APP_DATABASE_URL}/api/getQuestionsByChapterName/${chapterName}`, {
 								method: "GET",
 								headers: {
 										"Content-Type": "application/json"
@@ -29,7 +32,7 @@ export default function useGetQuestionsByChapter(chapterId) {
 		};
 
 		fetchData();
-	}, [chapterId]);
+	}, [chapterName]);
 
 	return { questions, loading };
 }
