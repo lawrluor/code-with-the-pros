@@ -1,16 +1,9 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import CodeBlock from '../../components/CodeBlock';
 import Collapsible from '../../components/Collapsible';
-import QuizQuestion from '../../components/QuizQuestion';
-
-import useGetQuestionsByChapter from '../../hooks/useGetQuestionsByChapter';
+import { Link } from 'react-router-dom';
 
 const Intro = () => {
-  // const { questions, loading } = useGetQuestionsByChapter("00Intro.py");
-
-  // useEffect(() => {
-  //    console.log(questions);
-  // }, [questions])
 
   return (
         <div className="lesson-container">
@@ -218,6 +211,44 @@ print("age")  # no error`}/>
             </ul>
           </section>
 
+          <section>
+            <h2>Special Arithmetic Operators</h2>
+            <h3>Integer division</h3>
+            <p>This arithmetic operator <code className="inline">//</code> divides one number by another, just like the standard division operator <code className="inline">/</code>, but it returns the quotient without any remainder, effectively "flooring" or rounding down the result to the nearest whole number.</p>
+            <CodeBlock language={"python"} codeString={`# Example of integer division vs normal division
+print(10 / 3)    # Outputs: 3.3333333333333335 (normal division)
+print(10 // 3)   # Outputs: 3 (integer division)
+
+print(9 / 2)     # Outputs: 4.5 (normal division)
+print(9 // 2)    # Outputs: 4 (integer division)
+print(-11 // 3)  # Outputs: -4 (integer division)`} />
+
+            <p>You can also think about integer division as truncating, or chopping off the decimal point of a number.</p>
+
+            <Collapsible title="Challenge">
+              <p>Can you think of examples where integer division could be useful or preferable to normal division?</p>
+            </Collapsible>
+
+            <h3>Modulo Operator <code className="inline">%</code></h3>
+            <p>This operator returns the <strong>remainder</strong> of a division between two numbers.</p>
+            <CodeBlock language={"python"} codeString={`print(10 % 3)   # Outputs: 1 (10 divided by 3 leaves a remainder of 1)
+print(18 % 4)   # Outputs: 2 (18 divided by 4 leaves a remainder of 2)
+print(20 % 2)   # Outputs: 0 (20 is even, so division by 2 has no remainder)
+
+print(5.5 % 5)  # Outputs: 0.5 (5.5 is not an integer)
+print(7 % 2)    # Outputs: 1 (7 is an odd number)`} />
+
+            <p>Imagine you have a group of students and you want to assign them into different project groups. You can use the modulo operator to determine which group each student belongs to.</p>
+            <CodeBlock language={"python"} codeString={`# Determine the group number of the last student
+num_students = 10
+num_groups = 3
+print(num_students % num_groups)  # Outputs: 1 (the last student belongs to the 1st group)`} />
+
+            <Collapsible title="Challenge">
+              <p>Can you think of any other tasks that modulo can help achieve?</p>
+            </Collapsible>
+          </section>
+
             {/* {questions && questions.length > 0 && !loading
             ?
             <section>
@@ -229,6 +260,11 @@ print("age")  # no error`}/>
                 <h2>Loading Quiz...</h2>
             </section>
             } */}
+            <section>
+                <h2>Wrapping Up</h2>
+                <p>Great job! You've started learning about the most fundamental building blocks of the Python language. Feel free to take the quiz to test your knowledge.</p>
+                <button onClick={() => window.location.href = '/quiz?quizName=00Intro.py'}>Start Quiz</button>
+            </section>
         </div>
     );
 }

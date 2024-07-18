@@ -3,14 +3,13 @@ import React from 'react';
 export default function useGetQuestionsByChapterName(chapterName) {
 	const [questions, setQuestions] = React.useState([]);
 	const [loading, setLoading] = React.useState(true);
+	const [error, setError] = React.useState("");
 
 	React.useEffect(() => {
 			const fetchData = async () => {
 				try {
 						const url = `${process.env.REACT_APP_DATABASE_URL}/api/getQuestionsByChapterName/${chapterName}`;
-						console.log(url);
-
-						const response = await fetch(`${process.env.REACT_APP_DATABASE_URL}/api/getQuestionsByChapterName/${chapterName}`, {
+						const response = await fetch(url, {
 								method: "GET",
 								headers: {
 										"Content-Type": "application/json"
@@ -27,12 +26,14 @@ export default function useGetQuestionsByChapterName(chapterName) {
 						console.error("Error fetching data:");
 						console.error(error);
 						setQuestions([]); // Optionally reset to empty array on error
+						setError(error.message);
+				} finally {
+						setLoading(false);
 				}
-				setLoading(false);
 		};
 
 		fetchData();
 	}, [chapterName]);
 
-	return { questions, loading };
+	return { questions, loading, error };
 }

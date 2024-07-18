@@ -1,5 +1,4 @@
 import Intro from './00Intro';
-import Quiz00 from './00Quiz';
 import Strings from './01Strings';
 import Input from './02Input';
 import PigLatin from './03P_PigLatin';
@@ -13,4 +12,4 @@ import Lists from './08Lists';
 import Dictionaries from './09Dictionaries';
 import PassByReference from './20PassByReference';
 
-export { Intro, Quiz00, Strings, Input, PigLatin, IfElse, Booleans, Functions, WhileLoops, ForLoops, CaesarCipher, Lists, Dictionaries, PassByReference }
+export { Intro, Strings, Input, PigLatin, IfElse, Booleans, Functions, WhileLoops, ForLoops, CaesarCipher, Lists, Dictionaries, PassByReference }
