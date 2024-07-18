@@ -6,7 +6,7 @@ import useGetQuestionsByChapter from '../hooks/useGetQuestionsByChapter';
 
 const Quiz = () => {
 	const [searchParams] = useSearchParams();
-  const name = searchParams.get('quizName');
+  const name = searchParams.get('name');
 
   const { questions, loading, error } = useGetQuestionsByChapter(name);
 
