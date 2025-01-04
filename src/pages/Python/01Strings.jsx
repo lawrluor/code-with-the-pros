@@ -1,5 +1,6 @@
 import React from 'react';
 import CodeBlock from '../../components/CodeBlock';
+import Collapsible from '../../components/Collapsible';
 
 const StringsLesson = () => {
     return (
@@ -59,8 +60,13 @@ print(last_char)  # Outputs: d
 print(s[-2])      # Outputs: l
 print(s[-3])      # Outputs: o`} />
 
-                <p>TODO: Challenge: when would this be useful?</p>
-                <p>TODO: CHALLENGE: for a word over 6 chars, print first char, 3rd to last, and middle</p>
+                <Collapsible title={"View Challenge"}>
+                    <p>Can you think of why it might be useful to select a single character from a string?</p>
+                </Collapsible>
+
+                <Collapsible title={"View Challenge"}>
+                    <p>For a 6-character long string, print the first character, the 3rd to last character, and the last character.</p>
+                </Collapsible>
 
                 <h3>Slicing Strings</h3>
                 <p>What if we want to get more than just a single character from a string? Slicing can be used to obtain a substring, or a smaller part or subset of the string.</p>
@@ -122,9 +128,8 @@ greeting = 'Alice is ' + str(age) + ' years old'`} />
 
             <section>
                 <h2>Choosing Between Single and Double Quotes in Strings</h2>
-                <p>
-                        As both single quotes (<code className="inline">' '</code>) and double quotes (<code className="inline">" "</code>) can be used to define strings, the choice between these can sometimes depend on the content of the string itself.
-                        For example, if the string itself contains single quotes like the apostrophe symbol, using single quotes can cause an error.</p>
+                <p>As both single quotes (<code className="inline">' '</code>) and double quotes (<code className="inline">" "</code>) can be used to define strings, the choice between these can sometimes depend on the content of the string itself.
+                For example, if the string itself contains single quotes like the apostrophe symbol, using single quotes can cause an error.</p>
                 <CodeBlock language={"python"} codeString={`'This is the cat's home."  # Syntax parsing error`} />
                 <p>There is an error because the Python interpreter sees the apostrophe (single quote symbol) and believes that it is the end of the string. If we use double quotes instead, so that the single quote from the apostrophe symbol is not interpreted as attempting to end the string.</p>
 

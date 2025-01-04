@@ -26,19 +26,19 @@ const Input = () => {
 
             <section>
                 <h2>How To Use <code className="inline">input()</code></h2>
-                <p>Basic Syntax:</p>
                 <CodeBlock language={"python"} codeString={`name = input("What's your name? ")
 print(name)`}></CodeBlock>
-                <p>Breakdown:</p>
+                <p>Here's a breakdown of this code:</p>
                 <ul>
                     <li><code className="inline">name</code>: A variable to store the user's input.</li>
                     <li><code className="inline">input()</code>: The function that pauses the program and waits for the user to type something.</li>
-                    <li><code className="inline">"What's your name? ":</code> The prompt displayed to the user.</li>
+                    <li><code className="inline">"What's your name?"</code>: The prompt displayed to the user.</li>
                 </ul>
 
                 <Collapsible title={"View Challenge"}>
                     <CodeBlock language={"python"} codeString={`# Challenge 1: Prompt the user to type their name and store their input into a variable.
-    # Challenge 2: Prompt the user to type a city that they've visited and store their input into a variable.`}></CodeBlock>
+# Challenge 2: Prompt the user to type a city that they've visited and store their input into a variable.`}>
+                    </CodeBlock>
                 </Collapsible>
             </section>
 
@@ -47,25 +47,26 @@ print(name)`}></CodeBlock>
                 <p>Even if the user types a number, <code className="inline">input()</code> will always return a string.</p>
                 <CodeBlock language={"python"} codeString={`num1 = input("Enter a number: ")
 num2 = input("Enter another number: ")
-print(num1 + num2)  # Will this add the numbers, or something else?`}></CodeBlock>
+print(num1 + num2)  # Can you guess what will happen here?`}></CodeBlock>
 
                 <p>Type conversion/casting may be needed if you intend to perform calculations.</p>
                 <CodeBlock language={"python"} codeString={`num1 = input("Enter a number: ")
 num2 = input("Enter another number: ")
 
-# Convert the string inputs to integers
+# Rather than add two strings together, first convert the string inputs to integers
 int_num1 = int(num1)
 int_num2 = int(num2)
 
-# Now you can add them to yield a mathematical sum
+# Then, add the two integers together to yield a mathematical sum
 total = int_num1 + int_num2
 
-print(total)`}></CodeBlock>
+print(total)  # The sum of the two numbers that were entered`}>
+</CodeBlock>
             </section>
 
             <section>
                 <h2>Projects</h2>
-                <p>We've learned about the following topic areas so far: <code className="inline">input()</code>, variables, arithmetic, data casting, string operations. Let's use our knowledge to work on some of the following projects.</p>
+                <p>We've learned about the following topic areas so far: <code className="inline">input()</code>, variables, arithmetic, casting data types, and string operations. Let's use our knowledge to work on some of the following projects.</p>
                 <li><strong>"Mad Libs" Game</strong>: Create a simple "Mad Libs" style game where the user is asked for different inputs (noun, adjective, verb, etc.) and a silly story is generated.</li>
                 <li><strong>Checkout Form</strong>: Create a simple program that allows a user to enter their cart and shipping details as if they were about to make a purchase on an e-commerce platform.</li>
             </section>
