@@ -1,16 +1,7 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import CodeBlock from '../../components/CodeBlock';
-import QuizQuestion from '../../components/QuizQuestion';
-
-import useGetQuestionsByChapter from '../../hooks/useGetQuestionsByChapter';
 
 const StringsLesson = () => {
-    const { questions, loading } = useGetQuestionsByChapter(1);
-
-    useEffect(() => {
-       console.log(questions);
-    }, [questions])
-
     return (
         <div className="lesson-container">
             <h1>Strings</h1>
@@ -30,12 +21,10 @@ const StringsLesson = () => {
 # Sentence
 'Python is fun!'
 "The quick brown fox jumps over the lazy dog."`}/>
-
                 <p>The quotations must be matched, as in there must be a matching closing quotation for each opening quotation mark for the string to be valid.</p>
                 <CodeBlock language={"python"} codeString={`'hello"       # Mismatching marks
 'hi everyone  # Missing closing quotation
 name          # Interpreted as a variable instead of a string, as it is missing quote marks`}/>
-
                 <p>For paragraphs or text with multiple line breaks, use triple quotes (<code className='inline'>''' '''</code>) or (<code className='inline'>""" """</code>).</p>
 
                 <CodeBlock language={"python"} codeString={`# Paragraph
@@ -55,9 +44,9 @@ print(occupation)`}/>
 
             <section>
                 <h2>Indexing and Slicing Strings in Python</h2>
-                <p>
-                    Each character in a string can be accessed using an index, which specifies the position of a character in a string. The index starts from 0 for the first character.
-                </p>
+                <p>TODO: Explain the terms slicing and indexing and analogies</p>
+
+                <p>Each character in a string can be accessed using an index, which specifies the position of a character in a string. The index starts from 0 for the first character.</p>
                 <CodeBlock language={"python"} codeString={`s = 'Hello World'
 first_char = s[0]
 print(first_char)  # Outputs: H`} />
@@ -70,13 +59,14 @@ print(last_char)  # Outputs: d
 print(s[-2])      # Outputs: l
 print(s[-3])      # Outputs: o`} />
 
+                <p>TODO: Challenge: when would this be useful?</p>
+                <p>TODO: CHALLENGE: for a word over 6 chars, print first char, 3rd to last, and middle</p>
+
                 <h3>Slicing Strings</h3>
                 <p>What if we want to get more than just a single character from a string? Slicing can be used to obtain a substring, or a smaller part or subset of the string.</p>
                 <CodeBlock language={"python"} codeString={`s = 'Hello World'
-sub = s[1:5]  # s[start:stop]
-print(sub)    # Outputs: ello
-`} />
-
+sub = s[1:5]  # Format is: s[start:stop]
+print(sub)    # Outputs: ello`} />
                 <p>Note that the character at the stop index is <strong>not</strong> included, which is a common convention in Python.</p>
 
                 <h4>Including the "Step" Value</h4>
@@ -89,8 +79,8 @@ print(sub_step)  # Outputs: HloW`} />
             </section>
 
             <section>
-                <h2>Handling <code className="inline">IndexError</code> (Index Out of Range Errors)</h2>
-                <p>An "Index Out of Range" error in Python occurs when you attempt to access an index that matches or exceeds the length of the string, leading to an <code className="inline">IndexError</code>. </p>
+                <h2>Handling <code className="inline">IndexError</code></h2>
+                <p>An <code className="inline">IndexError</code> or "Index Out of Range" error in Python occurs when you attempt to access an index that matches or exceeds the length of the string, leading to an <code className="inline">IndexError</code>. </p>
                 <CodeBlock language={"python"} codeString={`# String indexes start from 0
 s = 'Hello'
 print(s[4])  # Outputs: o
@@ -114,7 +104,7 @@ print(s[5])  # IndexError: string index out of range`} />
                 <CodeBlock language={"python"} codeString={`message = "hi" + "there"
 print(message)  # Outputs: hithere
 
-greeting = 'Hello' + ' ' + 'World'
+greeting = 'Hello' + ' ' + "World"
 print(greeting)  # Outputs: Hello World
 
 # We can also concatenate strings to variables
@@ -128,7 +118,6 @@ greeting = 'Alice is ' + age + ' years old'  # Raises TypeError
 
 # Correct
 greeting = 'Alice is ' + str(age) + ' years old'`} />
-
             </section>
 
             <section>
@@ -144,11 +133,17 @@ greeting = 'Alice is ' + str(age) + ' years old'`} />
                 <h3>Using Single Quotes</h3>
                 <p>Single quotes are useful when the string contains double quotes. This can be particularly handy in strings representing spoken dialog or when quoting text.</p>
                 <CodeBlock language={"python"} codeString={`'She said, "Hello, how are you?"'`} />
+            </section>
 
-                <h3>Escape Characters</h3>
+            <section>
+                <h2>Escape Characters</h2>
                 <p>Alternatively, you can use escape characters (<code className="inline">\</code>) to tell Python to interpret a quote as a literal quotation mark rather than use its default behavior of ending the string.</p>
                 <CodeBlock language={"python"} codeString={`"She said, \\"It's lovely to see you!\\""`} />
                 <p>This will print <code className="inline">She said, "It's lovely to see you!"</code>, including the quotation marks in the actual string itself.</p>
+            </section>
+
+            <section>
+                <h2>TODO: Empty Strings</h2>
             </section>
 
             <section>
@@ -217,21 +212,8 @@ print(reversed_greeting)  # Outputs: Everyone Hello`} />
             <section>
                 <h2>Projects and Exercises</h2>
                 <p>Using what you've learned about strings, try to implement the following projects:</p>
-                <li><strong>Simple Chatbot</strong>: Create a program that asks for the user's name, age, and a favorite movie, and then prints a personalized message back to them.</li>
                 <li><strong>Text Analyzer</strong>: Develop a script that counts the number of words, the frequency of each word, and other statistics in a given text.</li>
             </section>
-
-            {questions && questions.length > 0 && !loading
-            ?
-            <section>
-                <h2>Quiz</h2>
-                {questions?.map((question, index) => <QuizQuestion key={index} index={index} question={question} />)}
-            </section>
-            :
-            <section>
-                <h2>Loading Quiz...</h2>
-            </section>
-            }
         </div>
     );
 };

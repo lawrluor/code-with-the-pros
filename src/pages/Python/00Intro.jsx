@@ -1,7 +1,6 @@
 import React from 'react';
 import CodeBlock from '../../components/CodeBlock';
 import Collapsible from '../../components/Collapsible';
-import { Link } from 'react-router-dom';
 
 const Intro = () => {
 
@@ -64,16 +63,20 @@ Hello, world
             <h2>Basic Math (Arithmetic Operators)</h2>
             <p>Computers were originally designed to do math (it's in the name "compute!"). So, it's no surprise that we can use Python for mathematical operations. Here are some of just the simplest operators that you can use to add, subtract, multiply, and divide numbers:</p>
             <CodeBlock language={"python"} codeString={`# Adding two numbers
-print(10 + 5)  # Results in 15
+print(10 + 5)     # Results in 15
 
 # Subtracting one number from another
-print(10 - 5)  # Results in 5
+print(10 - 5)     # Results in 5
 
 # Multiplying two numbers
-print(10 * 5)  # Results in 50
+print(10 * 5)     # Results in 50
 
 # Dividing one number by another
-print(10 / 2)  # Results in 5.0`} />
+print(10 / 2)     # Results in 5.0
+
+# Raising one number to the power of another (exponents)
+print(10 ** 2)     # (10 to the power of 2), results in 100.
+print(100 ** 0.5)  # Square root of 100, results in 10`} />
           </section>
 
           <section>
@@ -129,7 +132,7 @@ print(10 + 5)
 print("I have " + "2" + " dogs")
 
 # 3.
-print(10 + 0)  # Error: it doesn't make sense to add a non-number!`}/>
+print(10 + 0)`}/>
 
 						<p>Like <code className="inline">print()</code>, casting also uses functions. Each performs the specific task of converting the data to the specified data type: <code className="inline">int()</code>, <code className="inline">float()</code>, <code className="inline">str()</code>.</p>
 
@@ -187,8 +190,6 @@ print("Hi there)  # Missing closing quotation mark
 9 ++ 4            # Incorrect operator: should be 9 + 4
 x _ 10            # Defining a variable: should be x = 10`}/>
 
-            <p>These errors are akin to forgetting a key ingredient in a recipe or using a teaspoon instead of a tablespoon — small mistakes that have big impacts.</p>
-
             <h3><code className="inline">NameError</code></h3>
             <p>A <code className="inline">NameError</code> happens when Python does not recognize a name you reference. This usually occurs if you try to use a variable that has not been defined, similar to referencing a spice in your recipe that you forgot to list in your ingredients.</p>
 
@@ -205,7 +206,7 @@ print("age")  # no error`}/>
           <section>
             <h2>Avoiding Common Errors</h2>
             <ul>
-                <li><strong>Double Check Syntax:</strong> Always check that opening brackets or opening quotation marks are matched with their closing counterpart.</li>
+                <li><strong>Double Check Syntax:</strong> Check that opening brackets or opening quotation marks are matched with their closing counterpart.</li>
                 <li><strong>Declare Variables Before Use:</strong> Make sure all your variables are declared and initialized before you use or update them.</li>
                 <li><strong>Use Comments:</strong> Commenting your code can help you and others keep track of what each part of your program is supposed to do.</li>
             </ul>

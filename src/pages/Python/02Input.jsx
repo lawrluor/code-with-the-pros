@@ -1,5 +1,6 @@
 import React from 'react';
 import CodeBlock from '../../components/CodeBlock';
+import Collapsible from '../../components/Collapsible';
 
 const Input = () => {
     return (
@@ -9,16 +10,14 @@ const Input = () => {
             <section>
                 <h2>Why User Input Matters</h2>
                 <p>
-                    Up to this point, we’ve mainly been using values that have been fixed or “hard-coded”.
+                    Up to this point, we've mainly been using values that have been fixed or “hard-coded”.
                     For example, a simple calculator that only knows how to add <code className="inline">10 + 5</code> doesn't offer much flexibility.
                     With user input, you can ask the user exactly which numbers they'd like to calculate. Similarly, a program that always
                     says <code className="inline">"Hello, world!"</code> is not very useful. By accepting user input with the <code className="inline">input()</code> method, our program could ask for a name and say <code className="inline">"Hello, NAME!"</code>.
                 </p>
 
                 <h2>What Is <code className="inline">input()</code>?</h2>
-                <p>
-                Believe it or not, you've already worked with various different types of input methods! Using websites or software regularly involves providing input to your computer or device, often through writing and submitting text.
-                </p>
+                <p>Believe it or not, you've already worked with various different types of input methods! Using websites or software regularly involves providing input to your computer or device, often through writing and submitting text.</p>
 
                 <li>Search Engines: When you type queries into a search engine like Google, you provide search terms and expect relevant search results.</li>
                 <li>Online Shopping: Entering shipping information and payment details when purchasing products online.</li>
@@ -26,24 +25,21 @@ const Input = () => {
             </section>
 
             <section>
-                <h2>How To Use The <code className="inline">input()</code> Method</h2>
+                <h2>How To Use <code className="inline">input()</code></h2>
                 <p>Basic Syntax:</p>
                 <CodeBlock language={"python"} codeString={`name = input("What's your name? ")
 print(name)`}></CodeBlock>
                 <p>Breakdown:</p>
                 <ul>
-                    <li><strong>name:</strong> A variable to store the user's input.</li>
-                    <li><strong><code className="inline">input()</code>:</strong> The function that pauses the program and waits for the user to type something.</li>
-                    <li><strong>"What's your name? ":</strong> The prompt displayed to the user.</li>
+                    <li><code className="inline">name</code>: A variable to store the user's input.</li>
+                    <li><code className="inline">input()</code>: The function that pauses the program and waits for the user to type something.</li>
+                    <li><code className="inline">"What's your name? ":</code> The prompt displayed to the user.</li>
                 </ul>
-            </section>
 
-            <section>
-                <h2>Storing Input In Variables</h2>
-                <p>In this example, the result of <code className="inline">input()</code> is assigned to the variable (name in the example).</p>
-                <p>Practice with different examples:</p>
-                <CodeBlock language={"python"} codeString={`# Task 1: Prompt the user to type their name and store their input into a variable.
-# Task 2: Prompt the user to type a city that they've visited and store their input into a variable.`}></CodeBlock>
+                <Collapsible title={"View Challenge"}>
+                    <CodeBlock language={"python"} codeString={`# Challenge 1: Prompt the user to type their name and store their input into a variable.
+    # Challenge 2: Prompt the user to type a city that they've visited and store their input into a variable.`}></CodeBlock>
+                </Collapsible>
             </section>
 
             <section>

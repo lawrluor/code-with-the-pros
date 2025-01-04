@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 
 // Import Lessons
-import { Intro, Strings, Input, PigLatin, IfElse, Booleans, Functions, WhileLoops, ForLoops, CaesarCipher, Lists, Dictionaries, PassByReference } from './pages/Python';
+import { Intro, Strings, Variables, Input, PigLatin, IfElse, Booleans, Functions, WhileLoops, ForLoops, CaesarCipher, Lists, Dictionaries, PassByReference } from './pages/Python';
 import { JavaObjects, JavaInheritance, JavaPolymorphism } from './pages/Java';
 import Quiz from './pages/Quiz';
 
@@ -17,6 +17,7 @@ function App() {
             <h4>Beginner Topics</h4>
             <li><Link to="/intro">Intro</Link></li>
             <li><Link to="/strings">Strings</Link></li>
+            <li><Link to="/variables">Variables</Link></li>
             <li><Link to="/input">Input</Link></li>
             <li><Link to="/pigLatin">Pig Latin</Link></li>
             <li><Link to="/ifelse">Conditionals</Link></li>
@@ -45,6 +46,7 @@ function App() {
           <Route path="/intro" element={<Intro />} />
           <Route path="/quiz" element={<Quiz />} />
           <Route path="/strings" element={<Strings />} />
+          <Route path="/variables" element={<Variables />} />
           <Route path="/input" element={<Input />} />
           <Route path="/pigLatin" element={<PigLatin />} />
           <Route path="/conditionals" element={<IfElse />} />
