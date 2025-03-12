@@ -256,9 +256,8 @@ print(agee)`} />
           <section>
             <h2>Avoiding Common Errors</h2>
             <ul>
-                <li><strong>Double Check Syntax:</strong> Check that opening brackets or opening quotation marks are matched with their closing counterpart.</li>
+                <li><strong>Double Check Syntax:</strong> Check that parentheses or opening quotation marks are matched with their closing counterpart.</li>
                 <li><strong>Declare Variables Before Use:</strong> Make sure all your variables are declared and initialized before you use or update them.</li>
-                <li><strong>Use Comments:</strong> Commenting your code can help you and others keep track of what each part of your program is supposed to do.</li>
             </ul>
           </section>
 
@@ -300,22 +299,11 @@ print(num_students % num_groups)  # Outputs: 1 (the last student belongs to the 
             </Collapsible>
           </section>
 
-            {/* {questions && questions.length > 0 && !loading
-            ?
-            <section>
-                <h2>Quiz</h2>
-                {questions?.map((question, index) => <QuizQuestion key={index} index={index} question={question} />)}
-            </section>
-            :
-            <section>
-                <h2>Loading Quiz...</h2>
-            </section>
-            } */}
-            <section>
-                <h2>Wrapping Up</h2>
-                <p>Great job! You've started learning about the most fundamental building blocks of the Python language. Feel free to take the quiz to test your knowledge.</p>
-                <button onClick={() => window.location.href = '/quiz?name=00Intro.py'}>Start Quiz</button>
-            </section>
+          <section>
+              <h2>Wrapping Up</h2>
+              <p>Great job! You've started learning about the most fundamental building blocks of the Python language. Feel free to take the quiz to test your knowledge.</p>
+              <button onClick={() => window.location.href = '/quiz?name=00Intro.py'}>Start Quiz</button>
+          </section>
         </div>
     );
 }
