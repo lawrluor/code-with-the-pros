@@ -19,8 +19,8 @@ function App() {
             <li><Link to="/strings">Strings</Link></li>
             <li><Link to="/variables">Variables</Link></li>
             <li><Link to="/input">Input</Link></li>
-            <li><Link to="/pigLatin">Pig Latin</Link></li>
             <li><Link to="/ifelse">Conditionals</Link></li>
+            <li><Link to="/pigLatin">Pig Latin</Link></li>
             <li><Link to="/booleans">Booleans</Link></li>
             <li><Link to="/functions">Functions</Link></li>
             <li><Link to="/whileLoops">While Loops</Link></li>
@@ -46,10 +46,10 @@ function App() {
           <Route path="/intro" element={<Intro />} />
           <Route path="/quiz" element={<Quiz />} />
           <Route path="/strings" element={<Strings />} />
-          <Route path="/variables" element={<Variables />} />
           <Route path="/input" element={<Input />} />
-          <Route path="/pigLatin" element={<PigLatin />} />
+          <Route path="/variables" element={<Variables />} />
           <Route path="/conditionals" element={<IfElse />} />
+          <Route path="/pigLatin" element={<PigLatin />} />
           <Route path="/booleans" element={<Booleans />} />
           <Route path="/functions" element={<Functions />} />
           <Route path="/whileLoops" element={<WhileLoops />} />

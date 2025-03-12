@@ -55,7 +55,7 @@ print(fruits)  # Output: ['apple', 'banana', 'orange']`} />
             <CodeBlock language={"python"} codeString={`animal = "cat"
 name[0] = "b"  # TypeError: 'str' object does not support item assignment`}/>
 
-            <Collapsible title={"View Challenge"}>
+            <Collapsible title={"Challenge"}>
                 <p className="challenge">How would you change the above code to change the string as intended?</p>
             </Collapsible>
 
@@ -73,7 +73,7 @@ list_two = [4, 5, 6]
 combined_list = list_one + list_two
 print(combined_list)  # Output: [1, 2, 3, 4, 5, 6]`} />
 
-            <Collapsible title={"View Challenge"}>
+            <Collapsible title={"Challenge"}>
                 <CodeBlock language={"python"} codeString={`# 1. Create two lists of names and concatenate them together
 
 # 2. What is the output of the following code?
@@ -99,7 +99,7 @@ print(fruits)  # Output: ['apple', 'banana', 'cherry', 'orange']`} />
             <p>Concatenation is best when you need to combine multiple lists into one and do not need to keep the original lists. It's also useful when working with immutable list-like types, such as tuples or strings.</p>
             <p><code className="inline">.append()</code> is ideal when building a single list incrementally. It's more efficient than concatenation because it modifies the existing list in place rather than creating a new list each time an element is added.</p>
 
-            <Collapsible title={"View Challenge"}>
+            <Collapsible title={"Challenge"}>
                 <CodeBlock language={"python"} codeString={`# 1. Use both strategies to combine these three lists into one list.
 a = [1, 2, 3]
 b = [4, 5, 6]

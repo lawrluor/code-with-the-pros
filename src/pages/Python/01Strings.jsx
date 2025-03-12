@@ -60,11 +60,11 @@ print(last_char)  # Outputs: d
 print(s[-2])      # Outputs: l
 print(s[-3])      # Outputs: o`} />
 
-                <Collapsible title={"View Challenge"}>
+                <Collapsible title={"Challenge"}>
                     <p>Can you think of why it might be useful to select a single character from a string?</p>
                 </Collapsible>
 
-                <Collapsible title={"View Challenge"}>
+                <Collapsible title={"Challenge"}>
                     <p>For a 6-character long string, print the first character, the 3rd to last character, and the last character.</p>
                 </Collapsible>
 
@@ -148,7 +148,24 @@ greeting = 'Alice is ' + str(age) + ' years old'`} />
             </section>
 
             <section>
-                <h2>TODO: Empty Strings</h2>
+                <h2>Empty Strings (<code className="inline">""</code>)</h2>
+                <p>Empty strings are, well, strings that are empty, meaning that they contain no characters. In Python, an empty string is represented by <code className="inline">""</code>. It is analogous to the number 0 in math - just as 0 is still a number, an empty string is still a string that contains nothing.</p>
+
+                <h3>Why use empty strings?</h3>
+                <p>Why use empty strings and what are their purpose? Empty strings are often used as placeholders for variables that have not been assigned a value yet. For example, if we wanted to create a greeting message, we could use an empty string as a placeholder for the name of the person we are greeting, then later update name when we are ready to assign it a value.</p>
+                <CodeBlock language={"python"} codeString={`name = ""
+
+# Other code
+
+name = input("What's your name? ")
+greeting = "Hello, " + name + "!"`} />
+
+                The following example illustrates how the empty string can function as a starting placeholder, much like the number zero:
+                <CodeBlock language={"python"} codeString={`total = 0  # start with a default value
+total = total + 1  # increment total by 1
+
+message = ""  # start with a default value of empty string
+message = message + "a"  # add the letter 'a' to the message`} />
             </section>
 
             <section>
@@ -212,12 +229,6 @@ print(new_greeting)  # Outputs: Hello Everyone
 words = new_greeting.split()
 reversed_greeting = ' '.join(reversed(words))
 print(reversed_greeting)  # Outputs: Everyone Hello`} />
-            </section>
-
-            <section>
-                <h2>Projects and Exercises</h2>
-                <p>Using what you've learned about strings, try to implement the following projects:</p>
-                <li><strong>Text Analyzer</strong>: Develop a script that counts the number of words, the frequency of each word, and other statistics in a given text.</li>
             </section>
         </div>
     );

@@ -1,5 +1,6 @@
 import React from 'react';
 import CodeBlock from '../../components/CodeBlock';
+import Collapsible from '../../components/Collapsible';
 
 const Variables = () => {
     return (
@@ -11,7 +12,7 @@ const Variables = () => {
 
 					<section>
             <h2>What is a Variable?</h2>
-            <p>A variable in Python is like a labeled jar where you can put something you want to use later. Once you have placed an item into this jar, you can use the label to reference what's inside without having to open the jar and look inside every time.</p>
+            <p>A variable in Python is like a labeled container where you can put something you want to use later. Once you have placed an item into this container, you can use the label to reference what's inside without having to open the container and look inside every time.</p>
 					</section>
 
 					<section>
@@ -40,13 +41,13 @@ current_job = "doctor"  # 'current_job' is a variable storing the string "doctor
 width = 1.5
 length = 2.0
 area = width * length
-print(bmi)  # 3
+print(area)  # Output: 3.0
 
 # Using variables to hold strings for output
 first_name = "Alice"
 last_name = "Johnson"
 full_name = first_name + " " + last_name  # Concatenating two string variables
-print(full_name)  # Output the full name`}/>
+print(full_name)`}/>
 					</section>
 
 					<section>
@@ -54,7 +55,10 @@ print(full_name)  # Output the full name`}/>
             <p>You can change the value of a variable by assigning a new value to it. This is helpful when tracking changing data within a program.</p>
             <CodeBlock language={"python"} codeString={`x = 5  # initial value
 x = x + 2  # increase the value of x by 2
-print(x)  # output the new value of x, which is 7`} />
+print(x)  # output the new value of x, which is 7
+
+x += 1  # An abbreviated syntax that is thesame as x = x + 1
+print(x)`} />
 
             <h3>Reassigning Variables</h3>
             <p>Many operations on variables, especially those involving data manipulation methods, require you to reassign the result back to the variable if you want to keep the changes. This is particularly important when working with strings, as strings in Python are immutable.</p>
@@ -62,15 +66,14 @@ print(x)  # output the new value of x, which is 7`} />
             <CodeBlock language={"python"} codeString={`my_string = "Hello World"
 my_string = my_string.lower()  # convert to lowercase and reassign
 print(my_string)`} />
-            <p>However, some operations might seem to change the variable in place. For example, appending an item to a list:</p>
+            <p>(Optional) However, some operations might seem to change the variable in place. For example, appending an item to a list:</p>
             <CodeBlock language={"python"} codeString={`my_list = [1, 2, 3]
 my_list.append(4)  # appends in place, no need to reassign
 print(my_list)`} />
-					</section>
 
-					<section>
-            <h2>Practice Challenge</h2>
-            <p>Try creating a variable to store your favorite color and print it out. Then, change the variable to store your favorite movie and print that out.</p>
+            <Collapsible title={"Practice Challenge"}>
+              <p>Try creating a variable to store your favorite color and print it out. Then, update the variable to store your favorite animal and then print the variable again.</p>
+            </Collapsible>
 					</section>
 				</div>
     );

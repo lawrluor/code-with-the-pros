@@ -35,7 +35,7 @@ print(name)`}></CodeBlock>
                     <li><code className="inline">"What's your name?"</code>: The prompt displayed to the user.</li>
                 </ul>
 
-                <Collapsible title={"View Challenge"}>
+                <Collapsible title={"Challenge"}>
                     <CodeBlock language={"python"} codeString={`# Challenge 1: Prompt the user to type their name and store their input into a variable.
 # Challenge 2: Prompt the user to type a city that they've visited and store their input into a variable.`}>
                     </CodeBlock>
@@ -64,11 +64,13 @@ print(total)  # The sum of the two numbers that were entered`}>
 </CodeBlock>
             </section>
 
+            <p>TODO: Input validation?</p>
+
             <section>
                 <h2>Projects</h2>
                 <p>We've learned about the following topic areas so far: <code className="inline">input()</code>, variables, arithmetic, casting data types, and string operations. Let's use our knowledge to work on some of the following projects.</p>
                 <li><strong>"Mad Libs" Game</strong>: Create a simple "Mad Libs" style game where the user is asked for different inputs (noun, adjective, verb, etc.) and a silly story is generated.</li>
-                <li><strong>Checkout Form</strong>: Create a simple program that allows a user to enter their cart and shipping details as if they were about to make a purchase on an e-commerce platform.</li>
+                <li><strong>Checkout Form</strong>: Create a simple program that allows a user to enter their cart and contact info if they were about to make a purchase on an e-commerce platform.</li>
             </section>
         </div>
     );
