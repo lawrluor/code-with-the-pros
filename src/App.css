@@ -9,7 +9,8 @@
 :root {
   --primary-color: rgb(217, 99, 160);
   --secondary-color: rgb(200, 158, 107);
-  --tertiary-color: rgb(204, 166, 166);
+  --tertiary-color: rgb(170, 150, 90);
+  --highlight-color: rgb(204, 166, 166);
   --text-color: #f0e9f0;
 }
 
@@ -45,14 +46,20 @@ h2 {
 
 h3 {
   color: var(--secondary-color);
-  margin-top: 0.5rem;
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+h4 {
+  color: var(--tertiary-color);
+  margin-top: 1rem;
   margin-bottom: 0.5rem;
 }
 
 h5 {
   font-size: 0.8rem;
   margin-top: 0.5rem;
-  color: var(--tertiary-color);
+  color: var(--highlight-color);
 }
 
 hr {

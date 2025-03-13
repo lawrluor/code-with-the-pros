@@ -58,9 +58,16 @@ print(bio)`}/>
                 <p>Each character in a string can be accessed using an <strong>index</strong>, which specifies the position of a character in a string. The index starts from <code className="inline">0</code>, representing the first character's position.</p>
                 <CodeBlock language={"python"} codeString={`s = 'Hello World'
 first_char = s[0]
-print(first_char)  # Outputs: H`} />
+print(first_char)  # Outputs: H
 
-                <p>Python also supports negative indexing, which is less common in other programming languages. Negative indexes start from the end of the string as <code className="inline">-1</code> and count backwards.</p>
+last_char = s[10]
+print(last_char)   # Outputs: d`} />
+
+                <Collapsible title={"Challenge"}>
+                    <p>In the above example, what would be the result of <code className="inline">print(s[5])</code>? </p>
+                </Collapsible>
+
+                <p>Python also supports negative indexing, which is less common in other programming languages. Negative indexes start from the end of the string as <code className="inline">-1</code> and increment backwards.</p>
                 <CodeBlock language={"python"} codeString={`s = 'Hello World'
 last_char = s[-1]
 print(last_char)  # Outputs: d
@@ -83,6 +90,18 @@ sub = s[1:5]  # The format is: s[start:stop]
 print(sub)    # Outputs: ello`} />
                 <p>Note that the character at the stop index is <strong>not</strong> included, which is a common convention in Python and other programming languages.</p>
 
+                <h4>String Slicing Properties</h4>
+                <p>String slicing does <strong>not</strong> modify the original string.</p>
+                <CodeBlock language={"python"} codeString={`animal = 'Jellyfish'
+print(animal[1:5])  # elly
+print(animal)       # Jellyfish`} />
+
+<p>If we wish to modify the original string, we must reassign the slice of the string to the original string.</p>
+                <CodeBlock language={"python"} codeString={`animal = 'Jellyfish'
+animal = animal[5:9]
+print(animal)  # fish`} />
+
+
                 <h4>Including the "Step" Value</h4>
                 <p>There can also be an optional <strong>step</strong> value, which specifies how many characters to skip or "step" between characters in the slice. The syntax is <code className="inline">s[start:stop:step]</code>. </p>
                 <CodeBlock language={"python"} codeString={`s = 'Hello World'
@@ -90,25 +109,42 @@ sub_step = s[0:8:2]
 print(sub_step)  # Outputs: HloW`} />
 
                 <p>Here, "step" specifies that the slice should skip every second character, starting from the first character and ending at (but not including) the 8th index.</p>
+
+                <Collapsible title={"Challenge"}>
+                    <p>In the above example, what would the result of <code className="inline">s[0:8:3]</code> be? What about <code className="inline">s[4:8:-1]</code>?</p>
+                </Collapsible>
             </section>
 
             <section>
-                <h2>Handling <code className="inline">IndexError</code></h2>
-                <p>An <code className="inline">IndexError</code> or "Index Out of Range" error in Python occurs when you attempt to access an index of a string that matches or exceeds the length of the string.</p>
+                <h2><code className="inline">IndexError</code></h2>
+                <p>An <code className="inline">IndexError</code> or "string index out of range" error occurs when you attempt to access an index of a string that matches or exceeds the total length of the string.</p>
                 <CodeBlock language={"python"} codeString={`s = 'Hello'
-print(s[4])  # Outputs: o
-print(s[5])  # IndexError: string index out of range`} />
+print(s[4])   # Outputs: o
+print(s[5])   # IndexError: string index out of range
+print(s[10])  # IndexError: string index out of range`} />
 
+                <h3>Out-of-Bounds Slicing</h3>
                 <p>Unlike the direct indexing examples above, slicing a string outside of its bounds does <strong>not</strong> result in an error. Instead, Python handles it gracefully by adjusting the bounds:</p>
                 <ul>
                     <li><strong>Overextended Slices:</strong> If the start index is beyond the string length, Python returns an empty string.</li>
-                    <CodeBlock language={"python"} codeString={`print(s[10:])  # Outputs: ''`} />
+                    <CodeBlock language={"python"} codeString={`s = "Hello World"
+print(s[10:])  # Outputs: ''`} />
                     <li><strong>Negative Indexing Beyond Bounds:</strong> Negative indices beyond the string's length wrap around, potentially leading to non-empty results if not calculated correctly.</li>
-                    <CodeBlock language={"python"} codeString={`print(s[-10:2])  # Outputs: 'He'`} />
+                    <CodeBlock language={"python"} codeString={`s = "Hello World"
+print(s[-10:2])  # Outputs: 'He'`} />
                 </ul>
 
-                <h3>Avoiding Index Errors</h3>
-                <p>We will learn more about how to avoid index errors in future sections, but for now, make sure that you carefully select indices that are within the bounds of a string.</p>
+                <h3>Avoiding <code className="inline">IndexError</code></h3>
+                <p>When indexing a string, it's best to carefully select indices that are within the bounds of a string, keeping in mind that the first character has an index of <code className="inline">0</code>.</p>
+
+                <Collapsible title={"Challenge"}>
+                    <p>Identify which of the following <code className="inline">print()</code> statements will result in an <code className="inline">IndexError</code>.</p>
+                    <CodeBlock language={"python"} codeString={`planet = "Jupiter"
+print(planet[10])
+print(planet[4])
+print(planet[-8])`} />
+
+                </Collapsible>
             </section>
 
             <section>
@@ -119,12 +155,15 @@ print(message)  # Outputs: hithere
 
 greeting = 'Hello' + ' ' + "World"
 print(greeting)  # Outputs: Hello World`} />
+
                 <p>We can also concatenate strings to variables that have been assigned string values.</p>
                 <CodeBlock language={"python"} codeString={`word = "Salutations"
 print(word + "!")  # Outputs: Salutations!`}/>
 
-                <h3>Avoiding <code className="inline">TypeError</code></h3>
-                <p>Attempting to concatenate strings with non-string types (like integers) directly with the <code className="inline">+</code> operator will lead to a <code className="inline">TypeError</code>. To avoid this, make sure that you only add strings to other strings, or convert them explicitly to strings using the <code className="inline">str()</code> function. This is known as <strong>casting</strong>; to convert a data type to a string is to <strong>cast</strong> that data type to a string.</p>
+                <p>Keep in mind that spaces are <strong>not</strong> automatically inserted between concatenated strings - we must include them ourselves.</p>
+
+                <h3><code className="inline">TypeError</code> Revisited</h3>
+                <p>Attempting to concatenate strings with non-string types (like integers or floats) will lead to a <code className="inline">TypeError</code>. To avoid this, make sure that you only add strings to other strings, or convert the non-string data to strings using the <code className="inline">str()</code> function before concatenation. This is known as <strong>casting</strong>; to convert a data type to a string is to <strong>cast</strong> that data type to a string.</p>
                 <CodeBlock language={"python"} codeString={`# Incorrect
 age = 30
 greeting = 'Alice is ' + age + ' years old'  # TypeError
@@ -137,31 +176,47 @@ greeting = 'Alice is ' + str(age) + ' years old'  # str(age) becomes the string 
                 <CodeBlock language={"python"} codeString={`# Using different types of quotes
 greeting = 'Hello' + " there"
 print(greeting)  # Outputs: Hello there`} />
+
+                <Collapsible title={"Challenge"}>
+                    <p>Identify which of the following <code className="inline">print()</code> statements will result in a <code className="inline">TypeError</code>. </p>
+                    <CodeBlock language={"python"} codeString={`# 1.
+print("Apple" + 5)
+
+# 2.
+print("Banana" + "5.0")
+
+# 3.
+print("Coconut" + ' ')`} />
+                </Collapsible>
             </section>
 
             <section>
                 <h2>Choosing Between Single and Double Quotes</h2>
-                <p>As both single quotes (<code className="inline">' '</code>) and double quotes (<code className="inline">" "</code>) can be used to define strings, the choice between these can sometimes depend on the content of the string itself.
-                For example, if the string itself contains single quotes like the apostrophe symbol, using single quotes can cause an error.</p>
+                <p>As both single quotes <code className="inline">' '</code> and double quotes <code className="inline">" "</code> can be used to define strings, the choice between these can sometimes depend on the content of the string itself.
+                For example, if the string itself contains single quotes like the apostrophe symbol <code className="inline">'</code>, using single quotes can cause an error.</p>
                 <CodeBlock language={"python"} codeString={`'This is the cat's home.'  # SyntaxError: Each opening quote must have a corresponding closing quote`} />
-                <p>There is an error because the Python interpreter sees the apostrophe (single quote symbol) and believes that it is the end of the string. If we use double quotes instead, so that the single quote from the apostrophe symbol is not interpreted as attempting to end the string.</p>
+                <p>There is an error because the Python interpreter sees the apostrophe and believes it to be the end of the string. Using double quotes for the string instead ensures that the single quote from the apostrophe symbol is interpreted correctly.</p>
 
                 <CodeBlock language={"python"} codeString={`"This is the cat's home."`} />
 
                 <h3>Using Single Quotes</h3>
                 <p>Single quotes are useful when the string contains double quotes. This can be particularly handy in strings representing spoken dialog or when quoting text.</p>
                 <CodeBlock language={"python"} codeString={`'She said, "Hello, how are you?"'`} />
+
+                <Collapsible title={"Challenge"}>
+                    <p>Create an example where using double quotes could result in a <code className="inline">SyntaxError</code>.</p>
+                </Collapsible>
             </section>
 
             <section>
-                <h2>Escape Characters</h2>
-                <p>Alternatively, you can use escape characters (<code className="inline">\</code>) to tell Python to interpret a quote as a literal quotation mark rather than use its default behavior of ending the string.</p>
+                <h2>(Optional) Escape Characters</h2>
+                <p>Alternatively, you can use the escape character <code className="inline">\</code> to tell Python to interpret a quote as a literal quotation mark rather than use its default behavior of ending the string.</p>
                 <CodeBlock language={"python"} codeString={`"She said, \\"It's lovely to see you!\\""`} />
                 <p>This will print <code className="inline">She said, "It's lovely to see you!"</code>, including the quotation marks in the actual string itself.</p>
             </section>
 
             <section>
-                <h2>Empty Strings (<code className="inline">""</code>)</h2>
+                <h2>Empty Strings <code className="inline">""</code></h2>
                 <p>Empty strings are, well, strings that are empty, meaning that they contain no characters. In Python, an empty string is represented by <code className="inline">""</code>. It is analogous to the number <code className="inline">0</code> in math - just as <code className="inline">0</code> is still a number, an empty string is still a string, just one that currently holds no value.</p>
 
                 <h3>The Purpose of Empty Strings</h3>
@@ -178,16 +233,26 @@ greeting = "Hello, " + name + "!"`} />
 total = total + 1  # increment total by 1
 
 message = ""             # start with a default value of empty string
-message = message + "a"  # add the letter 'a' to the message`} />
+message = message + "a"  # add the letter "a" to the message`} />
+
+                <p>Concatenating an empty string to another string is analagous to adding <code className="inline">0</code> to a number.</p>
+                <CodeBlock language={"python"} codeString={`day = "Friday"
+print(day + "") # Outputs: Friday`} />
+
+                <Collapsible title={"Challenge"}>
+                    <p>What is the result of the following <code className="inline">print()</code> statement?</p>
+                    <CodeBlock language={"python"} codeString={`name = "Liam"
+print("" + "Hi" + " " + "" + name + "")`} />
+                </Collapsible>
             </section>
 
             <section>
                 <h2>Common String Methods</h2>
-                <p> A method, also known as a function, is an action that a string can take or an operation that can be applied to a string. Some common methods like <code className="inline">.upper()</code> and <code className="inline">.lower()</code> are used to create an altered version of the string.</p>
-                <CodeBlock language={"python"} codeString={`greeting = 'Hello, World!'
-print(greeting.upper())    # Outputs: HELLO WORLD
+                <p> A <strong>method</strong>, another name for a function, is an action that a string can perform or an operation that can be applied to a string. Some common methods like <code className="inline">.upper()</code> and <code className="inline">.lower()</code> are used to create a new, altered version of the string.</p>
+                <CodeBlock language={"python"} codeString={`greeting = 'Happy birthday'
+print(greeting.upper())    # Outputs: HAPPY BIRTHDAY
 
-lowercase_greeting = "Greetings everyone!".lower()
+lowercase_greeting = "Greetings Everyone!".lower()
 print(lowercase_greeting)  # Outputs: greetings everyone!`} />
 
                 <p>Note that most string methods return a <em>new</em> string, rather than actually modifying the original string (known as "in-place" methods). In the following example, note how even though <code className="inline">.upper()</code> is used on the original string, the original string remains unchanged.</p>
@@ -207,22 +272,32 @@ print(name.isalpha())  # Outputs: True
 sentence = 'I have 3 cats.'
 print(sentence.isalpha())  # Outputs: False`} />
 
-                <p>There are dozens of other string methods, but you can find them all along with their explanations in the <a href="https://docs.python.org/3/library/stdtypes.html#string-methods" target="_blank" rel="noreferrer">Python documentation</a>.</p>
+                <p>There are dozens of other string methods, but you can find them all along with their explanations in the <a href="https://docs.python.org/3/library/stdtypes.html#string-methods" target="_blank" rel="noreferrer">Python developer handbook</a>.</p>
+
+                <Collapsible title={"Challenge"}>
+                    <p>Think of something useful that you would like to be able to do with strings that hasn't been covered already. Then, see if there is a string method in the Python documentation that does what you want.</p>
+                </Collapsible>
             </section>
 
             <section>
-                <h2>Formatting Strings</h2>
-                <p>Inserting text into a string can be a pain. As we saw in earlier examples, we had <strong>cast</strong> integers to strings in order to properly combine them with other strings. Fortunately, we can use the <code className="inline">.format()</code> method to make things more convenient for us.</p>
-                <CodeBlock language={"python"} codeString={`print('{} is {} years old'.format(name, age))  # Outputs: Alice is 30 years old`} />
-                <p>Note how we didn't have to cast the int variable <code className="inline">age</code> to a string, saving us some work. Furthermore, we didn't need to include multiple <code className="inline">+</code> symbols. Generally, these improvements over regular string addition make combining strings with the <code className="inline">.format()</code> method easier for you to write and easier for others to read.</p>
+                <h2><code className="inline">.format()</code></h2>
+                <p>Concatenating strings can be a pain. As we saw in earlier examples, we had to <strong>cast</strong> integers to strings in order to properly concatenate them to other strings. Fortunately, we can use the <code className="inline">.format()</code> method to make things more convenient for us.</p>
+                <CodeBlock language={"python"} codeString={`name = 'Alice'
+age = 30
+print('{} is {} years old'.format(name, age))  # Outputs: Alice is 30 years old`} />
+                <p>Compare this to where we have to cast the int variable <code className="inline">age</code> to a string before concatenating it to the other strings.</p>
+                <CodeBlock language={"python"} codeString={`name = 'Alice'
+age = 30
+print(name + ' is ' + str(age) + ' years old')  # Outputs: Alice is 30 years old`} />
+                <p>Another advantage of <code className="inline">.format()</code> is that we don't need to include multiple <code className="inline">+</code> symbols. Generally, these improvements over regular string addition make combining strings with the <code className="inline">.format()</code> method easier for you to write and easier for others to read.</p>
 
-                <h3>Using f-strings</h3>
-                <p>f-strings are an abbreviated way to format strings, derived from the <code className="inline">.format()</code> method. Here, the letter <code className="inline">f</code> is written before the opening quotation mark, which tells Python that this is a special string that can be formatted with variables.</p>
+                <h3>Another Alternative to <code className="inline">.format()</code></h3>
+                <p><strong>f-strings</strong> are an abbreviated way to format strings, derived from the <code className="inline">.format()</code> method. Here, the letter <code className="inline">f</code> is written before the opening quotation mark, which tells Python that this is a special string that can be formatted with variables.</p>
                 <CodeBlock language={"python"} codeString={`name = 'Alice'
 age = 30
 print(f'{name} is {age} years old')  # Outputs: Alice is 30 years old`} />
 
-                <h3>Old methods of string formatting (optional)</h3>
+                <h3>(Optional) Old methods of string formatting</h3>
                 <p>In older versions of Python, string formatting was typically done with the <code className="inline">%</code> character. We can still use this syntax, though it is no longer recommended.</p>
                 <CodeBlock language={"python"} codeString={`print('%s is %d years old' % (name, age))  # Outputs: Alice is 30 years old`} />
             </section>
