@@ -48,7 +48,7 @@ export default function QuizQuestion ({ index, question }) {
 			<button onClick={() => setIsVisible(!isVisible)}>{isVisible ? 'Hide Answer' : 'Show Answer'}</button>
 
 			{isVisible && <>
-				<h3>Answer</h3>
+				<h4>Answer</h4>
 
 				<ReactMarkdown
 					children={answer}
