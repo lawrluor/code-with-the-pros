@@ -280,22 +280,21 @@ print(-11 // 3)  # Outputs: -4 (integer division)`} />
             </Collapsible>
 
             <h3>Modulo Operator <code className="inline">%</code></h3>
-            <p>This operator returns the <strong>remainder</strong> of a division between two numbers.</p>
+            <p>This operator returns the <strong>remainder</strong> of a division between two numbers. For example, <code className="inline">5 % 2</code> (read as "5 mod 2") results in <code className="inline">1</code>. Here are some more examples:</p>
             <CodeBlock language={"python"} codeString={`print(10 % 3)   # Outputs: 1 (10 divided by 3 leaves a remainder of 1)
 print(18 % 4)   # Outputs: 2 (18 divided by 4 leaves a remainder of 2)
 print(20 % 2)   # Outputs: 0 (20 is even, so division by 2 has no remainder)
+print(7 % 2)    # Outputs: 1 (7 is an odd number)
+print(5.5 % 5)  # Outputs: 0.5 (5.5 is not an integer)`} />
 
-print(5.5 % 5)  # Outputs: 0.5 (5.5 is not an integer)
-print(7 % 2)    # Outputs: 1 (7 is an odd number)`} />
-
-            <p>Imagine you have a group of students and you want to assign them into different project groups. You can use the modulo operator to determine which group each student belongs to.</p>
+            <p>Time for a practical example. Imagine you have a group of students and you want to assign them into different project groups. You can use the modulo operator to determine which group each student belongs to.</p>
             <CodeBlock language={"python"} codeString={`# Determine the group number of the last student
 num_students = 10
 num_groups = 3
 print(num_students % num_groups)  # Outputs: 1 (the last student belongs to the 1st group)`} />
 
             <Collapsible title="Challenge">
-              <p>Can you think of any other tasks that modulo can help achieve?</p>
+              <p>In your code editor, use the modulo operator to determine the result of <code className="inline">5 % 0</code>. What is the result and how might you explain this?</p>
             </Collapsible>
           </section>
 
