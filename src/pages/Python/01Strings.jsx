@@ -22,7 +22,7 @@ const StringsLesson = () => {
 # Sentence
 'Python is fun!'
 "The quick brown fox jumps over the lazy dog."`}/>
-
+                {/* TODO: Add example of a multi-line string and how it breaks in normal string example */}
                 <p>For paragraphs or text with multiple line breaks, use sets of three quotation marks (<code className='inline'>''' '''</code>) or (<code className='inline'>""" """</code>).</p>
 
                 <CodeBlock language={"python"} codeString={`# Paragraph
@@ -55,6 +55,8 @@ print(bio)`}/>
             <section>
                 <h2>Accessing Parts of a String</h2>
 
+                {/* TODO: Specifically define terms like indices, indexing, and how to pronounce s[0] */}
+
                 <p>Each character in a string can be accessed using an <strong>index</strong>, which specifies the position of a character in a string. The index starts from <code className="inline">0</code>, representing the first character's position.</p>
                 <CodeBlock language={"python"} codeString={`s = 'Hello World'
 first_char = s[0]
@@ -73,14 +75,14 @@ last_char = s[-1]
 print(last_char)  # Outputs: d
 
 print(s[-2])      # Outputs: l
-print(s[-3])      # Outputs: o`} />
+print(s[-3])      # Outputs: r`} />
 
                 <Collapsible title={"Challenge"}>
                     <p>Can you think of why it might be useful to select a single character from a string?</p>
                 </Collapsible>
 
                 <Collapsible title={"Challenge"}>
-                    <p>For a 6-character long string, print the first character, the 3rd to last character, and the last character, each on a separate line.</p>
+                    <p>Assign a 6-character long string into a variable called <code className="inline">word</code>. Then, print the first character, the 3rd to last character, and the last character, each on a separate line.</p>
                 </Collapsible>
 
                 <h3>Slicing Strings</h3>
@@ -96,7 +98,7 @@ print(sub)    # Outputs: ello`} />
 print(animal[1:5])  # elly
 print(animal)       # Jellyfish`} />
 
-<p>If we wish to modify the original string, we must reassign the slice of the string to the original string.</p>
+<p>If we wish to update the original variable, we must reassign the slice of the string to the original variable.</p>
                 <CodeBlock language={"python"} codeString={`animal = 'Jellyfish'
 animal = animal[5:9]
 print(animal)  # fish`} />
@@ -128,7 +130,9 @@ print(s[10])  # IndexError: string index out of range`} />
                 <ul>
                     <li><strong>Overextended Slices:</strong> If the start index is beyond the string length, Python returns an empty string.</li>
                     <CodeBlock language={"python"} codeString={`s = "Hello World"
-print(s[10:])  # Outputs: ''`} />
+print(s[10:12])  # Outputs: ''`} />
+
+{/* TODO: s[0:15] */}
                     <li><strong>Negative Indexing Beyond Bounds:</strong> Negative indices beyond the string's length wrap around, potentially leading to non-empty results if not calculated correctly.</li>
                     <CodeBlock language={"python"} codeString={`s = "Hello World"
 print(s[-10:2])  # Outputs: 'He'`} />
@@ -202,10 +206,6 @@ print("Coconut" + ' ')`} />
                 <h3>Using Single Quotes</h3>
                 <p>Single quotes are useful when the string contains double quotes. This can be particularly handy in strings representing spoken dialog or when quoting text.</p>
                 <CodeBlock language={"python"} codeString={`'She said, "Hello, how are you?"'`} />
-
-                <Collapsible title={"Challenge"}>
-                    <p>Create an example where using double quotes could result in a <code className="inline">SyntaxError</code>.</p>
-                </Collapsible>
             </section>
 
             <section>
@@ -248,6 +248,9 @@ print("" + "Hi" + " " + "" + name + "")`} />
 
             <section>
                 <h2>Common String Methods</h2>
+
+                {/* TODO: briefly explain method/function syntax? */}
+
                 <p> A <strong>method</strong>, another name for a function, is an action that a string can perform or an operation that can be applied to a string. Some common methods like <code className="inline">.upper()</code> and <code className="inline">.lower()</code> are used to create a new, altered version of the string.</p>
                 <CodeBlock language={"python"} codeString={`greeting = 'Happy birthday'
 print(greeting.upper())    # Outputs: HAPPY BIRTHDAY
@@ -255,7 +258,7 @@ print(greeting.upper())    # Outputs: HAPPY BIRTHDAY
 lowercase_greeting = "Greetings Everyone!".lower()
 print(lowercase_greeting)  # Outputs: greetings everyone!`} />
 
-                <p>Note that most string methods return a <em>new</em> string, rather than actually modifying the original string (known as "in-place" methods). In the following example, note how even though <code className="inline">.upper()</code> is used on the original string, the original string remains unchanged.</p>
+                <p>Note that most string methods return a <em>new</em> string, rather than actually modifying the original string. In the following example, note how even though <code className="inline">.upper()</code> is used on the original string, the original string remains unchanged.</p>
                 <CodeBlock language={"python"} codeString={`greeting = 'Hello, World!'
 print(greeting.upper())  # Outputs: HELLO, WORLD
 
@@ -265,9 +268,9 @@ print(greeting)          # Outputs: Hello, World!`} />
                 <CodeBlock language={"python"} codeString={`greeting = '   Hello, World!   '
 print(greeting.strip())  # Outputs: Hello, World!`} />
 
-                <p>Some methods like <code className="inline">.isalpha()</code> does not return an altered string, but instead gets information about the string, in this case checking if the string contains only letters.</p>
+                <p>Some methods like <code className="inline">.isalpha()</code> does not return an altered string, but instead gets information about the string, in this case checking if the string contains only letters and does not include any numeric-like characters.</p>
                 <CodeBlock language={"python"} codeString={`name = 'Rachel'
-print(name.isalpha())  # Outputs: True
+print(name.isalpha())      # Outputs: True
 
 sentence = 'I have 3 cats.'
 print(sentence.isalpha())  # Outputs: False`} />
@@ -291,7 +294,7 @@ age = 30
 print(name + ' is ' + str(age) + ' years old')  # Outputs: Alice is 30 years old`} />
                 <p>Another advantage of <code className="inline">.format()</code> is that we don't need to include multiple <code className="inline">+</code> symbols. Generally, these improvements over regular string addition make combining strings with the <code className="inline">.format()</code> method easier for you to write and easier for others to read.</p>
 
-                <h3>Another Alternative to <code className="inline">.format()</code></h3>
+                <h3>(Optional) Another Alternative to <code className="inline">.format()</code></h3>
                 <p><strong>f-strings</strong> are an abbreviated way to format strings, derived from the <code className="inline">.format()</code> method. Here, the letter <code className="inline">f</code> is written before the opening quotation mark, which tells Python that this is a special string that can be formatted with variables.</p>
                 <CodeBlock language={"python"} codeString={`name = 'Alice'
 age = 30
