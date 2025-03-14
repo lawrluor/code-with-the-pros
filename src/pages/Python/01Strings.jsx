@@ -22,21 +22,29 @@ const StringsLesson = () => {
 # Sentence
 'Python is fun!'
 "The quick brown fox jumps over the lazy dog."`}/>
-                {/* TODO: Add example of a multi-line string and how it breaks in normal string example */}
-                <p>For paragraphs or text with multiple line breaks, use sets of three quotation marks (<code className='inline'>''' '''</code>) or (<code className='inline'>""" """</code>).</p>
-
-                <CodeBlock language={"python"} codeString={`# Paragraph
-"""Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-
-    Ut enim ad minim veniam, quis nostrud exercitation ullamco
-laboris nisi ut aliquip ex ea commodo consequat."""`}/>
 
                 <h3>String Syntax</h3>
                 <p>A string must have matching opening and closing quotation marks.</p>
                 <CodeBlock language={"python"} codeString={`'hello"       # SyntaxError: Mismatching marks
 'hi everyone  # SyntaxError: Missing closing quotation
 name          # NameError: this is interpreted as a variable instead of a string, as it is missing quotation marks`}/>
+
+                <h3>Multiline Strings</h3>
+                <p>What if you want a string to span multiple lines? You would get an error if you tried to do it this way: </p>
+                <CodeBlock language={"python"} codeString={`'Hello
+world!'`} />
+                <p>This is because of the previous rule that a string must have matching opening and closing quotation marks. Python interprets code line by line and does not automatically recognize that the string continues on the next line. Therefore, it marks the first string as an incorrectly closed string and gives us a <code className="inline">SyntaxError</code>.</p>
+                <p>For paragraphs or text with multiple line breaks, use sets of three quotation marks (<code className='inline'>''' '''</code>) or (<code className='inline'>""" """</code>).</p>
+
+                <CodeBlock language={"python"} codeString={`"""Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+    Nullam eget lacus cursus, posuere risus eget, facilisis enim.
+Nam cursus sit amet mauris sit amet blandit."""
+
+'''
+Nulla facilisi. Ut efficitur laoreet quam id scelerisque.
+    Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+        Curabitur libero ipsum, malesuada tincidunt nisi et, varius lobortis mi.
+'''`}/>
             </section>
 
             <section>
@@ -54,19 +62,28 @@ print(bio)`}/>
 
             <section>
                 <h2>Accessing Parts of a String</h2>
-
-                {/* TODO: Specifically define terms like indices, indexing, and how to pronounce s[0] */}
-
-                <p>Each character in a string can be accessed using an <strong>index</strong>, which specifies the position of a character in a string. The index starts from <code className="inline">0</code>, representing the first character's position.</p>
-                <CodeBlock language={"python"} codeString={`s = 'Hello World'
-first_char = s[0]
+                <p>Each character in a string can be accessed using an <strong>index</strong>, a number that specifies the position of a character in a string. The index starts from <code className="inline">0</code>, representing the first character's position.</p>
+                <CodeBlock language={"python"} codeString={`phrase = 'Hello World'
+first_char = phrase[0]
 print(first_char)  # Outputs: H
 
-last_char = s[10]
+last_char = phrase[10]
 print(last_char)   # Outputs: d`} />
 
+                <p>The notation <code className="inline">phrase[0]</code> is most commonly pronounced as <em>"phrase at 0"</em> or <em>"phrase of 0"</em>.</p>
+
                 <Collapsible title={"Challenge"}>
-                    <p>In the above example, what would be the result of <code className="inline">print(s[5])</code>? </p>
+                    <p>In the above example, what would be the result of <code className="inline">print(phrase[5])</code>? </p>
+                    <p>How would you pronounce <code className="inline">word[5]</code>? </p>
+                </Collapsible>
+
+                <p>Indexes (also known as <strong>indices</strong>) must be integers. It should make sense that you can access, for example, the first or second character of a string, but <strong>not</strong> the "first-and-a-half" character of a string nor the "character at position 1.5".</p>
+                <CodeBlock language={"python"} codeString={`s = 'Lincoln'
+print(s[1])    # Outputs: i
+print(s[1.5])  # TypeError: string indices must be integers`}/>
+
+                <Collapsible title={"Challenge"}>
+                    <p>Can you think of a reason that it might be useful to select a single character from a string?</p>
                 </Collapsible>
 
                 <p>Python also supports negative indexing, which is less common in other programming languages. Negative indexes start from the end of the string as <code className="inline">-1</code> and increment backwards.</p>
@@ -76,10 +93,6 @@ print(last_char)  # Outputs: d
 
 print(s[-2])      # Outputs: l
 print(s[-3])      # Outputs: r`} />
-
-                <Collapsible title={"Challenge"}>
-                    <p>Can you think of why it might be useful to select a single character from a string?</p>
-                </Collapsible>
 
                 <Collapsible title={"Challenge"}>
                     <p>Assign a 6-character long string into a variable called <code className="inline">word</code>. Then, print the first character, the 3rd to last character, and the last character, each on a separate line.</p>
@@ -105,7 +118,7 @@ print(animal)  # fish`} />
 
 
                 <h4>Including the "Step" Value</h4>
-                <p>There can also be an optional <strong>step</strong> value, which specifies how many characters to skip or "step" between characters in the slice. The syntax is <code className="inline">s[start:stop:step]</code>. </p>
+                <p>There can also be an optional <strong>step</strong> value, which specifies how many characters to skip or "step" between characters in the slice. The syntax for this is <code className="inline">s[start:stop:step]</code>. </p>
                 <CodeBlock language={"python"} codeString={`s = 'Hello World'
 sub_step = s[0:8:2]
 print(sub_step)  # Outputs: HloW`} />
@@ -128,11 +141,15 @@ print(s[10])  # IndexError: string index out of range`} />
                 <h3>Out-of-Bounds Slicing</h3>
                 <p>Unlike the direct indexing examples above, slicing a string outside of its bounds does <strong>not</strong> result in an error. Instead, Python handles it gracefully by adjusting the bounds:</p>
                 <ul>
-                    <li><strong>Overextended Slices:</strong> If the start index is beyond the string length, Python returns an empty string.</li>
+                    <li><strong>Overextended Start Index:</strong> If the start index is beyond the string length, Python returns an empty string.</li>
                     <CodeBlock language={"python"} codeString={`s = "Hello World"
-print(s[10:12])  # Outputs: ''`} />
+print(s[11:15])  # Outputs: ''`} />
 
-{/* TODO: s[0:15] */}
+                    <li><strong>Overextended Stop Index:</strong> If the stop index is beyond the string length, Python acts as if the stop index is simply the string length.</li>
+                    <CodeBlock language={"python"} codeString={`s = "Hello World"
+print(s[0:25])   # Outputs: 'Hello World
+print(s[0:10])   # Outputs: 'Hello World'`} />
+
                     <li><strong>Negative Indexing Beyond Bounds:</strong> Negative indices beyond the string's length wrap around, potentially leading to non-empty results if not calculated correctly.</li>
                     <CodeBlock language={"python"} codeString={`s = "Hello World"
 print(s[-10:2])  # Outputs: 'He'`} />
@@ -248,9 +265,6 @@ print("" + "Hi" + " " + "" + name + "")`} />
 
             <section>
                 <h2>Common String Methods</h2>
-
-                {/* TODO: briefly explain method/function syntax? */}
-
                 <p> A <strong>method</strong>, another name for a function, is an action that a string can perform or an operation that can be applied to a string. Some common methods like <code className="inline">.upper()</code> and <code className="inline">.lower()</code> are used to create a new, altered version of the string.</p>
                 <CodeBlock language={"python"} codeString={`greeting = 'Happy birthday'
 print(greeting.upper())    # Outputs: HAPPY BIRTHDAY
@@ -294,11 +308,27 @@ age = 30
 print(name + ' is ' + str(age) + ' years old')  # Outputs: Alice is 30 years old`} />
                 <p>Another advantage of <code className="inline">.format()</code> is that we don't need to include multiple <code className="inline">+</code> symbols. Generally, these improvements over regular string addition make combining strings with the <code className="inline">.format()</code> method easier for you to write and easier for others to read.</p>
 
+                <h3>Rounding Floats</h3>
+                <p><code className="inline">.format()</code> can also be used to conveniently process text that contains numbers. For example, say that we have a float variable <code className="inline">pi</code> that we want to display rounded to two decimal places.</p>
+                <CodeBlock language={"python"} codeString={`pi = 3.14159
+print('Pi is {}'.format(pi))      # Normal Output: "Pi is 3.14159"
+print('Pi is {:.2f}'.format(pi))  # Rounded Output: "Pi is 3.14"`} />
+
+                <p>The <code className="inline">:.2f</code> inserted between the brackets is known as a <em>format specifier</em>. For three decimal places, we would write <code className="inline">:.3f</code>.</p>
+
+                <Collapsible title={"Challenge"}>
+                    <p>In your code editor, create a variable that stores the result of dividing a <code className="inline">100</code> by <code className="inline">11</code>. Then, use the <code className="inline">.format()</code> to print and display the result of this division to three decimal places.</p>
+                </Collapsible>
+
                 <h3>(Optional) Another Alternative to <code className="inline">.format()</code></h3>
                 <p><strong>f-strings</strong> are an abbreviated way to format strings, derived from the <code className="inline">.format()</code> method. Here, the letter <code className="inline">f</code> is written before the opening quotation mark, which tells Python that this is a special string that can be formatted with variables.</p>
-                <CodeBlock language={"python"} codeString={`name = 'Alice'
+                <CodeBlock language={"python"} codeString={`name = 'Andy'
 age = 30
-print(f'{name} is {age} years old')  # Outputs: Alice is 30 years old`} />
+print(f'{name} is {age} years old')  # Outputs: Andy is 30 years old`} />
+
+                <p>We can also use format specifiers:</p>
+                <CodeBlock language={"python"} codeString={`pi = 3.14159
+print(f'Pi is {pi:.2f}')  # Output: "Pi is 3.14"`} />
 
                 <h3>(Optional) Old methods of string formatting</h3>
                 <p>In older versions of Python, string formatting was typically done with the <code className="inline">%</code> character. We can still use this syntax, though it is no longer recommended.</p>
@@ -319,6 +349,12 @@ print(new_greeting)  # Outputs: Hello Everyone
 words = new_greeting.split()
 reversed_greeting = ' '.join(reversed(words))
 print(reversed_greeting)  # Outputs: Everyone Hello`} />
+            </section>
+
+            <section>
+                <h2>Wrapping Up</h2>
+                <p>Understanding strings, how to manipulate and format them, and how to use their methods are all essential for working with text data in Python. This fundamental data type will be used throughout the rest of this course, and you can use strings as a basis for understanding new data types in Python.</p>
+                <button onClick={() => window.location.href = '/quiz?name=01Strings.py'}>Start Quiz</button>
             </section>
         </div>
     );

@@ -163,6 +163,8 @@ print("I have " + "2" + " dogs")
 # 3.
 print(10 + 0)`}/>
 
+            <>{/* TODO: briefly explain method/function syntax? */}</>
+
 						<p>Like <code className="inline">print()</code>, casting also uses functions. If you recall, functions are pieces of code that perform specific tasks. The casting functions <code className="inline">int()</code>, <code className="inline">float()</code>, <code className="inline">str()</code> performs the specific task of converting data to a new data type.</p>
 
             <Collapsible title={"Challenge"}>

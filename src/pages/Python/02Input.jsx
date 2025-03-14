@@ -64,7 +64,7 @@ print(total)  # The sum of the two numbers that were entered`}>
 </CodeBlock>
             </section>
 
-            <p>TODO: Input validation?</p>
+            {/* <p>TODO: Input validation?</p> */}
 
             <section>
                 <h2>Projects</h2>
