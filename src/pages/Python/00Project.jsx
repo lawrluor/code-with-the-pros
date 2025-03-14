@@ -4,27 +4,27 @@ import Collapsible from "../../components/Collapsible"
 const Project00 = () => {
 	return (
 		<div className="lesson-container">
-  <section>
-    <h1>Restaurant Payment System</h1>
-    <p>Imagine that you are in charge of the payments system of a new restaurant. The owner has hired you to write a program to calculate the total cost of a meal ordered by a customer, then give them a receipt.</p>
-  </section>
+			<section>
+				<h1>Restaurant Payment System</h1>
+				<p>Imagine that you are in charge of the payments system of a new restaurant. The owner has hired you to write a program to calculate the total cost of a meal ordered by a customer, then give them a receipt.</p>
+			</section>
 
-  <section>
-    <h2>Step 1: Creating Variables</h2>
-    <p>Let's start by defining variables to store key details about the order.</p>
+			<section>
+				<h2>Step 1: Creating Variables</h2>
+				<p>Let's start by defining variables to store key details about the order.</p>
 
-    <ul>
-      <li>Create a variable <code className="inline">restaurant_name</code> to store the name of your restaurant.</li>
-      <li>Create a variable <code className="inline">customer_name</code> to store the name of the customer.</li>
-      <li>Create variables <code className="inline">dish_one_name</code>, <code className="inline">dish_two_name</code>, and <code className="inline">dish_three_name</code> to store the names of three dishes ordered.</li>
-      <li>Create variables <code className="inline">dish_one_price</code>, <code className="inline">dish_two_price</code>, and <code className="inline">dish_three_price</code> to store the prices of each dish as a float.</li>
-      <li>Create a variable <code className="inline">total</code> and assign it an initial float value of <code className="inline">0.00</code>.</li>
-    </ul>
+				<ul>
+					<li>Create a variable <code className="inline">restaurant_name</code> to store the name of your restaurant.</li>
+					<li>Create a variable <code className="inline">customer_name</code> to store the name of the customer.</li>
+					<li>Create variables <code className="inline">dish_one_name</code>, <code className="inline">dish_two_name</code>, and <code className="inline">dish_three_name</code> to store the names of three dishes ordered.</li>
+					<li>Create variables <code className="inline">dish_one_price</code>, <code className="inline">dish_two_price</code>, and <code className="inline">dish_three_price</code> to store the prices of each dish as a float.</li>
+					<li>Create a variable <code className="inline">total</code> and assign it an initial float value of <code className="inline">0.00</code>.</li>
+				</ul>
 
-    <Collapsible title="Hint">
-      <CodeBlock
-        language={"python"}
-        codeString={`restaurant_name = "Your Restaurant"
+				<Collapsible title="Hint">
+					<CodeBlock
+						language={"python"}
+						codeString={`restaurant_name = "Your Restaurant"
 customer_name = "Customer Name"
 dish_one_name = "Dish 1"
 dish_two_name = "Dish 2"
@@ -116,7 +116,6 @@ Your grand total is $35.3028.`}
       Congratulations on finishing your first Python project! This project introduced you to variables, arithmetic operations, string concatenation, and printing — all essential building blocks for Python programming. Feel free to experiment and see how you can extend this program further!
     </p>
   </section>
-
 </div>
 	)
 }
