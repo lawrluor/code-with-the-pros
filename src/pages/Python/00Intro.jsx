@@ -302,7 +302,7 @@ print(num_students % num_groups)  # Outputs: 1 (the last student belongs to the 
           <section>
               <h2>Wrapping Up</h2>
               <p>Great job! You've started learning about the most fundamental building blocks of the Python language. Feel free to take the quiz to test your knowledge.</p>
-              <button onClick={() => window.location.href = '/quiz?name=Intro00.py'}>Start Quiz</button>
+              <button onClick={() => window.location.href = '/quiz?name=00Intro.py'}>Start Quiz</button>
           </section>
         </div>
     );
