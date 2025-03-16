@@ -11,13 +11,13 @@ const Input = () => {
                 <h2>User Input</h2>
                 <p>
                     Up to this point, we've mainly been using values that have been fixed or <em>hard-coded</em>.
-                    For example, a calculator that is pre-programmed to only add the numbers <code className="inline">10 + 5</code> and doesn't allow you to enter your own numbers is not very helpful.
+                    For example, a calculator that is pre-programmed to only add the numbers <code className="inline">10 + 5</code> when you power it on, and that doesn't allow you to enter your own numbers is not very helpful. Wouldn't it be great if we could add code that allows the user to enter their own numbers?
 
-                    Oftentimes, we are not going to be the only user of our code. What if we are building a tool for someone else to use?
-                    By accepting user input with the <code className="inline">input()</code> method, our program could ask for a name and say <code className="inline">"Hello, NAME!"</code>.
+                    {/* Furthermore, you might not always be the only one who uses the code that you write. What if we are building a tool for someone else to use?
+                    By accepting user input with the <code className="inline">input()</code> method, our program could ask for a name and say <code className="inline">"Hello, NAME!"</code>. */}
                 </p>
 
-                <p>Believe it or not, you've already worked with various different types of input methods! Using websites or software regularly involves providing input to your computer or device, often through writing and submitting text.</p>
+                <p>Believe it or not, you've already encountered various different types of user input! Using websites or software regularly involves providing input to your computer or device, often through writing and submitting text.</p>
 
                 <ul>
                     <li>Search Engines: When you type queries into a search engine like Google, you provide search terms and expect relevant search results.</li>
@@ -27,10 +27,18 @@ const Input = () => {
                 <Collapsible title={"Challenge"}>
                     <p>Think of a specific situation where you have entered input into your computer, a website, or an application.</p>
                 </Collapsible>
+
+                <h3>The User</h3>
+                <p>What exactly is a user? A user is simply whoever is <em>using</em> a program. In the above example, the user is the person who is using the calculator. If someone is on a website that you made, they are a user of your website. If someone is running code that you wrote, they are currently your user.</p>
             </section>
 
             <section>
-                <h2>The <code className="inline">input()</code> Method</h2>
+                <h2>The <code className="inline">input()</code> Function</h2>
+                <p>Consider the following code:</p>
+                <CodeBlock language={"python"} codeString={`print("Hello, World!")`} />
+
+                <p>Running this program will invariably display <code className="inline">"Hello, World!"</code> (which at this point, is probably becoming a bit boring). Instead, let's learn to ask the user what their name is, then greet them by displaying <code className="inline">"Hello, NAME!"</code>. </p>
+
                 <CodeBlock language={"python"} codeString={`name = input("What's your name?")
 print(name)`} />
 
@@ -83,6 +91,10 @@ Step 3: Hello, Richard! The program has resumed.
 Step 4: Program has finished.`}/>
 
                 <p>To summarize, when <code className="inline">input()</code> prompts the user, the Python does not continue executing other lines of code until <strong>after</strong> the user enters a response. This makes <code className="inline">input()</code> essential for interactive programs that we will explore later.</p>
+
+                <Collapsible title={"Challenge"}>
+                    <p>Why do you think it's necessary that Python pauses the program until the user provides input? Can you think of a specific error that could occur otherwise?</p>
+                </Collapsible>
             </section>
 
             <section>
@@ -113,6 +125,22 @@ print(total)  `} />
                 <CodeBlock language={"python"} codeString={`num1 = input("Enter a number: ")
 num2 = input("Enter another number: ")
 print(int(num1) + int(num2))`} />
+
+                <Collapsible title={"Challenge"}>
+                    <div>
+                        <p>What is the result of the following code?</p>
+                        <CodeBlock language={"python"} codeString={`num1 = input("Enter a number: ")
+num2 = int(input("Enter another number: "))
+print(num1 + num2)`} />
+                    </div>
+
+                    <div>
+                        <p>Try running the following code in your code editor. Enter numbers for each input.</p>
+                        <CodeBlock language={"python"} codeString={`num1 = int(input("Enter a number: "))
+num2 = float(input("Enter another number: ")
+print(num1 + num2)`} />
+                    </div>
+                </Collapsible>
             </section>
 
             <section>
