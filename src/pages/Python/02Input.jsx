@@ -8,47 +8,93 @@ const Input = () => {
             <h1>The <code className="inline">input()</code> Function</h1>
 
             <section>
-                <h2>Why User Input Matters</h2>
+                <h2>User Input</h2>
                 <p>
-                    Up to this point, we've mainly been using values that have been fixed or “hard-coded”.
-                    For example, a simple calculator that only knows how to add <code className="inline">10 + 5</code> doesn't offer much flexibility.
-                    With user input, you can ask the user exactly which numbers they'd like to calculate. Similarly, a program that always
-                    says <code className="inline">"Hello, world!"</code> is not very useful. By accepting user input with the <code className="inline">input()</code> method, our program could ask for a name and say <code className="inline">"Hello, NAME!"</code>.
+                    Up to this point, we've mainly been using values that have been fixed or <em>hard-coded</em>.
+                    For example, a calculator that is pre-programmed to only add the numbers <code className="inline">10 + 5</code> and doesn't allow you to enter your own numbers is not very helpful.
+
+                    Oftentimes, we are not going to be the only user of our code. What if we are building a tool for someone else to use?
+                    By accepting user input with the <code className="inline">input()</code> method, our program could ask for a name and say <code className="inline">"Hello, NAME!"</code>.
                 </p>
 
-                <h2>What Is <code className="inline">input()</code>?</h2>
                 <p>Believe it or not, you've already worked with various different types of input methods! Using websites or software regularly involves providing input to your computer or device, often through writing and submitting text.</p>
 
-                <li>Search Engines: When you type queries into a search engine like Google, you provide search terms and expect relevant search results.</li>
-                <li>Online Shopping: Entering shipping information and payment details when purchasing products online.</li>
-                <li>Social Media: Writing comments and messaging all require typing into a textbox.</li>
-            </section>
-
-            <section>
-                <h2>How To Use <code className="inline">input()</code></h2>
-                <CodeBlock language={"python"} codeString={`name = input("What's your name? ")
-print(name)`}></CodeBlock>
-                <p>Here's a breakdown of this code:</p>
                 <ul>
-                    <li><code className="inline">name</code>: A variable to store the user's input.</li>
-                    <li><code className="inline">input()</code>: The function that pauses the program and waits for the user to type something.</li>
-                    <li><code className="inline">"What's your name?"</code>: The prompt displayed to the user.</li>
+                    <li>Search Engines: When you type queries into a search engine like Google, you provide search terms and expect relevant search results.</li>
+                    <li>Social Media: Writing comments and messaging all require typing into a textbox or text area.</li>
                 </ul>
 
                 <Collapsible title={"Challenge"}>
-                    <CodeBlock language={"python"} codeString={`# Challenge 1: Prompt the user to type their name and store their input into a variable.
-# Challenge 2: Prompt the user to type a city that they've visited and store their input into a variable.`}>
-                    </CodeBlock>
+                    <p>Think of a specific situation where you have entered input into your computer, a website, or an application.</p>
                 </Collapsible>
             </section>
 
             <section>
+                <h2>The <code className="inline">input()</code> Method</h2>
+                <CodeBlock language={"python"} codeString={`name = input("What's your name?")
+print(name)`} />
+
+                <p>Let's break down this code:</p>
+                <ul>
+                    <li><code className="inline">name</code>: A variable to store the user's input.</li>
+                    <li><code className="inline">input()</code>: The function that pauses the program and waits for the user to type something.</li>
+                    <li><code className="inline">"What's your name?"</code>: The <em>prompt</em> displayed to the user, generally a question or request.</li>
+                </ul>
+
+                <Collapsible title={"Challenge"}>
+                    <ul>
+                        <li>Prompt the user to type their favorite color and store the input into a variable.</li>
+                        <li>Prompt the user to type a city that they've visited and store the input into a variable.</li>
+                    </ul>
+                </Collapsible>
+
+                <h3>Formatting User Input</h3>
+                <p>Note that <code className="inline">input()</code> does <strong>not</strong> automatically add any spaces or other formatting to the user's input. A typical convention is to put a space (<code className="inline">' '</code>) at the end of the prompt to separate the prompt from the user's input when the user enters text.</p>
+                <CodeBlock language={"python"} codeString={`age = input("What's your age? ")
+print(age)
+
+food = input("Enter a food you like: ")
+print(food)`} />
+
+                <h3>Empty Prompt</h3>
+                <p>Technically, the prompt is optional. In this case, the user will be prompted to enter text, but no prompt will be displayed. This is not recommended, however, as it can be confusing to users.</p>
+                <CodeBlock language={"python"} codeString={`name = input()
+print(name)`} />
+            </section>
+
+            <section>
+                <h2>How <code className="inline">input()</code> Works</h2>
+                <p>The <code className="inline">input()</code> function does more than just collect user input - it also <strong>pauses</strong> the program until the user provides an entry and presses the <code className="inline">Enter</code> or <code className="inline">Return</code> key. This means that no code after the <code className="inline">input()</code> statement will run until the user responds.</p>
+
+                <CodeBlock language={"python"} codeString={`print("Step 1: Program has started.")
+
+ # Code execution pauses here until user input is provided
+name = input("Step 2: Program has paused. Enter your name, then press 'Return/Enter' to continue: ")
+
+print("Step 3: Program has resumed. Hello, " + name + "!")
+
+print("Step 4: Program has finished.")`} />
+
+                <p>When this code runs, the output will look like this:</p>
+
+                <CodeBlock language={"txt"} codeString={`Step 1: Program has started.
+Step 2: Program has paused. Enter your name, then press 'Return/Enter' to continue: Richard
+Step 3: Hello, Richard! The program has resumed.
+Step 4: Program has finished.`}/>
+
+                <p>To summarize, when <code className="inline">input()</code> prompts the user, the Python does not continue executing other lines of code until <strong>after</strong> the user enters a response. This makes <code className="inline">input()</code> essential for interactive programs that we will explore later.</p>
+            </section>
+
+            <section>
                 <h2><code className="inline">input()</code> Always Gives You Strings</h2>
-                <p>Even if the user types a number, <code className="inline">input()</code> will always return a string.</p>
+                <p>Even if the user types a number, using <code className="inline">input()</code> will <strong>always</strong> result in a string.</p>
                 <CodeBlock language={"python"} codeString={`num1 = input("Enter a number: ")
 num2 = input("Enter another number: ")
-print(num1 + num2)  # Can you guess what will happen here?`}></CodeBlock>
+print(num1 + num2)  # Can you guess what will happen here?`} />
 
+                <p>In the above example, <code className="inline">num1</code> and <code className="inline">num2</code> are both strings, meaning that the <code className="inline">+</code> operator results in string concatenation instead of mathematical addition. Therefore, if the user enters <code className="inline">"5"</code> and <code className="inline">"10"</code>, for example, the result will actually be <code className="inline">"510"</code>!</p>
+
+                <h3>Performing Calculations</h3>
                 <p>Type conversion/casting may be needed if you intend to perform calculations.</p>
                 <CodeBlock language={"python"} codeString={`num1 = input("Enter a number: ")
 num2 = input("Enter another number: ")
@@ -60,17 +106,19 @@ int_num2 = int(num2)
 # Then, add the two integers together to yield a mathematical sum
 total = int_num1 + int_num2
 
-print(total)  # The sum of the two numbers that were entered`}>
-</CodeBlock>
+# Assuming the user enters "5" and "10", this would correctly be the integer 15
+print(total)  `} />
+
+                <p>If you don't need to store the integer versions of the strings, this would be a simpler version of the code:</p>
+                <CodeBlock language={"python"} codeString={`num1 = input("Enter a number: ")
+num2 = input("Enter another number: ")
+print(int(num1) + int(num2))`} />
             </section>
 
-            {/* <p>TODO: Input validation?</p> */}
-
             <section>
-                <h2>Projects</h2>
-                <p>We've learned about the following topic areas so far: <code className="inline">input()</code>, variables, arithmetic, casting data types, and string operations. Let's use our knowledge to work on some of the following projects.</p>
-                <li><strong>"Mad Libs" Game</strong>: Create a simple "Mad Libs" style game where the user is asked for different inputs (noun, adjective, verb, etc.) and a silly story is generated.</li>
-                <li><strong>Checkout Form</strong>: Create a simple program that allows a user to enter their cart and contact info if they were about to make a purchase on an e-commerce platform.</li>
+                <h2>Wrapping Up</h2>
+                <p>In future chapters, you'll learn other ways that <code className="inline">input()</code> can be useful. In the meantime, we'll practice applying <code className="inline">input()</code> to past projects and in a new project.</p>
+                <button onClick={() => window.location.href = '/quiz?name=02Input.py'}>Start Quiz</button>
             </section>
         </div>
     );

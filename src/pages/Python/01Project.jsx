@@ -15,7 +15,7 @@ const Project01 = () => {
 
       <section>
         <h2>Step 1: Creating Variables</h2>
-        <p>Start by defining variables to store your key details.</p>
+        <p>Start by defining variables to store key details.</p>
 
         <ul>
           <li>
@@ -57,7 +57,7 @@ company_name = "TechCorp"`}
         <Collapsible title="Hint">
           <CodeBlock
             language="python"
-            codeString={`email = first_name.lower() + "." + last_name.lower() + "@company.com"`}
+            codeString={`email = first_name.lower() + "." + last_name.lower() + "@" + company_name.lower()`}
           />
         </Collapsible>
       </section>
@@ -66,15 +66,11 @@ company_name = "TechCorp"`}
         <h2>Step 3: Generating an ID</h2>
         <p>ID badges often include a short, unique identifier. Let's generate one using slicing.</p>
 
+        <p>Create a variable <code className="inline">short_id</code> that consists of:</p>
         <ul>
-          <li>
-            Create a variable <code className="inline">short_id</code> that consists of:
-            <ul>
-              <li>The first two letters of your <code className="inline">first_name</code></li>
-              <li>The first two letters of your <code className="inline">last_name</code></li>
-              <li>The last two letters of your <code className="inline">company_name</code></li>
-            </ul>
-          </li>
+          <li>The first two letters of <code className="inline">first_name</code></li>
+          <li>The first two letters of <code className="inline">last_name</code></li>
+          <li>The last two letters of <code className="inline">company_name</code></li>
         </ul>
 
         <Collapsible title="Hint">
@@ -87,9 +83,7 @@ company_name = "TechCorp"`}
 
       <section>
         <h2>Step 4: Formatting the ID Badge</h2>
-        <p>
-          Now, let's format everything neatly into an ID badge using Python's <code className="inline">.format()</code> method. Your final output should look something like this:
-        </p>
+        <p>Now, let's format everything neatly into an ID badge using Python's <code className="inline">.format()</code> method and the multiline string syntax (<code className="inline">""" """</code>). Here's an example:</p>
 
 				<CodeBlock
 					language="txt"
@@ -100,6 +94,8 @@ company_name = "TechCorp"`}
 * Email: alice.brown@techcorp.com *
 * ID: albrrp *
 ***********************`}/>
+
+        <p>Store your multiline string to a variable called <code className="inline">id_badge</code>. Finally, print out <code className="inline">id_badge</code>.</p>
 
         <Collapsible title="Hint">
           <CodeBlock

@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 
 // Import Lessons
-import { Intro, Project00, Strings, Project01, Variables, Input, PigLatin, IfElse, Booleans, Functions, WhileLoops, ForLoops, CaesarCipher, Lists, Dictionaries, PassByReference } from './pages/Python';
+import { Intro, Project00, Strings, Project01, Variables, Input, Project02, PigLatin, IfElse, Booleans, Functions, WhileLoops, ForLoops, CaesarCipher, Lists, Dictionaries, PassByReference } from './pages/Python';
 import { JavaObjects, JavaInheritance, JavaPolymorphism } from './pages/Java';
 import Quiz from './pages/Quiz';
 
@@ -21,6 +21,7 @@ function App() {
             <li><Link to="/project01">Project 01</Link></li>
             <li><Link to="/variables">Variables</Link></li>
             <li><Link to="/input">Input</Link></li>
+            <li><Link to="/project02">Project 02</Link></li>
             <li><Link to="/ifelse">Conditionals</Link></li>
             <li><Link to="/pigLatin">Pig Latin</Link></li>
             <li><Link to="/booleans">Booleans</Link></li>
@@ -50,6 +51,7 @@ function App() {
           <Route path="/quiz" element={<Quiz />} />
           <Route path="/strings" element={<Strings />} />
           <Route path="/project01" element={<Project01 />} />
+          <Route path="/project02" element={<Project02 />} />
           <Route path="/input" element={<Input />} />
           <Route path="/variables" element={<Variables />} />
           <Route path="/conditionals" element={<IfElse />} />
