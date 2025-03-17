@@ -3,11 +3,19 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 
 // Import Lessons
-import { Intro, Project00, Strings, Project01, Variables, Input, Project02, PigLatin, Conditionals, Booleans, Functions, WhileLoops, ForLoops, CaesarCipher, Lists, Dictionaries, PassByReference } from './pages/Python';
+import { Intro, Project00, Strings, Project01, Variables, Input, Project02B, Project02A, PigLatin, Conditionals, Project03, Booleans, Functions, WhileLoops, ForLoops, CaesarCipher, Lists, Dictionaries, PassByReference } from './pages/Python';
 import { JavaObjects, JavaInheritance, JavaPolymorphism } from './pages/Java';
 import Quiz from './pages/Quiz';
 
 function App() {
+  const projects = [
+    { name: 'Project 00', path: '/project00', component: Project00 },
+    { name: 'Project 01', path: '/project01', component: Project01 },
+    { name: 'Project 02A', path: '/Project02A', component: Project02A },
+    { name: 'Project 02B', path: '/Project02B', component: Project02B },
+    { name: 'Project 03', path: '/Project03', component: Project03 },
+  ];
+
   return (
     <Router>
       <div className="App">
@@ -21,7 +29,9 @@ function App() {
             <li><Link to="/project01">Project 01</Link></li>
             <li><Link to="/variables">Variables</Link></li>
             <li><Link to="/input">Input</Link></li>
-            <li><Link to="/project02">Project 02</Link></li>
+            <li><Link to="/Project02B">Project 02B</Link></li>
+            <li><Link to="/Project02A">Project 02A</Link></li>
+            <li><Link to="/Project03">Project 03</Link></li>
             <li><Link to="/conditionals">Conditionals</Link></li>
             <li><Link to="/pigLatin">Pig Latin</Link></li>
             <li><Link to="/booleans">Booleans</Link></li>
@@ -45,12 +55,13 @@ function App() {
         </nav>
 
         <Routes>
+          {projects.map((project) => (
+            <Route key={project.name} path={project.path} element={<project.component />} />
+          ))}
+
           <Route path="/intro" element={<Intro />} />
-          <Route path="/project00" element={<Project00 />} />
           <Route path="/quiz" element={<Quiz />} />
           <Route path="/strings" element={<Strings />} />
-          <Route path="/project01" element={<Project01 />} />
-          <Route path="/project02" element={<Project02 />} />
           <Route path="/input" element={<Input />} />
           <Route path="/variables" element={<Variables />} />
           <Route path="/conditionals" element={<Conditionals />} />

@@ -33,6 +33,16 @@ false  # NOT interpreted as a boolean`} />
                 <p>Moreover, strings are case-sensitive in most programming languages, including Python. Thus, "Yes", "YES", and "yes" would be treated as distinct responses, complicating the logic for interpreting user inputs. This sensitivity adds unnecessary complexity to condition checks and can easily lead to bugs.</p>
 
                 <p>The Boolean data type eliminates these issues by providing a universal, language-independent way of representing truth values. This not only makes the code more reliable and straightforward but also enhances its readability and maintainability. When conditions are evaluated using Boolean values, there's no ambiguity about the outcome—either a condition is <code className="inline">True</code>, or it is <code className="inline">False</code>, with no room for misinterpretation or error.</p>
+
+                <p>Now that we understand the term "Boolean", we can now use it to better describe the logic of <code className="inline">if-else</code> conditions.</p>
+
+                <CodeBlock language={"python"} codeString={`age = 10
+if age >= 10:
+    print("You are old enough to ride this rollercoaster.")
+else:
+    print("You are not old enough to ride this rollercoaster.")`} />
+
+    <p>Here, we can describe the <code className="inline">if</code> condition <code className="inline">age &gt;= 10</code> as <code className="inline">True</code>.</p>
             </section>
 
 
@@ -291,6 +301,15 @@ if (age < 18) or (not isCitizen):
 if age < 18 or not isCitizen:
     print("Not eligible to vote")
 `} />
+            </section>
+
+            <section>
+                <h2>Ternary Operators</h2>
+                <p>Ternary operators are a compact, abbreviated way to write simple <code class="inline">if-else</code> statements. They are often used in place of short <code class="inline">if-else</code> statements. Here's an example of a ternary operator:</p>
+                <CodeBlock language={"python"} codeString={`celsius = 100
+                weather = "hot" if celsius >= 100 else "warm"`} />
+
+                <p>The term <code class="inline">ternary</code> comes from the Latin word <em>"terna"</em> which means "three".  The three terms are the condition itself, the expression if the condition is <code class="inline">True</code> and the expression if the condition is <code class="inline">False</code>. The condition is evaluated first. If the result of the expression is evaluated as <code class="inline">True</code>, then is stored into the variable <code class="inline">is_boiling</code>. Storing the result of short boolean expressions into variables is a common use case for ternary operators.</p>
             </section>
 
         </div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import CodeBlock from '../../components/CodeBlock';
 
-const PigLatin = () => {
+const MilestoneProject04 = () => {
     return (
         <div className="lesson-container">
             <h1>Translate English to Pig Latin</h1>
@@ -60,4 +60,4 @@ def is_vowel(letter):
     );
 }
 
-export default PigLatin;
+export default MilestoneProject04;

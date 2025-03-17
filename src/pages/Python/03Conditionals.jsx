@@ -258,6 +258,7 @@ else:
             <section>
                 <h2>Wrapping Up</h2>
                 <p>Great job learning the basics of conditional statements! We'll continue to learn more about applications of conditional statements in future lessons. We'll also take a deeper look at the condition part of <code class="inline">if</code> statements and how the value of the condition is evaluated.</p>
+                <button onClick={() => window.location.href = "/quiz?name=03Conditionals.py"}>Start Quiz</button>
             </section>
         </div>
     );

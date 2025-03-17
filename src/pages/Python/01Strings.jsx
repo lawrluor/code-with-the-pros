@@ -62,7 +62,13 @@ print(bio)`}/>
 
             <section>
                 <h2>Accessing Parts of a String</h2>
-                <p>Each character in a string can be accessed using an <strong>index</strong>, a number that specifies the position of a character in a string. The index starts from <code className="inline">0</code>, representing the first character's position.</p>
+                <p>Each character in a string can be accessed using an <strong>index</strong>, a number that specifies the position of a character in a string. The index starts from <code className="inline">0</code>, representing the first character's position. Here's a diagram to help visualize this: </p>
+                <CodeBlock language={"python"} codeString={`phrase = 'Hello World'
+# H e l l o   W o r l d
+# 0 1 2 3 4 5 6 7 8 9 10`}/>
+
+                <p>The following example illustrates how to access the first and last characters of this same string.</p>
+
                 <CodeBlock language={"python"} codeString={`phrase = 'Hello World'
 first_char = phrase[0]
 print(first_char)  # Outputs: H
@@ -86,6 +92,7 @@ print(s[1.5])  # TypeError: string indices must be integers`}/>
                     <p>Can you think of a reason that it might be useful to select a single character from a string?</p>
                 </Collapsible>
 
+                <h3>Negative Indexing</h3>
                 <p>Python also supports negative indexing, which is less common in other programming languages. Negative indexes start from the end of the string as <code className="inline">-1</code> and increment backwards.</p>
                 <CodeBlock language={"python"} codeString={`s = 'Hello World'
 last_char = s[-1]
@@ -98,14 +105,14 @@ print(s[-3])      # Outputs: r`} />
                     <p>Assign a 6-character long string into a variable called <code className="inline">word</code>. Then, print the first character, the 3rd to last character, and the last character, each on a separate line.</p>
                 </Collapsible>
 
-                <h3>Slicing Strings</h3>
+                <h2>String Slicing</h2>
                 <p>What if we want to get more than just a single character from a string? String <strong>slicing</strong> is a way to conveniently get multiple characters from a string. Slicing can be used to obtain a <strong>substring</strong>, or a smaller part or subset of the string. Slicing characters from a string is analagous to slicing pieces of bread from a loaf of bread!</p>
                 <CodeBlock language={"python"} codeString={`s = 'Hello World'
 sub = s[1:5]  # The format is: s[start:stop]
 print(sub)    # Outputs: ello`} />
                 <p>Note that the character at the stop index is <strong>not</strong> included, which is a common convention in Python and other programming languages.</p>
 
-                <h4>String Slicing Properties</h4>
+                <h3>String Slicing Properties</h3>
                 <p>String slicing does <strong>not</strong> modify the original string.</p>
                 <CodeBlock language={"python"} codeString={`animal = 'Jellyfish'
 print(animal[1:5])  # elly
@@ -117,7 +124,7 @@ animal = animal[5:9]
 print(animal)  # fish`} />
 
 
-                <h4>Including the "Step" Value</h4>
+                <h3>Including the "Step" Value</h3>
                 <p>There can also be an optional <strong>step</strong> value, which specifies how many characters to skip or "step" between characters in the slice. The syntax for this is <code className="inline">s[start:stop:step]</code>. </p>
                 <CodeBlock language={"python"} codeString={`s = 'Hello World'
 sub_step = s[0:8:2]
@@ -320,7 +327,19 @@ print('Pi is {:.2f}'.format(pi))  # Rounded Output: "Pi is 3.14"`} />
                     <p>In your code editor, create a variable that stores the result of dividing a <code className="inline">100</code> by <code className="inline">11</code>. Then, use the <code className="inline">.format()</code> to print and display the result of this division to three decimal places.</p>
                 </Collapsible>
 
-                <h3>(Optional) Another Alternative to <code className="inline">.format()</code></h3>
+                <h3>The <code className="inline">len()</code> Function</h3>
+                <p>The <code className="inline">len()</code> function returns the number of characters in a string.</p>
+                <CodeBlock language={"python"} codeString={`dinosaur = 'Tyrannosaurus Rex'
+print(len(dinosaur))  # Outputs: 18`} />
+
+                <p>You might wonder why it's useful to use the <code className="inline">len()</code> function. For one, it beats having to count all the characters of a string by hand, especially considering that the string could be a sentence, paragraph, or even a whole book! We will continue learning about other applications of the <code className="inline">len()</code> function later in the course. </p>
+
+                <p>Note that the syntax for <code className="inline">len()</code> is not like the other string methods. This is because it is considered a <em>global</em> function, much like <code className="inline">print()</code> or <code className="inline">type()</code>, meaning the function can be applied to data types beyond just strings. We will revisit this concept later in the course.</p>
+            </section>
+
+            <section>
+                <h2>(Optional) Advanced String Methods and Manipulation</h2>
+                <h3>Another Alternative to <code className="inline">.format()</code></h3>
                 <p><strong>f-strings</strong> are an abbreviated way to format strings, derived from the <code className="inline">.format()</code> method. Here, the letter <code className="inline">f</code> is written before the opening quotation mark, which tells Python that this is a special string that can be formatted with variables.</p>
                 <CodeBlock language={"python"} codeString={`name = 'Andy'
 age = 30
@@ -330,13 +349,10 @@ print(f'{name} is {age} years old')  # Outputs: Andy is 30 years old`} />
                 <CodeBlock language={"python"} codeString={`pi = 3.14159
 print(f'Pi is {pi:.2f}')  # Output: "Pi is 3.14"`} />
 
-                <h3>(Optional) Old methods of string formatting</h3>
+                <h3>Old methods of string formatting</h3>
                 <p>In older versions of Python, string formatting was typically done with the <code className="inline">%</code> character. We can still use this syntax, though it is no longer recommended.</p>
                 <CodeBlock language={"python"} codeString={`print('%s is %d years old' % (name, age))  # Outputs: Alice is 30 years old`} />
-            </section>
 
-            <section>
-                <h2>(Optional) Advanced String Methods and Manipulation</h2>
                 <p>Strings in Python come with a set of built-in methods that allow you to perform necessary manipulations. These methods include searching for substrings, replacing content, splitting strings, and joining them.</p>
                 <CodeBlock language={"python"} codeString={`# Find a substring
 print('World' in greeting)  # Outputs: True

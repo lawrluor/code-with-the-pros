@@ -1,13 +1,13 @@
 import CodeBlock from "../../components/CodeBlock";
 import Collapsible from "../../components/Collapsible";
 
-const Project02 = () => {
+const Project02A = () => {
 	return (
 		<div className="lesson-container">
 			<section>
-					<h2>Project: Mad Libs Generator</h2>
+					<h1>Project: Mad Libs Generator</h1>
 					<p>Now that you've learned about <code className="inline">input()</code>, let's put it to use with a fun project! In this <a href="https://en.wikipedia.org/wiki/Mad_Libs" target="_blank" rel="noreferrer">Mad Libs</a> game, the user will provide a series of words, and those words will be inserted into a story of your creation.</p>
-					<h3>Tasks</h3>
+					<h2>Tasks</h2>
 					<ol>
 							<li>Create at least five variables on separate lines.</li>
 							<li>On each line, prompt the user to enter a specific type of word on each line such as a noun, verb, adjective, and so on.</li>
@@ -72,4 +72,4 @@ print(story)`} />
 	)
 }
 
-export default Project02;
+export default Project02A;
