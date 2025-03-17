@@ -29,7 +29,7 @@ const Input = () => {
                 </Collapsible>
 
                 <h3>The User</h3>
-                <p>What exactly is a user? A user is simply whoever is <em>using</em> a program. In the above example, the user is the person who is using the calculator. If someone is on a website that you made, they are a user of your website. If someone is running code that you wrote, they are currently your user.</p>
+                <p>What exactly is a user? A <strong>user</strong> is simply whoever is <em>using</em> a program. In the above example, the user is the person who is using the calculator. If someone is on a website that you made, they are a user of your website. If someone is running code that you wrote, they are currently your user.</p>
             </section>
 
             <section>

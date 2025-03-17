@@ -45,7 +45,7 @@ company_name = "TechCorp"`}
 
       <section>
         <h2>Step 2: Creating an Email Address</h2>
-        <p>Most companies provide employees with a professional email address. Rather than have each employee create their email, let's automaticallygenerate them using string concatenation.</p>
+        <p>Most companies provide employees with a professional email address. Rather than have each employee create their email, let's automatically generate them using string concatenation.</p>
 
         <ul>
           <li>
@@ -64,7 +64,7 @@ company_name = "TechCorp"`}
 
       <section>
         <h2>Step 3: Generating an ID</h2>
-        <p>ID badges often include a short, unique identifier. Let's generate one using slicing.</p>
+        <p>ID badges often include a short, unique identifier. Let's generate one using slicing or indexing.</p>
 
         <p>Create a variable <code className="inline">short_id</code> that consists of:</p>
         <ul>

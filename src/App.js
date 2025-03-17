@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 
 // Import Lessons
-import { Intro, Project00, Strings, Project01, Variables, Input, Project02, PigLatin, IfElse, Booleans, Functions, WhileLoops, ForLoops, CaesarCipher, Lists, Dictionaries, PassByReference } from './pages/Python';
+import { Intro, Project00, Strings, Project01, Variables, Input, Project02, PigLatin, Conditionals, Booleans, Functions, WhileLoops, ForLoops, CaesarCipher, Lists, Dictionaries, PassByReference } from './pages/Python';
 import { JavaObjects, JavaInheritance, JavaPolymorphism } from './pages/Java';
 import Quiz from './pages/Quiz';
 
@@ -22,7 +22,7 @@ function App() {
             <li><Link to="/variables">Variables</Link></li>
             <li><Link to="/input">Input</Link></li>
             <li><Link to="/project02">Project 02</Link></li>
-            <li><Link to="/ifelse">Conditionals</Link></li>
+            <li><Link to="/conditionals">Conditionals</Link></li>
             <li><Link to="/pigLatin">Pig Latin</Link></li>
             <li><Link to="/booleans">Booleans</Link></li>
             <li><Link to="/functions">Functions</Link></li>
@@ -44,7 +44,6 @@ function App() {
           </ul>
         </nav>
 
-        {/* New Route Configuration for React Router v6 */}
         <Routes>
           <Route path="/intro" element={<Intro />} />
           <Route path="/project00" element={<Project00 />} />
@@ -54,7 +53,7 @@ function App() {
           <Route path="/project02" element={<Project02 />} />
           <Route path="/input" element={<Input />} />
           <Route path="/variables" element={<Variables />} />
-          <Route path="/conditionals" element={<IfElse />} />
+          <Route path="/conditionals" element={<Conditionals />} />
           <Route path="/pigLatin" element={<PigLatin />} />
           <Route path="/booleans" element={<Booleans />} />
           <Route path="/functions" element={<Functions />} />

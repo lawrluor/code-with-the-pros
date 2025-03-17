@@ -1,28 +1,51 @@
 import React from 'react';
 import CodeBlock from '../../components/CodeBlock';
+import Collapsible from '../../components/Collapsible';
 
-const IfElse = () => {
+const Conditionals = () => {
     return (
         <div className="lesson-container">
-            <h1>Conditional (If-Else) Statements</h1>
+            <h1>Conditional Statements</h1>
 
             <section>
-                <h2>Making Decisions</h2>
-                <p>Up to this point, your Python code has followed one path from start to finish. But what if you want your program to make decisions based on user input or specific conditions? That's where <code class="inline">if-else</code> statements come in.</p>
-                <p>Consider writing a program that acts as a virtual assistant for planning your day. Without <code class="inline">if-else</code> statements, it might always suggest reading a book, regardless of the weather outside. By using <code class="inline">if-else</code> logic, the program can make a more suitable suggestion: if it's raining, it suggests staying in to read a book; else, if it's sunny, it suggests going for a walk. This way, <code class="inline">if-else</code> statements empower your program to offer choices that adapt to changing conditions.</p>
+                <h2>Making Decisions in Code</h2>
+                <p>Up to this point, your Python code has followed one path from start to finish. But what if you want your program to make decisions based on user input or specific values in the code? That's where <strong>conditional</strong>, or <code class="inline">if-else</code> statements, come to the rescue.</p>
+                <p>Consider a program that acts as a virtual assistant for planning your day. Without <code class="inline">if-else</code> statements, it might always suggest exercising outside, regardless of the weather forecast. By using <code class="inline">if-else</code> logic, the program can make a more suitable suggestion: <strong>if</strong> it's raining, it suggests staying in to read a book; <strong>else</strong>, it suggests going outside for a walk. This way, the program can adapt to changing conditions.</p>
+
+                <Collapsible title={"Challenge"}>
+                    <p>Describe a situation where you have made a decision in your daily life using <code class="inline">if-else</code> logic.</p>
+                </Collapsible>
             </section>
 
             <section>
                 <h2>The <code class="inline">if</code> Statement</h2>
-                <p>The <code class="inline">if</code> statement in Python is essential for decision-making in code. Unlike some other computer languages that use brackets to define blocks of code, Python uses indentation.</p>
-                <CodeBlock language={"python"} codeString={`age = 19
-if age >= 18:
-    print("You are eligible to vote")`}></CodeBlock>
+                <p>The <code class="inline">if</code> statement in Python is essential for decision-making in code. Unlike some other computer languages that use brackets to define blocks of code, Python uses <strong>indentation</strong>.</p>
+                <CodeBlock language={"python"} codeString={`number = -10.5
+if number < 0:
+    print("This number is negative.")`} />
+               <p>An <code class="inline">if</code> statement begins with the <code class="inline">if</code> keyword, followed by a condition or comparison, followed by a colon <code class="inline">:</code>. The condition is evaluated and if it is met, the indented lines of code underneath will execute.</p>
+
+                <Collapsible title={"Challenge"}>
+                    <p>What is wrong with the syntax of the following <code class="inline">if</code> statement?</p>
+                    <CodeBlock language={"python"} codeString={`number = 10
+if number > 0
+    print("This number is positive.")`} />
+                </Collapsible>
+            </section>
+
+            <section>
+                <h2>Comparison Operators</h2>
+                <p>Python has several <strong>comparison operators</strong> that allow you to compare values and make decisions.</p>
                 <ul>
-                    <li><strong>Syntax of the if Statement:</strong> The syntax begins with the <code class="inline">if</code> keyword, followed by a condition, and a colon. The condition is evaluated, and if it results in <code class="inline">True</code>, the indented block of code underneath will execute.</li>
-                    <li><strong>Condition:</strong> The condition after the <code class="inline">if</code> statement can be any expression that evaluates to <code class="inline">True</code> or <code class="inline">False</code>. This flexibility allows for complex expressions and comparisons directly in the <code class="inline">if</code> statement.</li>
-                    <li><strong>Indentation Matters!</strong> Python relies on indentation to define the scope of conditional blocks. While some computer languages use curly braces to define the scope, Python's use of indentation makes the code visually cleaner and emphasizes the importance of code formatting.</li>
+                    <li><code class="inline">==</code> (equal to)</li>
+                    <li><code class="inline">!=</code> (not equal to)</li>
+                    <li><code class="inline">&gt;</code> (greater than)</li>
+                    <li><code class="inline">&lt;</code> (less than)</li>
+                    <li><code class="inline">&gt;=</code> (greater than or equal to)</li>
+                    <li><code class="inline">&lt;=</code> (less than or equal to)</li>
                 </ul>
+
+                <p>In this lesson, we will mainly use these comparison operators with integers and floats in our <code class="inline">if</code> statements. However, conditional statements can be used with any data types, as we'll learn and practice in the next lesson.</p>
             </section>
 
             <section>
@@ -30,16 +53,45 @@ if age >= 18:
                 <p>Use the <code class="inline">else</code> clause to specify what happens when the <code class="inline">if</code> condition was not met.</p>
                 <CodeBlock language={"python"} codeString={`age = 19
 if age >= 18:
-    print("You are eligible to vote")
+    print("You are eligible to vote in the United States!")
 else:
-    print("You are not eligible to vote")`}></CodeBlock>
-            <p>You can interpret the statement in English as: "If the age is greater than or equal to 18, print the message "You are eligible to vote". Otherwise, print the message "You are not eligible to vote".</p>
+    print("You are not eligible to vote in the United States.")`}></CodeBlock>
+            <p>You can interpret the statement in English as: "If the age is greater than or equal to 18, print the message <code className="inline">"You are eligible to vote"</code>. Otherwise, print the message <code className="inline">"You are not eligible to vote"</code>.</p>
             <p>Note that the <code className="inline">else</code> clause does <strong>not</strong> have a condition, because it is simply the default path the program takes when the preceding <code className="inline">if</code> condition is not met. It acts as a "catch-all" scenario, ensuring that the program can proceed with an alternative action.</p>
+
+            <h3>Code Blocks</h3>
+            <p>A <strong>code block</strong> or <strong>block</strong> of code is a group of lines of code that are grouped together through indentation - they are indented with the same level of indentation. If the condition is met, the <strong>entire</strong> code block is executed (line by line from top to bottom, just as in normal Python code).</p>
+            <CodeBlock language={"python"} codeString={`if age >= 18:
+    print("You are eligible to vote in the United States!")
+    answer = input("Would you like to register for voting materials?")
+else:
+    print("You are not eligible to vote in the United States!")
+    print("See you in a few years!")`} />
+
+            <p>In the above example, there are two code blocks, each with two lines. The first block is executed if the condition is met, and the second block is executed if the condition is not met.</p>
+            </section>
+
+            <section>
+                <h2>Code Execution</h2>
+                <p>Code execution continues as normal after an <code class="inline">if</code> or <code class="inline">else</code> block. Let's examine the following example:</p>
+                <CodeBlock language={"python"} codeString={`battery = 100
+if battery == 0:
+    print("The battery is empty")
+else:
+    print("The battery is not empty")
+
+print("Battery level: ", battery)  # This line will always print`} />
+
+            <p>In this example, the <code class="inline">if</code> statement is evaluated, and the code block below it is skipped as the condition is not met. The <code class="inline">else</code> block is then executed, because the <code class="inline">if</code> condition was <strong>not</strong> met. Finally, code execution continues, printing the message <code class="inline">"Battery level: 100"</code>. To be clear, the line <code class="inline">print("Battery level: ", battery)</code> will always print  regardless of the result of the preceding <code class="inline">if-else</code> statement.</p>
+
+            <Collapsible title="Challenge">
+                <p>Describe the execution of the above example if the value of <code class="inline">battery</code> is set to <code class="inline">0</code>.</p>
+            </Collapsible>
             </section>
 
             <section>
                 <h2>Multiple Choices with <code class="inline">elif</code></h2>
-                <p>What if you need more than two options? <code class="inline">elif</code> (short for "else if") lets you chain multiple checks.</p>
+                <p>What if you need more than two options? <code class="inline">elif</code> (short for <em>"else if"</em>) lets you chain multiple conditions.</p>
                 <CodeBlock language={"python"} codeString={`grade = 85
 if grade >= 90:
     print("Excellent! You got an A")
@@ -63,7 +115,7 @@ else:
             </section>
 
             <section>
-                <h2>Order Matters in Elif Statements</h2>
+                <h3>Order Matters in Elif Statements</h3>
                 <p>When chaining conditions using <code className="inline">elif</code>, the order in which you place these statements is crucial. An improperly ordered <code className="inline">elif</code> sequence can lead to scenarios where some conditions may never be evaluated. For example, if a more general condition is placed before a more specific one, the specific condition may never be reached.</p>
                 <CodeBlock language={"python"} codeString={`grade = 95
 if grade > 60:
@@ -108,14 +160,14 @@ else:
                 <p>When we use <code className="inline">if</code> and <code className="inline">elif</code> statements in Python, there's an underlying concept known as the implicit <code className="inline">else</code>. This refers to the default action or outcome that occurs when none of the specified conditions in the <code className="inline">if</code> and <code className="inline">elif</code> statements are met. Even if an explicit <code className="inline">else</code> clause is not written out, the logic of <code className="inline">if</code>-<code className="inline">elif</code> constructs implies an <code className="inline">else</code> scenario.</p>
 
                 <p>Consider the following code. The absence of an explicit <code className="inline">else</code> doesn't halt the program; it simply means that if all conditions are false, the program continues line by line without executing any block of code associated with those conditions:</p>
-                <CodeBlock language={"python"} codeString={`have_homework = False
-if have_homework:
-    print("Guess I'll be studying this weekend.")
+                <CodeBlock language={"python"} codeString={`liters_of_fuel = 10
+if liters_of_fuel != 0:
+    print("I can continue driving!")
 
-# Implicit else scenario: If I don't have homework, I can enjoy the weekend!
-print("This line of code will execute no matter the result of the if statement")`} />
+# Implicit else scenario: This line of code executes regardless of the result of the previous if statement
+print("I must refuel before I can continue driving.")`} />
 
-                <p>In this example, there's no need for an extra line of code to say "if not have_homework, then enjoy the weekend" because the absence of homework (and thus the action of enjoying the weekend) is the automatic fallback if the <code className="inline">if</code> condition (having homework) turns out to be false.</p>
+                <p>In this example, there's no need for an extra <code className="inline">if</code> statement because the absence of fuel (and thus the need to refuel) is the automatic fallback if the <code className="inline">if</code> condition (not needing to refuel) turns out to be incorrect.</p>
 
                 <h3>Why use the <code className="inline">else</code> statement at all?</h3>
                 <p>Given that Python implicitly handles scenarios not covered by <code className="inline">if</code> through an implicit <code className="inline">else</code>, you might wonder why we need the <code className="inline">else</code> statement at all. The <code className="inline">else</code> statement is crucial for clarity and explicitness in our code. While the implicit <code className="inline">else</code> assumes a default action (or inaction) for unmet <code className="inline">if</code> conditions, explicitly using an <code className="inline">else</code> clarifies your intent to anyone reading your code—including your future self.</p>
@@ -154,22 +206,23 @@ print("Missed! Score decreased.")`} />
             </section>
 
             <section>
-                <h2>Understanding Indentation in Python</h2>
+                <h2>More About Indentation</h2>
                 <p>Indentation is not just a part of Python's syntax; it's a core feature. Every block of code within a control structure, like an <code class="inline">if</code> statement, must be consistently indented to indicate the block's boundaries. Incorrect indentation can lead to <code class="inline">IndentationError</code>, which is a common mistake for beginners.</p>
                 <p>Here's an example of an indentation error:</p>
                 <CodeBlock language={"python"} codeString={`age = 19
 if age >= 18:
 print("You are eligible to vote")  # This will cause an IndentationError`}></CodeBlock>
-                <p>The above code will raise an <code class="inline">IndentationError</code> because the <code class="inline">print</code> statement is not indented, and Python cannot determine if it's part of the <code class="inline">if</code> condition's block.</p>
+                <p>The above code will raise an <code class="inline">IndentationError</code> because the <code class="inline">print</code> statement is not indented, and Python cannot determine whether the statement is part of the <code class="inline">if</code> block or not.</p>
                 <h3>Fixing Indentation Errors</h3>
                 <p>To correct an indentation error, ensure that all code intended to be executed within a block (like an <code class="inline">if</code> statement) is indented to the same level:</p>
                 <CodeBlock language={"python"} codeString={`age = 19
 if age >= 18:
     print("You are eligible to vote")  # Correct indentation`}></CodeBlock>
+
+                <h4>Avoiding Indentation Errors</h4>
                 <ul>
-                    <li><strong>Indentation Level:</strong> The standard indentation level is four spaces per level of indentation, though tabs can also be used. Consistency is key, as mixing spaces and tabs can lead to errors in Python.</li>
-                    <li><strong>Consistent Indentation:</strong> Always use the same number of spaces (or tabs) for each level of indentation in your block. The Python style guide (PEP 8) recommends using four spaces per indentation level.</li>
-                    <li><strong>Readability:</strong> Beyond preventing errors, consistent indentation improves the readability of your code, making it easier to understand the program's flow and logic at a glance.</li>
+                    <li><strong>Indentation Level:</strong> The standard indentation level is four spaces per level of indentation. You <em>can</em> also use tabs, but we won't get into that discussion now.</li>
+                    <li><strong>Consistent Indentation:</strong> Always use the same number of spaces (or tabs) for each level of indentation in your block. Mixing spaces and tabs can lead to errors in Python.</li>
                 </ul>
             </section>
 
@@ -191,7 +244,7 @@ else:
                 <p>In this example, Python first checks if the person is at least 18 years old. If this condition is true, it proceeds to the next <code class="inline">if</code> statement nested inside, which checks if the person is a registered voter.</p>
             </section>
 
-            <section>
+            {/* <section>
                 <h2>Projects</h2>
                 <p>Let's apply what we've learned about if-else statements. Which of these projects sounds most exciting to try?</p>
                 <ul>
@@ -201,9 +254,13 @@ else:
 
  to check the answers.</li>
                 </ul>
+            </section> */}
+            <section>
+                <h2>Wrapping Up</h2>
+                <p>Great job learning the basics of conditional statements! We'll continue to learn more about applications of conditional statements in future lessons. We'll also take a deeper look at the condition part of <code class="inline">if</code> statements and how the value of the condition is evaluated.</p>
             </section>
         </div>
     );
 };
 
-export default IfElse;
+export default Conditionals;
