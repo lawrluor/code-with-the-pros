@@ -35,7 +35,7 @@ if number > 0
 
             <section>
                 <h2>Comparison Operators</h2>
-                <p>Python has several <strong>comparison operators</strong> that allow you to compare values and make decisions.</p>
+                <p>Python has several <strong>comparison operators</strong> that allow you to compare values and make decisions. Though they have have a specific syntax in Python, we actually use comparisons like these in our daily lives.</p>
                 <ul>
                     <li><code class="inline">==</code> (equal to)</li>
                     <li><code class="inline">!=</code> (not equal to)</li>
@@ -46,6 +46,17 @@ if number > 0
                 </ul>
 
                 <p>In this lesson, we will mainly use these comparison operators with integers and floats in our <code class="inline">if</code> statements. However, conditional statements can be used with any data types, as we'll learn and practice in the next lesson.</p>
+
+                <CodeBlock language={"python"} codeString={`height = 50
+if height == 50:
+    print("You are tall enough to ride the roller coaster.")`} />
+
+                <p>Note that <code class="inline">==</code> is used to check if two values are equal, while <code class="inline">=</code> is used to assign a value to a variable (it is known as the <strong>assignment operator</strong>). Attempting a comparison in an <code class="inline">if</code> statement with only one <code class="inline">=</code> sign will result in a <code class="inline">SyntaxError</code>.</p>
+                <Collapsible title={"Challenge"}>
+                    <p>Try running the following code in your code editor. What happens?</p>
+                    <CodeBlock language={"python"} codeString={`if height = 50:
+    print("You are tall enough to ride the roller coaster.")`} />
+                </Collapsible>
             </section>
 
             <section>
@@ -57,10 +68,26 @@ if age >= 18:
 else:
     print("You are not eligible to vote in the United States.")`}></CodeBlock>
             <p>You can interpret the statement in English as: "If the age is greater than or equal to 18, print the message <code className="inline">"You are eligible to vote"</code>. Otherwise, print the message <code className="inline">"You are not eligible to vote"</code>.</p>
-            <p>Note that the <code className="inline">else</code> clause does <strong>not</strong> have a condition, because it is simply the default path the program takes when the preceding <code className="inline">if</code> condition is not met. It acts as a "catch-all" scenario, ensuring that the program can proceed with an alternative action.</p>
+            <p>Note that the <code className="inline">else</code> clause does <strong>not</strong> have a specific condition, because it is simply the default path the program takes when the preceding <code className="inline">if</code> condition is not met. It acts as a "catch-all" scenario, ensuring that the program can proceed with an alternative action. Consider the following example:</p>
+
+            <CodeBlock language={"python"} codeString={`# Incorrect example
+age = 17
+if age >= 18:
+    print("You are eligible to vote in the United States!")
+else age < 18:  # It is INCORRECT for an "else" clause to have a condition
+    print("You are not eligible to vote in the United States!") `} />
+
+            <p>Do you see how the condition in the <code className="inline">else</code> clause is already covered by the preceding <code className="inline">if</code> condition? Not only is adding the condition to the <code className="inline">else</code> unnecessary, it would actually lead to a <code className="inline">SyntaxError</code> - <code className="inline">else</code> should <strong>never</strong> have a condition and should always be written <code className="inline">else:</code>.</p>
+
+            <CodeBlock language={"python"} codeString={`# Correct example
+age = 17
+if age >= 18:
+    print("You are eligible to vote in the United States!")
+else:
+    print("You are not eligible to vote in the United States!") `} />
 
             <h3>Code Blocks</h3>
-            <p>A <strong>code block</strong> or <strong>block</strong> of code is a group of lines of code that are grouped together through indentation - they are indented with the same level of indentation. If the condition is met, the <strong>entire</strong> code block is executed (line by line from top to bottom, just as in normal Python code).</p>
+            <p>A <strong>code block</strong> or <strong>block</strong> of code is a group of lines of code that are grouped together through indentation - it means that the lines are indented with the <em>same level</em> of indentation. If the condition is met, the <strong>entire</strong> code block is executed (line by line from top to bottom, just as in normal Python code).</p>
             <CodeBlock language={"python"} codeString={`if age >= 18:
     print("You are eligible to vote in the United States!")
     answer = input("Would you like to register for voting materials?")
@@ -69,11 +96,14 @@ else:
     print("See you in a few years!")`} />
 
             <p>In the above example, there are two code blocks, each with two lines. The first block is executed if the condition is met, and the second block is executed if the condition is not met.</p>
+                <Collapsible title={"Challenge"}>
+                    <p>Write an <code class="inline">if</code> statement with an <code class="inline">else</code> block that has two lines of code in each block.</p>
+                </Collapsible>
             </section>
 
             <section>
                 <h2>Code Execution</h2>
-                <p>Code execution continues as normal after an <code class="inline">if</code> or <code class="inline">else</code> block. Let's examine the following example:</p>
+                <p>Code execution continues as normal after an <code class="inline">if</code> statement. Let's examine the following example:</p>
                 <CodeBlock language={"python"} codeString={`battery = 100
 if battery == 0:
     print("The battery is empty")
@@ -84,14 +114,14 @@ print("Battery level: ", battery)  # This line will always print`} />
 
             <p>In this example, the <code class="inline">if</code> statement is evaluated, and the code block below it is skipped as the condition is not met. The <code class="inline">else</code> block is then executed, because the <code class="inline">if</code> condition was <strong>not</strong> met. Finally, code execution continues, printing the message <code class="inline">"Battery level: 100"</code>. To be clear, the line <code class="inline">print("Battery level: ", battery)</code> will always print  regardless of the result of the preceding <code class="inline">if-else</code> statement.</p>
 
-            <Collapsible title="Challenge">
+            <Collapsible title={"Challenge"}>
                 <p>Describe the execution of the above example if the value of <code class="inline">battery</code> is set to <code class="inline">0</code>.</p>
             </Collapsible>
             </section>
 
             <section>
                 <h2>Multiple Choices with <code class="inline">elif</code></h2>
-                <p>What if you need more than two options? <code class="inline">elif</code> (short for <em>"else if"</em>) lets you chain multiple conditions.</p>
+                <p>What if you need more than two options? <code class="inline">elif</code> (short for <em>"else if"</em>) lets you chain multiple conditions. It is usually pronounced "EH-lif".</p>
                 <CodeBlock language={"python"} codeString={`grade = 85
 if grade >= 90:
     print("Excellent! You got an A")
@@ -130,6 +160,8 @@ if grade > 90:
 elif grade > 60:
     print("Pass")`} />
                 <p>By ordering the conditions from most to least specific, we ensure that the program checks each scenario in a logical sequence, allowing for more precise control over which code blocks are executed.</p>
+
+                <p>Remember, only one block is executed in a given <code className="inline">if</code> statement, the others are all skipped.</p>
             </section>
 
 
@@ -144,7 +176,7 @@ if temperature > 80:
     print("It's hot!")
 if temperature > 70:
     print("It's warm!")`} />
-                <p>With two separate <code class="inline">if</code> statements, both conditions are checked independently. This is because after an <code class="inline">if</code> statement executes, the rest of the code continues to execute from top to bottom as usual. In the example above, if <code class="inline">temperature</code> is <code class="inline">75</code>, <strong>both</strong> messages would be printed!</p>
+                <p>With two separate <code class="inline">if</code> statements, both conditions are checked independently. This is because after an <code class="inline">if</code> statement executes, the rest of the code continues to execute from top to bottom as usual. In the example above, if <code class="inline">temperature</code> is <code class="inline">85</code>, <strong>both</strong> messages would be printed!</p>
                 <p>The following example uses the regular <code class="inline">if-else</code> structure:</p>
                 <CodeBlock language={"python"} codeString={`temperature = 65
 if temperature > 80:
@@ -152,6 +184,24 @@ if temperature > 80:
 else:
     print("It's not hot")`} />
                 <p>Here, once the <code class="inline">if</code> condition is <code class="inline">True</code>, the code in the <code class="inline">else</code> block is skipped. This guarantees only one of the messages will be displayed. This reinforces the idea of <code class="inline">if-else</code> as a branching statement - you can only go down one path at a time.</p>
+
+                <p>Let's examine one final example:</p>
+                <CodeBlock language={"python"} codeString={`battery = 50
+if battery == 50:
+    print("The battery is half full")
+
+if battery > 0:
+    print("The battery is not empty")
+else:
+    print("The battery is empty")
+
+print("Battery level: ", battery)  # This line will always print`} />
+
+                <p>In this example, there are two separate <code class="inline">if</code> statements that are each evaluated separately. The first <code class="inline">if</code> condition is met, so <code className="inline">print("The battery is half full")</code> is executed. Then, the second <code class="inline">if</code> condition is evaluated, and as the condition is also met, <code className="inline">print("The battery is not empty")</code> is executed. Finally, the last line of code is executed, printing the message <code class="inline">"Battery level: 50"</code>.</p>
+
+                <Collapsible title="Challenge">
+                    <p>Describe the execution of the above example if the value of <code class="inline">battery</code> is set to <code class="inline">100</code>.</p>
+                </Collapsible>
             </section>
 
             <section>
@@ -174,34 +224,34 @@ print("I must refuel before I can continue driving.")`} />
 
                 <p>Using <code className="inline">else</code> serves several important purposes:</p>
                 <ul>
-                    <li><strong>Explicitness:</strong> It makes it crystal clear that a certain block of code should run only when all preceding conditions are false. This enhances readability and maintainability.</li>
-                    <li><strong>Intent:</strong> It communicates your intent, ensuring that others understand that you have considered all possible scenarios and are deliberately choosing to execute specific code when conditions fail.</li>
-                    <li><strong>Functionality:</strong> In some cases, you want to guarantee that a block of code runs if none of the conditions are met. An explicit <code className="inline">else</code> is necessary for these scenarios to handle exceptions, perform cleanup, or provide alternative outcomes.</li>
+                    <li><strong>Explicitness:</strong> It makes it crystal clear that a certain block of code should run only when all preceding conditions are skipped. This enhances readability and maintainability.</li>
+                    <li><strong>Functionality:</strong> In some cases, you want to guarantee that a block of code runs if none of the conditions are met.</li>
                 </ul>
 
                 <p>For example, in a game, if a player doesn't hit a target, you might want to explicitly reduce their score or give feedback, which is a perfect use for an <code className="inline">else</code> statement:</p>
 
                 <CodeBlock language={"python"} codeString={`score = 100
-target_hit = False
-if target_hit:
+targets_hit = 5
+if targets_hit >= 3:
     score += 10
-    print("Great shot! Score increased.")
+    print("Great shots! Score increased.")
 else:
     score -= 5
-    print("Missed! Score decreased.")`} />
+    print("Missed targets! Score decreased.")`} />
 
                 <p>However, in the following example without an explicit <code className="inline">else</code>, it is incorrect to subtract from the score as the default behavior, as that should only happen when the player misses their target. In other words, subtracting from the score should only happen <strong>explicitly</strong> when the user misses, not implicitly after any shot the user takes.</p>
                 <CodeBlock language={"python"} codeString={`score = 100
-target_hit = False
-if target_hit:
+targets_hit = 5
+if targets_hit >= 3:
     score += 10
-    print("Great shot! Score increased.")
+    print("Great shots! Score increased.")
 
-# Implicit else scenario: This code will always execute and the score will always decrease - incorrect!
+# Implicit else scenario: This code will always execute and the score will always decrease
+# That is illogical as it means that the score will decrease even if the player hit the target!
 score -= 5
-print("Missed! Score decreased.")`} />
+print("Missed shots! Score decreased.")`} />
 
-            <p>This example shows that the <code className="inline">else</code> statement is not just a fallback mechanism but a vital part of controlling flow and providing specific feedback based on user actions. It's about making our code as clear and intentional as possible, which is why <code className="inline">else</code> remains a fundamental construct in Python programming.</p>
+            <p>This example shows that the <code className="inline">else</code> statement is not just a fallback mechanism but a vital part of controlling the flow of the program and providing specific feedback based on values in the code. Using <code className="inline">else</code> is often (but not always) necessary to handle all possible scenarios in a program.</p>
 
             </section>
 
@@ -232,10 +282,10 @@ if age >= 18:
                 <p>Think of nested <code class="inline">if</code> statements in Python like a map or a flowchart. Imagine you're at an intersection in a maze, and each decision you make takes you down a different path. That's what these statements do in your code. Each <code class="inline">if</code> statement is like coming to a new intersection and having to decide which way to go based on specific conditions, and the way you got there was dependent on decisions you made earlier in the maze. When you add more <code class="inline">if</code> statements inside each other, it's like adding more turns to the map, making the journey through your code more interesting and complex.</p>
                 <p>Here's an example of a nested <code class="inline">if</code> statement in action:</p>
                 <CodeBlock language={"python"} codeString={`age = 19
-registered_voter = True
+registered_voter = "Yes"
 
 if age >= 18:
-    if registered_voter:
+    if registered_voter == "Yes":
         print("You are eligible to vote and are registered.")
     else:
         print("You are eligible to vote but not registered.")

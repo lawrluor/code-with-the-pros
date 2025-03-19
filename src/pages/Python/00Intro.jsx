@@ -21,7 +21,7 @@ const Intro = () => {
 						<p>What's happening here? We wrote out an instruction for the computer to follow: <code className="inline">print()</code> displays the message <code className="inline">"Hello, world!"</code> to the computer screen.</p>
 
             <Collapsible title={"Challenge"}>
-              <p>In your code editor, write a program that prints your name to the screen.</p>
+              <p>In your code editor, use <code className="inline">print()</code> to display your name to the screen.</p>
             </Collapsible>
           </section>
 
@@ -39,7 +39,7 @@ print("Python is fun!")  # Displays a message`} />
             <p>Throughout the reading, you will see comments used to explain, label, and annotate code examples.</p>
 
             <Collapsible title={"Challenge"}>
-              <p>In your code editor, add a comment at the top of your file that says <code className="inline">Program 1</code>.</p>
+              <p>In your code editor, add a comment at the top of your file that says <code className="inline"># Program 1</code>.</p>
             </Collapsible>
           </section>
 
@@ -67,7 +67,7 @@ Hello, world
 						<p><code className="inline">print()</code> is a type of <strong>function</strong>: a piece of code that allows us to perform a specific action (in this case, display something on the screen). Throughout our learning, we will come across many more useful functions in Python and even learn to create our own!</p>
 
             <Collapsible title={"Challenge"}>
-              <p>In your code editor, use <code className="inline">print()</code> to display the name of three different colors on separate lines.</p>
+              <p>In your code editor, use <code className="inline">print()</code> to display the name your favorite color. Then, on the line below it, use <code className="inline">print()</code> to display the name of your favorite animal.</p>
             </Collapsible>
           </section>
 
@@ -98,7 +98,7 @@ print(10 * 5 / 2)     # Results in 25.0`}/>
             <p>Note that exponents do NOT use the carat <code className="inline">^</code> sign!</p>
 
             <Collapsible title={"Challenge"}>
-              <p>In your code editor, create 3 different expressions using the arithmetic operators. Try using more than one operator in one of your expressions.</p>
+              <p>In your code editor, create 3 different expressions, each on separate lines, using three different arithmetic operators.</p>
             </Collapsible>
           </section>
 
@@ -137,16 +137,20 @@ print("I have " + 2 + " dogs")  # Error: we cannot use the '+' operator to add s
 # 3. Attempting to add a number to a 'None' value
 print(10 + None)  # Error: it doesn't make sense to add anything to a non-number!`}/>
 						<h3>Checking Data Types</h3>
-            <p>One way to check the data type of a variable is to use the <code className="inline">type()</code> function. Like <code className="inline">print()</code>, it is a piece of code that performs a simple task. The <code className="inline">type()</code> function will display the data type of the variable. You can do this if you're not sure what the data type is or if you encounter a new one that you don't recognize! </p>
-            <CodeBlock language={"python"} codeString={`print(type(10))   # int
+            <p>One way to check the type of any data in your code is to use the <code className="inline">type()</code> function. Like <code className="inline">print()</code>, it is a piece of code that performs a simple task. The <code className="inline">type()</code> function will display the type of the data. You can do this if you're not sure what the data type is or if you encounter a new one that you don't recognize! </p>
+            <CodeBlock language={"python"} codeString={`print(type(10))    # int
 print(type("5"))   # string
 print(type(10.5))  # float`} />
             <Collapsible title={"Challenge"}>
-            <p>In your code editor, use the <code className="inline">type()</code> function to check the data type of <code className="inline">"10"</code>.</p>
+              <p>What is the difference between an <code className="inline">int</code> and a <code className="inline">float</code>?</p>
             </Collapsible>
 
-						<h3>Converting Data Types (Casting)</h3>
-            <p>One way to fix errors like the ones above is to convert or <code className="inline">cast</code> the data types to the correct types, so Python will be able to perform the operation correctly. You can use the following functions to cast data types: </p>
+            <Collapsible title={"Challenge"}>
+              <p>In your code editor, use the <code className="inline">type()</code> function to check the data type of <code className="inline">"99"</code>.</p>
+            </Collapsible>
+
+						<h3>Converting Data Types</h3>
+            <p>One way to fix errors like the ones above is to convert or <em>cast</em> an incorrect data type to the correct data type, so Python will be able to perform the operation correctly. You can use the following functions to cast data types: </p>
             <CodeBlock language={"python"} codeString={`# 1.
 print(10 + int("5"))  # Simplifies to 10 + 5, which results in 15
 
@@ -168,31 +172,49 @@ print(10 + 0)`}/>
 						<p>Like <code className="inline">print()</code>, casting also uses functions. If you recall, functions are pieces of code that perform specific tasks. The casting functions <code className="inline">int()</code>, <code className="inline">float()</code>, <code className="inline">str()</code> performs the specific task of converting data to a new data type.</p>
 
             <Collapsible title={"Challenge"}>
-							<p>Exercise: Use casting to convert data types: </p>
-							<CodeBlock language={"python"} codeString={`# 1. Integer to a string
-# 2. String to an integer
-# 3. Integer to a float`} />
+							<p>Use casting to convert data types: </p>
+							<CodeBlock language={"python"} codeString={`# 1. Convert an integer of your choice to a string using the str() function.
+# 2. Convert a string of your choice to an integer using the int() function.
+# 3. Convert a float of your choice an integer using the int() function. What is notable about the result?`} />
             </Collapsible>
           </section>
 
           <section>
-						<h2>Storing Information (Variables)</h2>
-            <p>Variables are like containers in your kitchen. You can store data of any data type inside variables, and you can use them again later in your code.</p>
-            <CodeBlock language={"python"} codeString={`# Storing a message
+						<h2>Storing Information</h2>
+            <p>Say that you've cooked up a delicious meal that you want to save for later, so you store the leftovers in a container and place it in the refrigerator. A <strong>variable</strong> is like a container in your kitchen. You can store data of any data type inside a variable, and you can use a variable later on in your code. Unlike your delicious leftovers, you can actually reuse a variable as many times as you'd like!</p>
+            <CodeBlock language={"python"} codeString={`# 1. Storing a string to the variable "message"
 message = "Hello World"
 print(message)  # Displays "Hello World"
 
-# Doing other stuff in your code
+# 2. Doing other unrelatedstuff in your code
 print(5 + 5)
 print("Hi!")
 
-# Reusing the same variable that we created earlier
+# 3. Reusing the same variable that we created earlier
 print(message)  # Displays "Hello World" again`} />
 
-            <p>In this case, the variable's name is <code className="inline">message</code> and stores the string <code className="inline">"Hello World"</code>. When defining or <strong>declaring</strong> variables, we always place the variable on the left side and the value assigned to it on the right side.</p>
+            <p>In this case, the variable's name is <code className="inline">message</code> and stores the string <code className="inline">"Hello World"</code>. When defining or <strong>initializing</strong> variables, we always place the variable on the left side and the value assigned to it on the right side. In the middle is the <code className="inline">=</code> symbol. The syntax for initializing a variable is:</p>
+            <CodeBlock language={"python"} codeString={`variable_name = value`} />
+
+            <p>Technically, the <code className="inline">=</code> symbol is called the <strong>assignment operator</strong> in Python - it is <bold>not</bold> called the <em>equals</em> sign. It is a special operator that is used specifically to <strong>assign</strong> a value to a variable.</p>
+            <Collapsible title={"Challenge"}>
+              <p>In your code editor, create a variable called <code className="inline">day</code> and assign the day of the week to it.</p>
+            </Collapsible>
+
+            <h3>Synonyms For Variables</h3>
+            <p>Some alternate terms for initializing a variable that you may come across in this course include:</p>
+            <ul>
+              <li><em>create</em> a variable</li>
+              <li><em>declare</em> a variable</li>
+              <li><em>define</em> a variable</li>
+              <li><em>set</em> a variable to a value</li>
+              <li><em>assign</em> a variable to a value</li>
+            </ul>
+
+            <p>Many programmers will use these terms interchangeably, and for the this course, we will consider these all to mean the same thing. You don't have to memorize each of these terms, but it's good to be aware of them, especially when talking with other programmers.</p>
 
             <h3>Changing Variable Contents</h3>
-            <p>Variables aren't just static; you can update their contents:</p>
+            <p>Like a container, variables aren't just static; you can update or change their contents at any time.</p>
             <CodeBlock language={"python"} codeString={`count = 10
 
 # Adding one to the count
@@ -211,7 +233,11 @@ print(count)  # Results in 0
 <p>Note that the line <code className="inline">count += 1</code> is the same as <code className="inline">count = count + 1</code>, but it's a shorter way to write the same thing. You can also use the abbreviation operators <code className="inline">-=</code>, <code className="inline">*=</code>, and <code className="inline">/=</code> operators to update the value of a variable.</p>
 
             <Collapsible title="Challenge">
-              <p>In your code editor, add a variable called <code className="inline">age</code> and assign it the value of your age. Then, use the <code className="inline">+=</code> operator to add 1 year to your age. Finally, use the <code className="inline">print()</code> function to display your updated age.</p>
+              <ol>
+                <li>In your code editor, create a variable called <code className="inline">age</code> and assign it the value of your age.</li>
+                <li>On the next line, use the <code className="inline">+=</code> operator to add 1 year to your age.</li>
+                <li>Finally, use the <code className="inline">print()</code> function to display your updated age.</li>
+              </ol>
             </Collapsible>
           </section>
 
@@ -220,15 +246,19 @@ print(count)  # Results in 0
             <p>When learning Python, you're bound to encounter errors; they're part of the learning process. Understanding common errors can help you write your code more efficiently and avoid bugs in your code. Two of the most common errors you might come across are <code className="inline">SyntaxError</code> and <code className="inline">NameError</code>.</p>
 
 						<h3><code className="inline">SyntaxError</code></h3>
-            <p>A <code className="inline">SyntaxError</code> occurs when Python can't understand the written instructions that you have given it. The syntax, or grammatical rules of Python are strict, and breaking them is easy. A <code className="inline">SyntaxError</code> could arise due to missing punctuation, incorrect spacing, or misuse of the operators that Python relies on.</p>
+            <p>A <code className="inline">SyntaxError</code> occurs when Python can't understand the written instructions that you have given it. The <bold>syntax</bold>, or grammatical rules of Python are strict, and breaking them is easy. A <code className="inline">SyntaxError</code> could arise due to missing punctuation, incorrect spacing, or misuse of the operators that Python relies on.</p>
 
             <CodeBlock language={"python"} codeString={`print("Hi there"  # Missing closing parenthesis
 print("Hi there)  # Missing closing quotation mark
 9 ++ 4            # Incorrect operator: should be 9 + 4
 x _ 10            # Defining a variable: should be x = 10`}/>
 
+            <Collapsible title="Challenge">
+              <p>What does <strong>syntax</strong> refer to?</p>
+            </Collapsible>
+
             <h3><code className="inline">NameError</code></h3>
-            <p>A <code className="inline">NameError</code> happens when Python does not recognize a name you reference. This usually occurs if you try to use a variable that has not been defined, similar to referencing a spice in your recipe that you forgot to list in your ingredients.</p>
+            <p>A <code className="inline">NameError</code> happens when Python does not recognize a name you reference. This usually occurs if you try to use a variable that has not been initialized or defined, similar to referencing a spice in your recipe that you forgot to list in your ingredients.</p>
 
             <CodeBlock language={"python"} codeString={`print(age)
 # Python is looking for a variable called age
@@ -259,7 +289,7 @@ print(agee)`} />
             <h2>Avoiding Common Errors</h2>
             <ul>
                 <li><strong>Double Check Syntax:</strong> Check that parentheses or opening quotation marks are matched with their closing counterpart.</li>
-                <li><strong>Declare Variables Before Use:</strong> Make sure all your variables are declared and initialized before you use or update them.</li>
+                <li><strong>Initialize Variables Before Use:</strong> Make sure all your variables are initialized before you use or update them.</li>
             </ul>
           </section>
 

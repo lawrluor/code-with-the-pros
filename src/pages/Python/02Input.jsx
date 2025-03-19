@@ -49,11 +49,15 @@ print(name)`} />
                     <li><code className="inline">"What's your name?"</code>: The <em>prompt</em> displayed to the user, generally a question or request.</li>
                 </ul>
 
+                <p>When the <code className="inline">input()</code> function is called, the program will pause and wait for the user to type something. To answer the prompt, the user should type text, then press the <code className="inline">"Enter"</code> or <code className="inline">"Return"</code> key.</p>
+
                 <Collapsible title={"Challenge"}>
                     <ul>
-                        <li>Prompt the user to type their favorite color and store the input into a variable.</li>
-                        <li>Prompt the user to type a city that they've visited and store the input into a variable.</li>
+                        <li>In your code editor, use <code className="inline">input()</code> to prompt the user to type their favorite color and store their input into a variable.</li>
+                        <li>In your code editor, use <code className="inline">input()</code> to prompt the user to type a city that they've visited and store their input into a variable.</li>
                     </ul>
+
+                    <p>Don't forget to try typing some text into the prompt after running your code editor to see how it works!</p>
                 </Collapsible>
 
                 <h3>Formatting User Input</h3>
@@ -137,7 +141,7 @@ print(num1 + num2)`} />
                     <div>
                         <p>Try running the following code in your code editor. Enter numbers for each input.</p>
                         <CodeBlock language={"python"} codeString={`num1 = int(input("Enter a number: "))
-num2 = float(input("Enter another number: ")
+num2 = float(input("Enter another number: "))
 print(num1 + num2)`} />
                     </div>
                 </Collapsible>

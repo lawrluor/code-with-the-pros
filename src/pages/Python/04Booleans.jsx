@@ -1,5 +1,6 @@
 import React from 'react';
 import CodeBlock from '../../components/CodeBlock';
+import Collapsible from '../../components/Collapsible';
 
 const Booleans = () => {
     return (
@@ -8,78 +9,116 @@ const Booleans = () => {
 
             <section>
                 <h2>What Are Booleans?</h2>
-                <p>
-                    At the heart of every decision-making process in programming, there are Booleans. Booleans are a special data type that can be one of two values: <code className="inline">True</code> or <code className="inline">False</code>. Like other data types such as <code className="inline">int</code> and <code className="inline">float</code>, they can be stored in variables and used in expressions.
+                <p>At the heart of every decision-making process in programming, there are Booleans. A <code className="inline">boolean</code> is a special data type that can be one of two values: <code className="inline">True</code> or <code className="inline">False</code>. Like other data types, such as integers, floats, and strings, they can be stored in variables and used in expressions. They are named after George Boole, a 19th-century mathematician.</p>
+            </section>
 
-                    They are named after George Boole, a 19th-century mathematician who pioneered the field of algebraic logic.
-                </p>
-
-                <p>Here are some examples of how you might use booleans. Note that in Python, <code className="inline">True</code> and <code className="inline">False</code> are case-sensitive!</p>
+            <section>
+                <h2>Boolean Examples</h2>
+                <p>Here are some examples of booleans:</p>
                 <CodeBlock language={"python"} codeString={`True
 False
 is_sunny = True
 is_rainy = False
 
-true   # NOT interpreted as a boolean
-false  # NOT interpreted as a boolean`} />
+print(is_sunny)  # True
+print(is_rainy)  # False`} />
+
+                <p>Note that in Python, <code className="inline">True</code> and <code className="inline">False</code> are case-sensitive! Below are some common misspellings of <code className="inline">True</code> and <code className="inline">False</code>.</p>
+                <CodeBlock language={"python"} codeString={`# Python interprets lowercase "true" and "false" as variable names rather than booleans
+true    # NOT interpreted as a boolean
+false   # NOT interpreted as a boolean
+
+# These are strings, not booleans
+"true"  # NOT interpreted as a boolean
+"false" # NOT interpreted as a boolean`} />
+
+                <h3>Naming Booleans</h3>
+                    <p>As with other data types, you can name booleans using any valid variable name. However, it is best to give booleans variable names that directly describe their purpose. Here are some examples:</p>
+                    <li><code className="inline">is_rainy</code>: A value of <code className="inline">True</code> implies that it is currently raining.</li>
+                    <li><code className="inline">did_press_button</code>: A value of <code className="inline">True</code> implies that the user did press a button</li>
+                    <li><code className="inline">was_present</code>: A value of <code className="inline">True</code> implies that the student was present.</li>
+
+                <h3>Checking the Boolean Type</h3>
+                <p>As with other data types, you can check the type of a boolean using the <code className="inline">type()</code> function.</p>
+                <CodeBlock language={"python"} codeString={`type(True)   # <class 'bool'>
+type(False)  # <class 'bool'>`} />
+
+                <p>You can also <strong>cast</strong> data to and from booleans. To convert a value to a boolean, use the <code className="inline">bool()</code> function.</p>
+                <CodeBlock language={"python"} codeString={`bool(1)   # True
+bool(0)   # False
+
+bool("True")  # True
+bool("")      # False`} />
+
+                <p>We will discuss more specific rules for boolean casting later in the chapter.</p>
             </section>
 
             <section>
                 <h2>Why Do We Need Booleans?</h2>
-                <p>While it might seem straightforward to use strings such as "yes" and "no" to make decisions in code, this approach is fraught with complications. The Boolean data type, which includes only two values, <code className="inline">True</code> and <code className="inline">False</code>, provides a clear, unequivocal way to represent the truth or falsehood of a statement, which is crucial for decision-making in programming.</p>
+                <p>While it might seem straightforward to use strings such as "yes" and "no" to make decisions in code, this approach is actually fraught with complications. Booleans provide a clear, unambiguous way to represent the truth or falsehood of a statement.</p>
 
                 <p>One major issue with using strings like "yes" and "no" is the lack of standardization. In the real world, different languages and cultures have different words for affirmative and negative responses, and even within the same language, there can be variations ("yep", "nope", "sure", etc.). This variability can lead to errors and inconsistencies in how conditions are evaluated.</p>
 
-                <p>Moreover, strings are case-sensitive in most programming languages, including Python. Thus, "Yes", "YES", and "yes" would be treated as distinct responses, complicating the logic for interpreting user inputs. This sensitivity adds unnecessary complexity to condition checks and can easily lead to bugs.</p>
+                <p>Moreover, strings are case-sensitive in most programming languages, including Python. Thus, "Yes", "YES", and "yes" would be treated as distinct responses, overcomplicating the logic for interpreting user inputs. This sensitivity adds unnecessary complexity to condition checks and can easily lead to errors.</p>
 
-                <p>The Boolean data type eliminates these issues by providing a universal, language-independent way of representing truth values. This not only makes the code more reliable and straightforward but also enhances its readability and maintainability. When conditions are evaluated using Boolean values, there's no ambiguity about the outcome—either a condition is <code className="inline">True</code>, or it is <code className="inline">False</code>, with no room for misinterpretation or error.</p>
-
-                <p>Now that we understand the term "Boolean", we can now use it to better describe the logic of <code className="inline">if-else</code> conditions.</p>
-
-                <CodeBlock language={"python"} codeString={`age = 10
-if age >= 10:
-    print("You are old enough to ride this rollercoaster.")
-else:
-    print("You are not old enough to ride this rollercoaster.")`} />
-
-    <p>Here, we can describe the <code className="inline">if</code> condition <code className="inline">age &gt;= 10</code> as <code className="inline">True</code>.</p>
+                <Collapsible>
+                    <p>If you're not convinced, consider the following: How would you write a check for whether a string equals <code className="inline">"yes"</code> or <code className="inline">"no"</code>? What code would you need to add to ensure that <code className="inline">"y"</code> and <code className="inline">"n"</code> would also be considered affirmative or negative responses?</p>
+                </Collapsible>
             </section>
 
 
             <section>
                 <h2>Boolean Expressions</h2>
 
-                <p>In our discussion of if-else statements, we referred to the code after the <code className="inline">if</code> keyword as the <strong>condition</strong>.</p>
-                <CodeBlock language={"python"} codeString={`age = 19
-if age >= 18:  # (age >= 18) is the condition of this if statement
-    print("You are eligible to vote")`} />
+                <p>Now that we better understand booleans, we can use them to better describe the logic of <code className="inline">if-else</code> statements. In our previous discussion of conditional statements, we referred to the code directly after the <code className="inline">if</code> keyword as the <strong>condition</strong>.</p>
+                <CodeBlock language={"python"} codeString={`age = 10
+if age >= 10:  # The condition is: age >= 10
+    print("You are old enough to ride this rollercoaster.")`} />
 
-                <p>The condition of an <code className="inline">if</code> statement can also be described as a <strong>boolean expression</strong> - an expression that evaluates to either <code className="inline">True</code> or <code className="inline">False</code>. The computer can use the result of the boolean expression in the condition of an <code className="inline">if</code> statement to decide which block of code to execute.</p>
+                <p>The condition of an <code className="inline">if</code> statement can <em>also</em> be described as a <strong>boolean expression</strong> - an expression that evaluates to either <code className="inline">True</code> or <code className="inline">False</code>. The computer can use the result of the boolean expression in the condition of an <code className="inline">if</code> statement to decide which block of code to execute.</p>
                 <p>Let's take a closer look at how this condition can be analyzed as a boolean expression.</p>
-                <CodeBlock language={"python"} codeString={`age >= 18  # a boolean expression`} />
-                <p>Here, <code className="inline">age &gt;= 18</code> is a boolean expression because it evaluates to either <code className="inline">True</code> or <code className="inline">False</code> depending on the value of <code className="inline">age</code>.</p>
+                <CodeBlock language={"python"} codeString={`age = 10
+print(age >= 10)`} />
+                <p>Just as the mathematical expression <code className = "inline">10 - 5</code> can be simplified to <code className = "inline">5</code>, the boolean expression <code className = "inline">age &ge; 10</code> can be simplified to <code className = "inline">True</code>.</p>
             </section>
 
             <section>
-                <h2>Comparison Operators</h2>
-                <p>The comparison operators are boolean expressions that compare the relative values of data. Though the comparison operators have a specific syntax in Python, we actually use comparisons like these in our daily lives. The comparison operators include:</p>
+                <h2>Comparison Operators Revisited</h2>
+                <p>The comparison operators that we have learned about previously are actually at the heart of boolean expressions.</p>
                 <ul>
-                    <li><code className="inline">==</code> tests for equality, evaluating to <code className="inline">True</code> if two values are equal and <code className="inline">False</code> otherwise.</li>
-                    <li><code className="inline">!=</code> tests for inequality, evaluating to <code className="inline">True</code> if two values are not equal and <code className="inline">False</code> otherwise.</li>
+                    <li><code className="inline">==</code> tests for equality, evaluating to <code className="inline">True</code> if the two surrounding values are equal and <code className="inline">False</code> otherwise.</li>
+                    <li><code className="inline">!=</code> tests for inequality, evaluating to <code className="inline">True</code> if the two surrounding values and <code className="inline">False</code> otherwise.</li>
                     <li><code className="inline">&gt;</code> (greater than) checks if the value on the left is greater than the value on the right.</li>
                     <li><code className="inline">&lt;</code> (less than) checks if the value on the left is less than the value on the right.</li>
                     <li><code className="inline">&gt;=</code> (greater than or equal to)</li>
                     <li><code className="inline">&lt;=</code> (less than or equal to)</li>
                 </ul>
 
-                <p>Here are some examples of comparison operators at work:</p>
-                <CodeBlock language={"python"} codeString={`5 == 5   # True
-10 > 20  # False
-7 != 3   # True
-x >= 4
-temperature <= 1
-`} />
-                <p>The comparison operators are not just simple checks; they are powerful operators that compare two values and return either <code className="inline">True</code> or <code className="inline">False</code>. These operators are fundamental to programming, allowing us to make decisions and control the flow of our programs based on specific conditions.</p>
+                <h3>Using Comparison Operators</h3>
+                <p>We have seen several examples of comparison operators used with integers and floats. Let's examine them when used with strings:</p>
+                <CodeBlock language={"python"} codeString={`print("apple" == "apple")   # True
+print("apple" == "banana")  # False
+
+fruit = "coconut"
+print("apple" != fruit)  # False
+print(fruit == fruit)    # True`} />
+
+                <p>And now, with booleans:</p>
+                <CodeBlock language={"python"} codeString={`print(True == True)      # True
+print(False != False)    # False
+
+is_late = True
+print(is_late == True)   # True
+print(True != is_late)   # False`} />
+                <p>The comparison operators are not just simple checks; they are powerful operators that transform expressions into boolean values <code className="inline">True</code> or <code className="inline">False</code>.</p>
+
+                <Collapsible title={"Challenge"}>
+                    <p>In your code editor, write the following boolean expressions:</p>
+                    <ol>
+                        <li>An expression involving two integers that evaluates to <code className="inline">True</code>.</li>
+                        <li>An expression involving two strings that evaluates to <code className="inline">False</code>.</li>
+                    </ol>
+                </Collapsible>
             </section>
 
             <section>
@@ -88,7 +127,7 @@ temperature <= 1
                 <ul>
                     <li><code className="inline">and</code>: Returns <code className="inline">True</code> if both operands are true, and <code className="inline">False</code> if otherwise.</li>
                     <li><code className="inline">or</code>: Returns <code className="inline">True</code> if at least one of the operands is true, and <code className="inline">False</code> if otherwise.</li>
-                    <li><code className="inline">not</code>: "Negates" the operand, flipping it from <code className="inline">True</code> to <code className="inline">False</code> and vice versa.</li>
+                    <li><code className="inline">not</code>: <em>Negates</em> the operand, flipping it from <code className="inline">True</code> to <code className="inline">False</code> and vice-versa.</li>
                 </ul>
                 <p>Like arithmetic operators, they can be used in boolean expressions and evaluate to either <code className="inline">True</code> or <code className="inline">False</code>. Here are some examples of how to use logical operators.</p>
                 <CodeBlock language={"python"} codeString={`is_raining = True
@@ -129,7 +168,7 @@ else:
     print("Conditions are not ideal for a picnic.")
 
 # Deciding on an evening activity based on weather conditions
-if temperature > 65 and not (wind_speed > 20):
+if temperature > 65 and not wind_speed > 20:
     print("Great evening for a walk.")
 else:
     print("Maybe stay in and read a book.")
@@ -146,8 +185,8 @@ else:
             </section>
 
             <section>
-                <h2>Truth Tables (Optional)</h2>
-                <p>A truth table is a mathematical table used to illustrate how the logical operators function for all possible true/false combinations of their inputs. They are essential because they provide a clear, systematic way to understand how different Boolean expressions will evaluate, making them an invaluable tool for anyone looking to debug or design logical statements in programming.</p>
+                <h2>Truth Tables</h2>
+                <p>A truth table is a mathematical table used to illustrate how the logical operators function for all possible true/false combinations of their inputs. They are essential because they provide a clear, systematic way to understand how different Boolean expressions will evaluate.</p>
 
                 <p>Truth tables display the outcomes of logical operations for every possible combination of inputs. For programmers, they are particularly useful for:</p>
                 <ul>
@@ -156,11 +195,27 @@ else:
                     <li>Ensuring the logic of conditional expressions is accurate and behaves as expected.</li>
                 </ul>
 
-                <p>By fully grasping the mechanics of logical operators through truth tables, programmers can create more effective and error-free code, especially when dealing with intricate conditional logic.</p>
-
                 <p>Here are the truth tables for these logical operators, which illustrate the result of each operation based on all possible input combinations:</p>
 
-                <CodeBlock language={"python"} codeString={`# and Truth Table
+                <CodeBlock language={"python"} codeString={`# and
+True and True   # True
+True and False  # False
+False and True  # False
+False and False # False
+
+# or
+True or True    # True
+True or False   # True
+False or True   # True
+False or False  # False
+
+# not
+not True  # False
+not False # True`}/>
+
+                <Collapsible title={"Challenge"}>
+                    <p>Add the following code to your code editor, then run it.</p>
+                    <CodeBlock language={"python"} codeString={`# and Truth Table
 print("True and True =", True and True)   # True
 print("True and False =", True and False)  # False
 print("False and True =", False and True)  # False
@@ -175,10 +230,11 @@ print("False or False =", False or False)  # False
 # NOT Truth Table
 print("not True =", not True)  # False
 print("not False =", not False) # True`}/>
+                </Collapsible>
             </section>
 
             <section>
-                <h2>Truthy and Falsy Values (Optional)</h2>
+                <h2>Truthy and Falsy Values</h2>
                 <p>In Python, beyond the explicit Boolean values <code className="inline">True</code> and <code className="inline">False</code>, other types of values are also evaluated for their truthiness or falsiness when used in conditions. This means that practically any value can be tested for truth value, allowing for more sophisticated and concise control flow without the need for explicit comparison checks.</p>
                 <p>Falsy values are those that Python considers equivalent to <code className="inline">False</code> when evaluated in a Boolean context. Here are the commonly encountered falsy values in Python:</p>
                 <ul>
@@ -225,11 +281,23 @@ True and False or True  # Evaluates to True
 False or True and False  # Evaluates to False
 `} />
                 <h3>Combining Arithmetic Operators with Logical Operators</h3>
-                <p>Arithmetic operators have higher precedence than logical ones. This means that in expressions involving both types of operators, the arithmetic operations will be evaluated first, followed by the logical operations. This hierarchy ensures that numerical calculations are completed before logical comparisons are made.</p>
+                <p>Arithmetic operators have higher precedence than logical ones. This means that in expressions involving both types of operators, the arithmetic operations will be evaluated <strong>first</strong>, followed by the logical operations. This hierarchy ensures that numerical calculations are completed before logical comparisons are made.</p>
 
-                <CodeBlock language={"python"} codeString={`# Arithmetic operation is performed first, then logical
-print(2 + 3 * 4 == 14 and True)  # Evaluates to True`} />
-                <p>Here, multiplication is performed, followed by addition, then the equality check, and finally the logical <code className="inline">and</code>.</p>
+                <CodeBlock language={"python"} codeString={`print(1 + 3 * 4 == 14 and True)`} />
+                <p>Here, according to PEMDAS rules, multiplication <code className="inline">*</code>, followed by addition <code className="inline">+</code>. We now have:</p>
+
+                <CodeBlock language={"python"} codeString={`print(13 == 14 or True)`} />
+                <p>The number on the left is then compared to the number on the right using the <code className="inline">==</code> operator. This simplifies to:</p>
+
+                <CodeBlock language={"python"} codeString={`print(False or True)`} />
+                <p>Then, we use the logical operator <code className="inline">or</code>. Since at least one of the operands is true, the boolean expression simplifies to <code className="inline">True</code>.</p>
+
+                <CodeBlock language={"python"} codeString={`print(True)`} />
+                <p>Finally, we print <code className="inline">True</code> to the console.</p>
+
+                <Collapsible title={"Challenge"}>
+                    <p>In your code editor, write the PEMDAS order of operations as a comment.</p>
+                </Collapsible>
 
                 <h3>Using Parentheses <code className="inline">()</code></h3>
                 <p>In addition to the above rules, parentheses <code className="inline">()</code> can be used to explicitly define the evaluation order, overriding the default precedence rules. This is particularly useful for making complex expressions clearer and ensuring they evaluate as intended.</p>
@@ -253,7 +321,6 @@ result2 = False and (False or True)
                 <p>By thoughtfully using parentheses, you can ensure your boolean expressions are evaluated in the exact order you intend, avoiding potential logic errors in your code.</p>
             </section>
 
-
             <section>
                 <h2>DeMorgan's Laws and Simplifying Boolean Expressions (Optional)</h2>
                 <p>DeMorgan's Laws consist of two transformation rules that help in rephrasing boolean expressions involving <code className="inline">and</code> (conjunction) and <code className="inline">or</code> (disjunction), making complex logic more accessible. Here's how they work:</p>
@@ -267,47 +334,43 @@ result2 = False and (False or True)
                     <li><strong>Law 2:</strong> Negating a disjunction (<code className="inline">or</code>) statement equates to negating each component and combining them with <code className="inline">and</code>.</li>
                 </ul>
 
-                <p><strong>Benefits of DeMorgan's Laws:</strong></p>
-                <ul>
-                    <li><strong>Simplification:</strong> These laws allow for the rewriting of complex boolean expressions into simpler forms.</li>
-                    <li><strong>Efficiency:</strong> Simplified expressions can sometimes be executed more efficiently, depending on the programming environment.</li>
-                    <li><strong>Flexibility:</strong> By offering alternative ways to express conditions, DeMorgan's Laws enhance the versatility of your logical operations.</li>
-                </ul>
-
                 <p><strong>Example:</strong></p>
-                <p>Consider a scenario where someone is eligible to vote if they are at least 18 years old (<code className="inline">age >= 18</code>) and a citizen (<code className="inline">isCitizen</code> is <code className="inline">True</code>). This is represented with an <code className="inline">and</code> condition:</p>
+                <p>Consider a scenario where someone is eligible to vote if they are at least 18 years old (<code className="inline">age >= 18</code>) and a citizen (<code className="inline">is_citizen</code> is <code className="inline">True</code>). This is represented with an <code className="inline">and</code> condition:</p>
 
                 <CodeBlock language={"python"} codeString={`# Original eligibility check
-isCitizen = True
-if age >= 18 and isCitizen:
+is_citizen = True
+if age >= 18 and is_citizen:
     print("Eligible to vote")
 
 # Applying DeMorgan's Law 1 to express the inverse logic step by step:
 
 # Step 1: Apply NOT to the whole condition
-not (age >= 18 and isCitizen)
+not (age >= 18 and is_citizen)
 
 # Step 2: Distribute NOT across the AND condition, flipping AND to OR
-(not (age >= 18)) or (not isCitizen)
+(not (age >= 18)) or (not is_citizen)
 
 # Step 3: Simplify the expressions
-(age < 18) or (not isCitizen)
+(age < 18) or (not is_citizen)
 
 # Final inverted condition check for ineligibility
-if (age < 18) or (not isCitizen):
+if (age < 18) or (not is_citizen):
     print("Not eligible to vote")
 
 # We can also eliminate the parentheses due to the natural precedence of the operators
-if age < 18 or not isCitizen:
+if age < 18 or not is_citizen:
     print("Not eligible to vote")
 `} />
+
+                <h3>Benefits of DeMorgan's Laws:</h3>
+                <p>These laws allow for the rewriting of complex boolean expressions into simpler forms. In addition to being easier to read, simplified expressions can sometimes be executed (marginally) more efficiently.</p>
             </section>
 
             <section>
                 <h2>Ternary Operators</h2>
-                <p>Ternary operators are a compact, abbreviated way to write simple <code class="inline">if-else</code> statements. They are often used in place of short <code class="inline">if-else</code> statements. Here's an example of a ternary operator:</p>
+                <p>Ternary operators are a compact, abbreviated way to write simple conditionals. They are often used in place of short <code class="inline">if-else</code> statements. Here's an example of a ternary operator:</p>
                 <CodeBlock language={"python"} codeString={`celsius = 100
-                weather = "hot" if celsius >= 100 else "warm"`} />
+weather = "hot" if celsius >= 100 else "warm"`} />
 
                 <p>The term <code class="inline">ternary</code> comes from the Latin word <em>"terna"</em> which means "three".  The three terms are the condition itself, the expression if the condition is <code class="inline">True</code> and the expression if the condition is <code class="inline">False</code>. The condition is evaluated first. If the result of the expression is evaluated as <code class="inline">True</code>, then is stored into the variable <code class="inline">is_boiling</code>. Storing the result of short boolean expressions into variables is a common use case for ternary operators.</p>
             </section>
