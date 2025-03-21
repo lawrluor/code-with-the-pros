@@ -104,7 +104,7 @@ print(age >= 10)`} />
 print("apple" == "banana")  # False
 
 fruit = "coconut"
-print("apple" != fruit)  # False
+print("apple" != fruit)  # True
 print(fruit == fruit)    # True`} />
 
                 <p>And now, with booleans:</p>
@@ -125,7 +125,7 @@ print(True != is_late)   # False`} />
                 </Collapsible>
 
                 <Collapsible title={"Challenge"}>
-                    <p>In your code editor, comparing strings using the greater than and less than operators.</p>
+                    <p>Bonus: In your code editor, compare strings using the greater than and less than operators. What do you notice?</p>
                 </Collapsible>
             </section>
 
@@ -137,35 +137,45 @@ print(True != is_late)   # False`} />
                     <li><code className="inline">or</code>: <code className="inline">True</code> if at least one of the operands is true, and <code className="inline">False</code> if otherwise.</li>
                     <li><code className="inline">not</code>: <em>Negates</em> the operand, flipping it from <code className="inline">True</code> to <code className="inline">False</code> and vice-versa.</li>
                 </ul>
-                <p>Don't worry if this doesn't make sense yet. Let's take a look at some examples of using logical operators.</p>
+                <p>An <strong>operand</strong> is the formal term for the values on the left or right of the operator. For example, in the expression <code className="inline">a and b</code>, the operator is <code className="inline">and</code>, while the operands are <code className="inline">a</code> and <code className="inline">b</code>.</p>
+
+                <h3>Using Logical Operators</h3>
                 <CodeBlock language={"python"} codeString={`is_raining = True
 have_umbrella = False
+
 # Use 'and' for cases where BOTH conditions must be met
-if is_raining==True and have_umbrella==True:
+if is_raining and have_umbrella:
     print("You can go outside without getting wet.")
 else:
     print("You might get wet in the rain.")
 
 # Use 'or' for cases where EITHER condition suffices
-if is_raining==True or have_umbrella==True:
-    print("Either it's raining, or you have an umbrella, or both.")
+if is_raining or have_umbrella:
+    print("Either it's raining, or you have an umbrella, or both.")`} />
 
-# Use 'not' to negate a condition
-if not is_raining==True:
-    print("It's not raining, you can leave the umbrella at home.")
-else:
-    print("It's raining, you might need an umbrella.")`} />
             <p>Here's a breakdown of the examples:</p>
             <ul>
-            <li>Using <code className="inline">and</code>: Checks if it's raining <em>and</em> if you have an umbrella. You're prepared for rain only if both conditions are true.</li>
-            <li>Using <code className="inline">or</code>: Useful for scenarios where satisfying at least one of the conditions is enough. Here, if it's raining or you have an umbrella (or both), a specific block of code will execute.</li>
-            <li>Using <code className="inline">not</code>: <em>Inverts</em> the truth value of a condition. If it's <em>not</em> raining, you don't need an umbrella.</li>
+                <li>Using <code className="inline">and</code>: Checks if it's raining <em>and</em> if you have an umbrella. You're prepared for rain only if both conditions are true.</li>
+                <li>Using <code className="inline">or</code>: Useful for scenarios where satisfying at least one of the conditions is enough. Here, if it's raining or you have an umbrella (or both), a specific block of code will execute.</li>
             </ul>
+
+            <h3>The <code className="inline">not</code> Operator</h3>
+            <p><code className="inline">not</code> is the odd one out. Let's take a look at an example:</p>
+            <CodeBlock language={"python"} codeString={`# Use 'not' to negate a condition
+people = 3
+
+if not people >= 3:
+    print("Not a crowd.")
+else:
+    print("A crowd.")`} />
+
+            <p>Using <code className="inline">not</code> negates the condition <code className="inline">people &gt;= 3</code>, which is originally <code className="inline">True</code>. After negating it with <code className="inline">not</code>, the value bcomes <code className="inline">False</code>. Therefore, the <code className="inline">else</code> block is executed.</p>
 
             <Collapsible title={"Challenge"}>
                 <p>Using <code className="inline">and</code>, write the following:</p>
                 <ol>
                     <li>An if statement that determines whether or not you should go to school based on the day and hour of the day.</li>
+                    <li>An if statement that determines whether or not it is New Year's day based on the month and day.</li>
                 </ol>
             </Collapsible>
 
@@ -189,7 +199,7 @@ else:
     print("Conditions are not ideal for a picnic.")
 
 # 2. Deciding on an evening activity based on weather conditions
-if temperature > 65 and not wind_speed > 20:
+if temperature > 65 and wind_speed < 20:
     print("Great evening for a walk.")
 else:
     print("Maybe stay in and read a book.")`}/>
@@ -217,6 +227,10 @@ if not rained_yesterday==True or soil_moisture < 40:
     print("You need to water the plants today.")
 else:
     print("No need to water the plants today.")`}/>
+
+            <Collapsible title={"Challenge"}>
+                <p>What prints out in the above if statement?</p>
+            </Collapsible>
             </section>
 
             <section>
@@ -273,7 +287,7 @@ print("not False =", not False)  # True`}/>
                     <li><code className="inline">()</code>: An empty tuple</li>
                     <li><code className="inline">set()</code>: An empty set</li> */}
                     <li><code className="inline">None</code>: The <code className="inline">None</code> object</li>
-                    <li><code className="inline">False</code>: The Boolean value <code className="inline">False</code> itself</li>
+                    <li><code className="inline">False</code>: The boolean value <code className="inline">False</code> itself</li>
                     <li>Empty sequences of data, which we will learn about in future sections.</li>
                 </ul>
 
@@ -326,7 +340,7 @@ else:
                 <p>Practically any value of any data type can be tested for truth value, without using an explicit comparison check.</p>
 
                 <Collapsible title={"Challenge"}>
-                    <p>In your code editor, rewrite the following expressions to use truthiness instead of explicit comparison checks:</p>
+                    <p>In your code editor, rewrite the following expressions without directly comparing the variable to <code className="inline">is_tired</code> to <code className="inline">True</code> or <code className="inline">False</code>.</p>
                     <CodeBlock language={"python"} codeString={`# 1.
 is_tired = True
 if is_tired == True:
@@ -369,7 +383,7 @@ print(not True or False and False)`} />
                 <h3>Combining Arithmetic Operators with Logical Operators</h3>
                 <p>Arithmetic operators have higher precedence than logical ones. This means that in expressions involving both types of operators, the arithmetic operations will be evaluated <strong>first</strong>, followed by the logical operations. This hierarchy ensures that numerical calculations are completed before logical comparisons are made.</p>
 
-                <CodeBlock language={"python"} codeString={`print(1 + 3 * 4 == 14 and True)`} />
+                <CodeBlock language={"python"} codeString={`print(1 + 3 * 4 == 14 or True)`} />
                 <p>Here, according to PEMDAS rules, multiplication <code className="inline">*</code> happens first, followed by addition <code className="inline">+</code>. We now have:</p>
 
                 <CodeBlock language={"python"} codeString={`print(13 == 14 or True)`} />
@@ -392,23 +406,10 @@ print("a" == "b" or not False)`} />
                 <h3>Using Parentheses <code className="inline">()</code></h3>
                 <p>In addition to the above rules, parentheses <code className="inline">()</code> can be used to explicitly define the evaluation order, overriding the default precedence rules. This is particularly useful for making complex expressions clearer and ensuring they evaluate as intended.</p>
 
-                <p>Let's see how using parentheses affects our code. In each example, the second result will use parentheses, thereby changing the final result of the expression.</p>
-                <CodeBlock language={"python"} codeString={`# Example 1
-result = False or True and not False
-# Evaluates to True
-
-result = (False or True) and not False
-# After grouping with parentheses, evaluates to True
-
-
-# Example 2
-result2 = False and False or True
-# Evaluates to True
-
-result2 = False and (False or True)
-# After grouping with parentheses, evaluates to False
-`} />
-                <p>By carefully using parentheses, you can ensure your boolean expressions are evaluated in the exact order you intend.</p>
+                <p>Let's see how using parentheses affects our code.</p>
+                <CodeBlock language={"python"} codeString={`result = False and False or True    # Evaluates to True
+result = False and (False or True)  # After grouping with parentheses, evaluates to False`} />
+                <p>By carefully using parentheses, you can ensure your boolean expressions are evaluated in the exact order that you intend.</p>
 
                 <Collapsible title={"Challenge"}>
                     <p>What will the following boolean expressions with parentheses will evaluate to? Use your code editor to check your results.</p>
@@ -448,7 +449,7 @@ result = True or (3 * 9 == 25)`} />
 
             <section>
                 <h2>(Optional) DeMorgan's Laws and Simplifying Boolean Expressions</h2>
-                <p>DeMorgan's Laws consist of two transformation rules that help in rephrasing boolean expressions involving <code className="inline">and</code> (conjunction) and <code className="inline">or</code> (disjunction), making complex logic more accessible. Here's how they work:</p>
+                <p><strong>DeMorgan's Laws</strong> consist of two transformation rules that help in rephrasing boolean expressions involving <code className="inline">and</code> (conjunction) and <code className="inline">or</code> (disjunction), making complex logic more accessible. Here's how they work:</p>
                 <CodeBlock language={"python"} codeString={`# DeMorgan's Laws Examples
 # not (a and b) is equivalent to (not a) or  (not b)
 # not (a or b)  is equivalent to (not a) and (not b)
@@ -459,17 +460,15 @@ result = True or (3 * 9 == 25)`} />
                     <li><strong>Law 2:</strong> Negating a disjunction (<code className="inline">or</code>) statement equates to negating each component and combining them with <code className="inline">and</code>.</li>
                 </ul>
 
-                <p><strong>Example:</strong></p>
-                <p>Consider a scenario where someone is eligible to vote if they are at least 18 years old (<code className="inline">age >= 18</code>) and a citizen (<code className="inline">is_citizen</code> is <code className="inline">True</code>). This is represented with an <code className="inline">and</code> condition:</p>
+                <h3>Applying DeMorgan's Laws</h3>
+                <p>Consider a scenario where someone is eligible to vote in the United States if they are at least 18 years old (<code className="inline">age &gt;= 18</code>) and a U.S. citizen (<code className="inline">is_citizen</code> is <code className="inline">True</code>). This scenario will be represented with an <code className="inline">and</code> condition:</p>
 
-                <CodeBlock language={"python"} codeString={`# Original eligibility check
-is_citizen = True
+                <CodeBlock language={"python"} codeString={`is_citizen = True
 if age >= 18 and is_citizen:
-    print("Eligible to vote")
+    print("Eligible to vote")`} />
 
-# Applying DeMorgan's Law 1 to express the inverse logic step by step:
-
-# Step 1: Apply NOT to the whole condition
+                <p>Now, we can apply DeMorgan's Law 1 to invert this condition step by step:</p>
+                <CodeBlock language={"python"} codeString={`# Step 1: Apply NOT to the whole condition
 not (age >= 18 and is_citizen)
 
 # Step 2: Distribute NOT across the AND condition, flipping AND to OR
@@ -484,8 +483,7 @@ if (age < 18) or (not is_citizen):
 
 # We can also eliminate the parentheses due to the natural precedence of the operators
 if age < 18 or not is_citizen:
-    print("Not eligible to vote")
-`} />
+    print("Not eligible to vote")`} />
 
                 <h3>Benefits of DeMorgan's Laws:</h3>
                 <p>These laws allow for the rewriting of complex boolean expressions into simpler forms. In addition to being easier to read, simplified expressions can sometimes be executed (marginally) more efficiently.</p>
