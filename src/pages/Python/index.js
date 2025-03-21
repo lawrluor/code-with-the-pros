@@ -8,6 +8,7 @@ import Variables from './10Variables';
 import Input from './02Input';
 import Conditionals from './03Conditionals';
 import Project03 from './03Project';
+import Project04B from './04BProject';
 import Booleans from './04Booleans';
 import PigLatin from './04Milestone_PigLatin';
 import Functions from './05Functions';
@@ -18,4 +19,4 @@ import Lists from './08Lists';
 import Dictionaries from './09Dictionaries';
 import PassByReference from './20PassByReference';
 
-export { Intro, Project00, Strings, Project01, Project02A, Project02B, Project03, Variables, Input, PigLatin, Conditionals, Booleans, Functions, WhileLoops, ForLoops, CaesarCipher, Lists, Dictionaries, PassByReference }
+export { Intro, Project00, Strings, Project01, Project02A, Project02B, Project03, Project04B,Variables, Input, PigLatin, Conditionals, Booleans, Functions, WhileLoops, ForLoops, CaesarCipher, Lists, Dictionaries, PassByReference }

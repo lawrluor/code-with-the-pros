@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './App.css';
 
 // Import Lessons
-import { Intro, Project00, Strings, Project01, Variables, Input, Project02B, Project02A, PigLatin, Conditionals, Project03, Booleans, Functions, WhileLoops, ForLoops, CaesarCipher, Lists, Dictionaries, PassByReference } from './pages/Python';
+import { Intro, Project00, Strings, Project01, Variables, Input, Project02B, Project02A, PigLatin, Conditionals, Project03, Booleans, Project04B, Functions, WhileLoops, ForLoops, CaesarCipher, Lists, Dictionaries, PassByReference } from './pages/Python';
 import { JavaObjects, JavaInheritance, JavaPolymorphism } from './pages/Java';
 import Quiz from './pages/Quiz';
 
@@ -14,6 +14,7 @@ function App() {
     { name: 'Project 02A', path: '/Project02A', component: Project02A },
     { name: 'Project 02B', path: '/Project02B', component: Project02B },
     { name: 'Project 03', path: '/Project03', component: Project03 },
+    { name: 'Project 04B', path: '/Project04B', component: Project04B },
   ];
 
   return (

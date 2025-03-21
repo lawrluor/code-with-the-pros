@@ -253,25 +253,51 @@ False or False  # False
 not True   # False
 not False  # True`}/>
 
-                <p>Don't worry about memorizing the truth tables. Most programmers learn them quickly simply by using logical operators in their code. However, they are a useful reference for beginning programmers.</p>
+<p>To further illustrate how these values are derived, let's try adding some real-world context.</p>
+
+<CodeBlock language={"python"} codeString={`True and True
+# Statement: Cats are animals and roses are plants.
+# Overall truth: True
+
+True and False
+# Statement: Cats are animals and roses are animals.
+# Overall truth: False
+
+False and True
+# Statement: Cats are plants and roses are plants.
+# Overall truth: False
+
+False and False
+# Statement: Cats are plants and roses are animals.
+# Overall truth: False` }/>
 
                 <Collapsible title={"Challenge"}>
-                    <p>Add the following code to your code editor, then run it in.</p>
+                   <p>In your code editor, create real-world examples for the <code className="inline">or</code> operator.</p>
+                </Collapsible>
+
+                <p>Don't worry about memorizing the truth tables. Most programmers learn them quickly simply by using logical operators in their code. However, they are a useful reference for beginning programmers. The most important takeaway is that: </p>
+                <ul>
+                    <li>If either operand in an <code className="inline">and</code> expression evaluates to <code className="inline">False</code>, the entire expression evaluates to <code className="inline">False</code>.</li>
+                    <li>If either operand in an <code className="inline">or</code> expression evaluates to <code className="inline">True</code>, the entire expression evaluates to <code className="inline">True</code>.</li>
+                </ul>
+
+                <Collapsible title={"Challenge"}>
+                    <p>Add the following code to your code editor, then run it to get a visual reference to the truth tables.</p>
                     <CodeBlock language={"python"} codeString={`# and Truth Table
-print("True and True =", True and True)      # True
-print("True and False =", True and False)    # False
-print("False and True =", False and True)    # False
-print("False and False =", False and False)  # False
+print(f"True and True = {True and True}")      # True
+print(f"True and False = {True and False}")    # False
+print(f"False and True = {False and True}")    # False
+print(f"False and False = {False and False}")  # False
 
 # or Truth Table
-print("True or True =", True or True)       # True
-print("True or False =", True or False)     # True
-print("False or True =", False or True)     # True
-print("False or False =", False or False)   # False
+print(f"True or True = {True or True}")      # True
+print(f"True or False = {True or False}")    # True
+print(f"False or True = {False or True}")    # True
+print(f"False or False = {False or False}")  # False
 
-# NOT Truth Table
-print("not True =", not True)   # False
-print("not False =", not False)  # True`}/>
+# not Truth Table
+print(f"not True = {not True}")   # False
+print(f"not False = {not False}") # True`}/>
                 </Collapsible>
             </section>
 
@@ -300,7 +326,7 @@ bool(0)         # False
 bool(-2)        # True, because any non-zero number is truthy
 bool('Hello!')  # True
 bool('')        # False`} />
-                <p>Why does Python have truthy and falsy values? This feature enables you to write more concise conditions. For example, instead of checking if a value is equal to <code className="inline">True</code>, you can simply check if the value <em>itself</em> is truthy. Both examples below are equivalent:</p>
+                <p>Why does Python have truthy and falsy values? This feature enables you to write more concise conditions. For example, instead of checking if a value is equal to <code className="inline">True</code>, you can simply check if the value <em>itself</em> is truthy. The <code className="inline">if</code> statements in both examples below are equivalent:</p>
                 <CodeBlock language={"python"} codeString={`is_weekend = True
 
 # 1. Explicit comparison of is_weekend == True is unnecessary, as True is a truthy value
@@ -492,10 +518,16 @@ if age < 18 or not is_citizen:
             <section>
                 <h2>(Optional) Ternary Operators</h2>
                 <p>Ternary operators are a compact, abbreviated way to write simple conditionals. They are often used in place of short <code class="inline">if-else</code> statements. Here's an example of a ternary operator:</p>
-                <CodeBlock language={"python"} codeString={`celsius = 30
-weather = "hot" if celsius >= 30 else "warm"`} />
+                <CodeBlock language={"python"} codeString={`celsius = 0
+water = "frozen" if celsius <= 0 else "not frozen"`} />
 
-                <p>The term <code class="inline">ternary</code> comes from the Latin word <em>"terna"</em> which means "three".  The three terms are the condition itself, the expression if the condition is <code class="inline">True</code> and the expression if the condition is <code class="inline">False</code>. The condition is evaluated first. If the result of the expression is evaluated as <code class="inline">True</code>, then is stored into the variable <code class="inline">is_boiling</code>. Storing the result of short boolean expressions into variables is a common use case for ternary operators.</p>
+                <p>The term <code class="inline">ternary</code> comes from the Latin word <em>"terna"</em> which means three. The three terms are the condition itself, the expression if the condition is <code class="inline">True</code> and the expression if the condition is <code class="inline">False</code>. In the above example, these are:</p>
+                <ol>
+                    <li>Value if the condition is <code class="inline">True</code>: <code class="inline">"frozen"</code></li>
+                    <li>Value if the condition is <code class="inline">False</code>: <code class="inline">"not frozen"</code></li>
+                    <li>Condition: <code class="inline">celsius &lt;= 0</code></li>
+                </ol>
+                <p>The condition is evaluated first. If the result of the expression is evaluated as <code class="inline">True</code>, then is stored into the variable <code class="inline">is_boiling</code>. Storing the result of short boolean expressions into variables is a common use case for ternary operators.</p>
 
                 <Collapsible title={"Challenge"}>
                     <p>Convert the following <code className="inline">if-else</code> statement using a ternary operator.</p>
@@ -507,6 +539,12 @@ else:
 
 print(water_temp)`} />
                 </Collapsible>
+            </section>
+
+            <section>
+                <h2>Summary</h2>
+                <p>Understanding booleans will supercharge your <code className="inline">if</code> statements! Writing concise and efficient code that branches based on conditions is a key skill in programming.</p>
+                <button onClick={() => window.location.href = "/quiz?name=04Booleans.py"}>Start Quiz</button>
             </section>
 
         </div>
