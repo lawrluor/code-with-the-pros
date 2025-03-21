@@ -80,6 +80,10 @@ if age >= 10:  # The condition is: age >= 10
                 <CodeBlock language={"python"} codeString={`age = 10
 print(age >= 10)`} />
                 <p>Just as the mathematical expression <code className = "inline">10 - 5</code> can be simplified to <code className = "inline">5</code>, the boolean expression <code className = "inline">age &ge; 10</code> can be simplified to <code className = "inline">True</code>.</p>
+
+                <Collapsible>
+                    <p>What value does <code className="inline">10 &lt; 15</code> evaluate to? What about <code className="inline">10 &gt; 10</code>?</p>
+                </Collapsible>
             </section>
 
             <section>
@@ -95,7 +99,7 @@ print(age >= 10)`} />
                 </ul>
 
                 <h3>Using Comparison Operators</h3>
-                <p>We have seen several examples of comparison operators used with integers and floats. Let's examine them when used with strings:</p>
+                <p>We have seen several examples of comparison operators used with integers and floats. We can actually use them with strings and booleans, too! Let's look at some examples:</p>
                 <CodeBlock language={"python"} codeString={`print("apple" == "apple")   # True
 print("apple" == "banana")  # False
 
@@ -115,9 +119,13 @@ print(True != is_late)   # False`} />
                 <Collapsible title={"Challenge"}>
                     <p>In your code editor, write the following boolean expressions:</p>
                     <ol>
-                        <li>An expression involving two integers that evaluates to <code className="inline">True</code>.</li>
+                        <li>An expression involving two booleans that evaluates to <code className="inline">True</code>.</li>
                         <li>An expression involving two strings that evaluates to <code className="inline">False</code>.</li>
                     </ol>
+                </Collapsible>
+
+                <Collapsible title={"Challenge"}>
+                    <p>In your code editor, comparing strings using the greater than and less than operators.</p>
                 </Collapsible>
             </section>
 
@@ -125,60 +133,87 @@ print(True != is_late)   # False`} />
                 <h2>Logical Operators</h2>
                 <p>Logical Operators allow you to construct complex boolean expressions from simpler ones. Like arithmetic comparison operators, using them also results in boolean expressions. There are three logical operators in Python:</p>
                 <ul>
-                    <li><code className="inline">and</code>: Returns <code className="inline">True</code> if both operands are true, and <code className="inline">False</code> if otherwise.</li>
-                    <li><code className="inline">or</code>: Returns <code className="inline">True</code> if at least one of the operands is true, and <code className="inline">False</code> if otherwise.</li>
+                    <li><code className="inline">and</code>: <code className="inline">True</code> if both operands are true, and <code className="inline">False</code> if otherwise.</li>
+                    <li><code className="inline">or</code>: <code className="inline">True</code> if at least one of the operands is true, and <code className="inline">False</code> if otherwise.</li>
                     <li><code className="inline">not</code>: <em>Negates</em> the operand, flipping it from <code className="inline">True</code> to <code className="inline">False</code> and vice-versa.</li>
                 </ul>
-                <p>Like arithmetic operators, they can be used in boolean expressions and evaluate to either <code className="inline">True</code> or <code className="inline">False</code>. Here are some examples of how to use logical operators.</p>
+                <p>Don't worry if this doesn't make sense yet. Let's take a look at some examples of using logical operators.</p>
                 <CodeBlock language={"python"} codeString={`is_raining = True
 have_umbrella = False
-# Use 'and' to check multiple conditions
-if is_raining and have_umbrella:
+# Use 'and' for cases where BOTH conditions must be met
+if is_raining==True and have_umbrella==True:
     print("You can go outside without getting wet.")
 else:
     print("You might get wet in the rain.")
 
-# Use 'or' for cases where either condition suffices
-if is_raining or have_umbrella:
+# Use 'or' for cases where EITHER condition suffices
+if is_raining==True or have_umbrella==True:
     print("Either it's raining, or you have an umbrella, or both.")
 
 # Use 'not' to negate a condition
-if not is_raining:
+if not is_raining==True:
     print("It's not raining, you can leave the umbrella at home.")
 else:
     print("It's raining, you might need an umbrella.")`} />
             <p>Here's a breakdown of the examples:</p>
             <ul>
-            <li><strong>Using <code className="inline">and</code></strong>: Checks if it's raining <em>and</em> if you have an umbrella. You're prepared for rain only if both conditions are true.</li>
-            <li><strong>Using <code className="inline">or</code></strong>: Useful for scenarios where satisfying at least one of the conditions is enough. Here, if it's raining or you have an umbrella (or both), a specific block of code will execute.</li>
-            <li><strong>Using <code className="inline">not</code></strong>: Inverts the truth value of a condition. If it's <em>not</em> raining, you don't need an umbrella.</li>
+            <li>Using <code className="inline">and</code>: Checks if it's raining <em>and</em> if you have an umbrella. You're prepared for rain only if both conditions are true.</li>
+            <li>Using <code className="inline">or</code>: Useful for scenarios where satisfying at least one of the conditions is enough. Here, if it's raining or you have an umbrella (or both), a specific block of code will execute.</li>
+            <li>Using <code className="inline">not</code>: <em>Inverts</em> the truth value of a condition. If it's <em>not</em> raining, you don't need an umbrella.</li>
             </ul>
-            <p>These examples demonstrate how logical operators allow for the combination of multiple Boolean expressions, enhancing the decision-making capabilities of your programs.</p>
+
+            <Collapsible title={"Challenge"}>
+                <p>Using <code className="inline">and</code>, write the following:</p>
+                <ol>
+                    <li>An if statement that determines whether or not you should go to school based on the day and hour of the day.</li>
+                </ol>
+            </Collapsible>
+
+            <h3>Logical Operators in Boolean Expressions</h3>
+            <p>Like arithmetic operators, logical operators are used in boolean expressions. Remember that a boolean expression is simply a statement that evaluates to <code className="inline">True</code> or <code className="inline">False</code>.</p>
+            <CodeBlock language={"python"} codeString={`print(True and False)  # Simplifies to False
+print(True or False)   # Simplifies to True
+print(not False)       # Simplifies to True`} />
+
 
             <h3>Combining Arithmetic and Logical Operators</h3>
-            <p>The following examples use both arithmetic and logical operators. Code like this is common in programming.</p>
+            <p>By combining arithmetic and logical operators, you can create more complex boolean expressions. Code like this is common in real-life applications. Below are some examples: </p>
             <CodeBlock language={"python"} codeString={`# Checking weather conditions for a picnic
 temperature = 75
 wind_speed = 10
 
-# Using 'and' with arithmetic comparisons
+# 1. Using 'and' with arithmetic comparisons
 if temperature > 70 and wind_speed < 15:
     print("Perfect weather for a picnic.")
 else:
     print("Conditions are not ideal for a picnic.")
 
-# Deciding on an evening activity based on weather conditions
+# 2. Deciding on an evening activity based on weather conditions
 if temperature > 65 and not wind_speed > 20:
     print("Great evening for a walk.")
 else:
-    print("Maybe stay in and read a book.")
+    print("Maybe stay in and read a book.")`}/>
 
-# Determining if you need to water plants based on weather and soil moisture
+            <p>Let's take a closer look. The first <code className="inline">if</code> statement can be broken down into multiple boolean expressions: <code className="inline">temperature &gt; 70</code> and <code className="inline">wind_speed &lt; 15</code>.</p>
+            <ol>
+                <li><code className="inline">temperature &gt; 70</code> evaluates to <code className="inline">True</code>.</li>
+                <li><code className="inline">wind_speed &lt; 15</code> evaluates to <code className="inline">False</code>.</li>
+            </ol>
+
+            <p>After simplifying these expressions, the <code className="inline">if</code> statement becomes <code className="inline">if True and False:</code>, which evaluates to <code className="inline">False</code>.</p>
+
+            <Collapsible title={"Challenge"}>
+                <p>Try breaking down the second <code className="inline">if</code> statement into multiple boolean expressions.</p>
+            </Collapsible>
+
+            <p>Here's a final example using <code className="inline">or</code> and <code className="inline">not</code>.</p>
+
+            <CodeBlock language={"python"} codeString={`# Determining if you need to water plants based on weather and soil moisture
 rained_yesterday = False
 soil_moisture = 30  # soil moisture percentage
 
 # Using 'or' and 'not' with arithmetic comparisons
-if not rained_yesterday or soil_moisture < 40:
+if not rained_yesterday==True or soil_moisture < 40:
     print("You need to water the plants today.")
 else:
     print("No need to water the plants today.")`}/>
@@ -186,22 +221,13 @@ else:
 
             <section>
                 <h2>Truth Tables</h2>
-                <p>A truth table is a mathematical table used to illustrate how the logical operators function for all possible true/false combinations of their inputs. They are essential because they provide a clear, systematic way to understand how different Boolean expressions will evaluate.</p>
-
-                <p>Truth tables display the outcomes of logical operations for every possible combination of inputs. For programmers, they are particularly useful for:</p>
-                <ul>
-                    <li>Visualizing how logical operators combine multiple conditions.</li>
-                    <li>Debugging complex conditional statements by breaking down the expressions.</li>
-                    <li>Ensuring the logic of conditional expressions is accurate and behaves as expected.</li>
-                </ul>
-
-                <p>Here are the truth tables for these logical operators, which illustrate the result of each operation based on all possible input combinations:</p>
+                <p>A truth table is a mathematical table used to illustrate how the logical operators function for all possible combinations of <code className="inline">True</code> and <code className="inline">False</code>.</p>
 
                 <CodeBlock language={"python"} codeString={`# and
-True and True   # True
-True and False  # False
-False and True  # False
-False and False # False
+True and True    # True
+True and False   # False
+False and True   # False
+False and False  # False
 
 # or
 True or True    # True
@@ -210,81 +236,141 @@ False or True   # True
 False or False  # False
 
 # not
-not True  # False
-not False # True`}/>
+not True   # False
+not False  # True`}/>
+
+                <p>Don't worry about memorizing the truth tables. Most programmers learn them quickly simply by using logical operators in their code. However, they are a useful reference for beginning programmers.</p>
 
                 <Collapsible title={"Challenge"}>
-                    <p>Add the following code to your code editor, then run it.</p>
+                    <p>Add the following code to your code editor, then run it in.</p>
                     <CodeBlock language={"python"} codeString={`# and Truth Table
-print("True and True =", True and True)   # True
-print("True and False =", True and False)  # False
-print("False and True =", False and True)  # False
-print("False and False =", False and False) # False
+print("True and True =", True and True)      # True
+print("True and False =", True and False)    # False
+print("False and True =", False and True)    # False
+print("False and False =", False and False)  # False
 
 # or Truth Table
-print("True or True =", True or True)    # True
-print("True or False =", True or False)   # True
-print("False or True =", False or True)   # True
-print("False or False =", False or False)  # False
+print("True or True =", True or True)       # True
+print("True or False =", True or False)     # True
+print("False or True =", False or True)     # True
+print("False or False =", False or False)   # False
 
 # NOT Truth Table
-print("not True =", not True)  # False
-print("not False =", not False) # True`}/>
+print("not True =", not True)   # False
+print("not False =", not False)  # True`}/>
                 </Collapsible>
             </section>
 
             <section>
                 <h2>Truthy and Falsy Values</h2>
-                <p>In Python, beyond the explicit Boolean values <code className="inline">True</code> and <code className="inline">False</code>, other types of values are also evaluated for their truthiness or falsiness when used in conditions. This means that practically any value can be tested for truth value, allowing for more sophisticated and concise control flow without the need for explicit comparison checks.</p>
-                <p>Falsy values are those that Python considers equivalent to <code className="inline">False</code> when evaluated in a Boolean context. Here are the commonly encountered falsy values in Python:</p>
+                <p>Beyond the explicit Boolean values <code className="inline">True</code> and <code className="inline">False</code>, values of other data types can be evaluated as <code className="inline">True</code> or <code className="inline">False</code> when used in conditions. "Falsy" values are those that Python considers equivalent to <code className="inline">False</code> when evaluated in a Boolean context. Here are some commonly encountered falsy values in Python:</p>
                 <ul>
                     <li><code className="inline">0</code>: The integer zero</li>
                     <li><code className="inline">0.0</code>: The float zero</li>
                     <li><code className="inline">''</code> or <code className="inline">""</code>: Empty strings</li>
-                    <li><code className="inline">[]</code>: An empty list</li>
+                    {/* <li><code className="inline">[]</code>: An empty list</li>
                     <li><code className="inline">{}</code>: An empty dictionary</li>
                     <li><code className="inline">()</code>: An empty tuple</li>
-                    <li><code className="inline">set()</code>: An empty set</li>
+                    <li><code className="inline">set()</code>: An empty set</li> */}
                     <li><code className="inline">None</code>: The <code className="inline">None</code> object</li>
                     <li><code className="inline">False</code>: The Boolean value <code className="inline">False</code> itself</li>
+                    <li>Empty sequences of data, which we will learn about in future sections.</li>
                 </ul>
-                <p>Here's how some values behave in a Boolean context:</p>
-                <CodeBlock language={"python"} codeString={`bool(1)  # True
-bool(0)  # False
-bool(-2)  # True, because any non-zero number is truthy
-bool('Hello!')  # True
-bool('')  # False
-bool([1, 2, 3])  # True, because the list is not empty
-bool([])  # False, because the list is empty`} />
-                <p>Why does Python have truthy and falsy values? This feature enables you to write more readable and concise conditions. For example, instead of checking if a list's length is greater than zero to determine if it's not empty, you can directly use the list in a condition. This leverages Python's ability to treat non-empty collections as truthy:</p>
-                <CodeBlock language={"python"} codeString={`my_list = [1, 2, 3]  # truthy value
-if my_list:
-    print("The line of code will execute")
 
-x = 0  # falsy value
-if x:
-    print("This line of code will not execute")
-            `} />
-                <p>Understanding truthy and falsy values is crucial for effectively controlling the flow of your programs and writing Pythonic code that is both clear and concise.</p>
+                <p>All other values are considered "truthy".</p>
+
+                <h3>Converting Values to Booleans</h3>
+                <p>If you ever want to analyze the truthiness of a value, you can simply cast the data to a boolean using the <code className="inline">bool</code> function:</p>
+                <CodeBlock language={"python"} codeString={`bool(1)         # True
+bool(0)         # False
+bool(-2)        # True, because any non-zero number is truthy
+bool('Hello!')  # True
+bool('')        # False`} />
+                <p>Why does Python have truthy and falsy values? This feature enables you to write more concise conditions. For example, instead of checking if a value is equal to <code className="inline">True</code>, you can simply check if the value <em>itself</em> is truthy. Both examples below are equivalent:</p>
+                <CodeBlock language={"python"} codeString={`is_weekend = True
+
+# 1. Explicit comparison of is_weekend == True is unnecessary, as True is a truthy value
+if is_weekend == True:
+  print("It's a weekend!")
+
+# 2. Using truthiness
+if is_weekend:
+  print("It's a weekend!")`} />
+
+                <p>Here's another example with strings:</p>
+                <CodeBlock language={"python"} codeString={`username = ""
+
+# 1. Explicit comparison of username != "" is unnecessary, as "" is a falsy value
+if username != "":
+  print("Valid username: your username is not empty.")
+
+# 2. Using truthiness
+if username:
+  print("Valid username: your username is not empty.")`} />
+
+                <p>And a final example with integers:</p>
+                <CodeBlock language={"python"} codeString={`number_of_items = 0
+
+# 1. Explicit comparison of number_of_items > 0 is unnecessary, as 0 is a falsy value
+if number_of_items > 0:
+  print("You may proceed to enter your payment information.")
+else:
+  print("You must check out at least one item.")
+
+# 2. Using truthiness
+if number_of_items:
+  print("You may proceed to enter your payment information.")
+else:
+  print("You must check out at least one item.")`} />
+
+                <p>Practically any value of any data type can be tested for truth value, without using an explicit comparison check.</p>
+
+                <Collapsible title={"Challenge"}>
+                    <p>In your code editor, rewrite the following expressions to use truthiness instead of explicit comparison checks:</p>
+                    <CodeBlock language={"python"} codeString={`# 1.
+is_tired = True
+if is_tired == True:
+  print("Take a break!")
+
+# 2. Bonus
+is_tired = True
+if is_tired == False:
+  print("Keep going!")`} />
+                </Collapsible>
             </section>
 
             <section>
-                <h2>Ordering and Grouping Logical Operators</h2>
-                <p>You might remember the acronym "PEMDAS" from math class, a useful mnemonic for memorizing the order of arithmetic operators. Like arithmetic operators, logical operators also follow a specific order of precedence when evaluating expressions. This order is crucial for understanding how complex boolean expressions are resolved. The basic order of precedence from highest to lowest is: <code className="inline">not</code>, <code className="inline">and</code>, and <code className="inline">or</code>.</p>
+                <h2>Order of Operators</h2>
+                <p>You might remember the acronym "PEMDAS" from math class, a useful mnemonic for memorizing the order of arithmetic operators: Parentheses, Exponents, Multiplication, Division, Addition, Subtraction. Like arithmetic operators, logical operators also follow a specific order of precedence when evaluating expressions. The basic order of precedence from highest to lowest is: <code className="inline">not</code>, <code className="inline">and</code>, and <code className="inline">or</code>. Let's examine some examples:</p>
                 <CodeBlock language={"python"} codeString={`# 'not' has the highest precedence
-not False and True  # Evaluates to True
+not False and True  # Evaluates to True`} />
 
-# 'and' is evaluated next
-True and False or True  # Evaluates to True
+                <p>Here, <code className="inline">not False</code> is evaluated to <code className="inline">True</code>, and then <code className="inline">True and True</code> is evaluated to <code className="inline">True</code>. Now, we'll focus on the <code className="inline">and</code> operator:</p>
 
-# 'or' has the lowest precedence
-False or True and False  # Evaluates to False
-`} />
+<CodeBlock language={"python"} codeString={`# 'and' has the next highest precedence
+True and False or True    # Evaluates to True`} />
+
+                <p>In the above example, <code className='inline'>True and False</code> is first evaluated to <code className="inline">False</code>, and then <code className="inline">False or True</code> is evaluated to <code className="inline">True</code>. Finally, we'll look at the <code className="inline">or</code> operator:</p>
+
+<CodeBlock language={"python"} codeString={`# 'or' has the lowest precedence
+False or False and True   # Evaluates to False`} />
+
+                <p>Here, <code className='inline'>False and True</code> is first evaluated to <code className="inline">False</code>, and then <code className="inline">False or False</code> is evaluated to <code className="inline">False</code>.</p>
+
+                <Collapsible title={"Challenge"}>
+                    <p>What will the following expressions will evaluate to? Use your code editor to check your results.</p>
+
+                    <CodeBlock language={"python"} codeString={`print(False and False or True)
+print(False or True and not True)
+print(not True or False and False)`} />
+                </Collapsible>
+
+
                 <h3>Combining Arithmetic Operators with Logical Operators</h3>
                 <p>Arithmetic operators have higher precedence than logical ones. This means that in expressions involving both types of operators, the arithmetic operations will be evaluated <strong>first</strong>, followed by the logical operations. This hierarchy ensures that numerical calculations are completed before logical comparisons are made.</p>
 
                 <CodeBlock language={"python"} codeString={`print(1 + 3 * 4 == 14 and True)`} />
-                <p>Here, according to PEMDAS rules, multiplication <code className="inline">*</code>, followed by addition <code className="inline">+</code>. We now have:</p>
+                <p>Here, according to PEMDAS rules, multiplication <code className="inline">*</code> happens first, followed by addition <code className="inline">+</code>. We now have:</p>
 
                 <CodeBlock language={"python"} codeString={`print(13 == 14 or True)`} />
                 <p>The number on the left is then compared to the number on the right using the <code className="inline">==</code> operator. This simplifies to:</p>
@@ -296,7 +382,11 @@ False or True and False  # Evaluates to False
                 <p>Finally, we print <code className="inline">True</code> to the console.</p>
 
                 <Collapsible title={"Challenge"}>
-                    <p>In your code editor, write the PEMDAS order of operations as a comment.</p>
+                    <p>What will the following expressions will evaluate to? Use your code editor to check your results.</p>
+
+                    <CodeBlock language={"python"} codeString={`print(1 + 10 == 11 and True)
+print(13 * 3 == 37 or False)
+print("a" == "b" or not False)`} />
                 </Collapsible>
 
                 <h3>Using Parentheses <code className="inline">()</code></h3>
@@ -318,11 +408,46 @@ result2 = False and False or True
 result2 = False and (False or True)
 # After grouping with parentheses, evaluates to False
 `} />
-                <p>By thoughtfully using parentheses, you can ensure your boolean expressions are evaluated in the exact order you intend, avoiding potential logic errors in your code.</p>
+                <p>By carefully using parentheses, you can ensure your boolean expressions are evaluated in the exact order you intend.</p>
+
+                <Collapsible title={"Challenge"}>
+                    <p>What will the following boolean expressions with parentheses will evaluate to? Use your code editor to check your results.</p>
+
+                    <CodeBlock language={"python"} codeString={`print((False or True) and not False)
+print(not "a" == "b" and (False or True))
+print(True == False or (False or True))`} />
+                </Collapsible>
             </section>
 
             <section>
-                <h2>DeMorgan's Laws and Simplifying Boolean Expressions (Optional)</h2>
+                <h2>Short-Circuit Evaluation</h2>
+                <p>In Python, <strong>short-circuit evaluation</strong> is a feature that allows for more efficient evaluation of boolean expressions when one of the operands is already known to be <code className="inline">True</code> or <code className="inline">False</code>. For example: </p>
+
+                <CodeBlock language={"python"} codeString={`# Evaluates to True without checking the second operand (False)
+result = True or False
+
+# Evaluates to False without checking the second operand ("hello" == "world")
+result = False and ("hello" == "world")
+
+# Evaluates to True without checking the second operand (3 * 9 == 25)
+result = True or (3 * 9 == 25)`} />
+
+                <p>In these examples, the second operand is not evaluated because the first operand combined with the logical operator is already known to be <code className="inline">True</code> or <code className="inline">False</code> via the truth tables. Essentially, short-circuit evaluation boils down to two rules:</p>
+                <ol>
+                    <li>In an <code className="inline">or</code> expression, if the first operand is <code className="inline">True</code>, the second operand is not evaluated.</li>
+                    <li>In an <code className="inline">and</code> expression, if the first operand is <code className="inline">False</code>, the second operand is not evaluated.</li>
+                </ol>
+
+                <h3>Implications of Short-Circuit Evaluation</h3>
+                <p>By placing conditions that are simpler to evaluate first, you can make the computer's running of your code more efficient. Short-circuit evaluation has the following benefits:</p>
+                <ul>
+                    <li>Optimizing performance by skipping unnecessary evaluations of complex boolean expressions.</li>
+                    <li>Ensuring that certain conditions are met before executing other conditions, reducing the risk of errors.</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>(Optional) DeMorgan's Laws and Simplifying Boolean Expressions</h2>
                 <p>DeMorgan's Laws consist of two transformation rules that help in rephrasing boolean expressions involving <code className="inline">and</code> (conjunction) and <code className="inline">or</code> (disjunction), making complex logic more accessible. Here's how they work:</p>
                 <CodeBlock language={"python"} codeString={`# DeMorgan's Laws Examples
 # not (a and b) is equivalent to (not a) or  (not b)
@@ -367,12 +492,23 @@ if age < 18 or not is_citizen:
             </section>
 
             <section>
-                <h2>Ternary Operators</h2>
+                <h2>(Optional) Ternary Operators</h2>
                 <p>Ternary operators are a compact, abbreviated way to write simple conditionals. They are often used in place of short <code class="inline">if-else</code> statements. Here's an example of a ternary operator:</p>
-                <CodeBlock language={"python"} codeString={`celsius = 100
-weather = "hot" if celsius >= 100 else "warm"`} />
+                <CodeBlock language={"python"} codeString={`celsius = 30
+weather = "hot" if celsius >= 30 else "warm"`} />
 
                 <p>The term <code class="inline">ternary</code> comes from the Latin word <em>"terna"</em> which means "three".  The three terms are the condition itself, the expression if the condition is <code class="inline">True</code> and the expression if the condition is <code class="inline">False</code>. The condition is evaluated first. If the result of the expression is evaluated as <code class="inline">True</code>, then is stored into the variable <code class="inline">is_boiling</code>. Storing the result of short boolean expressions into variables is a common use case for ternary operators.</p>
+
+                <Collapsible title={"Challenge"}>
+                    <p>Convert the following <code className="inline">if-else</code> statement using a ternary operator.</p>
+                    <CodeBlock language={"python"} codeString={`celsius = 100
+if celsius >= 100:
+    water_temp = "boiling"
+else:
+    water_temp = "not boiling"
+
+print(water_temp)`} />
+                </Collapsible>
             </section>
 
         </div>
