@@ -543,7 +543,7 @@ print(water_temp)`} />
 
             <section>
                 <h2>Summary</h2>
-                <p>Understanding booleans will supercharge your <code className="inline">if</code> statements! Writing concise and efficient code that branches based on conditions is a key skill in programming.</p>
+                <p>Understanding booleans will supercharge your <code className="inline">if</code> statements! Writing concise and efficient code that branches based on conditions is a fundamental skill in your programming journey.</p>
                 <button onClick={() => window.location.href = "/quiz?name=04Booleans.py"}>Start Quiz</button>
             </section>
 
