@@ -7,12 +7,12 @@ const Intro = () => {
         <div className="lesson-container">
           <section>
             <h1>Intro to Python</h1>
-            <p>Imagine you're learning to cook. Just as you need to understand common ingredients and tools, in programming, you need to understand data types and operations in order to build useful programs. This lesson introduces you to these basic "ingredients" of Python programming.</p>
+            <p>Imagine you're learning how to cook or bake. Just as you need to understand common ingredients and tools in your kitchen, in programming, you need to understand data types and operators in order to build useful programs. This lesson introduces you to these basic "ingredients" of Python programming.</p>
           </section>
 
           <section>
             <h2>What is Programming?</h2>
-            <p>Programming is the act of creating instructions that a computer can follow. Just as you might follow a recipe to make a meal, a computer will follow a program to perform task such as printing a paper or loading your favorite app. A program contains code, the actual written instructions that the computer can understand.</p>
+            <p><strong>Programming</strong> is the act of creating instructions that a computer can follow. Just as you might follow a recipe to make a meal, a computer will follow a program to perform tasks such as printing a paper or loading your favorite app. A program contains <strong>code</strong>, the actual written instructions that the computer can understand.</p>
 
 						<p>Let's write some code for our first program.</p>
 
@@ -27,11 +27,11 @@ const Intro = () => {
 
           <section>
 						<h2>Comments</h2>
-            <p>Comments are notes in your code or labels that explain what your code does, created with the hashtag or pound <code className="inline">#</code> symbol. They are essential for explaining what your code does, making it easier for others (and yourself) to understand your code, but are otherwise ignored by your computer.</p>
+            <p><strong>Comments</strong> are notes in your code or labels that explain what your code does, created with the hashtag or pound <code className="inline">#</code> symbol. They are essential for explaining what your code does, making it easier for others (and yourself) to understand your code. Your computer, however, ignores them completely.</p>
 
-<CodeBlock language={"python"} codeString={`print("Python is fun!")  # Displays a message`} />
+<CodeBlock language={"python"} codeString={`# This is my first program.`} />
 
-						<p>These following lines of code are interpreted by the computer identically:</p>
+						<p>You can insert comments in-line with code or on their own line. The following lines of code are interpreted by the computer identically:</p>
 
 						<CodeBlock language={"python"} codeString={`print("Python is fun!")
 print("Python is fun!")  # Displays a message`} />
@@ -64,7 +64,7 @@ print(5)
 a
 Hello, world
 5`} />
-						<p><code className="inline">print()</code> is a type of <strong>function</strong>: a piece of code that allows us to perform a specific action (in this case, display something on the screen). Throughout our learning, we will come across many more useful functions in Python and even learn to create our own!</p>
+						<p><code className="inline">print()</code> is a type of <strong>function</strong>: a piece of code that allows us to perform a specific action - in this case, display something on the screen. Throughout our learning, we will come across many more useful functions in Python and even learn to create our own!</p>
 
             <Collapsible title={"Challenge"}>
               <p>In your code editor, use <code className="inline">print()</code> to display the name your favorite color. Then, on the line below it, use <code className="inline">print()</code> to display the name of your favorite animal.</p>
@@ -75,27 +75,27 @@ Hello, world
             <h2>Basic Math (Arithmetic Operators)</h2>
             <p>Computers were originally designed to do math (it's in the name "compute!"). So, it's no surprise that we can use Python for mathematical operations. Here are some of just the simplest operators that you can use to add, subtract, multiply, and divide numbers. Note that these operators might not look exactly like the ones you're used to when doing math by hand. </p>
             <CodeBlock language={"python"} codeString={`# Adding (+) two numbers
-print(10 + 5)     # Results in 15
+print(10 + 5)      # Results in 15
 
 # Subtracting (-) one number from another
-print(10 - 5)     # Results in 5
+print(10 - 5)      # Results in 5
 
 # Multiplying (*) two numbers together
-print(10 * 5)     # Results in 50
+print(10 * 5)      # Results in 50
 
 # Dividing one (/) number by another
-print(10 / 2)     # Results in 5.0
+print(10 / 2)      # Results in 5.0
 
-# Raising one number to the power (**) of another (exponents)
+# Raising one number to the power (**) of another, also known as exponentiation
 print(10 ** 2)     # (10 to the power of 2), results in 100.
 print(100 ** 0.5)  # Square root of 100, results in 10`} />
 
-<p>Just like in math, we can use multiple operators in the same arithmetic expression.</p>
+            <p>Just like in math, we can use multiple operators in the same arithmetic expression.</p>
 
             <CodeBlock language={"python"} codeString={`print(10 + 5 - 2)     # Results in 13
 print(10 * 5 / 2)     # Results in 25.0`}/>
 
-            <p>Note that exponents do NOT use the carat <code className="inline">^</code> sign!</p>
+            <p>Note that exponents do <strong>not</strong> use the carat <code className="inline">^</code> sign!</p>
 
             <Collapsible title={"Challenge"}>
               <p>In your code editor, create 3 different expressions, each on separate lines, using three different arithmetic operators.</p>
@@ -111,7 +111,7 @@ print("c")
 print("Hi!")
 print("I Like Python")
 
-# int (short for integer)
+# int (short for integer, a positive or negativewhole number)
 print(10)
 print(-1000)
 
@@ -119,7 +119,7 @@ print(-1000)
 print(10.5)
 print(0.0)
 
-# boolean (named after the mathematician George Boole, and used to represent either True or False)
+# boolean (a data type used to represent either True or False)
 print(True)
 print(False)
 
@@ -137,7 +137,7 @@ print("I have " + 2 + " dogs")  # Error: we cannot use the '+' operator to add s
 # 3. Attempting to add a number to a 'None' value
 print(10 + None)  # Error: it doesn't make sense to add anything to a non-number!`}/>
 						<h3>Checking Data Types</h3>
-            <p>One way to check the type of any data in your code is to use the <code className="inline">type()</code> function. Like <code className="inline">print()</code>, it is a piece of code that performs a simple task. The <code className="inline">type()</code> function will display the type of the data. You can do this if you're not sure what the data type is or if you encounter a new one that you don't recognize! </p>
+            <p>One way to check the type of any value in your code is to use the <code className="inline">type()</code> function. Like <code className="inline">print()</code>, it is a piece of code that performs a simple task. The <code className="inline">type()</code> function will display the type of the data. You can do this if you're not sure what the data type of a value is or if you encounter a new one that you don't recognize! </p>
             <CodeBlock language={"python"} codeString={`print(type(10))    # int
 print(type("5"))   # string
 print(type(10.5))  # float`} />
@@ -186,7 +186,7 @@ print(10 + 0)`}/>
 message = "Hello World"
 print(message)  # Displays "Hello World"
 
-# 2. Doing other unrelatedstuff in your code
+# 2. Doing other unrelated stuff in your code
 print(5 + 5)
 print("Hi!")
 
@@ -201,8 +201,8 @@ print(message)  # Displays "Hello World" again`} />
               <p>In your code editor, create a variable called <code className="inline">day</code> and assign the day of the week to it.</p>
             </Collapsible>
 
-            <h3>Synonyms For Variables</h3>
-            <p>Some alternate terms for initializing a variable that you may come across in this course include:</p>
+            <h3>Terminology for Variables</h3>
+            <p>Some alternate terms for initializing a variable that you may come across in this course or other learning materials include:</p>
             <ul>
               <li><em>create</em> a variable</li>
               <li><em>declare</em> a variable</li>
@@ -214,8 +214,9 @@ print(message)  # Displays "Hello World" again`} />
             <p>Many programmers will use these terms interchangeably, and for the this course, we will consider these all to mean the same thing. You don't have to memorize each of these terms, but it's good to be aware of them, especially when talking with other programmers.</p>
 
             <h3>Changing Variable Contents</h3>
-            <p>Like a container, variables aren't just static; you can update or change their contents at any time.</p>
-            <CodeBlock language={"python"} codeString={`count = 10
+            <p>Like a container, variables aren't just static values that can't be changed; In Python, you can update or change the value assigned to a variable at any time.</p>
+            <CodeBlock language={"python"} codeString={`# Define a variable count and assign it the integer value 10
+count = 10
 
 # Adding one to the count
 count = count + 1
@@ -227,15 +228,14 @@ print(count)  # Results in 12
 
 # Reassigning the value of count ("resetting")
 count = 0
-print(count)  # Results in 0
-`} />
+print(count)  # Results in 0`} />
 
 <p>Note that the line <code className="inline">count += 1</code> is the same as <code className="inline">count = count + 1</code>, but it's a shorter way to write the same thing. You can also use the abbreviation operators <code className="inline">-=</code>, <code className="inline">*=</code>, and <code className="inline">/=</code> operators to update the value of a variable.</p>
 
             <Collapsible title="Challenge">
               <ol>
                 <li>In your code editor, create a variable called <code className="inline">age</code> and assign it the value of your age.</li>
-                <li>On the next line, use the <code className="inline">+=</code> operator to add 1 year to your age.</li>
+                <li>On the next line, use the <code className="inline">+=</code> operator to increase <code className="inline">age</code> by one.</li>
                 <li>Finally, use the <code className="inline">print()</code> function to display your updated age.</li>
               </ol>
             </Collapsible>
@@ -258,30 +258,30 @@ x _ 10            # Defining a variable: should be x = 10`}/>
             </Collapsible>
 
             <h3><code className="inline">NameError</code></h3>
-            <p>A <code className="inline">NameError</code> happens when Python does not recognize a name you reference. This usually occurs if you try to use a variable that has not been initialized or defined, similar to referencing a spice in your recipe that you forgot to list in your ingredients.</p>
+            <p>A <code className="inline">NameError</code> happens when Python does not recognize a variable or function name that you are trying to use. This usually occurs if you try to use a variable that has not been initialized or defined. An analogy in cooking would be attempting to use a spice in your recipe that you forgot to list in your ingredients!</p>
 
             <CodeBlock language={"python"} codeString={`print(age)
 # Python is looking for a variable called age
 # If 'age' has not been defined earlier, this causes NameError
 
 # Perhaps, you meant to print the string "age" instead of the variable named "age"
-print("age")  # no error
+print("age")  # Output: "age"
 
-# If you did want to use the variable age, define it first:
+# If you did indeed want to use the variable called age, define it first:
 age = 30
 print(age)`}/>
 
             <p>To avoid <code className="inline">NameError</code>, make sure all your variables are defined and accessible where you try to use them. Think of it as making sure all your ingredients are on the counter before you start cooking.</p>
 
             <Collapsible title="Challenge">
-            <p>What kind of errors will you get if you run the following code?</p>
+            <p>What kind of errors will you get if you run the following programs?</p>
 
-            <CodeBlock language={"python"} codeString={`#1.
-print("Hello, world!')
-
-#2.
+            <CodeBlock language={"python"} codeString={`# Program 2
 age = 5
-print(agee)`} />
+print(igloo)
+
+# Program 1
+print "Hello, world!")`} />
             </Collapsible>
           </section>
 

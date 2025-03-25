@@ -12,6 +12,7 @@ import Project04B from './04BProject';
 import Booleans from './04Booleans';
 import PigLatin from './04Milestone_PigLatin';
 import Functions from './05Functions';
+import Project05 from './05Project';
 import WhileLoops from './06WhileLoops';
 import ForLoops from './07ForLoops';
 import CaesarCipher from './07P_CaesarCipher';
@@ -19,4 +20,4 @@ import Lists from './08Lists';
 import Dictionaries from './09Dictionaries';
 import PassByReference from './20PassByReference';
 
-export { Intro, Project00, Strings, Project01, Project02A, Project02B, Project03, Project04B,Variables, Input, PigLatin, Conditionals, Booleans, Functions, WhileLoops, ForLoops, CaesarCipher, Lists, Dictionaries, PassByReference }
+export { Intro, Project00, Strings, Project01, Project02A, Project02B, Project03, Project04B,Variables, Input, PigLatin, Conditionals, Booleans, Functions, Project05, WhileLoops, ForLoops, CaesarCipher, Lists, Dictionaries, PassByReference }
