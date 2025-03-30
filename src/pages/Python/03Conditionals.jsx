@@ -152,7 +152,7 @@ if grade > 60:
     print("Pass")
 elif grade > 90:
     print("Excellent!")  # This line will never be reached regardless of the value of grade`} />
-                <p>In this scenario, because <code className="inline">grade &gt; 60</code> is true, "Pass" will be printed, and the program will not evaluate <code className="inline">grade &gt; 90</code>, even though it is true, because it comes after an already satisfied condition. Therefore, "Excellent!" will never be printed, no matter the grade.</p>
+                <p>In this scenario, because <code className="inline">grade &gt; 60</code> is true, <code className="inline">"Pass"</code> will be printed, and the program will not evaluate <code className="inline">grade &gt; 90</code>, even though it is true, because it comes after an already satisfied condition. Therefore, <code className="inline">"Excellent!"</code> will never be printed, no matter the grade.</p>
                 <p>To ensure that all relevant conditions are considered, <strong>start with the most specific conditions</strong> and proceed to the more general ones:</p>
                 <CodeBlock language={"python"} codeString={`grade = 95
 if grade > 90:
