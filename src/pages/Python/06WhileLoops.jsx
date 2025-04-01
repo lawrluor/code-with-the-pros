@@ -130,39 +130,39 @@ Done!`} />
 
                 <p>Let's trace our example code using this table approach:</p>
 
-                <table style={{ borderCollapse: 'collapse', width: '100%', marginBottom: '20px' }}>
+                <table>
                   <thead>
-                    <tr style={{ borderBottom: '1px solid #ddd' }}>
-                      <th style={{ padding: '8px', textAlign: 'left' }}>Iteration</th>
-                      <th style={{ padding: '8px', textAlign: 'left' }}>x value</th>
-                      <th style={{ padding: '8px', textAlign: 'left' }}>condition<br />(x &lt;= 3)</th>
-                      <th style={{ padding: '8px', textAlign: 'left' }}>Output</th>
+                    <tr>
+                      <th>Iteration</th>
+                      <th>x value</th>
+                      <th>condition<br />(x &lt;= 3)</th>
+                      <th>Output</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr style={{ borderBottom: '1px solid #ddd' }}>
-                      <td style={{ padding: '8px' }}>1</td>
-                      <td style={{ padding: '8px' }}>1</td>
-                      <td style={{ padding: '8px' }}>True</td>
-                      <td style={{ padding: '8px' }}>1</td>
+                    <tr>
+                     <td>1</td>
+                     <td>1</td>
+                     <td>True</td>
+                     <td>1</td>
                     </tr>
-                    <tr style={{ borderBottom: '1px solid #ddd' }}>
-                      <td style={{ padding: '8px' }}>2</td>
-                      <td style={{ padding: '8px' }}>2</td>
-                      <td style={{ padding: '8px' }}>True</td>
-                      <td style={{ padding: '8px' }}>2</td>
+                    <tr>
+                     <td>2</td>
+                     <td>2</td>
+                     <td>True</td>
+                     <td>2</td>
                     </tr>
-                    <tr style={{ borderBottom: '1px solid #ddd' }}>
-                      <td style={{ padding: '8px' }}>3</td>
-                      <td style={{ padding: '8px' }}>3</td>
-                      <td style={{ padding: '8px' }}>True</td>
-                      <td style={{ padding: '8px' }}>3</td>
+                    <tr>
+                     <td>3</td>
+                     <td>3</td>
+                     <td>True</td>
+                     <td>3</td>
                     </tr>
-                    <tr style={{ borderBottom: '1px solid #ddd' }}>
-                      <td style={{ padding: '8px' }}>Loop End</td>
-                      <td style={{ padding: '8px' }}>4</td>
-                      <td style={{ padding: '8px' }}>False</td>
-                      <td style={{ padding: '8px' }}>Done!</td>
+                    <tr>
+                     <td>Loop End</td>
+                     <td>4</td>
+                     <td>False</td>
+                     <td>Done!</td>
                     </tr>
                   </tbody>
                 </table>

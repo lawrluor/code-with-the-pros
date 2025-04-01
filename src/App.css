@@ -157,3 +157,24 @@ a.button:hover {
   text-decoration: none;
   color: var(--primary-color);
 }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+th {
+  padding: 8px;
+  text-align: left;
+}
+
+td {
+ padding: 8px;
+}
+
+tr {
+  border-bottom-width: 1px;
+  border-bottom-color: var(--text-color);
+  border-bottom-style: solid;
+}
