@@ -146,3 +146,8 @@ a.button:hover {
 .pointer {
   cursor: pointer;
 }
+
+.section-link {
+  text-decoration: none;
+  color: var(--primary-color);
+}

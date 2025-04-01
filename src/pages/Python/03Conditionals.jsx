@@ -122,7 +122,7 @@ print("Battery level: ", battery)  # This line will always print`} />
             </section>
 
             <section>
-                <h2>Multiple Choices with <code class="inline">elif</code></h2>
+                <h2 id="elif-statements"><a href="#elif-statements" className="section-link">Multiple Choices with <code class="inline">elif</code></a></h2>
                 <p>What if you need more than two options? <code class="inline">elif</code> (short for <em>"else if"</em>) lets you chain multiple conditions. It is usually pronounced "EH-lif".</p>
                 <CodeBlock language={"python"} codeString={`grade = 85
 if grade >= 90:
@@ -321,7 +321,7 @@ else:
             <section>
                 <h2>Wrapping Up</h2>
                 <p>Great job learning the basics of conditional statements! We'll continue to learn more about applications of conditional statements in future lessons. We'll also take a deeper look at the condition part of <code class="inline">if</code> statements and how the value of the condition is evaluated.</p>
-                <a href="/quiz?name=03Conditionals.py" target="_blank" rel="noopener noreferrer" className="button">Start Quiz</a>
+                <button onClick={() => window.location.href = "/quiz?name=03Conditionals.py"}>Start Quiz</button>
             </section>
         </div>
     );

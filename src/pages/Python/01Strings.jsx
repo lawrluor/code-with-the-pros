@@ -370,7 +370,7 @@ print(reversed_greeting)  # Outputs: Everyone Hello`} />
             <section>
                 <h2>Wrapping Up</h2>
                 <p>Understanding strings, how to manipulate and format them, and how to use their methods are all essential for working with text data in Python. This fundamental data type will be used throughout the rest of this course, and you can use strings as a basis for understanding new data types in Python.</p>
-                <a href="/quiz?name=01Strings.py" target="_blank" rel="noopener noreferrer" className="button">Start Quiz</a>
+                <button onClick={() => window.location.href = '/quiz?name=01Strings.py'}>Start Quiz</button>
             </section>
         </div>
     );
