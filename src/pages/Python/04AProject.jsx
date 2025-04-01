@@ -1,12 +1,15 @@
 import React from 'react';
 import CodeBlock from '../../components/CodeBlock';
 import Collapsible from '../../components/Collapsible';
+import useSequentialCounter from "../../hooks/useSequentialCounter";
 
 const Project04A = () => {
+	const { getCurrentNumber, getCurrentNumberAndIncrement } = useSequentialCounter(0);
+
 	return(
 		<div className="lesson-container">
 			<section>
-				<h2 id="truth-or-trick"><a href="#truth-or-trick" className="section-link">Truth or Trick? A Boolean Investigation</a></h2>
+				<h2 id={`truth-or-trick`}><a href={`#truth-or-trick`} className="section-link">Truth or Trick? A Boolean Investigation</a></h2>
 				<p>
 					Welcome to "Truth or Trick?" – a challenge where you will uncover the secrets of
 					Boolean logic and apply it in a mystery-solving scenario! You'll work with Boolean
@@ -15,7 +18,7 @@ const Project04A = () => {
 			</section>
 
 			<section>
-				<h2 id="step-1-set-up-the-rock-paper-scissors-game"><a href="#step-1-set-up-the-rock-paper-scissors-game" className="section-link">Step 1: Set Up the Rock-Paper-Scissors Game</a></h2>
+				<h2 id={`step-${getCurrentNumber()}-set-up-the-rock-paper-scissors-game`}><a href={`#step-${getCurrentNumber()}-set-up-the-rock-paper-scissors-game`} className="section-link">Step {getCurrentNumberAndIncrement()}: Set Up the Rock-Paper-Scissors Game</a></h2>
 				<p>
 					Before we start solving the mystery, let's establish the basics. A Boolean can only
 					be one of two values: <code>True</code> or <code>False</code>. Let's confirm this by
@@ -28,7 +31,7 @@ const Project04A = () => {
 			</section>
 
 			<section>
-				<h2 id="step-2-get-user-choice"><a href="#step-2-get-user-choice" className="section-link">Step 2: Get User Choice</a></h2>
+				<h2 id={`step-${getCurrentNumber()}-get-user-choice`}><a href={`#step-${getCurrentNumber()}-get-user-choice`} className="section-link">Step {getCurrentNumberAndIncrement()}: Get User Choice</a></h2>
 				<p>
 					A secret vault has been locked, and only a Boolean-based security system can
 					determine if someone is authorized to enter. The system evaluates multiple conditions
@@ -37,7 +40,7 @@ const Project04A = () => {
 			</section>
 
 			<section>
-				<h2 id="step-3-determine-computer-choice"><a href="#step-3-determine-computer-choice" className="section-link">Step 3: Determine Computer Choice</a></h2>
+				<h2 id={`step-${getCurrentNumber()}-determine-computer-choice`}><a href={`#step-${getCurrentNumber()}-determine-computer-choice`} className="section-link">Step {getCurrentNumberAndIncrement()}: Determine Computer Choice</a></h2>
 				<p>
 					The system checks three conditions:
 					<ul>
@@ -56,7 +59,7 @@ const Project04A = () => {
 			</section>
 
 			<section>
-				<h2 id="step-4-play-the-game"><a href="#step-4-play-the-game" className="section-link">Step 4: Play the Game</a></h2>
+				<h2 id={`step-${getCurrentNumber()}-play-the-game`}><a href={`#step-${getCurrentNumber()}-play-the-game`} className="section-link">Step {getCurrentNumberAndIncrement()}: Play the Game</a></h2>
 				<p>
 					The vault will only open if the person has a key AND knows the password,
 					OR if they have security clearance. Let's express this using Boolean logic:
@@ -69,7 +72,7 @@ const Project04A = () => {
 			</section>
 
 			<section>
-				<h2 id="step-5-run-the-game"><a href="#step-5-run-the-game" className="section-link">Step 5: Run the Game</a></h2>
+				<h2 id={`step-${getCurrentNumber()}-run-the-game`}><a href={`#step-${getCurrentNumber()}-run-the-game`} className="section-link">Step {getCurrentNumberAndIncrement()}: Run the Game</a></h2>
 				<p>
 					Now let's analyze how different logical operators affect the vault security system.
 					Modify the expressions below and see how the output changes.
@@ -83,7 +86,7 @@ const Project04A = () => {
 			</section>
 
 			<section>
-				<h2 id="additional-challenges"><a href="#additional-challenges" className="section-link">Additional Challenges</a></h2>
+				<h2 id={`additional-challenges`}><a href={`#additional-challenges`} className="section-link">Additional Challenges</a></h2>
 				<p>
 					The security system sometimes uses numbers instead of Booleans. In Python,
 					non-zero numbers are considered <strong>truthy</strong>, and zero is <strong>falsy</strong>.
@@ -97,7 +100,7 @@ const Project04A = () => {
 			</section>
 
 			<section>
-				<h2 id="step-7-fixing-a-security-flaw"><a href="#step-7-fixing-a-security-flaw" className="section-link">Step 7: Fixing a Security Flaw</a></h2>
+				<h2 id={`step-${getCurrentNumber()}-fixing-a-security-flaw`}><a href={`#step-${getCurrentNumber()}-fixing-a-security-flaw`} className="section-link">Step {getCurrentNumberAndIncrement()}: Fixing a Security Flaw</a></h2>
 				<p>
 					There's a security flaw! The vault is currently using a weak rule to check security
 					clearance. Rewrite the following condition to make it stricter.
@@ -115,7 +118,7 @@ const Project04A = () => {
 			</section>
 
 			<section>
-				<h2 id="step-8-final-challenge-the-master-lock"><a href="#step-8-final-challenge-the-master-lock" className="section-link">Step 8: Final Challenge - The Master Lock</a></h2>
+				<h2 id={`step-${getCurrentNumber()}-final-challenge-the-master-lock`}><a href={`#step-${getCurrentNumber()}-final-challenge-the-master-lock`} className="section-link">Step {getCurrentNumberAndIncrement()}: Final Challenge - The Master Lock</a></h2>
 				<p>
 					The vault designers have added a final layer of security. The vault will only
 					open if:
@@ -135,7 +138,7 @@ const Project04A = () => {
 			</section>
 
 			<section>
-				<h3 id="conclusion"><a href="#conclusion" className="section-link">Conclusion</a></h3>
+				<h3 id={`conclusion`}><a href={`#conclusion`} className="section-link">Conclusion</a></h3>
 				<p>
 					You've successfully navigated the vault security system! Understanding Booleans,
 					logical operators, and truthy/falsy values is crucial for making real-world decisions

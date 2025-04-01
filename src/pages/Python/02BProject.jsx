@@ -1,7 +1,10 @@
 import CodeBlock from "../../components/CodeBlock";
 import Collapsible from "../../components/Collapsible";
+import useSequentialCounter from "../../hooks/useSequentialCounter";
 
 const Project02B = () => {
+	const { getCurrentNumber, getCurrentNumberAndIncrement } = useSequentialCounter(0);
+
 	return (
 		<div className="lesson-container">
 			<section>
@@ -18,7 +21,7 @@ const Project02B = () => {
 			</section>
 
 			<section>
-				<h2 id="step-0-name-your-store"><a href="#step-0-name-your-store" className="section-link">Step 0: Name Your Store</a></h2>
+				<h2 id={`step-${getCurrentNumber()}-name-your-store`}><a href={`#step-${getCurrentNumber()}-name-your-store`} className="section-link">Step {getCurrentNumberAndIncrement()}: Name Your Store</a></h2>
 				<p>Pick a name for your store, and assign that hard-coded string to a variable called <code className="inline">store_name</code>. Then, print a message welcoming the customer to your store.</p>
 
 				<Collapsible title="Hint">
@@ -27,7 +30,7 @@ const Project02B = () => {
 			</section>
 
 			<section>
-				<h2 id="step-1-setting-up-project"><a href="#step-1-setting-up-project" className="section-link">Step 1: Setting Up the Project</a></h2>
+				<h2 id={`step-${getCurrentNumber()}-setting-up-project`}><a href={`#step-${getCurrentNumber()}-setting-up-project`} className="section-link">Step {getCurrentNumberAndIncrement()}: Setting Up the Project</a></h2>
 				<p>Start by asking the customer for their name and payment method.</p>
 				<ol>
 					<li>Prompt the customer to enter their name and store the result in a variable called <code className="inline">name</code>.</li>
@@ -40,7 +43,7 @@ const Project02B = () => {
 			</section>
 
 			<section>
-				<h2 id="step-2-storing-purchase-details"><a href="#step-2-storing-purchase-details" className="section-link">Step 2: Storing Purchase Details</a></h2>
+				<h2 id={`step-${getCurrentNumber()}-storing-purchase-details`}><a href={`#step-${getCurrentNumber()}-storing-purchase-details`} className="section-link">Step {getCurrentNumberAndIncrement()}: Storing Purchase Details</a></h2>
 				<p>Next, collect details about the item the customer is purchasing.</p>
 				<ol>
 					<li>Prompt the customer to enter the name of the product they are buying and store the result in a variable called <code className="inline">item</code>.</li>
@@ -57,7 +60,7 @@ const Project02B = () => {
 			</section>
 
 			<section>
-				<h2 id="step-3-calculating-total-cost"><a href="#step-3-calculating-total-cost" className="section-link">Step 3: Calculating Total Cost</a></h2>
+				<h2 id={`step-${getCurrentNumber()}-calculating-total-cost`}><a href={`#step-${getCurrentNumber()}-calculating-total-cost`} className="section-link">Step {getCurrentNumberAndIncrement()}: Calculating Total Cost</a></h2>
 				<p>Now that we have the item's price and quantity, we can calculate the total cost.</p>
 				<ol>
 					<li>Create a variable <code className="inline">total_cost</code></li>
@@ -70,7 +73,7 @@ const Project02B = () => {
 			</section>
 
 			<section>
-				<h2 id="step-4-formatting-the-invoice"><a href="#step-4-formatting-the-invoice" className="section-link">Step 4: Formatting the Invoice</a></h2>
+				<h2 id={`step-${getCurrentNumber()}-formatting-the-invoice`}><a href={`#step-${getCurrentNumber()}-formatting-the-invoice`} className="section-link">Step {getCurrentNumberAndIncrement()}: Formatting the Invoice</a></h2>
 				<p>Let's now format and display a digital invoice. Use string formatting to display the store name,customer's name, item purchased, quantity, price, total cost, and payment method. For example, if the user enters:</p>
 				<ul>
 					<li><code className="inline">name</code>: Alex</li>

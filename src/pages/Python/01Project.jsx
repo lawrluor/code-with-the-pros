@@ -1,7 +1,10 @@
 import Collapsible from "../../components/Collapsible";
 import CodeBlock from "../../components/CodeBlock";
+import useSequentialCounter from "../../hooks/useSequentialCounter";
 
 const Project01 = () => {
+  const { getCurrentNumber, getCurrentNumberAndIncrement } = useSequentialCounter(0);
+
   return (
     <div className="lesson-container">
       <section>
@@ -14,7 +17,7 @@ const Project01 = () => {
       </section>
 
       <section>
-        <h2 id="step-1-setting-up"><a href="#step-1-setting-up" className="section-link">Step 1: Setting Up</a></h2>
+        <h2 id={`step-${getCurrentNumber()}-setting-up`}><a href={`#step-${getCurrentNumber()}-setting-up`} className="section-link">Step {getCurrentNumberAndIncrement()}: Setting Up</a></h2>
         <p>Start by defining variables to store key details.</p>
 
         <ul>
@@ -44,7 +47,7 @@ company_name = "TechCorp"`}
       </section>
 
       <section>
-        <h2 id="step-2-asking-for-input"><a href="#step-2-asking-for-input" className="section-link">Step 2: Asking for Input</a></h2>
+        <h2 id={`step-${getCurrentNumber()}-asking-for-input`}><a href={`#step-${getCurrentNumber()}-asking-for-input`} className="section-link">Step {getCurrentNumberAndIncrement()}: Asking for Input</a></h2>
         <p>Most companies provide employees with a professional email address. Rather than have each employee create their email, let's automatically generate them using string concatenation.</p>
 
         <ul>
@@ -63,7 +66,7 @@ company_name = "TechCorp"`}
       </section>
 
       <section>
-        <h2 id="step-3-calculating-area"><a href="#step-3-calculating-area" className="section-link">Step 3: Calculating Area</a></h2>
+        <h2 id={`step-${getCurrentNumber()}-calculating-area`}><a href={`#step-${getCurrentNumber()}-calculating-area`} className="section-link">Step {getCurrentNumberAndIncrement()}: Calculating Area</a></h2>
         <p>ID badges often include a short, unique identifier. Let's generate one using slicing or indexing.</p>
 
         <p>Create a variable <code className="inline">short_id</code> that consists of:</p>
@@ -82,7 +85,7 @@ company_name = "TechCorp"`}
       </section>
 
       <section>
-        <h2 id="step-4-displaying-results"><a href="#step-4-displaying-results" className="section-link">Step 4: Displaying Results</a></h2>
+        <h2 id={`step-${getCurrentNumber()}-displaying-results`}><a href={`#step-${getCurrentNumber()}-displaying-results`} className="section-link">Step {getCurrentNumberAndIncrement()}: Displaying Results</a></h2>
         <p>Now, let's format everything neatly into an ID badge using Python's <code className="inline">.format()</code> method and the multiline string syntax (<code className="inline">""" """</code>). Here's an example:</p>
 
 				<CodeBlock
@@ -116,7 +119,7 @@ print(id_badge)`}
       </section>
 
       <section>
-        <h2 id="step-5-formatting-output"><a href="#step-5-formatting-output" className="section-link">Step 5: Formatting Output</a></h2>
+        <h2 id={`step-${getCurrentNumber()}-formatting-output`}><a href={`#step-${getCurrentNumber()}-formatting-output`} className="section-link">Step {getCurrentNumberAndIncrement()}: Formatting Output</a></h2>
         <p>Now, let's format everything neatly into an ID badge using Python's <code className="inline">.format()</code> method and the multiline string syntax (<code className="inline">""" """</code>). Here's an example:</p>
 
 				<CodeBlock

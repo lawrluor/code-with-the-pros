@@ -1,17 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import CodeBlock from '../../components/CodeBlock';
 import Collapsible from '../../components/Collapsible';
+import useSequentialCounter from '../../hooks/useSequentialCounter';
 
 const Conditionals = () => {
-    // State to track the current challenge number
-    const [challengeCount, setChallengeCount] = useState(1);
-
-    // Function to get and increment the challenge number
-    const getNextChallengeNumber = () => {
-        const currentNumber = challengeCount;
-        setChallengeCount(prevCount => prevCount + 1);
-        return currentNumber;
-    };
+    // Use our custom hook for challenge numbering
+    const { getCurrentNumber, getCurrentNumberAndIncrement } = useSequentialCounter(1);
 
     return (
         <div className="lesson-container">
@@ -23,9 +17,9 @@ const Conditionals = () => {
                 <p>Consider a program that acts as a virtual assistant for planning your day. Without <code class="inline">if-else</code> statements, it might always suggest exercising outside, regardless of the weather forecast. By using <code class="inline">if-else</code> logic, the program can make a more suitable suggestion: <strong>if</strong> it's raining, it suggests staying in to read a book; <strong>else</strong>, it suggests going outside for a walk. This way, the program can adapt to changing conditions.</p>
 
                 <Collapsible
-                    title={"Challenge"}
+                    title={`Challenge ${getCurrentNumber()}`}
                     section="Making Decisions in Code"
-                    number={getNextChallengeNumber()}
+                    number={getCurrentNumberAndIncrement()}
                 >
                     <p>Describe a situation where you have made a decision in your daily life using <code class="inline">if-else</code> logic.</p>
                 </Collapsible>
@@ -40,9 +34,9 @@ if number < 0:
                <p>An <code class="inline">if</code> statement begins with the <code class="inline">if</code> keyword, followed by a condition or comparison, followed by a colon <code class="inline">:</code>. The condition is evaluated and if it is met, the indented lines of code underneath will execute.</p>
 
                 <Collapsible
-                    title={"Challenge"}
+                    title={`Challenge ${getCurrentNumber()}`}
                     section="The if Statement"
-                    number={getNextChallengeNumber()}
+                    number={getCurrentNumberAndIncrement()}
                 >
                     <p>What is wrong with the syntax of the following <code class="inline">if</code> statement?</p>
                     <CodeBlock language={"python"} codeString={`number = 10
@@ -71,9 +65,9 @@ if height == 50:
 
                 <p>Note that <code class="inline">==</code> is used to check if two values are equal, while <code class="inline">=</code> is used to assign a value to a variable (it is known as the <strong>assignment operator</strong>). Attempting a comparison in an <code class="inline">if</code> statement with only one <code class="inline">=</code> sign will result in a <code class="inline">SyntaxError</code>.</p>
                 <Collapsible
-                    title={"Challenge"}
+                    title={`Challenge ${getCurrentNumber()}`}
                     section="Comparison Operators"
-                    number={getNextChallengeNumber()}
+                    number={getCurrentNumberAndIncrement()}
                 >
                     <p>Try running the following code in your code editor. What happens?</p>
                     <CodeBlock language={"python"} codeString={`if height = 50:
@@ -121,9 +115,9 @@ else:
 
             <p>In the above example, there are two code blocks, each with two lines. The first block is executed if the condition is met, and the second block is executed if the condition is not met.</p>
                 <Collapsible
-                    title={"Challenge"}
+                    title={`Challenge ${getCurrentNumber()}`}
                     section="The Other Path: else"
-                    number={getNextChallengeNumber()}
+                    number={getCurrentNumberAndIncrement()}
                 >
                     <p>Write an <code class="inline">if</code> statement with an <code class="inline">else</code> block that has two lines of code in each block.</p>
                 </Collapsible>
@@ -143,9 +137,9 @@ print("Battery level: ", battery)  # This line will always print`} />
             <p>In this example, the <code class="inline">if</code> statement is evaluated, and the code block below it is skipped as the condition is not met. The <code class="inline">else</code> block is then executed, because the <code class="inline">if</code> condition was <strong>not</strong> met. Finally, code execution continues, printing the message <code class="inline">"Battery level: 100"</code>. To be clear, the line <code class="inline">print("Battery level: ", battery)</code> will always print  regardless of the result of the preceding <code class="inline">if-else</code> statement.</p>
 
             <Collapsible
-                title={"Challenge"}
+                title={`Challenge ${getCurrentNumber()}`}
                 section="Code Execution"
-                number={getNextChallengeNumber()}
+                number={getCurrentNumberAndIncrement()}
             >
                 <p>Describe the execution of the above example if the value of <code class="inline">battery</code> is set to <code class="inline">0</code>.</p>
             </Collapsible>
@@ -196,9 +190,9 @@ elif grade > 60:
                 <p>Remember, only one block is executed in a given <code className="inline">if</code> statement, the others are all skipped.</p>
 
                 <Collapsible
-                    title={"Challenge"}
+                    title={`Challenge ${getCurrentNumber()}`}
                     section="Order Matters in Elif Statements"
-                    number={getNextChallengeNumber()}
+                    number={getCurrentNumberAndIncrement()}
                 >
                     <p>What is the output of the following code?</p>
                     <CodeBlock language={"python"} codeString={`temperature = 95  # Fahrenheit
@@ -245,9 +239,9 @@ print("Battery level: ", battery)  # This line will always print`} />
                 <p>In this example, there are two separate <code className="inline">if</code> statements that are each evaluated separately. The first <code className="inline">if</code> condition is met, so <code className="inline">print("The battery is half full")</code> is executed. Then, the second <code className="inline">if</code> condition is evaluated, and as the condition is also met, <code className="inline">print("The battery is not empty")</code> is executed. Finally, the last line of code is executed, printing the message <code className="inline">"Battery level: 50"</code>.</p>
 
                 <Collapsible
-                    title="Challenge"
+                    title={`Challenge ${getCurrentNumber()}`}
                     section="Multiple if Statements vs. if-else"
-                    number={getNextChallengeNumber()}
+                    number={getCurrentNumberAndIncrement()}
                 >
                     <p>Describe the execution of the above example if the value of <code className="inline">battery</code> is set to <code className="inline">100</code>.</p>
                 </Collapsible>
@@ -303,9 +297,9 @@ print("Missed shots! Score decreased.")`} />
             <p>This example shows that the <code className="inline">else</code> statement is not just a fallback mechanism but a vital part of controlling the flow of the program and providing specific feedback based on values in the code. Using <code className="inline">else</code> is often (but not always) necessary to handle all possible scenarios in a program.</p>
 
                 <Collapsible
-                    title={"Challenge"}
+                    title={`Challenge ${getCurrentNumber()}`}
                     section="Implicit Else"
-                    number={getNextChallengeNumber()}
+                    number={getCurrentNumberAndIncrement()}
                 >
                     <p>Consider the following code. What will be printed when it runs?</p>
                     <CodeBlock language={"python"} codeString={`humidity = 20
@@ -343,9 +337,9 @@ if age >= 18:
                 </ul>
 
                 <Collapsible
-                    title="Challenge"
+                    title={`Challenge ${getCurrentNumber()}`}
                     section="More About Indentation"
-                    number={getNextChallengeNumber()}
+                    number={getCurrentNumberAndIncrement()}
                 >
                     <p>Fix the indentation errors in the following code:</p>
                     <CodeBlock language={"python"} codeString={`  weather = "sunny"
