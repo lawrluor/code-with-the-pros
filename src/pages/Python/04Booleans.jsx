@@ -234,6 +234,58 @@ else:
             </section>
 
             <section>
+                <h2 id="nested-if-vs-and"><a href="#nested-if-vs-and" className="section-link">Nested <code className="inline">if</code> Statements vs. the <code className="inline">and</code> Operator</a></h2>
+                <p>One topic we covered in the last chapter was nested <code className="inline">if</code> statements. In this section, we will explore an alternative way to express the same logical condition using the <code className="inline">and</code> operator.</p>
+
+                <h3>Reviewing Nested <code className="inline">if</code> Statements</h3>
+                <p>Nested <code className="inline">if</code> statements involve placing one <code className="inline">if</code> statement inside another. The inner <code className="inline">if</code> statement only executes if the outer <code className="inline">if</code> condition is <code className="inline">True</code>.</p>
+
+                <CodeBlock language={"python"} codeString={`# Using nested if statements
+age = 25
+has_license = True
+
+if age >= 18:
+    if has_license:
+        print("You can drive a car.")
+    else:
+        # Both age >= 18 and has_license must be True for this line to execute
+        print("You need a license to drive.")
+else:
+    print("You must be at least 18 to drive.")`}/>
+
+                <h3>Rewriting Nested <code className="inline">if</code> Statements with <code className="inline">and</code></h3>
+                <p>Using the <code className="inline">and</code> operator allows you to combine multiple conditions in a single <code className="inline">if</code> statement. For the entire expression to evaluate to <code className="inline">True</code>, <strong>all</strong> conditions must be <code className="inline">True</code>.</p>
+
+                <CodeBlock language={"python"} codeString={`# Using the and operator
+age = 25
+has_license = True
+
+if age >= 18 and has_license:
+    # Both age >= 18 and has_license must be True for this line to execute
+    print("You can drive a car.")
+elif age >= 18:
+    print("You need a license to drive.")
+else:
+    print("You must be at least 18 to drive.")`}/>
+
+            <p>The two code blocks above are functionally equivalent. However, the <code className="inline">and</code> operator is more concise and easier to read. Oftentimes, it's a good idea to use the <code className="inline">and</code> operator as it improves the readability of your code.</p>
+            <Collapsible title={"Challenge"}>
+                <p>Rewrite the following nested <code className="inline">if</code> statement using the <code className="inline">and</code> operator:</p>
+                <CodeBlock language={"python"} codeString={`temperature = 28  # degrees Celsius
+is_sunny = True
+
+# Using nested if statements
+if temperature > 25:
+    if is_sunny:
+        print("Perfect day for the beach!")
+    else:
+        print("Good day for outdoor activities, but bring an umbrella.")
+else:
+    print("Consider indoor activities today.")`}/>
+            </Collapsible>
+            </section>
+
+            <section>
                 <h2 id="truth-tables"><a href="#truth-tables" className="section-link">Truth Tables</a></h2>
                 <p>A truth table is a mathematical table used to illustrate how the logical operators function for all possible combinations of <code className="inline">True</code> and <code className="inline">False</code>.</p>
 

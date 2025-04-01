@@ -333,7 +333,6 @@ else:
                 <p>In this example, we have two levels of nesting inside <code className="inline">if</code> statements. The program first checks if the user has been with us for over a month. If so, it further checks their login activity to determine if they qualify for a special reward.</p>
 
                 <p>Nested <code className="inline">if</code> statements allow you to create more complex decision trees in your code, where each subsequent condition depends on the previous condition being true. However, be careful not to nest code too deeply, as it can make your code harder to read and maintain.</p>
-                {/* TODO: add section on nested if similar to elif */}
             </section>
 
             {/* <section>
