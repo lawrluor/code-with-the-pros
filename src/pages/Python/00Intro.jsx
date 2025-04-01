@@ -180,7 +180,7 @@ print(10 + 0)`}/>
           </section>
 
           <section>
-						<h2>Storing Information</h2>
+						<h2>Storing Information (Variables)</h2>
             <p>Say that you've cooked up a delicious meal that you want to save for later, so you store the leftovers in a container and place it in the refrigerator. A <strong>variable</strong> is like a container in your kitchen. You can store data of any data type inside a variable, and you can use a variable later on in your code. Unlike your delicious leftovers, you can actually reuse a variable as many times as you'd like!</p>
             <CodeBlock language={"python"} codeString={`# 1. Storing a string to the variable "message"
 message = "Hello World"
@@ -276,21 +276,19 @@ print(age)`}/>
             <Collapsible title="Challenge">
             <p>What kind of errors will you get if you run the following programs?</p>
 
-            <CodeBlock language={"python"} codeString={`# Program 2
+            <CodeBlock language={"python"} codeString={`# Program 1
 age = 5
 print(igloo)
 
-# Program 1
+# Program 2
 print "Hello, world!")`} />
             </Collapsible>
-          </section>
 
-          <section>
-            <h2>Avoiding Common Errors</h2>
-            <ul>
-                <li><strong>Double Check Syntax:</strong> Check that parentheses or opening quotation marks are matched with their closing counterpart.</li>
-                <li><strong>Initialize Variables Before Use:</strong> Make sure all your variables are initialized before you use or update them.</li>
-            </ul>
+            <h3>Avoiding Common Errors</h3>
+            <ol>
+                <li>Check that parentheses or opening quotation marks are matched with their closing counterpart.</li>
+                <li>Make sure all your variables are initialized before you use or update them.</li>
+            </ol>
           </section>
 
           <section>
@@ -298,17 +296,22 @@ print "Hello, world!")`} />
             <h3>Integer division</h3>
             <p>This arithmetic operator <code className="inline">//</code> divides one number by another, just like the standard division operator <code className="inline">/</code>, but it returns the quotient without any remainder, effectively "flooring" or rounding down the result to the nearest whole number.</p>
             <CodeBlock language={"python"} codeString={`# Example of integer division vs normal division
-print(10 / 3)    # Outputs: 3.3333333333333335 (normal division)
+print(10 / 3)    # Outputs: 3.3333... (normal division)
 print(10 // 3)   # Outputs: 3 (integer division)
 
 print(9 / 2)     # Outputs: 4.5 (normal division)
 print(9 // 2)    # Outputs: 4 (integer division)
 print(-11 // 3)  # Outputs: -4 (integer division)`} />
 
-            <p>You can also think about integer division as truncating, or chopping off the decimal point of a number.</p>
+            <p>You can also think about integer division as <em>truncating</em>, or chopping off, everything including and after the decimal point of a number.</p>
 
             <Collapsible title="Challenge">
               <p>Can you think of an example where integer division could be useful or preferable to normal division?</p>
+
+              <p>Try using integer division to solve the following problem: </p>
+              <CodeBlock language={"python"} codeString={`#You have 1000 dollars to spend on 3 different items.
+# You want to buy 3 items that cost 100, 200, and 600 dollars respectively.
+# How much money will you have left after buying the items?`} />
             </Collapsible>
 
             <h3>Modulo Operator <code className="inline">%</code></h3>
@@ -319,7 +322,7 @@ print(20 % 2)   # Outputs: 0 (20 is even, so division by 2 has no remainder)
 print(7 % 2)    # Outputs: 1 (7 is an odd number)
 print(5.5 % 5)  # Outputs: 0.5 (5.5 is not an integer)`} />
 
-            <p>Time for a practical example. Imagine you have a group of students and you want to assign them into different project groups. You can use the modulo operator to determine which group each student belongs to.</p>
+            <p>Time for a practical example. Imagine you have a group of students and you want to assign them into three different project groups. You can use the modulo operator to determine which group each student belongs to.</p>
             <CodeBlock language={"python"} codeString={`# Determine the group number of the last student
 num_students = 10
 num_groups = 3
@@ -333,7 +336,7 @@ print(num_students % num_groups)  # Outputs: 1 (the last student belongs to the 
           <section>
               <h2>Wrapping Up</h2>
               <p>Great job! You've started learning about the most fundamental building blocks of the Python language. Feel free to take the quiz to test your knowledge.</p>
-              <button onClick={() => window.location.href = '/quiz?name=00Intro.py'}>Start Quiz</button>
+              <a href="/quiz?name=00Intro.py" target="_blank" rel="noopener noreferrer" className="button">Start Quiz</a>
           </section>
         </div>
     );

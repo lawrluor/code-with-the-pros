@@ -282,7 +282,7 @@ while count < 10:
             <p>This loop is set to run until the count reaches 10. However, within the loop, there's a check to see if the count equals 5. When the count does reach 5, the <code className="inline">break</code> keyword is executed, which immediately stops the loop. This example demonstrates how <code className="inline">break</code> can be used to halt the execution of a loop based on a condition met <em>inside the loop body</em>, even if the top-level loop condition would allow it to continue.</p>
 
             <h3>Using <code className="inline">break</code></h3>
-            <p>The previous example is unlikely to be a way that you use the <code className="inline">break</code> keyword, as a better method would be simply to set the looping condition to while <code className="inline">count &lt;= 5</code>. Here's a more realistic example of when you might use <code className="inline">break</code>.</p>
+            <p>The previous example is unlikely to be a way that you use the <code className="inline">break</code> keyword, as a better method would be simply to set the looping condition to while <code className="inline">count &lt;= 5</code>. Here's a more realistic example of when you would use <code className="inline">break</code>.</p>
 
             <CodeBlock language={"python"} codeString={`attempts = 0
 while attempts < 3:
@@ -500,8 +500,8 @@ print(first_a_index)  # Output: 2`} />
 
           <section>
             <h2>Wrapping Up</h2>
-            <p>Great job! You've learned about while loops and how to use them practically to repeat code.</p>
-            <button className="next-button" onClick={() => window.location.href = "/quiz?name=06WhileLoops.py"}>Start Quiz</button>
+            <p>While loops are a powerful tool for repeating code based on a condition. They're particularly useful when you don't know in advance how many iterations you'll need. Remember to always ensure your loop has a way to terminate, and consider using break and continue when they make your code clearer.</p>
+            <a href="/quiz?name=06WhileLoops.py" target="_blank" rel="noopener noreferrer" className="button">Start Quiz</a>
           </section>
 
             {/* <h3>Using <code className="inline">break</code> for random numbers</h3>

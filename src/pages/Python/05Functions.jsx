@@ -398,12 +398,7 @@ return product`} />
             <h2>Wrapping Up</h2>
             <p>Hopefully, you can see that using functions makes your code more concise and helps avoid repetition. It allows you to write a set of statements once and run them whenever you need to, without rewriting them each time.</p>
 
-            {/* <ul>
-                <li><strong>Reduces Redundancy:</strong> You avoid writing the same statements multiple times throughout your code.</li>
-                <li><strong>Enhances Clarity:</strong> Encapsulating code in a function reduces lines of code, making the main part of your code less cluttered.</li>
-                <li><strong>Simplifies Maintenance:</strong> If the greeting needs to be changed, you only need to update it in one place instead of repeating the change throughout the entirety of your code.</li>
-            </ul> */}
-            <button className="next-button" onClick={() => window.location.href = "/quiz?name=05Functions.py"}>Start Quiz</button>
+            <a href="/quiz?name=05Functions.py" target="_blank" rel="noopener noreferrer" className="button">Start Quiz</a>
         </section>
     </div> );
 }
