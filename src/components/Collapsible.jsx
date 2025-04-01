@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { IoChevronUpSharp, IoChevronForwardSharp } from "react-icons/io5";
-import { trackChallenge } from "../../firebase";
+import { trackChallenge } from "../firebase";
 
 export default function Collapsible({ title="Challenge", children, section, number }) {
 	const [shown, setShown] = useState(false);

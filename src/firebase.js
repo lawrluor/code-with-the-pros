@@ -52,6 +52,9 @@ export const trackChallenge = (action, params = {}) => {
 
 // Helper function to set user properties
 export const setAnalyticsUserProperties = (properties) => {
+  // This function sets user properties in Firebase Analytics
+  // Properties can include user demographics, preferences, or other attributes
+  // These properties help segment users for more targeted analytics
   setUserProperties(analytics, properties);
 };
 
