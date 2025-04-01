@@ -10,7 +10,7 @@ const Project00 = () => {
 			</section>
 
 			<section>
-				<h2>Step 1: Creating Variables</h2>
+				<h2 id="step-1-creating-variables"><a href="#step-1-creating-variables" className="section-link">Step 1: Creating Variables</a></h2>
 				<p>Let's start by defining variables to store key details about the order.</p>
 
 				<ul>
@@ -38,7 +38,7 @@ total = 0.00`}
   </section>
 
   <section>
-    <h2>Step 2: Calculating the Total</h2>
+    <h2 id="step-2-calculating-the-total"><a href="#step-2-calculating-the-total" className="section-link">Step 2: Calculating the Total</a></h2>
     <p>Now, let's calculate the total cost of the meal by adding the prices of the three dishes to the <code className="inline">total</code> variable.</p>
 
     <Collapsible title="Hint">
@@ -47,7 +47,7 @@ total = 0.00`}
   </section>
 
   <section>
-    <h2>Step 3: Adding Tax and Tip</h2>
+    <h2 id="step-3-adding-tax-and-tip"><a href="#step-3-adding-tax-and-tip" className="section-link">Step 3: Adding Tax and Tip</a></h2>
     <p>Most restaurants in the United States include an additional tax and tip when computing the final bill. Let's add these calculations to our program:</p>
 
     <ul>
@@ -71,7 +71,7 @@ total += tax_amount + tip_amount`}
   </section>
 
   <section>
-    <h2>Step 4: Displaying the Receipt</h2>
+    <h2 id="step-4-displaying-the-receipt"><a href="#step-4-displaying-the-receipt" className="section-link">Step 4: Displaying the Receipt</a></h2>
     <p>Finally, let's display the receipt with the order details and final total.</p>
 
     <ul>
@@ -111,11 +111,11 @@ Your grand total is $35.3028.`}
   </section>
 
 	<section>
-    <h2>Wrapping Up</h2>
-    <p>
-      Congratulations on finishing your first Python project! This project introduced you to variables, arithmetic operations, string concatenation, and printing — all essential building blocks for Python programming. Feel free to experiment and see how you can extend this program further!
-    </p>
-  </section>
+		<h2 id="wrapping-up"><a href="#wrapping-up" className="section-link">Wrapping Up</a></h2>
+		<p>
+			Congratulations on finishing your first Python project! This project introduced you to variables, arithmetic operations, string concatenation, and printing — all essential building blocks for Python programming. Feel free to experiment and see how you can extend this program further!
+		</p>
+	</section>
 </div>
 	)
 }

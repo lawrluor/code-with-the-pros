@@ -29,7 +29,7 @@ export default function Project05() {
 		</section> */}
 
 		<section>
-			<h2>Step 0: Create the Function Header</h2>
+			<h2 id="step-0-create-the-function-header"><a href="#step-0-create-the-function-header" className="section-link">Step 0: Create the Function Header</a></h2>
 
 			<p>
 				Write the function header for a function called <code className="inline">calculate_shipping_cost</code>.
@@ -49,12 +49,12 @@ export default function Project05() {
 		</section>
 
 		<section>
-			<h2>Step 1: Create the Function Body</h2>
+			<h2 id="step-1-create-the-function-body"><a href="#step-1-create-the-function-body" className="section-link">Step 1: Create the Function Body</a></h2>
 			<p>Inside the body of the function, create a variable called <code className="inline">cost</code> and set it to an initial value of <code className="inline">0.00</code>.</p>
 		</section>
 
 		<section>
-			<h2>Step 2: Calculating the Base Cost</h2>
+			<h2 id="step-2-calculating-the-base-cost"><a href="#step-2-calculating-the-base-cost" className="section-link">Step 2: Calculating the Base Cost</a></h2>
 			<p>The shipping cost changes depending on whether the package is being shipped domestically or internationally, and the weight of the package. After some research, you've decided on the following rates: </p>
 			<h3>International Shipping:</h3>
 			<ul>
@@ -75,7 +75,7 @@ export default function Project05() {
 		</section>
 
 		<section>
-			<h2>Step 3: Adjust Cost for Shipping Speed</h2>
+			<h2 id="step-3-adjust-cost-for-shipping-speed"><a href="#step-3-adjust-cost-for-shipping-speed" className="section-link">Step 3: Adjust Cost for Shipping Speed</a></h2>
 			<p>You've decided to allow customers to upgrade to express shipping for faster deliveries! There are three possible shipping speeds:</p>
 			<ul>
 				<li><strong>Standard shipping</strong> does not change the price.</li>
@@ -89,7 +89,7 @@ export default function Project05() {
 		</section>
 
 		<section>
-			<h2>Step 4: Add a Handling Fee</h2>
+			<h2 id="step-4-add-a-handling-fee"><a href="#step-4-add-a-handling-fee" className="section-link">Step 4: Add a Handling Fee</a></h2>
 			<p>To cover packaging and processing, every order has a <strong>$3.00 handling fee</strong>. Add this fee to <code className="inline">cost</code> inside the function.</p>
 			<Collapsible title="Hint">
 				<p>Use the <code className="inline">+=</code> operator to increase the <code className="inline">cost</code> variable.</p>
@@ -97,7 +97,7 @@ export default function Project05() {
 		</section>
 
 		<section>
-			<h2>Step 5: Apply a Bulk Discount</h2>
+			<h2 id="step-5-apply-a-bulk-discount"><a href="#step-5-apply-a-bulk-discount" className="section-link">Step 5: Apply a Bulk Discount</a></h2>
 			<p>Your store is now offering <strong>discounts for large orders</strong>!</p>
 			<ul>
 				<li>If the package weighs <strong>more than 25 pounds</strong>, apply a <strong>10% discount</strong> to the total cost.</li>
@@ -109,7 +109,7 @@ export default function Project05() {
 		</section>
 
 		<section>
-			<h2>Step 6: Return the Calculated Cost</h2>
+			<h2 id="step-6-return-the-calculated-cost"><a href="#step-6-return-the-calculated-cost" className="section-link">Step 6: Return the Calculated Cost</a></h2>
 			<p>Finally, make sure that your code uses the <code className="inline">return</code> keyword on the calculated <code className="inline">cost</code> variable. Make sure that no matter what branch of the <code className="inline">if</code> statements you take, your function should return an float value.</p>
 
 			<Collapsible title="Hint">
@@ -118,7 +118,7 @@ export default function Project05() {
 		</section>
 
 		<section>
-			<h2>Step 7: Call the Function and Display the Result</h2>
+			<h2 id="step-7-call-the-function-and-display-the-result"><a href="#step-7-call-the-function-and-display-the-result" className="section-link">Step 7: Call the Function and Display the Result</a></h2>
 			<p>
 				Now that you have the function, call it by passing it arguments <code className="inline">4.00</code>, <code className="inline">True</code>, and <code className="inline">"express"</code> for the <code className="inline">weight</code>, <code className="inline">is_international</code>, and <code className="inline">speed</code> parameters respectively.
 				Store the returned value in a variable called <code className="inline">final_cost</code>.
@@ -131,7 +131,7 @@ export default function Project05() {
 		</section>
 
 		<section>
-			<h2>Step 8: Special Offer - Free Shipping for VIPs</h2>
+			<h2 id="step-8-special-offer-free-shipping-for-vips"><a href="#step-8-special-offer-free-shipping-for-vips" className="section-link">Step 8: Special Offer - Free Shipping for VIPs</a></h2>
 			<p>Your company has launched a <strong>VIP membership program</strong> that offers free shipping! Modify your code so that if the customer enters <code className="inline">"VIP"</code> as their shipping speed, the shipping cost should be <strong>$0</strong>, regardless of any other factors.</p>
 
 			<Collapsible title="Hint">
@@ -140,7 +140,7 @@ export default function Project05() {
 		</section>
 
 		<section>
-			<h2>Step 9: Handling Orders</h2>
+			<h2 id="step-9-handling-orders">Step 9: Handling Orders</h2>
 			<p>You've launched your store's shipping service, and several orders have come in already. Call your function with the correct arguments based on the orders below to calculate the correct shipping cost for each customer:</p>
 			<ol>
 				<li>An international package that weighs 12 pounds and is shipped overnight.</li>
@@ -156,7 +156,7 @@ export default function Project05() {
 		</section>
 
 		<section>
-			<h2>Wrapping Up</h2>
+			<h2 id="challenges">Challenges</h2>
 			<p>
 				You've built an advanced shipping cost calculator that accounts for
 				<strong>weight, destination type, shipping speed, handling fees, discounts, and VIP status</strong>. Try calling your function with different values to see how the shipping cost changes!

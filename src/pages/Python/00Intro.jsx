@@ -44,7 +44,7 @@ print("Python is fun!")  # Displays a message`} />
           </section>
 
           <section>
-            <h2 id="print-statement"><a href="#print-statement" className="section-link">The <code className="inline">print()</code> Statement</a></h2>
+            <h2 id="the-print-statement"><a href="#the-print-statement" className="section-link">The <code className="inline">print()</code> Statement</a></h2>
             <p>When you use <code className="inline">print()</code>, you're telling Python to display whatever is inside the parentheses onto your screen. Almost anything in Python can be printed: </p>
             <CodeBlock language={"python"} codeString={`# Printing a single character
 print("a")
@@ -72,7 +72,7 @@ Hello, world
           </section>
 
           <section>
-            <h2 id="basic-math"><a href="#basic-math" className="section-link">Basic Math (Arithmetic Operators)</a></h2>
+            <h2 id="basic-math-arithmetic-operators"><a href="#basic-math-arithmetic-operators" className="section-link">Basic Math (Arithmetic Operators)</a></h2>
             <p>Computers were originally designed to do math (it's in the name "compute!"). So, it's no surprise that we can use Python for mathematical operations. Here are some of just the simplest operators that you can use to add, subtract, multiply, and divide numbers. Note that these operators might not look exactly like the ones you're used to when doing math by hand. </p>
             <CodeBlock language={"python"} codeString={`# Adding (+) two numbers
 print(10 + 5)      # Results in 15
@@ -180,7 +180,7 @@ print(10 + 0)`}/>
           </section>
 
           <section>
-						<h2 id="variables"><a href="#variables" className="section-link">Storing Information (Variables)</a></h2>
+						<h2 id="storing-information-variables"><a href="#storing-information-variables" className="section-link">Storing Information (Variables)</a></h2>
             <p>Say that you've cooked up a delicious meal that you want to save for later, so you store the leftovers in a container and place it in the refrigerator. A <strong>variable</strong> is like a container in your kitchen. You can store data of any data type inside a variable, and you can use a variable later on in your code. Unlike your delicious leftovers, you can actually reuse a variable as many times as you'd like!</p>
             <CodeBlock language={"python"} codeString={`# 1. Storing a string to the variable "message"
 message = "Hello World"
@@ -242,7 +242,7 @@ print(count)  # Results in 0`} />
           </section>
 
           <section>
-						<h2 id="common-errors"><a href="#common-errors" className="section-link">Common Errors in Python</a></h2>
+						<h2 id="common-errors-in-python"><a href="#common-errors-in-python" className="section-link">Common Errors in Python</a></h2>
             <p>When learning Python, you're bound to encounter errors; they're part of the learning process. Understanding common errors can help you write your code more efficiently and avoid bugs in your code. Two of the most common errors you might come across are <code className="inline">SyntaxError</code> and <code className="inline">NameError</code>.</p>
 
 						<h3><code className="inline">SyntaxError</code></h3>
@@ -292,7 +292,7 @@ print "Hello, world!")`} />
           </section>
 
           <section>
-            <h2 id="special-operators"><a href="#special-operators" className="section-link">Special Arithmetic Operators</a></h2>
+            <h2 id="special-arithmetic-operators"><a href="#special-arithmetic-operators" className="section-link">Special Arithmetic Operators</a></h2>
             <h3>Integer division</h3>
             <p>This arithmetic operator <code className="inline">//</code> divides one number by another, just like the standard division operator <code className="inline">/</code>, but it returns the quotient without any remainder, effectively "flooring" or rounding down the result to the nearest whole number.</p>
             <CodeBlock language={"python"} codeString={`# Example of integer division vs normal division

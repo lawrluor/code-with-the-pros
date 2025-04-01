@@ -8,7 +8,7 @@ const Input = () => {
             <h1>The <code className="inline">input()</code> Function</h1>
 
             <section>
-                <h2>User Input</h2>
+                <h2 id="user-input"><a href="#user-input" className="section-link">User Input</a></h2>
                 <p>
                     Up to this point, we've mainly been using values that have been fixed or <em>hard-coded</em>.
                     For example, a calculator that is pre-programmed to only add the numbers <code className="inline">10 + 5</code> when you power it on, and that doesn't allow you to enter your own numbers is not very helpful. Wouldn't it be great if we could add code that allows the user to enter their own numbers?
@@ -33,7 +33,7 @@ const Input = () => {
             </section>
 
             <section>
-                <h2>The <code className="inline">input()</code> Function</h2>
+                <h2 id="the-input-function"><a href="#the-input-function" className="section-link">The <code className="inline">input()</code> Function</a></h2>
                 <p>Consider the following code:</p>
                 <CodeBlock language={"python"} codeString={`print("Hello, World!")`} />
 
@@ -75,7 +75,7 @@ print(name)`} />
             </section>
 
             <section>
-                <h2>How <code className="inline">input()</code> Works</h2>
+                <h2 id="how-input-works"><a href="#how-input-works" className="section-link">How <code className="inline">input()</code> Works</a></h2>
                 <p>The <code className="inline">input()</code> function does more than just collect user input - it also <strong>pauses</strong> the program until the user provides an entry and presses the <code className="inline">Enter</code> or <code className="inline">Return</code> key. This means that no code after the <code className="inline">input()</code> statement will run until the user responds.</p>
 
                 <CodeBlock language={"python"} codeString={`print("Step 1: Program has started.")
@@ -102,7 +102,7 @@ Step 4: Program has finished.`}/>
             </section>
 
             <section>
-                <h2><code className="inline">input()</code> Always Gives You Strings</h2>
+                <h2 id="input-always-gives-you-strings"><a href="#input-always-gives-you-strings" className="section-link"><code className="inline">input()</code> Always Gives You Strings</a></h2>
                 <p>Even if the user types a number, using <code className="inline">input()</code> will <strong>always</strong> result in a string.</p>
                 <CodeBlock language={"python"} codeString={`num1 = input("Enter a number: ")
 num2 = input("Enter another number: ")
@@ -148,7 +148,7 @@ print(num1 + num2)`} />
             </section>
 
             <section>
-                <h2>Wrapping Up</h2>
+                <h2 id="wrapping-up"><a href="#wrapping-up" className="section-link">Wrapping Up</a></h2>
                 <p>In future chapters, you'll learn other ways that <code className="inline">input()</code> can be useful. In the meantime, we'll practice applying <code className="inline">input()</code> to past projects and in a new project.</p>
                 <button onClick={() => window.location.href = '/quiz?name=02Input.py'}>Start Quiz</button>
             </section>

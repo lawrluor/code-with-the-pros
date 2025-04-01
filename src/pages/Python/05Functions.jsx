@@ -10,7 +10,7 @@ const FunctionsLesson = () => {
         </section>
 
         <section>
-			<h2>Common Python Functions</h2>
+			<h2 id="common-python-functions"><a href="#common-python-functions" className="section-link">Common Python Functions</a></h2>
             <p>You've already encountered and used many functions, such as:</p>
             <ul>
                 <li><code className='inline'>print()</code> - Displays information to the screen.</li>
@@ -29,7 +29,7 @@ type('Hello, World!')`} />
         </section>
 
         <section>
-            <h2>Functions vs. Methods</h2>
+            <h2 id="functions-vs-methods"><a href="#functions-vs-methods" className="section-link">Functions vs. Methods</a></h2>
             <p>We've come across several string methods in Python already:</p>
             <ul>
                 <li><code className='inline'>.lower()</code>: Converts all characters in a string to lowercase.</li>
@@ -55,7 +55,7 @@ None.isupper()  # AttributeError`} />
         </section>
 
         <section>
-            <h2>Why Use Functions?</h2>
+            <h2 id="why-use-functions"><a href="#why-use-functions" className="section-link">Why Use Functions?</a></h2>
             <p>Imagine you have to send the same greeting to five people. You can do this easily by writing <code className="inline">print()</code> statements multiple times, but you end up repeating a lot of work.</p>
             <CodeBlock language={"python"} codeString={`print("Hello, welcome to our store!")
 print("We hope you find everything you need.")
@@ -112,7 +112,7 @@ take_picture()`} />
         </section>
 
         <section>
-            <h2>Function Syntax</h2>
+            <h2 id="function-syntax"><a href="#function-syntax" className="section-link">Function Syntax</a></h2>
             <p>A function is created using the <code className="inline">def</code> keyword, followed by the function's name, a pair of parentheses <code className="inline">()</code>, and a colon <code className="inline">:</code>.</p>
             <CodeBlock language={"python"} codeString={`# A function that performs the simple task of displaying a greeting message
 def greet():
@@ -162,7 +162,7 @@ greet()
         </section>
 
         <section>
-            <h2>Function Parameters</h2>
+            <h2 id="function-parameters"><a href="#function-parameters" className="section-link">Function Parameters</a></h2>
             <p>Functions can also be defined with <strong>parameters</strong>, which are values that a function expects to use when it is called. These parameters are listed inside the parentheses <code className="inline">()</code> after the function's name, and allow for more versatile behavior in functions.</p>
             <CodeBlock language={"python"} codeString={`def greet(name):
     print("Hello, " + name)
@@ -263,7 +263,7 @@ order_books(3, "The Lord of the Rings")  # Incorrect argument order`} />
         </section>
 
         <section>
-            <h2>Naming Functions</h2>
+            <h2 id="naming-functions"><a href="#naming-functions" className="section-link">Naming Functions</a></h2>
             <p>Python follows the same naming conventions for variables and functions. Like variables, function names use <strong>snake case</strong>, which means that they are written in lowercase with underscores between words.</p>
 
             <h3>Functions as Verbs</h3>
@@ -288,7 +288,7 @@ order_books(3, "The Lord of the Rings")  # Incorrect argument order`} />
         </section>
 
         <section>
-            <h2>Obtaining a Value from a Function</h2>
+            <h2 id="obtaining-a-value-from-a-function"><a href="#obtaining-a-value-from-a-function" className="section-link">Obtaining a Value from a Function</a></h2>
             <p>So far, all our functions have immediately printed a result to the screen. However, what if we want a function to create a value that we can use later? We have seen behavior, for example, with the <code className="inline">input()</code> function.</p>
             <CodeBlock language={"python"} codeString={`name = input("Enter your name")  # The result of calling input() is stored in a variable
 print(name)`} />
@@ -343,7 +343,7 @@ print(print_message("Hello, Python!"))
         </section>
 
         <section>
-            <h2>Other Implications of <code className="inline">return</code></h2>
+            <h2 id="other-implications-of-return"><a href="#other-implications-of-return" className="section-link">Other Implications of <code className="inline">return</code></a></h2>
             <p>Returning in a function immediately terminates the function. This means that any code after the <code className="inline">return</code> statement is never executed.</p>
 
             <CodeBlock language={"python"} codeString={`def subtract_numbers(a, b):
@@ -363,7 +363,7 @@ print(print_message("Hello, Python!"))
         </section>
 
         <section>
-            <h2>(Optional) Default Parameters</h2>
+            <h2 id="optional-default-parameters"><a href="#optional-default-parameters" className="section-link">(Optional) Default Parameters</a></h2>
             <p>Functions can also have <strong>default parameters</strong>. This means that if not all arguments are provided when a function is called, a default value will be used instead.</p>
 
             <CodeBlock language={"python"} codeString={`def greet(name="World"):
@@ -376,7 +376,7 @@ greet("John")  # Output: "Hello, John`} />
         </section>
 
         <section>
-            <h2>(Optional) Representing Types in Functions</h2>
+            <h2 id="optional-representing-types-in-functions"><a href="#optional-representing-types-in-functions" className="section-link">(Optional) Representing Types in Functions</a></h2>
             <p>Generally, Python will automatically infer the data type of parameters and the return value of a function. However, you can explicitly represent the data types of parameters and return values when you define your function.</p>
 
             <CodeBlock language={"python"} codeString={`def add_numbers(a: int, b: int) -> int:
@@ -395,7 +395,7 @@ return product`} />
         </section>
 
         <section>
-            <h2>Wrapping Up</h2>
+            <h2 id="wrapping-up"><a href="#wrapping-up" className="section-link">Wrapping Up</a></h2>
             <p>Hopefully, you can see that using functions makes your code more concise and helps avoid repetition. It allows you to write a set of statements once and run them whenever you need to, without rewriting them each time.</p>
 
             {/* <ul>

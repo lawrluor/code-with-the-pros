@@ -14,7 +14,7 @@ const Project01 = () => {
       </section>
 
       <section>
-        <h2>Step 1: Creating Variables</h2>
+        <h2 id="step-1-setting-up"><a href="#step-1-setting-up" className="section-link">Step 1: Setting Up</a></h2>
         <p>Start by defining variables to store key details.</p>
 
         <ul>
@@ -44,7 +44,7 @@ company_name = "TechCorp"`}
       </section>
 
       <section>
-        <h2>Step 2: Creating an Email Address</h2>
+        <h2 id="step-2-asking-for-input"><a href="#step-2-asking-for-input" className="section-link">Step 2: Asking for Input</a></h2>
         <p>Most companies provide employees with a professional email address. Rather than have each employee create their email, let's automatically generate them using string concatenation.</p>
 
         <ul>
@@ -63,7 +63,7 @@ company_name = "TechCorp"`}
       </section>
 
       <section>
-        <h2>Step 3: Generating an ID</h2>
+        <h2 id="step-3-calculating-area"><a href="#step-3-calculating-area" className="section-link">Step 3: Calculating Area</a></h2>
         <p>ID badges often include a short, unique identifier. Let's generate one using slicing or indexing.</p>
 
         <p>Create a variable <code className="inline">short_id</code> that consists of:</p>
@@ -82,7 +82,7 @@ company_name = "TechCorp"`}
       </section>
 
       <section>
-        <h2>Step 4: Formatting the ID Badge</h2>
+        <h2 id="step-4-displaying-results"><a href="#step-4-displaying-results" className="section-link">Step 4: Displaying Results</a></h2>
         <p>Now, let's format everything neatly into an ID badge using Python's <code className="inline">.format()</code> method and the multiline string syntax (<code className="inline">""" """</code>). Here's an example:</p>
 
 				<CodeBlock
@@ -113,6 +113,45 @@ company_name = "TechCorp"`}
 print(id_badge)`}
           />
         </Collapsible>
+      </section>
+
+      <section>
+        <h2 id="step-5-formatting-output"><a href="#step-5-formatting-output" className="section-link">Step 5: Formatting Output</a></h2>
+        <p>Now, let's format everything neatly into an ID badge using Python's <code className="inline">.format()</code> method and the multiline string syntax (<code className="inline">""" """</code>). Here's an example:</p>
+
+				<CodeBlock
+					language="txt"
+					codeString={`***********************
+* Name: Alice Brown *
+* Job: Designer *
+* Company: TechCorp *
+* Email: alice.brown@techcorp.com *
+* ID: albrrp *
+***********************`}/>
+
+        <p>Store your multiline string to a variable called <code className="inline">id_badge</code>. Finally, print out <code className="inline">id_badge</code>.</p>
+
+        <Collapsible title="Hint">
+          <CodeBlock
+            language="python"
+            codeString={`id_badge = '''
+***********************
+* Name: {} *
+* Job: {} *
+* Company: {} *
+* Email: {} *
+* ID: {} *
+***********************
+'''.format(first_name + " " + last_name, job_title, company_name, email, short_id)
+
+print(id_badge)`}
+          />
+        </Collapsible>
+      </section>
+
+      <section>
+        <h2 id="wrapping-up"><a href="#wrapping-up" className="section-link">Wrapping Up</a></h2>
+        <p>Congratulations! You've completed the project. You've learned how to use variables and strings to format and display information about an employee.</p>
       </section>
     </div>
   );

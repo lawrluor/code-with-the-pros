@@ -19,7 +19,7 @@ const Project03 = () => {
 			</section>
 
 			<section>
-				<h2>Step 0: Define Discount Tiers</h2>
+				<h2 id="step-0-define-discount-tiers"><a href="#step-0-define-discount-tiers" className="section-link">Step 0: Define Discount Tiers</a></h2>
 				<p>Set up the discount rules based on the total order amount:</p>
 				<ul>
 					<li>Orders between $50.00 and $99.99 get a <strong>5%</strong>  discount.</li>
@@ -38,7 +38,7 @@ discount_15 = 0.15  # 15% discount`} />
 			</section>
 
 			<section>
-				<h2>Step 1: Collect Order Details</h2>
+				<h2 id="step-1-collect-order-details"><a href="#step-1-collect-order-details" className="section-link">Step 1: Collect Order Details</a></h2>
 				<p>Ask the customer for the total cost of their order.</p>
 				<ol>
 					<li>Prompt the user to enter the total cost and store it in a variable called <code className="inline">order_total</code>.</li>
@@ -52,8 +52,7 @@ discount_15 = 0.15  # 15% discount`} />
 			</section>
 
 			<section>
-				<h2>Step 2: Create an <code className="inline">if</code> Statement</h2>
-				{/* TODO: Possibly split this into smaller steps */}
+				<h2 id="step-2-apply-the-discount"><a href="#step-2-apply-the-discount" className="section-link">Step 2: Apply the Discount</a></h2>
 				<p>Use an <code className="inline">if-elif-else</code> structure to apply the correct discount. Include the following conditions:</p>
 				<ol>
 					<li>If <code className="inline">order_total</code> is at least $200, calculate 15% of the order total and store it in a variable called <code className="inline">discount</code>.</li>
@@ -78,7 +77,7 @@ else:
 			</section>
 
 			<section>
-				<h2>Step 3: Calculate the Final Price</h2>
+				<h2 id="step-3-calculate-final-price"><a href="#step-3-calculate-final-price" className="section-link">Step 3: Calculate Final Price</a></h2>
 				<p>Now that you have the discount amount, subtract it from the original order total to get the final price.</p>
 				<p>Create a new variable called <code className="inline">final_total</code> that stores the result of this calculation.</p>
 
@@ -89,7 +88,7 @@ else:
 			</section>
 
 			<section>
-				<h2>Step 4: Display the Final Price</h2>
+				<h2 id="step-4-display-result"><a href="#step-4-display-result" className="section-link">Step 4: Display Result</a></h2>
 				<p>Your program should output one of two types of messages, depending on the order total.</p>
 
 				<ol>
@@ -111,6 +110,7 @@ else:
 			</section>
 
 			<section>
+				<h2 id="step-5-test-and-refine"><a href="#step-5-test-and-refine" className="section-link">Step 5: Test and Refine</a></h2>
 				<h3>Check Your Work</h3>
 				<Collapsible title="Answer">
 					<CodeBlock language="python" codeString={`# Step 0: Define discount tiers
@@ -143,7 +143,7 @@ else:
 			</section>
 
 			<section>
-				<h2>Additional Challenges</h2>
+				<h2 id="additional-challenges"><a href="#additional-challenges" className="section-link">Additional Challenges</a></h2>
 				<p>Try adding and integrating this code to the end of one of your previous projects that dealt with generating a receipt or an invoice. Reflect on how this makes your projects more interactive and engaging!</p>
 			</section>
 		</div>

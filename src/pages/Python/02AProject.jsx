@@ -65,7 +65,22 @@ print(story)`} />
 			</section>
 
 			<section>
-					<h2>Further Projects</h2>
+					<h2 id="step-1-setting-up"><a href="#step-1-setting-up" className="section-link">Step 1: Setting Up</a></h2>
+					<p>Copy and modify one of your existing projects to use <code className="inline">input()</code> instead of using hard-coded values. Reflect on how doing so might make your program more useful to others.</p>
+			</section>
+
+			<section>
+					<h2 id="step-2-asking-for-input"><a href="#step-2-asking-for-input" className="section-link">Step 2: Asking for Input</a></h2>
+					<p>Copy and modify one of your existing projects to use <code className="inline">input()</code> instead of using hard-coded values. Reflect on how doing so might make your program more useful to others.</p>
+			</section>
+
+			<section>
+					<h2 id="step-3-calculating-and-displaying-results"><a href="#step-3-calculating-and-displaying-results" className="section-link">Step 3: Calculating and Displaying Results</a></h2>
+					<p>Copy and modify one of your existing projects to use <code className="inline">input()</code> instead of using hard-coded values. Reflect on how doing so might make your program more useful to others.</p>
+			</section>
+
+			<section>
+					<h2 id="further-projects"><a href="#further-projects" className="section-link">Further Projects</a></h2>
 					<p>Copy and modify one of your existing projects to use <code className="inline">input()</code> instead of using hard-coded values. Reflect on how doing so might make your program more useful to others.</p>
 			</section>
 		</div>

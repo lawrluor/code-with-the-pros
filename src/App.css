@@ -20,6 +20,10 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+a {
+  color: var(--highlight-color);
+}
+
 .lesson-container {
   background-color: #1e1e1e;
   padding: 20px;
@@ -110,6 +114,7 @@ button {
 button:hover {
   background-color: var(--text-color);
   color: var(--primary-color);
+  cursor: pointer;
 }
 
 a.button {
@@ -127,6 +132,7 @@ a.button {
 a.button:hover {
   background-color: var(--text-color);
   color: var(--primary-color);
+  cursor: pointer;
 }
 
 .inline {

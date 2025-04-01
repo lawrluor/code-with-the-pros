@@ -8,7 +8,7 @@ const StringsLesson = () => {
             <h1>Strings</h1>
 
             <section>
-                <h2>Introduction to Strings</h2>
+                <h2 id="introduction-to-strings"><a href="#introduction-to-strings" className="section-link">Introduction to Strings</a></h2>
                 <p>A <strong>string</strong> is a common data type in Python that represents text as a sequence of characters. A string can be as short as a single character or as long as multiple paragraphs. They are enclosed in quotes; you can use single quotes (<code className="inline">' '</code>) or double quotes (<code className="inline">" "</code>) depending on your preference.</p>
                 <p>Below are some examples of strings:</p>
                 <CodeBlock language={"python"} codeString={`# Single character
@@ -48,7 +48,7 @@ Nulla facilisi. Ut efficitur laoreet quam id scelerisque.
             </section>
 
             <section>
-                <h2>Storing Strings in Variables</h2>
+                <h2 id="storing-strings-in-variables"><a href="#storing-strings-in-variables" className="section-link">Storing Strings in Variables</a></h2>
                 <p>As with almost any type of data in Python, we can store strings into variables to reuse them later. Below, there are three variables that have each been assigned a string value.</p>
                     <CodeBlock language={"python"} codeString={`name = 'Lawrence'
 occupation = "Software Developer"
@@ -61,7 +61,7 @@ print(bio)`}/>
             </section>
 
             <section>
-                <h2>Accessing Parts of a String</h2>
+                <h2 id="accessing-parts-of-a-string"><a href="#accessing-parts-of-a-string" className="section-link">Accessing Parts of a String</a></h2>
                 <p>Each character in a string can be accessed using an <strong>index</strong>, a number that specifies the position of a character in a string. The index starts from <code className="inline">0</code>, representing the first character's position. Here's a diagram to help visualize this: </p>
                 <CodeBlock language={"python"} codeString={`phrase = 'Hello World'
 # H e l l o   W o r l d
@@ -138,7 +138,7 @@ print(sub_step)  # Outputs: HloW`} />
             </section>
 
             <section>
-                <h2><code className="inline">IndexError</code></h2>
+                <h2 id="indexerror"><a href="#indexerror" className="section-link"><code className="inline">IndexError</code></a></h2>
                 <p>An <code className="inline">IndexError</code> or "string index out of range" error occurs when you attempt to access an index of a string that matches or exceeds the total length of the string.</p>
                 <CodeBlock language={"python"} codeString={`s = 'Hello'
 print(s[4])   # Outputs: o
@@ -176,7 +176,7 @@ print(planet[-8])`} />
             </section>
 
             <section>
-                <h2>Concatenating Strings in Python</h2>
+                <h2 id="concatenating-strings-in-python"><a href="#concatenating-strings-in-python" className="section-link">Concatenating Strings in Python</a></h2>
                 <p><strong>Concatenation</strong>, also known as string concatenation or string addition, is the process of combining two or more strings into a single longer string. The simplest way to concatenate strings is by using the plus <code className="inline">+</code> operator.</p>
                 <CodeBlock language={"python"} codeString={`message = "hi" + "there"
 print(message)  # Outputs: hithere
@@ -219,7 +219,7 @@ print("Coconut" + ' ')`} />
             </section>
 
             <section>
-                <h2>Choosing Between Single and Double Quotes</h2>
+                <h2 id="choosing-between-single-and-double-quotes"><a href="#choosing-between-single-and-double-quotes" className="section-link">Choosing Between Single and Double Quotes</a></h2>
                 <p>As both single quotes <code className="inline">' '</code> and double quotes <code className="inline">" "</code> can be used to define strings, the choice between these can sometimes depend on the content of the string itself.
                 For example, if the string itself contains single quotes like the apostrophe symbol <code className="inline">'</code>, using single quotes can cause an error.</p>
                 <CodeBlock language={"python"} codeString={`'This is the cat's home.'  # SyntaxError: Each opening quote must have a corresponding closing quote`} />
@@ -233,14 +233,14 @@ print("Coconut" + ' ')`} />
             </section>
 
             <section>
-                <h2>(Optional) Escape Characters</h2>
+                <h2 id="optional-escape-characters"><a href="#optional-escape-characters" className="section-link">(Optional) Escape Characters</a></h2>
                 <p>Alternatively, you can use the escape character <code className="inline">\</code> to tell Python to interpret a quote as a literal quotation mark rather than use its default behavior of ending the string.</p>
                 <CodeBlock language={"python"} codeString={`"She said, \\"It's lovely to see you!\\""`} />
                 <p>This will print <code className="inline">She said, "It's lovely to see you!"</code>, including the quotation marks in the actual string itself.</p>
             </section>
 
             <section>
-                <h2>Empty Strings <code className="inline">""</code></h2>
+                <h2 id="empty-strings"><a href="#empty-strings" className="section-link">Empty Strings <code className="inline">""</code></a></h2>
                 <p>Empty strings are, well, strings that are empty, meaning that they contain no characters. In Python, an empty string is represented by <code className="inline">""</code>. It is analogous to the number <code className="inline">0</code> in math - just as <code className="inline">0</code> is still a number, an empty string is still a string, just one that currently holds no value.</p>
 
                 <h3>The Purpose of Empty Strings</h3>
@@ -271,7 +271,7 @@ print("" + "Hi" + " " + "" + name + "")`} />
             </section>
 
             <section>
-                <h2>Common String Methods</h2>
+                <h2 id="common-string-methods"><a href="#common-string-methods" className="section-link">Common String Methods</a></h2>
                 <p> A <strong>method</strong>, another name for a function, is an action that a string can perform or an operation that can be applied to a string. Some common methods like <code className="inline">.upper()</code> and <code className="inline">.lower()</code> are used to create a new, altered version of the string.</p>
                 <CodeBlock language={"python"} codeString={`greeting = 'Happy birthday'
 print(greeting.upper())    # Outputs: HAPPY BIRTHDAY
@@ -304,7 +304,7 @@ print(sentence.isalpha())  # Outputs: False`} />
             </section>
 
             <section>
-                <h2><code className="inline">.format()</code></h2>
+                <h2 id="format"><a href="#format" className="section-link"><code className="inline">.format()</code></a></h2>
                 <p>Concatenating strings can be a pain. As we saw in earlier examples, we had to <strong>cast</strong> integers to strings in order to properly concatenate them to other strings. Fortunately, we can use the <code className="inline">.format()</code> method to make things more convenient for us.</p>
                 <CodeBlock language={"python"} codeString={`name = 'Alice'
 age = 30
@@ -338,7 +338,7 @@ print(len(dinosaur))  # Outputs: 18`} />
             </section>
 
             <section>
-                <h2>(Optional) Advanced String Methods and Manipulation</h2>
+                <h2 id="optional-advanced-string-methods-and-manipulation"><a href="#optional-advanced-string-methods-and-manipulation" className="section-link">(Optional) Advanced String Methods and Manipulation</a></h2>
                 <h3>Another Alternative to <code className="inline">.format()</code></h3>
                 <p><strong>f-strings</strong> are an abbreviated way to format strings, derived from the <code className="inline">.format()</code> method. Here, the letter <code className="inline">f</code> is written before the opening quotation mark, which tells Python that this is a special string that can be formatted with variables.</p>
                 <CodeBlock language={"python"} codeString={`name = 'Andy'
@@ -368,7 +368,7 @@ print(reversed_greeting)  # Outputs: Everyone Hello`} />
             </section>
 
             <section>
-                <h2>Wrapping Up</h2>
+                <h2 id="wrapping-up"><a href="#wrapping-up" className="section-link">Wrapping Up</a></h2>
                 <p>Understanding strings, how to manipulate and format them, and how to use their methods are all essential for working with text data in Python. This fundamental data type will be used throughout the rest of this course, and you can use strings as a basis for understanding new data types in Python.</p>
                 <button onClick={() => window.location.href = '/quiz?name=01Strings.py'}>Start Quiz</button>
             </section>

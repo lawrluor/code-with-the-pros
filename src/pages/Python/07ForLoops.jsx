@@ -13,7 +13,7 @@ const ForLoops = () => {
             </section>
 
             <section>
-                <h2>Why Are Loops Useful?</h2>
+                <h2 id="what-is-a-for-loop"><a href="#what-is-a-for-loop" className="section-link">What is a For Loop?</a></h2>
                 <p>A task like printing each character of a string individually can be incredibly tedious and inefficient. Without a loop, we must manually access each character by its index and writing a separate print statement for each one.</p>
 
                 <CodeBlock language={"python"} codeString={`# Example: Printing "Hello" without a loop
@@ -33,7 +33,8 @@ print("Hello"[4])  # Prints 'o'`} />
             </section>
 
             <section>
-                <h2>Element-Based For Loops</h2>
+                <h2 id="for-loop-syntax"><a href="#for-loop-syntax" className="section-link">For Loop Syntax</a></h2>
+                <h3>Element-Based For Loops</h3>
                 <p>Strings in Python are sequences of characters, and <code className="inline">for</code> loops provide a convenient way to iterate through each character in the string. These loops work by repeatedly executing a block of code for each element in the sequence.</p>
 
                 <CodeBlock language={"python"} codeString={`message = "Hello"
@@ -58,7 +59,8 @@ for _ in message:
             </section>
 
             <section>
-                <h2>Index-Based For Loops</h2>
+                <h2 id="iterating-over-strings"><a href="#iterating-over-strings" className="section-link">Iterating Over Strings</a></h2>
+                <h3>Index-Based For Loops</h3>
                 <p>What if we wanted to perform an action only on every other item in a sequence? Index-based for loops in Python allow you us to access each element by its index or position in a sequence. The index variable <code className="inline">i</code> changes values throughout the loop's execution.</p>
 
                 <CodeBlock language={"python"} codeString={`# Example of an index-based loop with dynamic index changes
@@ -87,7 +89,8 @@ for i in range(len(message)):
 
 
             <section>
-                <h2>Comparing Element-Based and Index-Based Loops</h2>
+                <h2 id="iterating-over-lists"><a href="#iterating-over-lists" className="section-link">Iterating Over Lists</a></h2>
+                <h3>Comparing Element-Based and Index-Based Loops</h3>
                 <ul>
                     <li><strong>Element-Based Loops:</strong>
                         <ul>
@@ -107,8 +110,9 @@ for i in range(len(message)):
 
 
             <section>
-                <h2>Applications of For Loops</h2>
-                <h3>Counting</h3>
+                <h2 id="iterating-over-ranges"><a href="#iterating-over-ranges" className="section-link">Iterating Over Ranges</a></h2>
+                <h3>Applications of For Loops</h3>
+                <h4>Counting</h4>
                 <p>We can count how many times a specific character appears in a string.</p>
                 <CodeBlock language={"python"} codeString={`# Example: Counting 'l' in "Hello"
 count = 0
@@ -117,7 +121,7 @@ for char in "Hello":
         count += 1
 print("The letter 'l' appears", count, "times.")`} />
 
-                <h3>Creating New Strings</h3>
+                <h4>Creating New Strings</h4>
                 <p>Although strings in Python are immutable, meaning they cannot be changed after they are created, you can construct new strings as you iterate through them.</p>
                 <CodeBlock language={"python"} codeString={`# Example: Create a new string with slashes instead of periods
 original = "12.31.2024"
@@ -129,7 +133,7 @@ for char in original:
         new_string += char
 print(new_string)`} />
 
-                <h3>Accessing Specific Indices</h3>
+                <h4>Accessing Specific Indices</h4>
                 <p>You may want to access or manipulate only the characters at specific indices in a string.</p>
                 <CodeBlock language={"python"} codeString={`# Example: Access and collect characters from even indices
 message = "Hello World"
@@ -143,7 +147,8 @@ print("Characters at even indices:", even_chars)
             </section>
 
             <section>
-                <h2>Challenges</h2>
+                <h2 id="nested-loops"><a href="#nested-loops" className="section-link">Nested Loops</a></h2>
+                <h3>Challenges</h3>
                 <p>Try these exercises to practice what you've learned:</p>
                 <ul>
                     <li>Write a for loop that prints out an "!" character whenever it finds the letter "e"</li>
@@ -152,6 +157,14 @@ print("Characters at even indices:", even_chars)
                     <li>Reverse a string using a for loop.</li>
                     <li>Generate a new string that contains every second character of the original string.</li>
                 </ul>
+            </section>
+
+            <section>
+                <h2 id="for-else"><a href="#for-else" className="section-link">The <code className="inline">for</code>-<code className="inline">else</code> Clause</a></h2>
+            </section>
+
+            <section>
+                <h2 id="wrapping-up"><a href="#wrapping-up" className="section-link">Wrapping Up</a></h2>
             </section>
         </div>
     );

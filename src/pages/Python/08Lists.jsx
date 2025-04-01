@@ -9,6 +9,10 @@ const Lists = () => {
             <p>A list in Python is a collection of items that are stored in a particular order. A list is <strong>mutable</strong> (changeable), meaning that both the order of the list and its individual items can be modified.</p>
             <p>Lists are used for tasks like data organization and repetitive operations. For instance, lists may be used for managing a collection of users in an application, storing items in an inventory of a game, or simply grouping related items together like the days of a week.</p>
 
+            <section>
+                <h2 id="what-is-a-list"><a href="#what-is-a-list" className="section-link">What is a List?</a></h2>
+            </section>
+
             <h2>Creating a List</h2>
             <p>Use the square brackets <code className='inline'>[]</code> to create a new list:</p>
 
@@ -23,6 +27,10 @@ print(fruits)
 # Creating a list with values and storing into a variable
 fruits = ["apple", "banana", "cherry"]
 print(fruits)`} />
+
+            <section>
+                <h2 id="list-syntax"><a href="#list-syntax" className="section-link">List Syntax</a></h2>
+            </section>
 
             <h2>Accessing List Items</h2>
             <p>As in strings, you can access individual items of a list by using the index (position) number. Remember that the first item has an index of <code className='inline'>0</code>.</p>
@@ -44,6 +52,10 @@ print(fruits[-2])  # banana
 print(fruits[-3])  # apple
 
 print(fruits[-4])  # IndexError: list index out of range `}/>
+
+            <section>
+                <h2 id="list-operations"><a href="#list-operations" className="section-link">List Operations</a></h2>
+            </section>
 
             <h2>Modifying List Items</h2>
             <p>You can modify list items by assigning new values to them, without creating a new list:</p>
@@ -146,6 +158,10 @@ while i < len(fruits):
     print(fruits[i])
     i += 1`} />
 
+            <section>
+                <h2 id="list-methods"><a href="#list-methods" className="section-link">List Methods</a></h2>
+            </section>
+
             <h2>Other List Methods (Optional)</h2>
             <p>Python lists come with a variety of methods that allow you to manipulate their contents efficiently. These methods make it easier to modify, search, and manage the lists in your programs.</p>
             <p>While these methods are useful for managing lists efficiently, most of their functionality can be replicated using the basic list methods we learned above in addition to using iteration (loops). Thererefore, there is no need to memorize them now, as you will naturally become familiar with them as you work with lists in Python.</p>
@@ -185,12 +201,24 @@ print(cart)  # Output: []
 
 # Later, we can add items back into the cart!`} />
 
+            <section>
+                <h2 id="list-slicing"><a href="#list-slicing" className="section-link">List Slicing</a></h2>
+            </section>
+
             <h2>Practice Challenges</h2>
             <ul>
                 <li>Create a list of your favorite movies and use a loop to print each one.</li>
                 <li>Modify the list by replacing one of the movies with another one, and add a new movie to the end of the list.</li>
                 <li>Access an index that does not exist to see what error you get and then handle that error using a conditional statement to prevent it.</li>
             </ul>
+
+            <section>
+                <h2 id="list-comprehension"><a href="#list-comprehension" className="section-link">List Comprehension</a></h2>
+            </section>
+
+            <section>
+                <h2 id="wrapping-up"><a href="#wrapping-up" className="section-link">Wrapping Up</a></h2>
+            </section>
         </div>
     );
 }

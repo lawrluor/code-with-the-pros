@@ -8,7 +8,7 @@ const WhileLoops = () => {
             <h1>While Loops</h1>
 
             <section>
-                <h2>What is a While Loop?</h2>
+                <h2 id="what-is-a-while-loop"><a href="#what-is-a-while-loop" className="section-link">What is a While Loop?</a></h2>
                 <p>A <code className="inline">while</code> loop repeatedly executes a block of code as long as a given condition is <code className="inline">True</code>. Before looking at any code, let's consider some real-life examples of when we might use a while loop:</p>
                 <ul>
                   <li>Starting a stopwatch to time how long it takes you to run a lap</li>
@@ -22,7 +22,7 @@ const WhileLoops = () => {
             </section>
 
             <section>
-                <h2>Syntax and Terminology</h2>
+                <h2 id="while-loop-syntax"><a href="#while-loop-syntax" className="section-link">While Loop Syntax</a></h2>
                 <p>The basic structure of a <code className="inline">while</code> loop includes the <strong>loop header</strong>, which is the first line of the loop, and the <strong>loop body</strong>, the indented block of code underneath the loop header that executes repeatedly.</p>
                 <CodeBlock language={"python"} codeString={`counter = 0
 while counter < 5:
@@ -267,6 +267,7 @@ while index < len(word):
             </section>
 
           <section>
+            <h2 id="breaking-out-of-loops"><a href="#breaking-out-of-loops" className="section-link">Breaking Out of Loops</a></h2>
             <h2>The <code className="inline">break</code> Keyword</h2>
             <p>In while loops, the ideal scenario is for the loop to terminate based on its loop condition. However, sometimes you may want to exit a loop early based on a specific situation. Sometimes, this situation is one that cannot be predicted by the initial loop condition. This is where the <code className="inline">break</code> keyword comes into play.</p>
 
