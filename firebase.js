@@ -33,6 +33,23 @@ export const trackEvent = (eventName, eventParams = {}) => {
   logEvent(analytics, eventName, eventParams);
 };
 
+// Helper function to track challenge interactions
+export const trackChallenge = (action, params = {}) => {
+  const currentPath = window.location.pathname;
+  const lessonName = currentPath.split('/').pop();
+
+  logEvent(analytics, 'challenge_interaction', {
+    action: action,
+    lesson_page: lessonName,
+    lesson_path: currentPath,
+    challenge_number: params.challengeNumber || 'unknown',
+    challenge_title: params.challengeTitle || 'unknown',
+    challenge_section: params.section || 'unknown',
+    timestamp: new Date().toISOString(),
+    ...params
+  });
+};
+
 // Helper function to set user properties
 export const setAnalyticsUserProperties = (properties) => {
   setUserProperties(analytics, properties);
