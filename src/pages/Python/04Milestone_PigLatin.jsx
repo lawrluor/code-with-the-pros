@@ -1,8 +1,11 @@
 import React from 'react';
 import CodeBlock from '../../components/CodeBlock';
 import Collapsible from '../../components/Collapsible';
+import useSequentialCounter from "../../hooks/useSequentialCounter";
 
 const MilestoneProject04 = () => {
+    const { getCurrentNumber, getCurrentNumberAndIncrement } = useSequentialCounter(0);
+
     return (
         <div className="lesson-container">
             <h1>A "Secret" Language: "Pig Latin"</h1>
@@ -36,7 +39,7 @@ const MilestoneProject04 = () => {
             </section>
 
             <section>
-                <h2 id="step-1-understand-the-project"><a href="#step-1-understand-the-project" className="section-link">Step 1: Understand the Project</a></h2>
+                <h2 id={`step-${getCurrentNumber()}-understand-the-project`}><a href={`#step-${getCurrentNumber()}-understand-the-project`} className="section-link">Step {getCurrentNumberAndIncrement()}: Understand the Project</a></h2>
                 <p>We'll need a way to get a word from the user. Use the <code className="inline">input()</code> function and assign the user input to a variable called <code className="inline">word</code>:</p>
                 <Collapsible title="Hint">
                     <CodeBlock language={"python"} codeString={`word = input('Enter a word to translate to Pig Latin: ')`} />
@@ -44,7 +47,7 @@ const MilestoneProject04 = () => {
             </section>
 
             <section>
-                <h2 id="step-2-initialize-variables"><a href="#step-2-initialize-variables" className="section-link">Step 2: Initialize Variables</a></h2>
+                <h2 id={`step-${getCurrentNumber()}-initialize-variables`}><a href={`#step-${getCurrentNumber()}-initialize-variables`} className="section-link">Step {getCurrentNumberAndIncrement()}: Initialize Variables</a></h2>
                 <p>We want all our letters in Pig Latin to be lowercase. Consider the following example: </p>
                 <CodeBlock language={"txt"} codeString={`"Python" becomes "ythonPay"`}/>
 
@@ -59,7 +62,7 @@ print(word)  # prints "python`} />
             </section>
 
             <section>
-                <h2 id="step-3-main-algorithm"><a href="#step-3-main-algorithm" className="section-link">Step 3: Main Algorithm</a></h2>
+                <h2 id={`step-${getCurrentNumber()}-main-algorithm`}><a href={`#step-${getCurrentNumber()}-main-algorithm`} className="section-link">Step {getCurrentNumberAndIncrement()}: Main Algorithm</a></h2>
                 <p>In Pig Latin, as outlined in step zero, there are different rules to follow depending on the word itself. Use <code className="inline">if</code>, <code className="inline">elif</code>, and <code className="inline">else</code> statements to make sure that we are following the correct rules for their respective conditions.</p>
 
                 <Collapsible title="Hint">
@@ -68,7 +71,7 @@ print(word)  # prints "python`} />
             </section>
 
             <section>
-                <h2 id="step-4-running-your-translator"><a href="#step-4-running-your-translator" className="section-link">Step 4: Running Your Translator</a></h2>
+                <h2 id={`step-${getCurrentNumber()}-running-your-translator`}><a href={`#step-${getCurrentNumber()}-running-your-translator`} className="section-link">Step {getCurrentNumberAndIncrement()}: Running Your Translator</a></h2>
                 <p>Create a variable called <code className="inline">first_letter</code> and use string indexing to assign it to the first letter of <code className="inline">word</code>.</p>
 
                 <Collapsible title="Hint">
@@ -79,7 +82,7 @@ last_letter = word[6]  # 't'`} />
             </section>
 
             <section>
-                <h2 id="advanced-extensions"><a href="#advanced-extensions" className="section-link">Advanced Extensions</a></h2>
+                <h2 id={`advanced-extensions`}><a href={`#advanced-extensions`} className="section-link">Advanced Extensions</a></h2>
                 <p>There are a few ways to check if the first letter is a vowel or a consonant. The simplest way is to use a conditional statement with <code className="inline">or</code>, checking the letter against each possible vowel.</p>
 
                 <Collapsible title="Hint">
@@ -90,7 +93,7 @@ letter == "y" or letter == "z"` } />
             </section>
 
             <section>
-                <h2 id="step-5-slice-the-string"><a href="#step-5-slice-the-string" className="section-link">Step 5: Slice the String</a></h2>
+                <h2 id={`step-${getCurrentNumber()}-slice-the-string`}><a href={`#step-${getCurrentNumber()}-slice-the-string`} className="section-link">Step {getCurrentNumberAndIncrement()}: Slice the String</a></h2>
                 <p>Now that you have the first letter, use string slicing to extract the rest of the word and assign it to a variable called <code className="inline">rest_of_word</code>.</p>
 
                 <Collapsible title="Hint">
@@ -101,7 +104,7 @@ rest_of_word = word[3:7]  # 'let'`} />
             </section>
 
             <section>
-                <h2 id="step-6-create-new-string"><a href="#step-6-create-new-string" className="section-link">Step 6: Create a New String</a></h2>
+                <h2 id={`step-${getCurrentNumber()}-create-new-string`}><a href={`#step-${getCurrentNumber()}-create-new-string`} className="section-link">Step {getCurrentNumberAndIncrement()}: Create a New String</a></h2>
                 <p>Now, create a new string called <code className="inline">new_word</code> that will contain the Pig Latin translation of <code className="inline">word</code>. Concatenate the variables that you created in the previous steps in the correct order.</p>
 
                 <Collapsible title="Hint">
@@ -114,7 +117,7 @@ print(full_name)  # "John Doe"`} />
             </section>
 
             <section>
-                <h2 id="step-7-finishing-touch"><a href="#step-7-finishing-touch" className="section-link">Step 7: The Finishing Touch</a></h2>
+                <h2 id={`step-${getCurrentNumber()}-finishing-touch`}><a href={`#step-${getCurrentNumber()}-finishing-touch`} className="section-link">Step {getCurrentNumberAndIncrement()}: The Finishing Touch</a></h2>
                 <p>For each condition, add the proper ending string to <code className="inline">new_word</code>: <code className="inline">"ay"</code>, <code className="inline">"way"</code>, or nothing.</p>
             </section>
 
