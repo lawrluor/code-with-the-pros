@@ -101,7 +101,7 @@ else:
 
 				<p>Your final output, depending on what you input as your order total, should look something like this:</p>
 
-				<CodeBlock language="txt" codeString={`15% discount applied! Your new total is: $170.00`} />
+				<CodeBlock language="txt" codeString={`Discount applied! Your new total is: $170.00`} />
 
 				<p>or</p>
 
@@ -139,7 +139,7 @@ final_total = order_total - discount
 
 # Step 4: Display result
 if discount > 0:
-    print(f"{(discount/order_total)*100:.0f}% discount applied! Your new total is: {final_total:.2f}")
+    print(f"Discount applied! Your new total is: {final_total:.2f}")
 else:
     print(f"No discount applied. Your total remains: {final_total:.2f}")`} />
 				</Collapsible>

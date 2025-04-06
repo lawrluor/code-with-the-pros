@@ -21,7 +21,7 @@ const FunctionsLesson = () => {
 print('Hello, World!')
 type('Hello, World!')`} />
 
-            <p>These functions are <strong>built-in</strong> functions, which means that they are included with the Python standard library and can immediately be used in your code without first creating them or <em>importing</em> them from other files.</p>
+            <p>These functions are <strong>built-in</strong> functions, which means that they are included with Python and can immediately be used in your code without first creating them or <em>importing</em> them from other files.</p>
 
             <Collapsible title="Challenge">
                 <p>Name one other function that you used in previous chapters or projects.</p>
@@ -114,18 +114,18 @@ take_picture()`} />
         <section>
             <h2 id="function-syntax"><a href="#function-syntax" className="section-link">Function Syntax</a></h2>
             <p>A function is created using the <code className="inline">def</code> keyword, followed by the function's name, a pair of parentheses <code className="inline">()</code>, and a colon <code className="inline">:</code>.</p>
-            <CodeBlock language={"python"} codeString={`# A function that performs the simple task of displaying a greeting message
-def greet():
+            <CodeBlock language={"python"} codeString={`# A function that performs the simple task of displaying a hello message
+def say_hello():
     print("Hello there!")
     print("Have a nice day!")`} />
 
             <h3>Function Header</h3>
-            <p>The first line of a function is known as the function <code className="inline">header</code> or function <code className="inline">signature</code>. It allows for, at a glance, an overview of what the function does and how it should be used.</p>
-            <CodeBlock language={"python"} codeString={`def greet():`} />
+            <p>The first line of a function is known as the <strong>function header</strong> or <strong>function signature</strong>. It allows for, at a glance, an overview of what the function does and how it should be used.</p>
+            <CodeBlock language={"python"} codeString={`def say_hello():`} />
 
             <h3>Function Body</h3>
             <p>Like an <code className="inline">if</code> statement, a function has a <strong>body</strong>, which is an indented block of code that is executed when the function is <strong>called</strong> or used.</p>
-            <CodeBlock language={"python"} codeString={`def greet():
+            <CodeBlock language={"python"} codeString={`def say_hello():
     # Begin function body
     print("Hello there!")
     print("Have a nice day!")`} />
@@ -154,6 +154,10 @@ greet()
 # Output:
 # "Hello There"
 # "Have a nice day!"`} />
+
+            <CodeBlock language={"txt"} codeString={`Output:
+"Hello There"
+"Have a nice day!"`} />
 
             <p>Calling a function is as simple as writing the function's name followed by parentheses <code className="inline">()</code>.</p>
             <Collapsible title="Challenge">
