@@ -336,7 +336,10 @@ print(num_students % num_groups)  # Outputs: 1 (the last student belongs to the 
           <section>
               <h2 id="wrapping-up"><a href="#wrapping-up" className="section-link">Wrapping Up</a></h2>
               <p>Great job! You've started learning about the most fundamental building blocks of the Python language. Feel free to take the quiz to test your knowledge.</p>
-              <a href="/quiz?name=00Intro.py" target="_blank" rel="noopener noreferrer" className="button">Start Quiz</a>
+          </section>
+
+          <section>
+            <a href="/quiz?name=00Intro.py" target="_blank" rel="noopener noreferrer" className="button">Start Quiz</a>
           </section>
         </div>
     );

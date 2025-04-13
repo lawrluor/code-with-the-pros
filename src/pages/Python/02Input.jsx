@@ -150,6 +150,9 @@ print(num1 + num2)`} />
             <section>
                 <h2 id="wrapping-up"><a href="#wrapping-up" className="section-link">Wrapping Up</a></h2>
                 <p>In future chapters, you'll learn other ways that <code className="inline">input()</code> can be useful. In the meantime, we'll practice applying <code className="inline">input()</code> to past projects and in a new project.</p>
+            </section>
+
+            <section>
                 <button onClick={() => window.location.href = '/quiz?name=02Input.py'}>Start Quiz</button>
             </section>
         </div>

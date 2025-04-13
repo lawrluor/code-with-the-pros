@@ -596,6 +596,9 @@ print(water_temp)`} />
             <section>
                 <h2 id="wrapping-up"><a href="#wrapping-up" className="section-link">Wrapping Up</a></h2>
                 <p>Understanding booleans will supercharge your <code className="inline">if</code> statements! Writing concise and efficient code that branches based on conditions is a fundamental skill in your programming journey.</p>
+            </section>
+
+            <section>
                 <button onClick={() => window.location.href = "/quiz?name=04Booleans.py"}>Start Quiz</button>
             </section>
 

@@ -328,11 +328,11 @@ print(result)`} />
             <CodeBlock language={"python"} codeString={`def print_message(message):
     print("Message: " + message)
 
-print(print_message("Hello, Python!"))
+print(print_message("Hello, Python!"))`} />
+            <p>The result of calling this code is:</p>
 
-# Output:
-# Message: Hello, Python!
-# None`} />
+            <CodeBlock language={"txt"} codeString={`Message: Hello, Python!
+None`} />
             <p>This function prints a message but does not return anything. Notice that when we use <code className="inline">print()</code> to display the value of <code className="inline">print_message("Hello, Python!")</code>, it outputs <code className="inline">None</code>, as <code className="inline">None</code> is the default return value for functions that do not explicitly have a <code className="inline">return</code> statement.</p>
 
             <p>In fact, you can even think of functions that lack a return statement as functions that return <code className="inline">None</code>. For the sake of brevity, it's standard to simply omit the <code className="inline">return</code> keyword in these cases.</p>
@@ -355,6 +355,15 @@ print(print_message("Hello, Python!"))
     return result
     print("This line will never be executed")`} />
 
+            <p>Let's look at an example of calling the above function:</p>
+            <CodeBlock language={"python"} codeString={`difference = subtract_numbers(5, 3)
+print(difference)`} />
+
+            <p>The final output of these lines is simply:</p>
+            <CodeBlock language={"txt"} codeString={`2`} />
+
+            <p>This is because the <code className="inline">print</code> statement is never reached - the function terminates immediately upon using the <code className="inline">return</code> statement.</p>
+
             <h3>Using <code className="inline">return</code> in <code className="inline">if</code> Statements</h3>
             <p>It is common to use <code className="inline">return</code> in functions with an <code className="inline">if</code> statement in order to yield a value if the condition is met, and a different value if the condition is not met.</p>
 
@@ -363,7 +372,12 @@ print(print_message("Hello, Python!"))
         return True
     else:
         return False`} />
-            <p>Here, it might seem that the <code className="inline">else</code> statement wouldn't be reached, as it appears after <code className="inline">return</code> (the <code className="inline">return</code> statement in the <code className="inline">if</code> block). However, this is not the case. The <code className="inline">if</code> statement is skipped entirely when its condition is not met, meaning <code className="inline">return</code> is not triggered.</p>
+            <p>Here, it might seem that the <code className="inline">else</code> statement wouldn't be reached, as it appears after <code className="inline">return</code> (the <code className="inline">return</code> statement in the <code className="inline">if</code> block). However, this is not the case. The <code className="inline">if</code> statement is skipped entirely when its condition is not met, meaning <code className="inline">return</code> is not triggered at all.</p>
+
+            <Collapsible title="Challenge">
+                <p>What is the result of calling the <code className="inline">is_even</code> function defined earlier with the argument <code className="inline">3</code>?</p>
+                <p>Is anything printed to the screen as a result of calling the <code className="inline">is_even</code> function?</p>
+            </Collapsible>
         </section>
 
         <section>
@@ -376,7 +390,7 @@ print(print_message("Hello, Python!"))
 greet()        # Output: "Hello, World
 greet("John")  # Output: "Hello, John`} />
 
-            <p>This is an exception to the rule that all parameters must be provided when the function is called. The default parameter is only used if the corresponding argument is <strong>not</strong> provided. Another name for a default parameter is a <em>keyword argument</em>.</p>
+            <p>This is an <strong>exception to the rule</strong> that all parameters must be provided when the function is called. The default parameter is only used if the corresponding argument is <strong>not</strong> provided. Another name for a default parameter is a <em>keyword argument</em>.</p>
         </section>
 
         <section>
@@ -386,28 +400,36 @@ greet("John")  # Output: "Hello, John`} />
             <CodeBlock language={"python"} codeString={`def add_numbers(a: int, b: int) -> int:
     return a + b`} />
 
-            <p>In the code above, <code className="inline">a</code>, <code className="inline">b</code>, and the return value are all labeled as type <code className="inline">int</code>. This will help you and other programmers who might use your code understand the intended behavior of the function. However, that this is simply a label and doesn't actually change the behavior of the function in any way.</p>
+            <p>In the code above, <code className="inline">a</code>, <code className="inline">b</code>, and the return value are all labeled as type <code className="inline">int</code>. This will help you and other programmers who might use your code understand the intended behavior of the function. However, that this is simply a label and <strong>doesn't actually change</strong> the behavior of the function in any way.</p>
 
             <CodeBlock language={"python"} codeString={`print(add_numbers(1, 2))            # Output: 3
 print(add_numbers("key", "board"))  # Output: "keyboard"`} />
 
             <p>However, equally important is to write code that is <strong>self-documenting</strong>, meaning that the code uses variable names that are clear and easy to understand. With the following self-documenting code, type annotations are not necessary.</p>
 
-            <CodeBlock language={"python"} codeString={`def multiply(int1, int2):
+            <CodeBlock language={"python"} codeString={`def multiply_numbers(int1, int2):
 product = int1 * int2
 return product`} />
+
+            <Collapsible title="Challenge">
+                <p>What is the result of calling the <code className="inline">add_numbers</code> function defined earlier with the float arguments <code className="inline">0.2</code> and <code className="inline">0.5</code>?</p>
+                <p>What is the result of calling the <code className="inline">multiply_numbers</code> function defined earlier with the float arguments <code className="inline">3.0</code> and <code className="inline">4.0</code>?</p>
+            </Collapsible>
         </section>
 
         <section>
             <h2 id="wrapping-up"><a href="#wrapping-up" className="section-link">Wrapping Up</a></h2>
-            <p>Hopefully, you can see that using functions makes your code more concise and helps avoid repetition. It allows you to write a set of statements once and run them whenever you need to, without rewriting them each time.</p>
+            <p>You've learned how using functions makes your code more concise and helps avoid repetition. A function allows you to write a set of statements once and run them whenever you need to, without rewriting the same statements over and over again. They also provide a way to customize the behavior of code depending on the parameters and arguments passed to them.</p>
 
             {/* <ul>
                 <li><strong>Reduces Redundancy:</strong> You avoid writing the same statements multiple times throughout your code.</li>
                 <li><strong>Enhances Clarity:</strong> Encapsulating code in a function reduces lines of code, making the main part of your code less cluttered.</li>
                 <li><strong>Simplifies Maintenance:</strong> If the greeting needs to be changed, you only need to update it in one place instead of repeating the change throughout the entirety of your code.</li>
             </ul> */}
-            <button className="next-button" onClick={() => window.location.href = "/quiz?name=05Functions.py"}>Start Quiz</button>
+        </section>
+
+        <section>
+        <button className="next-button" onClick={() => window.location.href = "/quiz?name=05Functions.py"}>Start Quiz</button>
         </section>
     </div> );
 }
