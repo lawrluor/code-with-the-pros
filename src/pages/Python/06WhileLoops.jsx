@@ -112,9 +112,9 @@ print("Done!")`} />
                     <li><strong>Execute:</strong> <code className="inline">print("Done!")</code> → Output: <code className="inline">Done!</code></li>
                 </ol>
 
-                <p>So the complete output of this program would be:</p>
+                <p>So, the complete output of this program would be:</p>
 
-                <CodeBlock language={"python"} codeString={`1
+                <CodeBlock language={"txt"} codeString={`1
 2
 3
 Done!`} />
@@ -174,7 +174,7 @@ Done!`} />
                 <p>This table format quickly shows:</p>
                 <ol>
                   <li>We start with <code className="inline">x = 1</code>, and the condition is <code className="inline">True</code></li>
-                  <li>After 3 iterations, <code className="inline">x</code> becomes 4</li>
+                  <li>After three iterations, <code className="inline">x</code> becomes <code className="inline">4</code></li>
                   <li>When <code className="inline">x</code> is <code className="inline">4</code>, the condition becomes <code className="inline">False</code> and we exit the loop</li>
                   <li>The final output is the sequence <code className="inline">"1", "2", "3", "Done!"</code>, all printed on separate lines</li>
                 </ol>
@@ -217,8 +217,8 @@ print("Thank you for entering a valid number!")`} />
               <p>In contrast to the simple <code className="inline">if</code> statement, the <code className="inline">while</code> loop will prompt the user <strong>again</strong> for valid input if the input is deemed invalid. This repeated checking is akin to an <code className="inline">if</code> statement that repeats each time the condition <code className="inline">number &gt; 10</code> is not met.</p>
 
               <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
-                <p>Technically, you can nest another <code className="inline">if</code> statement inside the first one to check the user's input again if it is invalid. However, this is not the best way to handle this situation - can you explain why?</p>
-                <CodeBlock language={"python"} codeString={`user_input = input("Enter a number greater than 10: ")
+                <p>Technically, you can nest another <code className="inline">if</code> statement inside the first one to check the user's input again if it is invalid. However, this is not the best way to handle this situation - can you think of some shortcomings of this code?</p>
+                <CodeBlock language={"python"} codeString={```user_input = input("Enter a number greater than 10: ")
 if int(user_input) <= 10:
   print("That's not a valid number, please try again.")
   user_input = input("Enter a number greater than 10: ")
@@ -226,7 +226,7 @@ if int(user_input) <= 10:
     print("That's not a valid number, please try again.")
     user_input = input("Enter a number greater than 10: ")
 
-print("Thank you for entering a valid number!")`} />
+print("Thank you for entering a valid number!")```} />
               </Collapsible>
           </section>
 
@@ -244,21 +244,21 @@ print("Lift off!")`} />
                 <CodeBlock language={"python"} codeString={`message = "North America"
 index = 0
 while index < len(message):
-  print("Character at position", index, "is", message[index])
+  print("Character at position " + str(index) + " is " + message[index])
   index += 1`} />
-                <p>Try running the above code in your code editor. In this example, the loop iterates through each character in the string <code className="inline">"America"</code> using an <code className="inline">index</code>. The condition checks if the <code className="inline">index</code> is less than the length of <code className="inline">message</code>, ensuring the loop runs for each character in the string.</p>
+                <p>Try running the above code in your code editor. In this example, the loop iterates through each character in the string <code className="inline">"North America"</code> using an <code className="inline">index</code>. The condition checks if the <code className="inline">index</code> is less than the length of <code className="inline">message</code>, ensuring the loop runs for each character in the string.</p>
 
                 <p>We can also use a while loop to check if a string contains a certain character.</p>
                 <CodeBlock language={"python"} codeString={`phrase = "Africa! I would love to visit."
 has_exclamation = False
-i = 0
-while i < len(phrase):
-  if phrase[i] == "!":
+index = 0
+while index < len(phrase):
+  if phrase[index] == "!":
     has_exclamation = True
-  i += 1
+  index += 1
 print(has_exclamation)`} />
 
-                <p>In each iteration of the while loop above, we check if the current character is an exclamation point. If it is, we set <code className="inline">has_exclamation</code> to <code className="inline">True</code>. We then print the value of <code className="inline">has_exclamation</code>.</p>
+                <p><code className="inline">index</code> represents the position of the current character in the string. In each iteration of the while loop above, we check if the current character (described by <code className="inline">phrase[index]</code>) is an exclamation point. If it is, we set <code className="inline">has_exclamation</code> to <code className="inline">True</code>. We then print the value of <code className="inline">has_exclamation</code>.</p>
                 <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
                   <p>The following code is incomplete. Complete steps 1 and 2 of the while loop to print each letter in the word "Asia":</p>
                   <CodeBlock language={"python"} codeString={`word = "Asia"
@@ -271,8 +271,7 @@ while index < len(word):
             </section>
 
           <section>
-            <h2 id="breaking-out-of-loops"><a href="#breaking-out-of-loops" className="section-link">Breaking Out of Loops</a></h2>
-            <h2>The <code className="inline">break</code> Keyword</h2>
+            <h2 id="break-keyword"><a href="#break-keyword" className="section-link">The <code className="inline">break</code> Keyword</a></h2>
             <p>In while loops, the ideal scenario is for the loop to terminate based on its loop condition. However, sometimes you may want to exit a loop early based on a specific situation. Sometimes, this situation is one that cannot be predicted by the initial loop condition. This is where the <code className="inline">break</code> keyword comes into play.</p>
 
             <p>The <code className="inline">break</code> keyword immediately terminates the loop, regardless of the loop's original condition. It provides a way to exit the loop from inside the loop body, typically under a conditional statement.</p>
@@ -287,7 +286,7 @@ while count < 10:
             <p>This loop is set to run until the count reaches 10. However, within the loop, there's a check to see if the count equals 5. When the count does reach 5, the <code className="inline">break</code> keyword is executed, which immediately stops the loop. This example demonstrates how <code className="inline">break</code> can be used to halt the execution of a loop based on a condition met <em>inside the loop body</em>, even if the top-level loop condition would allow it to continue.</p>
 
             <h3>Using <code className="inline">break</code></h3>
-            <p>The previous example is unlikely to be a way that you use the <code className="inline">break</code> keyword, as a better method would be simply to set the looping condition to while <code className="inline">count &lt;= 5</code>. Here's a more realistic example of when you might use <code className="inline">break</code>.</p>
+            <p>The previous example is unlikely to be a way that you use the <code className="inline">break</code> keyword, as a better method would be simply to set the looping condition to while <code className="inline">count &lt; 5</code>. Here's a more realistic example of when you might use <code className="inline">break</code>.</p>
 
             <CodeBlock language={"python"} codeString={`attempts = 0
 while attempts < 3:
@@ -304,7 +303,7 @@ while attempts < 3:
             <p>While the <code className="inline">break</code> keyword is powerful, it should be used judiciously. Relying heavily on <code className="inline">break</code> can make the loop logic hard to follow, especially in complex loops. Ideally, the loop's condition should be sufficient to control its termination, and <code className="inline">break</code> should be reserved for exceptional circumstances where an immediate exit is required.</p>
 
             <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
-              <p>1. What will this code print?</p>
+              <p>1. What will be the output of the following code?</p>
               <CodeBlock language={"python"} codeString={`ducks = 0
 while ducks < 2:
   print(ducks)
@@ -313,7 +312,7 @@ while ducks < 2:
 
 print("Exited loop")`} />
 
-              <p>2. How could using <code className="inline">break</code> improve the efficiency of the code below?</p>
+              <p>2. The following code loops through a string to check if it contains an exclamation point. How could using <code className="inline">break</code> improve the efficiency of the code below?</p>
               <CodeBlock language={"python"} codeString={`phrase = "Africa! I would love to visit."
 has_exclamation = False
 i = 0
@@ -337,7 +336,7 @@ while count < 10:
   if count % 2 == 0:  # If count is even
     continue
   print(count)`} />
-            <p>In this example, when <code className="inline">count</code> is even, the <code className="inline">continue</code> statement is triggered, thereby skipping the <code className="inline">print(count)</code> line and jumps back to check the loop condition. The end result of the loop is that only odd numbers are printed.</p>
+            <p>In this example, when <code className="inline">count</code> is even, the <code className="inline">continue</code> statement is triggered, thereby skipping the <code className="inline">print(count)</code> line and jumps back to check the loop condition. When <code className="inline">count</code> is odd, the <code className="inline">if</code> statement is skipped, and the <code className="inline">print(count)</code> line is executed, and the loop continues as usual. The end result of the loop is that only odd numbers are printed.</p>
 
             <h3>When <code className="inline">continue</code> is Redundant</h3>
             <p>While <code className="inline">continue</code> can be useful, it's often unnecessary and can make code harder to read. Here's an example of redundant usage:</p>
@@ -395,17 +394,17 @@ while customers > 0:
   if customers == 3:
     continue
     print("This line of code will never be executed.")
-  elif customers == 2:
+  elif customers == 1:
     break
     print("This line of code will also never be executed.")
-
-  print(customers)
-  customers -= 1
+  else:
+    print(customers)
+    customers -= 1
 
 print("Exited loop.")`} />
 
             <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
-              <p>What does the code above print? How does the output change if we remove the <code className="inline">continue</code> statement?</p>
+              <p>What does the code above print?</p>
             </Collapsible>
           </section>
 
@@ -426,8 +425,9 @@ while counter < 5:
 
             <h3>While Loops with <code className="inline">input()</code></h3>
 
-            <p>Sometimes we can write an "intentional" infinite loop that uses the <code className="inline">break</code> keyword instead of the initial looping condition to exit the loop. We can use infinite loops intentionally to keep a program running indefinitely until an external action occurs, such as user input or an error that breaks the loop. Consider the following example:</p>
-
+            <p>Sometimes we can write an "intentional" infinite loop that uses the <code className="inline">break</code> keyword instead of the initial looping condition to exit the loop. We can use infinite loops intentionally to keep a program running indefinitely until an external action occurs, such as user input or an error that breaks the loop.</p>
+            
+            <p>Consider the following example:</p>
             <CodeBlock language={"python"} codeString={`# Example: Infinite while loop with a break condition
 while True:
   response = input("Feel free to type anything you want. When you're finished, enter 'quit' to exit: ")
