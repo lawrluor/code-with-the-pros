@@ -2,7 +2,11 @@ import React from 'react';
 import CodeBlock from '../../components/CodeBlock';
 import Collapsible from '../../components/Collapsible';
 
+import useSequentialCounter from '../../hooks/useSequentialCounter';
+
 const Intro = () => {
+  const { getCurrentNumberAndIncrement } = useSequentialCounter(0);
+
   return (
         <div className="lesson-container">
           <section>
@@ -20,7 +24,7 @@ const Intro = () => {
 
 						<p>What's happening here? We wrote out an instruction for the computer to follow: <code className="inline">print()</code> displays the message <code className="inline">"Hello, world!"</code> to the computer screen.</p>
 
-            <Collapsible title={"Challenge"}>
+            <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
               <p>In your code editor, use <code className="inline">print()</code> to display your name to the screen.</p>
             </Collapsible>
           </section>
@@ -38,7 +42,7 @@ print("Python is fun!")  # Displays a message`} />
 
             <p>Throughout the reading, you will see comments used to explain, label, and annotate code examples.</p>
 
-            <Collapsible title={"Challenge"}>
+            <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
               <p>In your code editor, add a comment at the top of your file that says <code className="inline"># Program 1</code>.</p>
             </Collapsible>
           </section>
@@ -66,7 +70,7 @@ Hello, world
 5`} />
 						<p><code className="inline">print()</code> is a type of <strong>function</strong>: a piece of code that allows us to perform a specific action - in this case, display something on the screen. Throughout our learning, we will come across many more useful functions in Python and even learn to create our own!</p>
 
-            <Collapsible title={"Challenge"}>
+            <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
               <p>In your code editor, use <code className="inline">print()</code> to display the name your favorite color. Then, on the line below it, use <code className="inline">print()</code> to display the name of your favorite animal.</p>
             </Collapsible>
           </section>
@@ -97,7 +101,7 @@ print(10 * 5 / 2)     # Results in 25.0`}/>
 
             <p>Note that exponents do <strong>not</strong> use the carat <code className="inline">^</code> sign!</p>
 
-            <Collapsible title={"Challenge"}>
+            <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
               <p>In your code editor, create 3 different expressions, each on separate lines, using three different arithmetic operators.</p>
             </Collapsible>
           </section>
@@ -141,11 +145,11 @@ print(10 + None)  # Error: it doesn't make sense to add anything to a non-number
             <CodeBlock language={"python"} codeString={`print(type(10))    # int
 print(type("5"))   # string
 print(type(10.5))  # float`} />
-            <Collapsible title={"Challenge"}>
+            <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
               <p>What is the difference between an <code className="inline">int</code> and a <code className="inline">float</code>?</p>
             </Collapsible>
 
-            <Collapsible title={"Challenge"}>
+            <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
               <p>In your code editor, use the <code className="inline">type()</code> function to check the data type of <code className="inline">"99"</code>.</p>
             </Collapsible>
 
@@ -171,7 +175,7 @@ print(10 + 0)`}/>
 
 						<p>Like <code className="inline">print()</code>, casting also uses functions. If you recall, functions are pieces of code that perform specific tasks. The casting functions <code className="inline">int()</code>, <code className="inline">float()</code>, <code className="inline">str()</code> performs the specific task of converting data to a new data type.</p>
 
-            <Collapsible title={"Challenge"}>
+            <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
 							<p>Use casting to convert data types: </p>
 							<CodeBlock language={"python"} codeString={`# 1. Convert an integer of your choice to a string using the str() function.
 # 2. Convert a string of your choice to an integer using the int() function.
@@ -197,7 +201,7 @@ print(message)  # Displays "Hello World" again`} />
             <CodeBlock language={"python"} codeString={`variable_name = value`} />
 
             <p>Technically, the <code className="inline">=</code> symbol is called the <strong>assignment operator</strong> in Python - it is <bold>not</bold> called the <em>equals</em> sign. It is a special operator that is used specifically to <strong>assign</strong> a value to a variable.</p>
-            <Collapsible title={"Challenge"}>
+            <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
               <p>In your code editor, create a variable called <code className="inline">day</code> and assign the day of the week to it.</p>
             </Collapsible>
 
@@ -232,7 +236,7 @@ print(count)  # Results in 0`} />
 
 <p>Note that the line <code className="inline">count += 1</code> is the same as <code className="inline">count = count + 1</code>, but it's a shorter way to write the same thing. You can also use the abbreviation operators <code className="inline">-=</code>, <code className="inline">*=</code>, and <code className="inline">/=</code> operators to update the value of a variable.</p>
 
-            <Collapsible title="Challenge">
+            <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
               <ol>
                 <li>In your code editor, create a variable called <code className="inline">age</code> and assign it the value of your age.</li>
                 <li>On the next line, use the <code className="inline">+=</code> operator to increase <code className="inline">age</code> by one.</li>
@@ -253,7 +257,7 @@ print("Hi there)  # Missing closing quotation mark
 9 ++ 4            # Incorrect operator: should be 9 + 4
 x _ 10            # Defining a variable: should be x = 10`}/>
 
-            <Collapsible title="Challenge">
+            <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>  
               <p>What does <strong>syntax</strong> refer to?</p>
             </Collapsible>
 
@@ -273,7 +277,7 @@ print(age)`}/>
 
             <p>To avoid <code className="inline">NameError</code>, make sure all your variables are defined and accessible where you try to use them. Think of it as making sure all your ingredients are on the counter before you start cooking.</p>
 
-            <Collapsible title="Challenge">
+            <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
             <p>What kind of errors will you get if you run the following programs?</p>
 
             <CodeBlock language={"python"} codeString={`# Program 1
@@ -305,7 +309,7 @@ print(-11 // 3)  # Outputs: -4 (integer division)`} />
 
             <p>You can also think about integer division as <em>truncating</em>, or chopping off, everything including and after the decimal point of a number.</p>
 
-            <Collapsible title="Challenge">
+            <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>  
               <p>Can you think of an example where integer division could be useful or preferable to normal division?</p>
 
               <p>Try using integer division to solve the following problem: </p>
@@ -328,7 +332,7 @@ num_students = 10
 num_groups = 3
 print(num_students % num_groups)  # Outputs: 1 (the last student belongs to the 1st group)`} />
 
-            <Collapsible title="Challenge">
+            <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>  
               <p>In your code editor, use the modulo operator to determine the result of <code className="inline">5 % 0</code>. What is the result and how might you explain this?</p>
             </Collapsible>
           </section>

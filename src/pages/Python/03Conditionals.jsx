@@ -4,8 +4,7 @@ import Collapsible from '../../components/Collapsible';
 import useSequentialCounter from '../../hooks/useSequentialCounter';
 
 const Conditionals = () => {
-    // Use our custom hook for challenge numbering
-    const { getCurrentNumber, getCurrentNumberAndIncrement } = useSequentialCounter(1);
+    const { getCurrentNumber, getCurrentNumberAndIncrement } = useSequentialCounter(0);
 
     return (
         <div className="lesson-container">

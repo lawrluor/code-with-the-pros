@@ -2,7 +2,11 @@ import React from 'react';
 import CodeBlock from '../../components/CodeBlock';
 import Collapsible from '../../components/Collapsible';
 
+import useSequentialCounter from '../../hooks/useSequentialCounter';
+
 const StringsLesson = () => {
+    const { getCurrentNumberAndIncrement } = useSequentialCounter(0);
+    
     return (
         <div className="lesson-container">
             <h1>Strings</h1>
@@ -78,7 +82,7 @@ print(last_char)   # Outputs: d`} />
 
                 <p>The notation <code className="inline">phrase[0]</code> is most commonly pronounced as <em>"phrase at 0"</em> or <em>"phrase of 0"</em>.</p>
 
-                <Collapsible title={"Challenge"}>
+                <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
                     <p>In the above example, what would be the result of <code className="inline">print(phrase[5])</code>? </p>
                     <p>How would you pronounce <code className="inline">word[5]</code>? </p>
                 </Collapsible>
@@ -88,7 +92,7 @@ print(last_char)   # Outputs: d`} />
 print(s[1])    # Outputs: i
 print(s[1.5])  # TypeError: string indices must be integers`}/>
 
-                <Collapsible title={"Challenge"}>
+                <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
                     <p>Can you think of a reason that it might be useful to select a single character from a string?</p>
                 </Collapsible>
 
@@ -101,7 +105,7 @@ print(last_char)  # Outputs: d
 print(s[-2])      # Outputs: l
 print(s[-3])      # Outputs: r`} />
 
-                <Collapsible title={"Challenge"}>
+                <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
                     <p>Assign a 6-character long string into a variable called <code className="inline">word</code>. Then, print the first character, the 3rd to last character, and the last character, each on a separate line.</p>
                 </Collapsible>
 
@@ -132,7 +136,7 @@ print(sub_step)  # Outputs: HloW`} />
 
                 <p>Here, "step" specifies that the slice should skip every second character, starting from the first character and ending at (but not including) the 8th index.</p>
 
-                <Collapsible title={"Challenge"}>
+                <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
                     <p>In the above example, what would the result of <code className="inline">s[0:8:3]</code> be? What about <code className="inline">s[4:8:-1]</code>?</p>
                 </Collapsible>
             </section>
@@ -165,7 +169,7 @@ print(s[-10:2])  # Outputs: 'He'`} />
                 <h3>Avoiding <code className="inline">IndexError</code></h3>
                 <p>When indexing a string, it's best to carefully select indices that are within the bounds of a string, keeping in mind that the first character has an index of <code className="inline">0</code>.</p>
 
-                <Collapsible title={"Challenge"}>
+                <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
                     <p>Identify which of the following <code className="inline">print()</code> statements will result in an <code className="inline">IndexError</code>.</p>
                     <CodeBlock language={"python"} codeString={`planet = "Jupiter"
 print(planet[10])
@@ -205,7 +209,7 @@ greeting = 'Alice is ' + str(age) + ' years old'  # str(age) becomes the string 
 greeting = 'Hello' + " there"
 print(greeting)  # Outputs: Hello there`} />
 
-                <Collapsible title={"Challenge"}>
+                <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
                     <p>Identify which of the following <code className="inline">print()</code> statements will result in a <code className="inline">TypeError</code>. </p>
                     <CodeBlock language={"python"} codeString={`# 1.
 print("Apple" + 5)
@@ -263,7 +267,7 @@ message = message + "a"  # add the letter "a" to the message`} />
                 <CodeBlock language={"python"} codeString={`day = "Friday"
 print(day + "") # Outputs: Friday`} />
 
-                <Collapsible title={"Challenge"}>
+                <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
                     <p>What is the result of the following <code className="inline">print()</code> statement?</p>
                     <CodeBlock language={"python"} codeString={`name = "Liam"
 print("" + "Hi" + " " + "" + name + "")`} />
@@ -298,7 +302,7 @@ print(sentence.isalpha())  # Outputs: False`} />
 
                 <p>There are dozens of other string methods, but you can find them all along with their explanations in the <a href="https://docs.python.org/3/library/stdtypes.html#string-methods" target="_blank" rel="noreferrer">Python developer handbook</a>.</p>
 
-                <Collapsible title={"Challenge"}>
+                <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
                     <p>Think of something useful that you would like to be able to do with strings that hasn't been covered already. Then, see if there is a string method in the Python documentation that does what you want.</p>
                 </Collapsible>
             </section>
@@ -323,7 +327,7 @@ print('Pi is {:.2f}'.format(pi))  # Rounded Output: "Pi is 3.14"`} />
 
                 <p>The <code className="inline">:.2f</code> inserted between the brackets is known as a <em>format specifier</em>. For three decimal places, we would write <code className="inline">:.3f</code>.</p>
 
-                <Collapsible title={"Challenge"}>
+                <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
                     <p>In your code editor, create a variable that stores the result of dividing a <code className="inline">100</code> by <code className="inline">11</code>. Then, use the <code className="inline">.format()</code> to print and display the result of this division to three decimal places.</p>
                 </Collapsible>
 

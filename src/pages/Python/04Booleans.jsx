@@ -2,7 +2,11 @@ import React from 'react';
 import CodeBlock from '../../components/CodeBlock';
 import Collapsible from '../../components/Collapsible';
 
+import useSequentialCounter from '../../hooks/useSequentialCounter';
+
 const Booleans = () => {
+    const { getCurrentNumberAndIncrement } = useSequentialCounter(0);
+
     return (
         <div className="lesson-container">
             <h1>The Boolean Data Type</h1>
@@ -61,7 +65,7 @@ bool("")      # False`} />
 
                 <p>Moreover, strings are case-sensitive in most programming languages, including Python. Thus, "Yes", "YES", and "yes" would be treated as distinct responses, overcomplicating the logic for interpreting user inputs. This sensitivity adds unnecessary complexity to condition checks and can easily lead to errors.</p>
 
-                <Collapsible>
+                <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
                     <p>If you're not convinced, consider the following: How would you write a check for whether a string equals <code className="inline">"yes"</code> or <code className="inline">"no"</code>? What code would you need to add to ensure that <code className="inline">"y"</code> and <code className="inline">"n"</code> would also be considered affirmative or negative responses?</p>
                 </Collapsible>
             </section>
@@ -81,7 +85,7 @@ if age >= 10:  # The condition is: age >= 10
 print(age >= 10)`} />
                 <p>Just as the mathematical expression <code className = "inline">10 - 5</code> can be simplified to <code className = "inline">5</code>, the boolean expression <code className = "inline">age &ge; 10</code> can be simplified to <code className = "inline">True</code>.</p>
 
-                <Collapsible>
+                <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
                     <p>What value does <code className="inline">10 &lt; 15</code> evaluate to? What about <code className="inline">10 &gt; 10</code>?</p>
                 </Collapsible>
             </section>
@@ -116,7 +120,7 @@ print(is_late == True)   # True
 print(True != is_late)   # False`} />
                 <p>The comparison operators are not just simple checks; they are powerful operators that transform expressions into boolean values <code className="inline">True</code> or <code className="inline">False</code>.</p>
 
-                <Collapsible title={"Challenge"}>
+                <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
                     <p>In your code editor, write the following boolean expressions:</p>
                     <ol>
                         <li>An expression involving two booleans that evaluates to <code className="inline">True</code>.</li>
@@ -124,7 +128,7 @@ print(True != is_late)   # False`} />
                     </ol>
                 </Collapsible>
 
-                <Collapsible title={"Challenge"}>
+                <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
                     <p>Bonus: In your code editor, compare strings using the greater than and less than operators. What do you notice?</p>
                 </Collapsible>
             </section>
@@ -171,7 +175,7 @@ else:
 
             <p>Using <code className="inline">not</code> negates the condition <code className="inline">people &gt;= 3</code>, which is originally <code className="inline">True</code>. After negating it with <code className="inline">not</code>, the value bcomes <code className="inline">False</code>. Therefore, the <code className="inline">else</code> block is executed.</p>
 
-            <Collapsible title={"Challenge"}>
+            <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
                 <p>Using <code className="inline">and</code>, write the following:</p>
                 <ol>
                     <li>An if statement that determines whether or not you should go to school based on the day and hour of the day.</li>
@@ -212,7 +216,7 @@ else:
 
             <p>After simplifying these expressions, the <code className="inline">if</code> statement becomes <code className="inline">if True and False:</code>, which evaluates to <code className="inline">False</code>.</p>
 
-            <Collapsible title={"Challenge"}>
+            <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
                 <p>Try breaking down the second <code className="inline">if</code> statement into multiple boolean expressions.</p>
             </Collapsible>
 
@@ -228,7 +232,7 @@ if not rained_yesterday==True or soil_moisture < 40:
 else:
     print("No need to water the plants today.")`}/>
 
-            <Collapsible title={"Challenge"}>
+            <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
                 <p>What prints out in the above if statement?</p>
             </Collapsible>
             </section>
@@ -269,7 +273,7 @@ else:
     print("You must be at least 18 to drive.")`}/>
 
             <p>The two code blocks above are functionally equivalent. However, the <code className="inline">and</code> operator is more concise and easier to read. Oftentimes, it's a good idea to use the <code className="inline">and</code> operator as it improves the readability of your code.</p>
-            <Collapsible title={"Challenge"}>
+            <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
                 <p>Rewrite the following nested <code className="inline">if</code> statement using the <code className="inline">and</code> operator:</p>
                 <CodeBlock language={"python"} codeString={`temperature = 28  # degrees Celsius
 is_sunny = True
@@ -323,7 +327,7 @@ False and False
 # Statement: Cats are plants and roses are animals.
 # Overall truth: False` }/>
 
-                <Collapsible title={"Challenge"}>
+                <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
                    <p>In your code editor, create real-world examples for the <code className="inline">or</code> operator.</p>
                 </Collapsible>
 
@@ -333,7 +337,7 @@ False and False
                     <li>If either operand in an <code className="inline">or</code> expression evaluates to <code className="inline">True</code>, the entire expression evaluates to <code className="inline">True</code>.</li>
                 </ul>
 
-                <Collapsible title={"Challenge"}>
+                <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
                     <p>Add the following code to your code editor, then run it to get a visual reference to the truth tables.</p>
                     <CodeBlock language={"python"} codeString={`# and Truth Table
 print(f"True and True = {True and True}")      # True
@@ -417,7 +421,7 @@ else:
 
                 <p>Practically any value of any data type can be tested for truth value, without using an explicit comparison check.</p>
 
-                <Collapsible title={"Challenge"}>
+                <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
                     <p>In your code editor, rewrite the following expressions without directly comparing the variable to <code className="inline">is_tired</code> to <code className="inline">True</code> or <code className="inline">False</code>.</p>
                     <CodeBlock language={"python"} codeString={`# 1.
 is_tired = True
@@ -449,7 +453,7 @@ False or False and True   # Evaluates to False`} />
 
                 <p>Here, <code className='inline'>False and True</code> is first evaluated to <code className="inline">False</code>, and then <code className="inline">False or False</code> is evaluated to <code className="inline">False</code>.</p>
 
-                <Collapsible title={"Challenge"}>
+                <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
                     <p>What will the following expressions will evaluate to? Use your code editor to check your results.</p>
 
                     <CodeBlock language={"python"} codeString={`print(False and False or True)
@@ -473,7 +477,7 @@ print(not True or False and False)`} />
                 <CodeBlock language={"python"} codeString={`print(True)`} />
                 <p>Finally, we print <code className="inline">True</code> to the console.</p>
 
-                <Collapsible title={"Challenge"}>
+                <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
                     <p>What will the following expressions will evaluate to? Use your code editor to check your results.</p>
 
                     <CodeBlock language={"python"} codeString={`print(1 + 10 == 11 and True)
@@ -489,7 +493,7 @@ print("a" == "b" or not False)`} />
 result = False and (False or True)  # After grouping with parentheses, evaluates to False`} />
                 <p>By carefully using parentheses, you can ensure your boolean expressions are evaluated in the exact order that you intend.</p>
 
-                <Collapsible title={"Challenge"}>
+                <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
                     <p>What will the following boolean expressions with parentheses will evaluate to? Use your code editor to check your results.</p>
 
                     <CodeBlock language={"python"} codeString={`print((False or True) and not False)
@@ -581,7 +585,7 @@ water = "frozen" if celsius <= 0 else "not frozen"`} />
                 </ol>
                 <p>The condition is evaluated first. If the result of the expression is evaluated as <code class="inline">True</code>, then is stored into the variable <code class="inline">is_boiling</code>. Storing the result of short boolean expressions into variables is a common use case for ternary operators.</p>
 
-                <Collapsible title={"Challenge"}>
+                <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
                     <p>Convert the following <code className="inline">if-else</code> statement using a ternary operator.</p>
                     <CodeBlock language={"python"} codeString={`celsius = 100
 if celsius >= 100:

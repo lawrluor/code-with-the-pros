@@ -2,7 +2,11 @@ import React from 'react';
 import CodeBlock from '../../components/CodeBlock';
 import Collapsible from '../../components/Collapsible';
 
+import useSequentialCounter from '../../hooks/useSequentialCounter';
+
 const Input = () => {
+    const { getCurrentNumberAndIncrement } = useSequentialCounter(0);
+
     return (
         <div className="lesson-container">
             <h1>The <code className="inline">input()</code> Function</h1>
@@ -24,7 +28,7 @@ const Input = () => {
                     <li>Social Media: Writing comments and messaging all require typing into a textbox or text area.</li>
                 </ul>
 
-                <Collapsible title={"Challenge"}>
+                <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
                     <p>Think of a specific situation where you have entered input into your computer, a website, or an application.</p>
                 </Collapsible>
 
@@ -51,7 +55,7 @@ print(name)`} />
 
                 <p>When the <code className="inline">input()</code> function is called, the program will pause and wait for the user to type something. To answer the prompt, the user should type text, then press the <code className="inline">"Enter"</code> or <code className="inline">"Return"</code> key.</p>
 
-                <Collapsible title={"Challenge"}>
+                <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
                     <ul>
                         <li>In your code editor, use <code className="inline">input()</code> to prompt the user to type their favorite color and store their input into a variable.</li>
                         <li>In your code editor, use <code className="inline">input()</code> to prompt the user to type a city that they've visited and store their input into a variable.</li>
@@ -96,7 +100,7 @@ Step 4: Program has finished.`}/>
 
                 <p>To summarize, when <code className="inline">input()</code> prompts the user, the Python does not continue executing other lines of code until <strong>after</strong> the user enters a response. This makes <code className="inline">input()</code> essential for interactive programs that we will explore later.</p>
 
-                <Collapsible title={"Challenge"}>
+                <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
                     <p>Why do you think it's necessary that Python pauses the program until the user provides input? Can you think of a specific error that could occur otherwise?</p>
                 </Collapsible>
             </section>
@@ -130,7 +134,7 @@ print(total)  `} />
 num2 = input("Enter another number: ")
 print(int(num1) + int(num2))`} />
 
-                <Collapsible title={"Challenge"}>
+                <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
                     <div>
                         <p>What is the result of the following code?</p>
                         <CodeBlock language={"python"} codeString={`num1 = input("Enter a number: ")
