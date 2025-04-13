@@ -2,7 +2,11 @@ import React from 'react';
 import CodeBlock from '../../components/CodeBlock';
 import Collapsible from '../../components/Collapsible';
 
+import useSequentialCounter from '../../hooks/useSequentialCounter';
+
 const WhileLoops = () => {
+    const { getCurrentNumberAndIncrement } = useSequentialCounter(0);
+
     return (
         <div className="lesson-container">
             <h1>While Loops</h1>
@@ -16,7 +20,7 @@ const WhileLoops = () => {
                   <li>Allowing a user to enter a number until they guess the correct answer</li>
                 </ul>
 
-                <Collapsible title="Challenge">
+                <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
                   <p>What would the condition be for stopping each of the examples above? How might you phrase that condition as a boolean expression?</p>
                 </Collapsible>
             </section>
@@ -37,7 +41,7 @@ while counter < 5:
                 <h3>Iteration</h3>
                 <p><strong>To iterate</strong> means to repeat something or go through it again. When we say "the loop iterates five times," we mean that the code inside the loop executes five times in succession. The term <strong>iteration</strong> means repetition - in the context of a while loop, it refers to one complete execution of the loop body. In other words, each time the code inside the loop body runs, that's considered one iteration. </p>
 
-                <Collapsible title="Challenge">
+                <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
                   <p>How many iterations are in the code below?</p>
                   <CodeBlock language={"python"} codeString={`counter = 0
 while counter < 3:
@@ -179,7 +183,7 @@ Done!`} />
 
                 <p>The table method is especially useful when tracing loops with multiple variables or more complex conditions. If you are running into unexpected results after writing a <code className="inline">while</code> loop, using this type of code tracing will help you identify the issue.</p>
 
-                <Collapsible title="Challenge">
+                <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
                   <p>Trace through this code step by step and determine what the final value of <code className="inline">count</code> will be. You may create a table to help you track the values of <code className="inline">total</code> and the condition <code className="inline">count &lt; 4</code>.</p>
                   <CodeBlock language={"python"} codeString={`count = 4
 while count > 0:
@@ -212,7 +216,7 @@ while int(user_input) <= 10:
 print("Thank you for entering a valid number!")`} />
               <p>In contrast to the simple <code className="inline">if</code> statement, the <code className="inline">while</code> loop will prompt the user <strong>again</strong> for valid input if the input is deemed invalid. This repeated checking is akin to an <code className="inline">if</code> statement that repeats each time the condition <code className="inline">number &gt; 10</code> is not met.</p>
 
-              <Collapsible title="Challenge">
+              <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
                 <p>Technically, you can nest another <code className="inline">if</code> statement inside the first one to check the user's input again if it is invalid. However, this is not the best way to handle this situation - can you explain why?</p>
                 <CodeBlock language={"python"} codeString={`user_input = input("Enter a number greater than 10: ")
 if int(user_input) <= 10:
@@ -255,7 +259,7 @@ while i < len(phrase):
 print(has_exclamation)`} />
 
                 <p>In each iteration of the while loop above, we check if the current character is an exclamation point. If it is, we set <code className="inline">has_exclamation</code> to <code className="inline">True</code>. We then print the value of <code className="inline">has_exclamation</code>.</p>
-                <Collapsible title="Challenge">
+                <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
                   <p>The following code is incomplete. Complete steps 1 and 2 of the while loop to print each letter in the word "Asia":</p>
                   <CodeBlock language={"python"} codeString={`word = "Asia"
 index = 0
@@ -299,7 +303,7 @@ while attempts < 3:
 
             <p>While the <code className="inline">break</code> keyword is powerful, it should be used judiciously. Relying heavily on <code className="inline">break</code> can make the loop logic hard to follow, especially in complex loops. Ideally, the loop's condition should be sufficient to control its termination, and <code className="inline">break</code> should be reserved for exceptional circumstances where an immediate exit is required.</p>
 
-            <Collapsible title="Challenge">
+            <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
               <p>1. What will this code print?</p>
               <CodeBlock language={"python"} codeString={`ducks = 0
 while ducks < 2:
@@ -373,7 +377,7 @@ while count < 5:
     print(count)`} />
             <p>As a general rule, if you can achieve the same result using a simple <code className="inline">if</code> statement, that's usually the better choice. The <code className="inline">continue</code> keyword is most valuable when you need to skip complex processing or multiple lines of code within a loop iteration.</p>
 
-            <Collapsible title="Challenge">
+            <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
               <p>What will this code print? Could it be rewritten without using <code className="inline">continue</code>?</p>
               <CodeBlock language={"python"} codeString={`x = 0
 while x < 5:
@@ -400,7 +404,7 @@ while customers > 0:
 
 print("Exited loop.")`} />
 
-            <Collapsible title="Challenge">
+            <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
               <p>What does the code above print? How does the output change if we remove the <code className="inline">continue</code> statement?</p>
             </Collapsible>
           </section>
@@ -416,7 +420,7 @@ while counter < 5:
   print("Counting:", counter)`} />
             <p>Here, the <code className="inline">counter</code> variable is never incremented inside the loop, so the condition <code className="inline">counter &lt; 5</code> will <strong>always</strong> evaluate to <code className="inline">True</code>, meaning we will endlessly repeat the loop body. This results in an infinite loop that continuously prints <code className="inline">"Counting: 0"</code> without stopping.</p>
 
-            <Collapsible title="Challenge">
+            <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
               <p>Try running the above code in your code editor. What happens?</p>
             </Collapsible>
 
@@ -433,14 +437,14 @@ while True:
             <p><code className="inline">while True</code> means that the loop condition that will always evaluate to <code className="inline">True</code>, resulting in an infinite loop. This loop will continually prompt the user to enter a response.
             If the user types <code className="inline">'quit'</code>, the <code className="inline">break</code> statement is executed, which immediately exits the loop.
             Otherwise, it will print the user's response and prompt again. The use of the <code className="inline">break</code> keyword allows for looping that is directly controlled by user interaction.</p>
-            <Collapsible title="Challenge">
+            <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
               <p>As we discussed earlier, it is generally preferable to avoid using <code className="inline">break</code> and <code className="inline">continue</code>, instead having a loop condition that will naturally terminate. In the example above, how could you rewrite the code to avoid using <code className="inline">break</code>? What would the new loop condition be?</p>
             </Collapsible>
 
             <h3>Best Practices</h3>
             <p>While loops should include a clear and reachable exit condition to prevent them from running indefinitely in an uncontrollable manner. Ensure that the <code className="inline">while</code> loops that you write have a clear way to terminate via either the <code className="inline">break</code> statement or a change in the loop condition.</p>
 
-            <Collapsible title="Challenge">
+            <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
               <p>Why is this code an infinite loop? What line of code would you add to fix it?</p>
               <CodeBlock language={"python"} codeString={`x = 1
 while x < 5:
@@ -483,7 +487,7 @@ print(first_a_index)  # Output: 2`} />
 
             <p>Remember, the <code className="inline">return</code> statement can only be used inside a function. This means that this technique only works for loops that are inside a function. If you try to use <code className="inline">return</code> outside of a function, you will get a <code className="inline">SyntaxError</code>.</p>
 
-            <Collapsible title="Challenge">
+            <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
               <p>Rewrite the following code using a <code className="inline">return</code> statement to exit the loop instead of <code className="inline">break</code>.</p>
               <CodeBlock language={"python"} codeString={`def has_digit(s):
   result = False
