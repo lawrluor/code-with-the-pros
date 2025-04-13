@@ -8,13 +8,11 @@ export default function Project05() {
 	return <div className="lesson-container">
 		<section>
 			<h1>Project: Shipping Cost Calculator</h1>
-			<p>Your online store is booming, and customers are placing orders from all over the world! You've decided to begin shipping orders to customers.</p>
-
-			<p>During this project, you'll practice:</p>
+			<p>Your online store is booming, and customers are placing orders from all over the world! You've decided to begin shipping orders to customers. To achieve this, you'll need to be able to:</p>
 			<ul>
-				<li>How to define and call functions</li>
-				<li>How to use parameters and return values</li>
-				<li>How to use conditional statements inside a function</li>
+				<li>Define and call functions</li>
+				<li>Use parameters and return values</li>
+				<li>Use conditional statements inside a function</li>
 			</ul>
 		</section>
 
@@ -36,7 +34,7 @@ export default function Project05() {
 
 			<p>
 				Write the function header for a function called <code className="inline">calculate_shipping_cost</code>.
-				This function should take three parameters: <code className="inline">weight</code>, <code className="inline">is_international</code>, and <code className="inline">speed</code>. Optionally, consider what data types the parameters should accept.
+				This function should take three parameters: <code className="inline">weight</code>, <code className="inline">is_international</code>, and <code className="inline">speed</code>. Consider what data type each parameter should be.
 			</p>
 
 			<Collapsible title="Hint">
@@ -54,6 +52,10 @@ export default function Project05() {
 		<section>
 			<h2 id={`step-${getCurrentNumber()}-create-the-function-body`}><a href={`#step-${getCurrentNumber()}-create-the-function-body`} className="section-link">Step {getCurrentNumberAndIncrement()}: Create the Function Body</a></h2>
 			<p>Inside the body of the function, create a variable called <code className="inline">cost</code> and set it to an initial value of <code className="inline">0.00</code>.</p>
+
+			<Collapsible title="Hint">
+				<p>The function body is directly underneath the function header and is indented.</p>
+			</Collapsible>
 		</section>
 
 		<section>
@@ -81,9 +83,9 @@ export default function Project05() {
 			<h2 id={`step-${getCurrentNumber()}-adjust-cost-for-shipping-speed`}><a href={`#step-${getCurrentNumber()}-adjust-cost-for-shipping-speed`} className="section-link">Step {getCurrentNumberAndIncrement()}: Adjust Cost for Shipping Speed</a></h2>
 			<p>You've decided to allow customers to upgrade to express shipping for faster deliveries! There are three possible shipping speeds:</p>
 			<ul>
-				<li><strong>Standard shipping</strong> does not change the price.</li>
-				<li><strong>Express shipping</strong> costs an extra <strong>$10.00</strong> for domestic packages and <strong>$20.00</strong> for international packages.</li>
-				<li><strong>Overnight shipping</strong> costs an extra <strong>$20.00</strong> for domestic packages and <strong>$40.00</strong> for international packages.</li>
+				<li>Standard shipping: the price does not change.</li>
+				<li>Express shipping: costs an extra <strong>$10.00</strong> for domestic packages and <strong>$20.00</strong> for international packages.</li>
+				<li>Overnight shipping: costs an extra <strong>$20.00</strong> for domestic packages and <strong>$40.00</strong> for international packages.</li>
 			</ul>
 
 			<Collapsible title="Hint">
@@ -123,22 +125,25 @@ export default function Project05() {
 		<section>
 			<h2 id={`step-${getCurrentNumber()}-call-the-function-and-display-the-result`}><a href={`#step-${getCurrentNumber()}-call-the-function-and-display-the-result`} className="section-link">Step {getCurrentNumberAndIncrement()}: Call the Function and Display the Result</a></h2>
 			<p>
-				Now that you have the function, call it by passing it arguments <code className="inline">4.00</code>, <code className="inline">True</code>, and <code className="inline">"express"</code> for the <code className="inline">weight</code>, <code className="inline">is_international</code>, and <code className="inline">speed</code> parameters respectively.
-				Store the returned value in a variable called <code className="inline">final_cost</code>.
+				Now that you have finished defining the function, it's time to try calling it. To test the function, we'll simulate shipping a package that weighs 4 pounds, is international, and is shipped via express shipping.
+				Store the result of the function call in a variable called <code className="inline">final_cost</code>.
 			</p>
 			<p>Then, using the <code className="inline">final_cost</code> variable, display the final shipping cost to the customer using string formatting. Your final output should look something like this: <code className="inline">"Your total shipping cost is $28.00"</code></p>
 
 			<Collapsible title="Hint">
-				<p>Call the function like this: <code className="inline">calculate_shipping_cost(4.00, True, "express")</code>.</p>
+				<p>To call the function, pass it arguments <code className="inline">4.00</code>, <code className="inline">True</code>, and <code className="inline">"express"</code> for the <code className="inline">weight</code>, <code className="inline">is_international</code>, and <code className="inline">speed</code> parameters respectively</p>
+				<p>For example: <code className="inline">calculate_shipping_cost(4.00, True, "express")</code>.</p>
 			</Collapsible>
 		</section>
 
 		<section>
-			<h2 id={`step-${getCurrentNumber()}-special-offer-free-shipping-for-vips`}><a href={`#step-${getCurrentNumber()}-special-offer-free-shipping-for-vips`} className="section-link">Step {getCurrentNumberAndIncrement()}: Special Offer - Free Shipping for VIPs</a></h2>
-			<p>Your company has launched a <strong>VIP membership program</strong> that offers free shipping! Modify your code so that if the customer enters <code className="inline">"VIP"</code> as their shipping speed, the shipping cost should be <strong>$0</strong>, regardless of any other factors.</p>
+			<h2 id={`step-${getCurrentNumber()}-free-shipping-for-vips`}><a href={`#step-${getCurrentNumber()}-free-shipping-for-vips`} className="section-link">Step {getCurrentNumberAndIncrement()}: Free Shipping for VIPs</a></h2>
+			<p>Your company has decided to experiment with a <strong>VIP membership program</strong> that offers free shipping! Modify your function to accept an additional new parameter called <code className="inline">vip_code</code>.</p>
+			
+			<p>The VIP codes are structured like this - the user's last name followed by three random numbers. For example, if the value for <code className="inline">vip_code</code> is <code className="inline">"ROGERS123"</code>, the shipping cost should be set to <strong>$0</strong>, regardless of any other factors. While it isn't the most secure solution, your company has decided that a string that contains any three numbers at the end will count as a valid VIP code.</p>
 
 			<Collapsible title="Hint">
-				<p>Add a condition in your <code className="inline">if</code> statement to check if <code className="inline">speed == "VIP"</code>. Is there a line where you can insert this code for maximum efficiency in your code?</p>
+				<p>Add a condition in your <code className="inline">if</code> statement to check the value of <code className="inline">vip_code</code>. Try to check the last three characters of the string and determine if they are numbers.</p>
 			</Collapsible>
 		</section>
 
@@ -148,13 +153,13 @@ export default function Project05() {
 			<ol>
 				<li>An international package that weighs 12 pounds and is shipped overnight.</li>
 				<li>A domestic package that weighs 6 pounds and is shipped via standard shipping.</li>
-				<li>A VIP package that weighs 3 pounds and is shipped via standard shipping.</li>
+				<li>An international package that weighs 3 pounds and is shipped via standard shipping, and the customer is a VIP.</li>
 				<li>An international package that weighs 22 pounds and is shipped via express shipping.</li>
 				<li>A domestic package that weighs 3 pounds and is shipped via overnight shipping.</li>
 			</ol>
 
 			<Collapsible title="Hint">
-				<p>Call the function like this: <code className="inline">calculate_shipping_cost(3.00, True, "standard")</code>.</p>
+				<p>Call the function using the correct number of arguments in the correct order. For example: <code className="inline">calculate_shipping_cost(3.00, True, "standard", False)</code>.</p>
 			</Collapsible>
 		</section>
 
@@ -172,9 +177,13 @@ export default function Project05() {
 
 			<Collapsible title="Solution">
 				<h3>Sample Solution</h3>
-				<p>Here's a complete implementation of the shipping cost calculator based on the steps we've covered:</p>
-				<CodeBlock language="python" codeString={`def calculate_shipping_cost(weight, is_international, speed):
+				<p>This is one way to implement the shipping cost calculator based on the steps we've covered:</p>
+				<CodeBlock language="python" codeString={`def calculate_shipping_cost(weight, is_international, speed, vip_code):
     cost = 0.00
+
+    # Check if VIP code is valid
+    if vip_code[-3:].isnumeric():
+        return cost
 
     # Base cost based on weight and location
     if is_international:
@@ -187,8 +196,6 @@ export default function Project05() {
         cost += 20.00 if is_international else 10.00
     elif speed == "overnight":
         cost += 40.00 if is_international else 20.00
-    elif speed == "VIP":
-        return 0.00  # Terminate function and return 0.00
 
     # Add handling fee
     cost += 3.00
@@ -200,13 +207,17 @@ export default function Project05() {
     return cost
 
 # Example function call:
-final_cost = calculate_shipping_cost(4.00, True, "express")
+final_cost = calculate_shipping_cost(4.00, True, "express", "")
 print(f"Your total shipping cost is {final_cost:.2f}")`} />
 
 				<h3>Using Nested <code className="inline">if</code> Statements</h3>
 				<p>Here's another way to structure the function using nested <code className="inline">if</code> statements:</p>
-				<CodeBlock language="python" codeString={`def calculate_shipping_cost(weight, is_international, speed):
+				<CodeBlock language="python" codeString={`def calculate_shipping_cost(weight, is_international, speed, vip_code):
     cost = 0.00
+
+    # Check if VIP code is valid
+    if vip_code[-3:].isnumeric():
+        return cost
 
     # Determine base cost
     if is_international:
@@ -220,20 +231,16 @@ print(f"Your total shipping cost is {final_cost:.2f}")`} />
         else:
             cost = 15.00
 
-    # Adjust cost based on shipping speed
-    if speed == "VIP":
-        return 0.00  # Free shipping for VIP members
-    else:
-        if speed == "express":
-            if is_international:
-                cost += 20.00
-            else:
-                cost += 10.00
-        elif speed == "overnight":
-            if is_international:
-                cost += 40.00
-            else:
-                cost += 20.00
+	if speed == "express":
+		if is_international:
+			cost += 20.00
+		else:
+			cost += 10.00
+	elif speed == "overnight":
+		if is_international:
+			cost += 40.00
+		else:
+			cost += 20.00
 
     # Add handling fee
     cost += 3.00
