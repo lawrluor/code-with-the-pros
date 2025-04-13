@@ -2,7 +2,11 @@ import React from 'react';
 import Collapsible from '../../components/Collapsible';
 import CodeBlock from '../../components/CodeBlock';
 
+import useSequentialCounter from '../../hooks/useSequentialCounter';
+
 const FunctionsLesson = () => {
+    const { getCurrentNumberAndIncrement } = useSequentialCounter(0);
+
     return ( <div className="lesson-container">
         <section>
             <h1>Functions</h1>
@@ -23,7 +27,7 @@ type('Hello, World!')`} />
 
             <p>These functions are <strong>built-in</strong> functions, which means that they are included with Python and can immediately be used in your code without first creating them or <em>importing</em> them from other files.</p>
 
-            <Collapsible title="Challenge">
+            <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
                 <p>Name one other function that you used in previous chapters or projects.</p>
             </Collapsible>
         </section>
@@ -44,7 +48,7 @@ None.isupper()  # AttributeError`} />
 
             <p>Methods are uniquely identified by the fact that they are prefixed with a dot (<code className="inline">.</code>) character. We will explore the use of the dot prefix further in future lessons.</p>
 
-            <Collapsible title="Challenge">
+            <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
                 <p>What is incorrect about the following lines of code?</p>
                 <CodeBlock language={"python"} codeString={`# 1.
 "What is your name?".input()
@@ -92,7 +96,7 @@ greet()
 greet()
 greet()
 greet()`} />
-            <p>The <code className="inline">greet()</code> function acts as a "bundler" or "container" that allows us to execute all three print statements at once as a group. Not only is this approach is much more efficient already, but saves us additional effort if we need to send this greeting even more times in the future.</p>
+            <p>The <code className="inline">greet()</code> function acts as a "bundler" or "container" that allows us to execute all three print statements at once as a group, making the output equivalent to that of the code in the previous section. Not only is this approach is much more efficient already, but saves us additional effort if we need to send this greeting even more times in the future.</p>
 
             <h3>Functions as Abstractions</h3>
             <p>Functions help us <em>abstract</em> our code. For example, imagine your friend asks you to take a picture of them. They would say "Please take a picture of me" rather than saying "Take out your phone, go to the camera app, center me in the frame, and press the red button."</p>
@@ -109,6 +113,10 @@ greet()`} />
 take_picture()
 take_picture()
 take_picture()`} />
+
+            <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
+                <p>Think of an everyday task that can be abstracted as a function. What individual steps would you need to perform to complete the task?</p>
+            </Collapsible>
         </section>
 
         <section>
@@ -130,14 +138,9 @@ def say_hello():
     print("Hello there!")
     print("Have a nice day!")`} />
 
-            <Collapsible title="Challenge">
+            <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
                 <p>In your code editor, create a function called <code className="inline">happy_birthday</code>. Begin by creating the function header. Then, in the body of the function, add four print statements that display the lyrics to the "Happy Birthday" song to the screen: </p>
-                <ul>
-                    <li>"Happy birthday to you,"</li>
-                    <li>"Happy birthday to you,"</li>
-                    <li>"Happy birthday, dear person!"</li>
-                    <li>"Happy birthday to you!"</li>
-                </ul>
+                <CodeBlock language={"txt"} codeString={`Happy birthday to you,\nHappy birthday to you,\nHappy birthday, dear person!\nHappy birthday to you!`} />
             </Collapsible>
 
             <h3>Calling a Function</h3>
@@ -160,7 +163,7 @@ greet()
 "Have a nice day!"`} />
 
             <p>Calling a function is as simple as writing the function's name followed by parentheses <code className="inline">()</code>.</p>
-            <Collapsible title="Challenge">
+            <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
                 <p>In your code editor, after the <code className="inline">happy_birthday</code> function definition, call the <code className="inline">happy_birthday</code> function.</p>
             </Collapsible>
         </section>
@@ -180,13 +183,13 @@ greet()
 # "Hello, Danny"
 # "Have a nice day!"`} />
 
-            <Collapsible title="Challenge">
+            <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
                 <p>In your code editor, modify your <code className="inline">happy_birthday</code> function to accept a parameter called <code className="inline">name</code>.</p>
             </Collapsible>
 
             <h3>Function Arguments</h3>
             <p>When a function is called, the values passed to it are called <strong>arguments</strong>. When a function is defined, the values it expects to receive are called parameters. Some programmers use the terms "parameter" and "argument" interchangeably, however.</p>
-            <Collapsible title="Challenge">
+            <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
                 <p>What are the arguments in the example below?</p>
                 <CodeBlock language={"python"} codeString={`print("Hello")`} />
             </Collapsible>
@@ -203,7 +206,7 @@ greet("Louis", "Armstrong")
 # "Hello, Louis Armstrong"
 # "Have a nice day!"`} />
 
-            <Collapsible title="Challenge">
+            <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
                 <p>Identify the parameters and arguments in this example:</p>
                 <CodeBlock language={"python"} codeString={`def purchase_item(name, price):
     print("Purchased " + name + " for " + str(price))
@@ -247,7 +250,7 @@ greet("Jackson", "Michael")  # Incorrect argument order
 
 order_books(3, "The Lord of the Rings")  # Incorrect argument order`} />
 
-            <Collapsible title="Challenge">
+            <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
                 <p>What are issues with the following code?</p>
                 <CodeBlock language={"python"} codeString={`# Function 1`} />
             </Collapsible>
@@ -286,8 +289,15 @@ order_books(3, "The Lord of the Rings")  # Incorrect argument order`} />
                 <li><code className="inline">print_results()</code></li>
             </ul>
 
-            <Collapsible title="Challenge">
-                <p>In your code editor, rename your <code className="inline">happy_birthday</code> function to use a verb.</p>
+            <h3>Avoiding Reserved Words</h3>
+            <p>It is also important to avoid using the same name as Python's existing reserved functions, as you might unintentionally overwrite them or alter their behavior. For example, if you had a special function for displaying information, name it something like <code className="inline">display_info</code> rather than <code className="inline">print</code>.</p>
+
+            <CodeBlock language={"python"} codeString={`def print():
+    "This function will overwrite Python's normal print function"
+    "We won't be able to use print() to display text anymore!"`} />
+
+            <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
+                <p>In your code editor, rename your <code className="inline">happy_birthday</code> function use a verb.</p>
             </Collapsible>
         </section>
 
@@ -341,7 +351,7 @@ None`} />
     print("Message: " + message)
     return None  # it is preferred to omit this line`} />
 
-            <Collapsible title="Challenge">
+            <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
                 <p>Write a function that takes two numbers as parameters and returns the remainder of the first number divided by the second number. Then, store the result of calling the function into a variable called <code className="inline">remainder</code> and print the value of <code className="inline">remainder</code>.</p>
             </Collapsible>
         </section>
@@ -374,7 +384,7 @@ print(difference)`} />
         return False`} />
             <p>Here, it might seem that the <code className="inline">else</code> statement wouldn't be reached, as it appears after <code className="inline">return</code> (the <code className="inline">return</code> statement in the <code className="inline">if</code> block). However, this is not the case. The <code className="inline">if</code> statement is skipped entirely when its condition is not met, meaning <code className="inline">return</code> is not triggered at all.</p>
 
-            <Collapsible title="Challenge">
+            <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
                 <p>What is the result of calling the <code className="inline">is_even</code> function defined earlier with the argument <code className="inline">3</code>?</p>
                 <p>Is anything printed to the screen as a result of calling the <code className="inline">is_even</code> function?</p>
             </Collapsible>
@@ -390,12 +400,37 @@ print(difference)`} />
 greet()        # Output: "Hello, World
 greet("John")  # Output: "Hello, John`} />
 
-            <p>This is an <strong>exception to the rule</strong> that all parameters must be provided when the function is called. The default parameter is only used if the corresponding argument is <strong>not</strong> provided. Another name for a default parameter is a <em>keyword argument</em>.</p>
+            <p>This is an <strong>exception to the rule</strong> that all parameters must be provided when the function is called. The default parameter is only used if a value for the corresponding argument is <strong>not</strong> provided. Another name for a default parameter is a <em>keyword argument</em>.</p>
+
+            <p>Functions can take any number of <strong>default parameters</strong> - the only requirement is that they must be defined <strong>after</strong> the other regular parameters in the function header. Consider the following example that causes an error:</p>
+
+            <CodeBlock language={"python"} codeString={`def calculate_bill(tip=0.15, tax=0.10, cost):
+    return cost + (tax * cost) + (tip * cost)`} />
+
+            <p>This results in the error: <code className="inline">SyntaxError: non-default argument follows default argument</code>. This is because the <code className="inline">cost</code> parameter is a regular parameter, not a default parameter, and it should come first. Here is the function rewritten:</p>
+
+            <CodeBlock language={"python"} codeString={`def calculate_bill(cost, tax=0.10, tip=0.15):
+    return cost + (tax * cost) + (tip * cost)`} />
+
+            <p>Now the function will work as expected.</p>
+
+            <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
+                <p>Consider the following function that uses default parameters:</p>
+                <CodeBlock language="python" codeString={`def greet(name="World", greeting="Hello"):
+    return f"{greeting}, {name}!"`}/>
+                
+                <ol>
+                    <li>What will be returned by <code className="inline">greet()</code>?</li>
+                    <li>What will be returned by <code className="inline">greet("Casey")</code>?</li>
+                    <li>What will be returned by <code className="inline">greet(greeting="Hi")</code>?</li>
+                    <li>What will be returned by <code className="inline">greet("Alicia", "Good morning")</code>?</li>
+                </ol>
+            </Collapsible>      
         </section>
 
         <section>
             <h2 id="optional-representing-types-in-functions"><a href="#optional-representing-types-in-functions" className="section-link">(Optional) Representing Types in Functions</a></h2>
-            <p>Generally, Python will automatically infer the data type of parameters and the return value of a function. However, you can explicitly represent the data types of parameters and return values when you define your function.</p>
+            <p>Generally, Python will automatically <em>infer</em> the data type of parameters and the return value of a function. However, you can explicitly represent the data types of parameters and return values when you define your function.</p>
 
             <CodeBlock language={"python"} codeString={`def add_numbers(a: int, b: int) -> int:
     return a + b`} />
@@ -411,7 +446,7 @@ print(add_numbers("key", "board"))  # Output: "keyboard"`} />
 product = int1 * int2
 return product`} />
 
-            <Collapsible title="Challenge">
+            <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
                 <p>What is the result of calling the <code className="inline">add_numbers</code> function defined earlier with the float arguments <code className="inline">0.2</code> and <code className="inline">0.5</code>?</p>
                 <p>What is the result of calling the <code className="inline">multiply_numbers</code> function defined earlier with the float arguments <code className="inline">3.0</code> and <code className="inline">4.0</code>?</p>
             </Collapsible>
