@@ -1,10 +1,10 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { Link, Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 import './App.css';
 
 // Import Lessons
-import { Intro, Project00, Strings, Project01, Variables, Input, Project02B, Project02A, PigLatin, Conditionals, Project03, Booleans, Project04B, Project05, Functions, WhileLoops, ForLoops, CaesarCipher, Lists, Dictionaries, PassByReference } from './pages/Python';
-import { JavaObjects, JavaInheritance, JavaPolymorphism } from './pages/Java';
+import { JavaInheritance, JavaObjects, JavaPolymorphism } from './pages/Java';
+import { Booleans, CaesarCipher, Conditionals, Dictionaries, ForLoops, Functions, Input, Intro, Lists, PassByReference, PigLatin, Project00, Project01, Project02A, Project02B, Project03, Project04B, Project05, Project06, Strings, Variables, WhileLoops } from './pages/Python';
 import Quiz from './pages/Quiz';
 
 function App() {
@@ -16,6 +16,7 @@ function App() {
     { name: 'Project 03', path: '/Project03', component: Project03 },
     { name: 'Project 04B', path: '/Project04B', component: Project04B },
     { name: 'Project 05', path: '/Project05', component: Project05 },
+    { name: 'Project 06', path: '/Project06', component: Project06 },
   ];
 
   return (
@@ -41,6 +42,7 @@ function App() {
             <li><Link to="/functions">Functions</Link></li>
             <li><Link to="/Project05">Project 05</Link></li>
             <li><Link to="/whileLoops">While Loops</Link></li>
+            <li><Link to="/Project06">Project 06</Link></li>
             <li><Link to="/forLoops">For Loops</Link></li>
             <li><Link to="/caesarCipher">Caesar Cipher</Link></li>
             <li><Link to="/lists">Lists</Link></li>

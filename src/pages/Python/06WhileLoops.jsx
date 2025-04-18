@@ -426,7 +426,7 @@ while counter < 5:
             <h3>While Loops with <code className="inline">input()</code></h3>
 
             <p>Sometimes we can write an "intentional" infinite loop that uses the <code className="inline">break</code> keyword instead of the initial looping condition to exit the loop. We can use infinite loops intentionally to keep a program running indefinitely until an external action occurs, such as user input or an error that breaks the loop.</p>
-            
+
             <p>Consider the following example:</p>
             <CodeBlock language={"python"} codeString={`# Example: Infinite while loop with a break condition
 while True:
@@ -506,6 +506,9 @@ print(first_a_index)  # Output: 2`} />
           <section>
             <h2>Wrapping Up</h2>
             <p>Great job! You've learned about while loops and how to use them practically to repeat code.</p>
+          </section>
+
+          <section>
             <button className="next-button" onClick={() => window.location.href = "/quiz?name=06WhileLoops.py"}>Start Quiz</button>
           </section>
 
