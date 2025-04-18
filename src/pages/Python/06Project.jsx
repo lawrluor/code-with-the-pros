@@ -210,9 +210,9 @@ is_valid_guess(" ")     # False`} />
 
       <p>Therefore, after running the check on the user's guess, there are three possible scenarios:</p>
       <ol>
-        <li>The correct number is guessed, and we print a congratulatory message and exit the loop</li>
-        <li>The guessed number is too high, and we print a message indicating that the guess is too high. The computer then jumps back to the beginning of the loop and checks the loop condition again.</li>
-        <li>The guessed number is too low, and we print a message indicating that the guess is too low. The computer then jumps back to the beginning of the loop and checks the loop condition again.</li>
+        <li className="multiline"><b>The correct number is guessed</b>, and we print a congratulatory message and exit the loop.</li>
+        <li className="multiline"><b>The guessed number is too high</b>, and we print a message indicating that the guess is too high. The computer then jumps back to the beginning of the loop and checks the loop condition again.</li>
+        <li className="multiline"><b>The guessed number is too low</b>, and we print a message indicating that the guess is too low. The computer then jumps back to the beginning of the loop and checks the loop condition again.</li>
       </ol>
 
       <p>Run your code and play your game a few times to verify that the game is working as expected.</p>
