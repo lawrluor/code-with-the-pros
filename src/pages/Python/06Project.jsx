@@ -87,7 +87,7 @@ print(f"The number generated is: {random_number}")`} />
 
       <p>Use <code className="inline">input()</code> to prompt the user to enter their guess. Overwrite your previously created variable <code className="inline">guess</code> with the user's input.</p>
 
-      <p><em>Note that at this point, if you run your code, you may encounter an infinite loop. If you do end up stuck in a loop when you run your code, press the keys <code className="inline">CTRL+C</code> on your keyboard to stop Python's execution and exit the loop.</em></p>
+      <p><em>Note that at this point, if you run your code, you may encounter an infinite loop. If you do end up stuck in a loop when you run your code, press the keys <code className="inline">CTRL+C</code> (<code className="inline">CONTROL+C</code>) on your keyboard to stop Python's execution and exit the loop.</em></p>
 
       <Collapsible title="Hint">
         <p>Here is an example of using <code className="inline">input()</code> to get a string from the user:</p>
@@ -144,7 +144,9 @@ number.isnumeric()  # True`} />
 
     <section>
       <h2 id={`step-${getCurrentNumber()}-testing-your-function`}><a href={`#step-${getCurrentNumber()}-testing-your-function`} className="section-link">Step {getCurrentNumberAndIncrement()}: Testing Your Function</a></h2>
-      <p>Now that you've created your function, test it with calls to the example inputs in the "Validating User Input" section above. Do your results match up with the expected outputs?</p>
+      <p>Now that you've created your function, test it with calls to the example inputs in the "Validating User Input" section above. Make sure that your results match up with the expected outputs.</p>
+
+      <p>After testing and verifying that your function works as expected, comment out or delete your function calls. We will use the function in the next section.</p>
 
       <Collapsible title="Hint">
         <p>Here are some example calls to the function:</p>
@@ -262,6 +264,7 @@ print("I saw {} ships!".format(ships))`} />
         <li>If you used <code className="inline">break</code> or <code className="inline">continue</code>, can you think of ways to rewrite your code without those keywords?</li>
         <li>How could you allow the user to choose the range of numbers to guess from, or even the maximum number of attempts?</li>
         <li>How could you set different difficulty levels in the game?</li>
+        <li>How might you set up the game to be played again without running the code again? For example, restarting the game if the user types a specific word or phrase.</li>
       </ol>
     </section>
 
