@@ -88,6 +88,45 @@ for char in message:
       </section>
 
       <section>
+        <h2 id="applications-of-for-loops"><a href="#applications-of-for-loops" className="section-link">Applications of <code className="inline">for</code> Loops</a></h2>
+        <h3>Counting</h3>
+        <p>We can count how many times a specific character appears in a string.</p>
+        <CodeBlock language={"python"} codeString={`# Example: Counting 'l' in "Hello"
+count = 0
+for char in "Hello":
+    if char == 'l':
+        count += 1
+print("The letter 'l' appears", count, "times.")`} />
+
+        <p>The output of this code is:</p>
+        <CodeBlock language={"text"} codeString={`The letter 'l' appears 2 times.`} />
+
+        <h3>Creating New Strings</h3>
+        <p>You can construct new strings from existing strings by iterating through them.</p>
+        <CodeBlock language={"python"} codeString={`# Example: Create a new string with slashes instead of periods
+original="12.31.2024"
+new_string=""
+for char in original:
+if char == ".":
+  new_string += "/"
+else:
+  new_string += char
+
+print(new_string)  # Output: 12/31/2024`} />
+
+        <p>In fact, this is a common way to "modify" strings in Python, as strings are immutable, meaning they cannot be changed after they are created.</p>
+        <CodeBlock language={"python"} codeString={`# Incorrect code: causes an error 
+original = "12.31.2024"
+original[2] = '/'  # TypeError: 'str' object does not support item assignment`} />
+
+
+        <Collapsible title={"Challenge"}>
+          <p>In your code editor, count how many times the letter 'o' and the letter 'l' appears in the string <code className="inline">"Hello World"</code>.</p>
+          <p>The output should look like this: <code className="inline">The letters 'l' and 'o' appear a total of 5 times.</code></p>
+        </Collapsible>
+      </section>
+
+      <section>
         <h2 id="index-based-for-loops"><a href="#index-based-for-loops" className="section-link">Index-Based <code className="inline">for</code> Loops</a></h2>
         <p><em>Index-based</em> <code className="inline">for</code> loops allow you to access each element by its index or position in a sequence.</p>
 
@@ -102,7 +141,7 @@ for i in range(5):
         </ul>
         <p>In each cycle through the loop, the value of <code className="inline">i</code> is updated, ensuring that every character in the string is accessed sequentially from the first to the last. You can think of this as similar to incrementing the loop variable at the end of a <code className="inline">while</code> loop, although the exact mechanism is a bit different. We'll explore that in the next section. </p>
 
-        <p>One more thing: as with regular <em>element-based</em> <code className="inline">for</code> loops, the actual name of the looping variable is arbitrary. However, it is a common convention to use the letter i, short for index.</p>
+        <p>One more thing: as with regular <em>element-based</em> <code className="inline">for</code> loops, the actual name of the looping variable is arbitrary. However, it is a common convention to use the letter <code className="inline">i</code>, short for index.</p>
 
         <h3><code className="inline">range()</code> explained</h3>
 
@@ -114,29 +153,41 @@ for i in range(5):
 
         <Collapsible title={"Challenge"}>
           <p>What numbers will <code className="inline">range(3)</code> produce? What about <code className="inline">range(0)</code>?</p>
-          <p>Try looping through these ranges using a for loop in your code editor to confirm your answers.</p>
+          <p>Try looping through these ranges using a <code className="inline">for</code> loop in your code editor to confirm your answers.</p>
         </Collapsible>
 
         <h3>Using <code className="inline">range()</code> with <code className="inline">len()</code></h3>
         <p>You might have noticed in the earlier example that we <em>hardcoded</em> the value 5 in <code className="inline">range(5)</code>. What if we don't know the length of the string we are going to iterate through, or don't want to count the number of characters ourselves? We can use the <code className="inline">len()</code> function instead to automatically determine the length of the string.</p>
-        <CodeBlock language={"python"} codeString={`message = "Hello"
-for i in range(len(message)):
-    print(message[i])`} />
+        <CodeBlock language={"python"} codeString={`username = "brucewayne33"
+for i in range(len(username)):
+    print(username[i])`} />
 
-        <p>Now, <code className="inline">len(message)</code> is first evaluated to <code className="inline">5</code>, which will then be used to create the range <code className="inline">range(5)</code>. The loop will then iterate over each character in <code className="inline">message</code> as usual.</p>
+        <p>Now, <code className="inline">len(username)</code> is first evaluated to <code className="inline">12</code>, which will then be used to create the range <code className="inline">range(12)</code>. The loop will then iterate over each character in <code className="inline">username</code> as usual.</p>
 
         <h3>Why Use Indexes?</h3>
-        <p>Imagine that we wanted to perform an action only on every other item in a sequence.</p>
-        <CodeBlock language={"python"} codeString={`for i in range(5):
+        <p>Imagine that we wanted to perform an action only on every other item in a sequence. Using an index, we could easily accomplish this by checking if each index is an even number.</p>
+        <CodeBlock language={"python"} codeString={`password = "iAmBatman"
+for i in range(len(password)):
     if i % 2 == 0:
-        print(i)`} />
+        print(password[i])  # Output: imamn`} />
 
-        <p>Of course, we could use a while loop to accomplish the same task, but the above <code className="inline">for</code> loop is more convenient.</p>
+        <p>While we could accomplish this in a few ways, let's compare this approach to the unnecessarily complex version of using an element-based loop to achieve the same result.</p>
+        <CodeBlock language={"python"} codeString={`password = "iAmBatman"
+is_even = True
+for char in password:
+    if is_even:
+        print(char)
+        is_even = False
+    else:
+        is_even = True`} />
+        <p>In the above code, we need to use a boolean variable <code className="inline">is_even</code> to keep track of whether the current index is even or odd. We then print the character at the current index if it is even, and update the boolean variable to <code className="inline">False</code> so that we will skip the next character in the loop. This will continue until we have processed all characters in the string.</p>
+        <p>Lastly, let's see how we could use a <code className="inline">while</code> loop to accomplish the same task, also with more verbosity than the original index-based <code className="inline">for</code> loop.</p>
 
-        <CodeBlock language={"python"} codeString={`i = 0
-while i < 5:
+        <CodeBlock language={"python"} codeString={`password = "iAmBatman"
+i = 0
+while i < len(password):
     if i % 2 == 0:
-        print(i)
+        print(password[i])
     i += 1`} />
 
         <Collapsible title={"Challenge"}>
@@ -157,7 +208,7 @@ while i < 3:
     print(i)`} />
 
         <Collapsible title={"Challenge"}>
-          <p>The code block below attempts to manipulate the index of a <code className="inline">for</code> loop. What do you think will happen when you run the following code?</p>
+          <p>The code block below attempts to manipulate the looping variable of a <code className="inline">for</code> loop, which as we know, already increments automatically. What do you think will happen when you run the following code?</p>
 
           <CodeBlock language={"python"} codeString={`country = "Turkiye"
 for i in range(len(country)):
@@ -182,7 +233,23 @@ for i in range(len(country)):
           <li>Direct control over the numerical index, useful for complex operations that require element positions or modifying the sequence during iteration.</li>
           <li>Slightly more complex syntax and less direct than element-based loops.</li>
         </ul>
-        <p>Generally speaking, index-based loops are commonly used if you need to manipulate the position of items or perform mathmetical operations on their positions.</p>
+        <p>Generally speaking, index-based loops are commonly used if you need to manipulate the position of items or perform mathematical operations on their positions.</p>
+
+        <h3>Selecting Specific Indices Mathematically</h3>
+        <p>Consider the following example, where we attempt to access and build a string of characters from indices that are divisible by 2 and 3</p>
+        <CodeBlock language={"python"} codeString={`description = """The United Nations (UN) is an intergovernmental organization 
+that aims to maintain international peace and security, develop friendly 
+relations among states, promote international cooperation, 
+and serve as a centre for coordinating global action."""
+
+selected_chars = ""
+for i in range(len(description)):
+    if i % 2 == 0 or i % 3 == 0:
+        selected_chars += description[i]
+
+print("Characters at selected indices:", selected_chars)
+# Output: Characters at selected indices: Te Uied aion UN)i aniteroernetaloganztio...`} />
+        <p>This example iterates over the indices of <code className="inline">description</code> and appends characters that meet our specific criteria to a new string.</p>
 
         <Collapsible title={"Challenge"}>
           <p>What type of loop might you use for the following tasks? How might you defend your choice?</p>
@@ -198,15 +265,16 @@ for i in range(len(country)):
         <h2>Best of Both Worlds: <code className="inline">enumerate()</code></h2>
         <p>The <code className="inline">enumerate()</code> method allows you to access both the index and the element in your looping condition.</p>
 
-        <CodeBlock language={"python"} codeString={`for index, element in enumerate("Hello"):
+        <CodeBlock language={"python"} codeString={`for index, element in enumerate("Greece"):
     print(index + ": " + element)`} />
 
         <p>The above code outputs:</p>
-        <CodeBlock language={"text"} codeString={`0: H
-1: e
-2: l
-3: l
-4: o`} />
+        <CodeBlock language={"text"} codeString={`0: G
+1: r
+2: e
+3: e
+4: c
+5: e`} />
 
         <p><code className="inline">enumerate()</code> provides a convenient and easy way to write <code className="inline">for</code> loops that use both the index and the element itself. However, it can be overkill if you only need one or the other. In your code, you want to avoid creating extra variables that you won't end up using.</p>
 
@@ -214,7 +282,7 @@ for i in range(len(country)):
         <p>You might have questions about the syntax for the looping variables. The <code className="inline">index, element</code> part of the loop condition is technically a grouping of values known as a <em>tuple</em>. We will learn more about this data type in future chapters.</p>
 
         <p>As with element-based loops and index-based loops, the actual variable names of the index and element are arbitrary. You often will see code that abbreviates these names: </p>
-        <CodeBlock language={"python"} codeString={`for i, x in enumerate("Hello"):
+        <CodeBlock language={"python"} codeString={`for i, x in enumerate("Italy"):
     print(i, x)`} />
 
         <p><code className="inline">i</code> and <code className="inline">x</code> are fairly common conventions for the index and element looping variables.</p>
@@ -223,7 +291,6 @@ for i in range(len(country)):
           <p>In your code editor, use a for loop with <code className="inline">enumerate()</code> to display the following message for each element in the string <code className="inline">"Cambodia"</code>.</p>
           <p>The first line of your output should look like this: <code className="inline">"The character at position 0 is 'C'"</code></p>
         </Collapsible>
-
       </section>
 
       <section>
@@ -239,7 +306,7 @@ for i in range(len(country)):
     if i == 5:
         break
     print(i, end="-")`} />
-        <p>The above code will output: <code className="inline">0-1-2-3-4-</code></p>
+        <p>The above code will output: <code className="inline">0-1-2-3-4-</code>. Here, the optional <code className="inline">end</code> argument is used to insert a hyphen after each print instead of the default behavior of printing on the next line.</p>
 
         <Collapsible title={"Challenge"}>
           <p>In your code editor, write a <code className="inline">for</code> loop that iterates over the string <code className="inline">"United States of America"</code>.</p>
@@ -249,75 +316,27 @@ for i in range(len(country)):
       </section>
 
       <section>
-        <h2 id="applications-of-for-loops"><a href="#applications-of-for-loops" className="section-link">Applications of For Loops</a></h2>
-        <h4>Counting</h4>
-        <p>We can count how many times a specific character appears in a string.</p>
-        <CodeBlock language={"python"} codeString={`# Example: Counting 'l' in "Hello"
-count = 0
-for char in "Hello":
-    if char == 'l':
-        count += 1
-print("The letter 'l' appears", count, "times.")`} />
-
-        <h4>Creating New Strings</h4>
-        <p>You can construct new strings from existing strings by iterating through them.</p>
-        <CodeBlock language={"python"} codeString={`# Example: Create a new string with slashes instead of periods
-original = "12.31.2024"
-new_string = ""
-for char in original:
-    if char == ".":
-        new_string += "/"
-    else:
-        new_string += char
-print(new_string)`} />
-
-        <p>In fact, this is a common way to "modify" strings in Python, as strings are immutable, meaning they cannot be changed after they are created.</p>
-        <CodeBlock language={"python"} codeString={`# Incorrect code: causes an error 
-original = "12.31.2024"
-original[2] = '/'  # TypeError: 'str' object does not support item assignment`} />
-
-
-        <h4>Accessing Specific Indices</h4>
-        <p>You may want to access or manipulate only the characters at specific indices in a string.</p>
-        <CodeBlock language={"python"} codeString={`# Example: Access and collect characters from even indices
-message = "Hello World"
-even_chars = ""
-for i in range(len(message)):
-    if i % 2 == 0:  # Checks if the index is even
-        even_chars += message[i]
-print("Characters at even indices:", even_chars)
-`} />
-        <p>This example iterates over the indices of <code className="inline">message</code> and appends characters located at even indices to a new string. The use of <code className="inline">i % 2 == 0</code> ensures that only characters whose indices are divisible by two are considered.</p>
-      </section>
-
-      <section>
         <h2 id="nested-loops"><a href="#nested-loops" className="section-link">Nested Loops</a></h2>
         <p>
-          A <strong>nested loop</strong> is when you put one loop inside another. This means that for each time the outer loop runs once, the inner loop runs all the way through. Nested loops are useful when you want to work with data in two dimensions, like rows and columns in a table, or when you want to compare every item in one list to every item in another.
+          A <strong>nested loop</strong> is when you put one loop inside another. This means that for each time the outer loop runs once, the inner loop runs all the way through. Nested loops are useful when you want to work with data in two dimensions, like rows and columns in a table, or when you want to compare every item in one sequence to every item in another.
         </p>
-        <h4>Example 1: Printing a Grid of Stars</h4>
-        <p>Suppose you want to print a rectangle of stars, 3 rows by 5 columns:</p>
-        <CodeBlock language={"python"} codeString={`for row in range(3):      # Outer loop for each row
-    for col in range(5):  # Inner loop for each column
-        print("*", end="")
-    print()  # Move to the next line after each row`} />
+        <h4>Example 1: Printing a Grid</h4>
+        <p>Suppose you want to print a rectangle of text, three rows by four columns:</p>
+        <CodeBlock language={"python"} codeString={`for row in range(3):      
+    for col in range(4): 
+        print("*", end=" ")
+    print()  # print the row and move to the next line after each row`} />
         <p>This code will print:</p>
-        <CodeBlock language={"txt"} codeString={`*****
-*****
-*****`} />
-        <h4>Example 2: Comparing Letters in Two Words</h4>
-        <p>Let's say you want to see which letters two words have in common:</p>
-        <CodeBlock language={"python"} codeString={`word1 = "cat"
-word2 = "hat"
-for letter1 in word1:
-    for letter2 in word2:
-        if letter1 == letter2:
-            print(f"Both words have: {letter1}")`} />
-        <p>Here, the inner loop compares each letter from <code className="inline">word1</code> to every letter in <code className="inline">word2</code>. The output will be:</p>
-        <CodeBlock language={"txt"} codeString={`Both words have: a
-Both words have: t`} />
+        <CodeBlock language={"txt"} codeString={`* * * *
+* * * *
+* * * *`} />
+        <p>In a nested loop, the first loop is known as the <strong>outer loop</strong>, and the second loop or subsequent nested loops are known as the <strong>inner loop</strong>(s).</p>
 
-        <h4>Example 3: Finding all combinations</h4>
+        <Collapsible title={"Challenge"}>
+          <p>Which line begins the outer loop and which line begins the inner loop in the above example?</p>
+        </Collapsible>
+
+        <h4>Example 2: Finding all combinations</h4>
         <p>Suppose you want to find all pairs of letters from two words:</p>
         <CodeBlock language={"python"} codeString={`word1 = "cat"
 word2 = "hat"
@@ -334,7 +353,23 @@ at
 hc
 ha
 ht`} />
-        <p>Nested loops can be powerful, but they can also make your code run slower if you have lots of data. Use them when you really need to compare or process combinations of elements. For example, notice how even having one nested loop results in the amount of comparisons being squared (in the above example, from 3 comparisons to 9 comparisons).</p>
+
+        <h4>Example 3: Comparing Letters in Two Words</h4>
+        <p>Let's say you want to see which indexes in two different words have the same letter:</p>
+        <CodeBlock language={"python"} codeString={`word1 = "cat"
+word2 = "hat"
+for i in range(len(word1)):
+    for j in range(len(word2)):
+        if word1[i] == word2[j]:
+            print(f"Both words have the letter {word1[i]} at index {i}")`} />
+        <p>Here, the inner loop compares each character from <code className="inline">word1</code> to every character in <code className="inline">word2</code>. The output will be:</p>
+        <CodeBlock language={"txt"} codeString={`Both words have the letter 'a' at index 1
+Both words have the letter 't' at index 2`} />
+
+        <p>Note that <code className="inline">i</code> and <code className="inline">j</code> are a common convention for describing loop variables that are indexes inside nested loops. Therefore,  <code className="inline">word1[i]</code> and <code className="inline">word2[j]</code> are the characters in <code className="inline">word1</code> and <code className="inline">word2</code> respectively that are being compared.</p>
+
+        <h3>Some Considerations of Nested Loops</h3>
+        <p>Nested loops can be powerful, but they can also make your code run slower if you are dealing with long sequences. For example, notice how even having one nested loop results in the amount of comparisons being squared (in the above example, from 3 comparisons to 9 comparisons).</p>
 
         <p>Consider what happens when we add one more nested loop:</p>
 
@@ -357,6 +392,34 @@ for col in columns:
         print(col + row)`} />
         </Collapsible>
       </section>
+
+      <section>
+        <h2 id="for-in-functions"><a href="#for-in-functions" className="section-link">For Loops in Functions</a></h2>
+        <p>For loops can also be used inside functions. Here is an example:</p>
+        <CodeBlock language={"python"} codeString={`def duplicate_elements(text):
+    result = ""
+    for element in text:
+        result += element + element
+    return result`} />
+
+        <p>Having defined this function, we can now easily reuse it to duplicate the elements of any sequence:</p>
+        <CodeBlock language={"python"} codeString={`print(duplicate_elements("Peru"))   # Output: PPeerruu
+print(duplicate_elements("India"))  # Output: IInnddiiaa`} />
+
+        <CodeBlock language={"python"} codeString={`def alternate_letter_case(text):
+    result = ""
+    for i in range(len(text)):
+        if i % 2 == 0:
+            result += text[i].upper()
+        else:
+            result += text[i].lower()
+    return result`} />
+
+        <p>Having defined this function, we can now use it to alternate the case of any string:</p>
+        <CodeBlock language={"python"} codeString={`print(alternate_letter_case("Mexico"))  # Output: MeXiCo
+print(alternate_letter_case("Haiti"))   # Output: HaItI`} />
+      </section>
+
       <section>
         <h2 id="for-else"><a href="#for-else" className="section-link">(Optional) The <code className="inline">for</code>-<code className="inline">else</code> Clause</a></h2>
         <p>
@@ -429,15 +492,14 @@ else:
         <h2 id="additional-challenges"><a href="#additional-challenges" className="section-link">Additional Challenges</a></h2>
         <p>Try these exercises to practice what you've learned:</p>
         <ul>
-          <li>Write a for loop that prints out an "!" character whenever it finds the letter "e"</li>
-          <li>Write a for loop that prints out the total number of vowels in a string</li>
-          <li>Write a for loop that prints "Middle" when it reaches the middle of an odd-length string. Hint: Calculate the middle using len()</li>
-          <li>Reverse a string using a for loop.</li>
-          <li>Generate a new string that contains every second character of the original string.</li>
+          <li>Write a <code className="inline">for</code> loop that prints out an exclamation mark <code className="inline">"!"</code> whenever it finds the letter <code className="inline">"e"</code></li>
+          <li>Write a <code className="inline">for</code> loop that prints out the total number of vowels in a string</li>
+          <li>Generate a new string that contains every fourth and fifth character of the original string.</li>
+          <li>Write a <code className="inline">for</code> loop that prints "Middle" when it reaches the middle of a string. Consider how to handle even-length vs odd-length strings.</li>
+          <li>Given an existing string, return a new string that is the reverse of the original string using a <code className="inline">for</code> loop.</li>
         </ul>
       </section>
-
-    </div >
+    </div>
   );
 };
 
