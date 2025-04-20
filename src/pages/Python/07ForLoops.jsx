@@ -1,8 +1,11 @@
 import React from 'react';
 import CodeBlock from '../../components/CodeBlock';
 import Collapsible from '../../components/Collapsible';
+import useSequentialCounter from '../../hooks/useSequentialCounter';
 
 const ForLoops = () => {
+  const { getCurrentNumberAndIncrement } = useSequentialCounter(0);
+
   return (
     <div className="lesson-container">
       <h1>For Loops</h1>
@@ -38,7 +41,7 @@ while i < len(message):
 
         <p>We'll unpack more of the syntax, advantages, and disadvantages of <code className="inline">for</code> loops throughout this section.</p>
 
-        <Collapsible title={"Challenge"}>
+        <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
           <p>Why does the following code for a <code className="inline">while</code> loop result in an infinite loop?</p>
           <CodeBlock language={'python'} codeString={`country = "Norway"
 i = 0
@@ -61,7 +64,7 @@ for char in message:
         </ul>
 
         <p>In the loop, we start with the first character in <code className="inline">message</code>, and in each iteration, the loop variable <code className="inline">char</code> is updated to the next character in the string until all characters are exhausted. You can essentially read the loop condition as <em>"For each character <code className="inline">char</code> in the string <code className="inline">message</code>"</em>.</p>
-        <Collapsible title={"Challenge"}>
+        <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
           <p>In your code editor, loop through the string <code className="inline">"Canada"</code> and print each letter one at a time.</p>
           <p>The first line of your output should look like this: <code className="inline">C</code>.</p>
         </Collapsible>
@@ -81,7 +84,7 @@ for char in message:
     # print(_)`} />
 
         <p>The underscore <code className="inline">_</code> is a common <em>convention</em> in Python to indicate that a variable is not actually used directly in the loop. Because it is a convention rather than a <em>reserved keyword</em>, any variable name will technically suffice.</p>
-        <Collapsible title={"Challenge"}>
+        <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
           <p>In your code editor, loop through the string <code className="inline">"New Zealand"</code> and print an uppercase version of each letter.</p>
           <p>The last line of your output should look like this: <code className="inline">D</code>.</p>
         </Collapsible>
@@ -120,7 +123,7 @@ original = "12.31.2024"
 original[2] = '/'  # TypeError: 'str' object does not support item assignment`} />
 
 
-        <Collapsible title={"Challenge"}>
+        <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
           <p>In your code editor, count how many times the letter 'o' and the letter 'l' appears in the string <code className="inline">"Hello World"</code>.</p>
           <p>The output should look like this: <code className="inline">The letters 'l' and 'o' appear a total of 5 times.</code></p>
         </Collapsible>
@@ -151,7 +154,7 @@ for i in range(5):
     print(i)`} />
         <p>This will output the numbers <code className="inline">0</code>, <code className="inline">1</code>, <code className="inline">2</code>, <code className="inline">3</code>, and <code className="inline">4</code>, each on a separate line. In other words, <code className="inline">range(5)</code> generates numbers from zero to four. Then, the loop iterates through this sequence of numbers, printing each one. </p>
 
-        <Collapsible title={"Challenge"}>
+        <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
           <p>What numbers will <code className="inline">range(3)</code> produce? What about <code className="inline">range(0)</code>?</p>
           <p>Try looping through these ranges using a <code className="inline">for</code> loop in your code editor to confirm your answers.</p>
         </Collapsible>
@@ -190,7 +193,7 @@ while i < len(password):
         print(password[i])
     i += 1`} />
 
-        <Collapsible title={"Challenge"}>
+        <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
           <p>In your code editor: use <code className="inline">range()</code> and <code className="inline">len()</code> to print out the index of each character in the string <code className="inline">"Nigeria"</code>.</p>
           <p>The last line of your output should look like this: <code className="inline">"The character at index 6 is 'a'"</code>.</p>
         </Collapsible>
@@ -207,7 +210,7 @@ while i < 3:
         <CodeBlock language={"python"} codeString={`for i in range(3):
     print(i)`} />
 
-        <Collapsible title={"Challenge"}>
+        <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
           <p>The code block below attempts to manipulate the looping variable of a <code className="inline">for</code> loop, which as we know, already increments automatically. What do you think will happen when you run the following code?</p>
 
           <CodeBlock language={"python"} codeString={`country = "Turkiye"
@@ -251,7 +254,7 @@ print("Characters at selected indices:", selected_chars)
 # Output: Characters at selected indices: Te Uied aion UN)i aniteroernetaloganztio...`} />
         <p>This example iterates over the indices of <code className="inline">description</code> and appends characters that meet our specific criteria to a new string.</p>
 
-        <Collapsible title={"Challenge"}>
+        <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
           <p>What type of loop might you use for the following tasks? How might you defend your choice?</p>
           <ul>
             <li>Printing the value of every third character of a string</li>
@@ -287,7 +290,7 @@ print("Characters at selected indices:", selected_chars)
 
         <p><code className="inline">i</code> and <code className="inline">x</code> are fairly common conventions for the index and element looping variables.</p>
 
-        <Collapsible title={"Challenge"}>
+        <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
           <p>In your code editor, use a for loop with <code className="inline">enumerate()</code> to display the following message for each element in the string <code className="inline">"Cambodia"</code>.</p>
           <p>The first line of your output should look like this: <code className="inline">"The character at position 0 is 'C'"</code></p>
         </Collapsible>
@@ -308,7 +311,7 @@ print("Characters at selected indices:", selected_chars)
     print(i, end="-")`} />
         <p>The above code will output: <code className="inline">0-1-2-3-4-</code>. Here, the optional <code className="inline">end</code> argument is used to insert a hyphen after each print instead of the default behavior of printing on the next line.</p>
 
-        <Collapsible title={"Challenge"}>
+        <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
           <p>In your code editor, write a <code className="inline">for</code> loop that iterates over the string <code className="inline">"United States of America"</code>.</p>
           <p>However, any time the space character comes up (<code className="inline">' '</code>), skip it.</p>
           <p>Your end result should read <code className="inline">"UnitedStatesOfAmerica"</code></p>
@@ -332,7 +335,7 @@ print("Characters at selected indices:", selected_chars)
 * * * *`} />
         <p>In a nested loop, the first loop is known as the <strong>outer loop</strong>, and the second loop or subsequent nested loops are known as the <strong>inner loop</strong>(s).</p>
 
-        <Collapsible title={"Challenge"}>
+        <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
           <p>Which line begins the outer loop and which line begins the inner loop in the above example?</p>
         </Collapsible>
 
@@ -383,7 +386,7 @@ for letter1 in word1:
 
         <p>This amount of comparisons begin to rise exponentially - in this case, we now have 3 to the 3rd power (twenty-seven comparisons)!</p>
 
-        <Collapsible title={"Challenge"}>
+        <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
           <p>How many <code className="inline">print()</code> operations are performed in the code block below?</p>
           <CodeBlock language={"python"} codeString={`columns = "abcdefgh"
 rows = "12345678"
@@ -477,7 +480,7 @@ else:
 
         <p>In short, the <code className="inline">for-else</code> pattern allows you to distinguish between <em>"not found"</em> and <em>"found early"</em> cases in search problems, in a concise and easily readable way. In actual practice, the <code className="inline">for-else</code> pattern is rarely used, however.</p>
 
-        <Collapsible title={"Challenge"}>
+        <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
           <p>Using a <code className="inline">for-else</code> loop, write a program that searches for the letter <code className="inline">"z"</code> in the string <code className="inline">"Uruguay"</code> and prints a message indicating whether the letter was found or not.</p>
           <p>The final output of your code should read: <code className="inline">"Letter z not found in Uruguay"</code></p>
         </Collapsible>
