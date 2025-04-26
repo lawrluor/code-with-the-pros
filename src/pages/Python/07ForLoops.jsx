@@ -36,8 +36,8 @@ while i < len(message):
 
         <p>However, a <code className="inline">for</code> loop is even better at accomplishing this task. Here is the <code className="inline">for</code> loop equivalent of the above code:</p>
 
-        <CodeBlock language={"python"} codeString={`for char in "Hello":
-    print(char)`} />
+        <CodeBlock language={"python"} codeString={`for character in "Hello":
+    print(character)`} />
 
         <p>We'll unpack more of the syntax, advantages, and disadvantages of <code className="inline">for</code> loops throughout this section.</p>
 
@@ -59,11 +59,13 @@ for char in message:
     print(char)`} />
         <p>The structure of a <code className="inline">for</code> loop includes two key components:</p>
         <ul>
-          <li class="multiline"><strong>Loop Condition:</strong> <code className="inline">for char in message</code> defines the condition under which the loop continues to execute. Here, <code className="inline">char</code> serves as the <b>loop variable</b> that sequentially takes the value of each character in the string <code className="inline">message</code>. The loop continues iterating as long as there are more characters to process.</li>
+          <li class="multiline"><strong>Loop Condition:</strong> <code className="inline">for char in message</code> defines the condition under which the loop continues to execute. Here, <code className="inline">char</code> serves as the <b>loop variable</b> that sequentially takes the value of each character in the string <code className="inline">message</code>. The loop continues iterating as long as there are more characters to process. As in a <code className="inline">while</code> loop, we end the loop condition with a <code className="inline">:</code>.</li>
           <li class="multiline"><strong>Loop Body:</strong> The indented block of code <code className="inline">print(char)</code> specifies what is to be done in each iteration of the loop. <code className="inline">char</code> represents the current character we are looking at.</li>
         </ul>
 
         <p>In the loop, we start with the first character in <code className="inline">message</code>, and in each iteration, the loop variable <code className="inline">char</code> is updated to the next character in the string until all characters are exhausted. You can essentially read the loop condition as <em>"For each character <code className="inline">char</code> in the string <code className="inline">message</code>"</em>.</p>
+
+        <p>Note that we don't have to define the loop variable separately or previously.</p>
         <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
           <p>In your code editor, loop through the string <code className="inline">"Canada"</code> and print each letter one at a time.</p>
           <p>The first line of your output should look like this: <code className="inline">C</code>.</p>
@@ -71,12 +73,14 @@ for char in message:
 
         <h3>Naming the Loop Variable</h3>
         <p>Note that there is nothing special about the name we chose for the loop variable <code className="inline">char</code> - it is simply a variable name that we chose to represent the current letter of the string we are on. Oftentimes, programmers will abbreviate the name for the looping variable, like so:</p>
-        <CodeBlock language={"python"} codeString={`for c in word:
+        <CodeBlock language={"python"} codeString={`word = "Greetings"
+for c in word:
     print(c)`} />
 
         <p>As with all variables, however, choosing an accurate and descriptive name will make the code easier to understand. There is one other common convention in Python: the underscore <code className="inline">_</code> character as the loop variable name.</p>
 
-        <CodeBlock language={"python"} codeString={`for _ in message:
+        <CodeBlock language={"python"} codeString={`message = "Hey"
+for _ in message:
     print("Hi")
     print("Hello")
 
@@ -99,7 +103,7 @@ count = 0
 for char in "Hello":
     if char == 'l':
         count += 1
-print("The letter 'l' appears", count, "times.")`} />
+print("The letter 'l' appears " + str(count) + " times.")`} />
 
         <p>The output of this code is:</p>
         <CodeBlock language={"text"} codeString={`The letter 'l' appears 2 times.`} />
@@ -110,10 +114,10 @@ print("The letter 'l' appears", count, "times.")`} />
 original="12.31.2024"
 new_string=""
 for char in original:
-if char == ".":
-  new_string += "/"
-else:
-  new_string += char
+  if char == ".":
+    new_string += "/"
+  else:
+    new_string += char
 
 print(new_string)  # Output: 12/31/2024`} />
 
@@ -124,8 +128,8 @@ original[2] = '/'  # TypeError: 'str' object does not support item assignment`} 
 
 
         <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
-          <p>In your code editor, count how many times the letter 'o' and the letter 'l' appears in the string <code className="inline">"Hello World"</code>.</p>
-          <p>The output should look like this: <code className="inline">The letters 'l' and 'o' appear a total of 5 times.</code></p>
+          <p>In your code editor, count how many times the letter <code className="inline">'o'</code> and the letter <code className="inline">'l'</code> appears in the string <code className="inline">"Hello World"</code>.</p>
+          <p>The final output should look like this: <code className="inline">The letters 'l' and 'o' appear a total of 5 times.</code></p>
         </Collapsible>
       </section>
 
@@ -134,17 +138,17 @@ original[2] = '/'  # TypeError: 'str' object does not support item assignment`} 
         <p><em>Index-based</em> <code className="inline">for</code> loops allow you to access each element by its index or position in a sequence.</p>
 
         <CodeBlock language={"python"} codeString={`message = "Hello"
-for i in range(5):
-    print(f'Character at position {i} is {message[i]}')`} />
-        <p>Here, the loop variable <code className="inline">i</code> starts at <code className="inline">0</code> and increases by one on each iteration until it reaches the end of the string. Here's the breakdown of how <code className="inline">i</code> changes:</p>
+for index in range(5):
+    print(f'Character at position {index} is {message[index]}')`} />
+        <p>Here, the loop variable <code className="inline">index</code> starts at <code className="inline">0</code> and increases by one on each iteration until it reaches the end of the string. Here's the breakdown of how <code className="inline">index</code> changes:</p>
         <ul>
-          <li>On the first iteration, <code className="inline">i</code> is <code className="inline">0</code>, so <code className="inline">message[0]</code> points to <code className="inline">H</code>.</li>
-          <li>On the second iteration, <code className="inline">i</code> increments to <code className="inline">1</code>, accessing <code className="inline">message[1]</code>, which is <code className="inline">e</code>.</li>
-          <li>This incrementing continues, with <code className="inline">i</code> taking values <code className="inline">2</code>, <code className="inline">3</code>, and finally <code className="inline">4</code>, accessing <code className="inline">l</code>, <code className="inline">l</code>, and <code className="inline">o</code> respectively.</li>
+          <li>On the first iteration, <code className="inline">index</code> is <code className="inline">0</code>, so <code className="inline">message[0]</code> points to <code className="inline">H</code>.</li>
+          <li>On the second iteration, <code className="inline">index</code> increments to <code className="inline">1</code>, accessing <code className="inline">message[1]</code>, which is <code className="inline">e</code>.</li>
+          <li>This incrementing continues, with <code className="inline">index</code> taking values <code className="inline">2</code>, <code className="inline">3</code>, and finally <code className="inline">4</code>, accessing <code className="inline">l</code>, <code className="inline">l</code>, and <code className="inline">o</code> respectively.</li>
         </ul>
-        <p>In each cycle through the loop, the value of <code className="inline">i</code> is updated, ensuring that every character in the string is accessed sequentially from the first to the last. You can think of this as similar to incrementing the loop variable at the end of a <code className="inline">while</code> loop, although the exact mechanism is a bit different. We'll explore that in the next section. </p>
+        <p>In each cycle through the loop, the value of <code className="inline">index</code> is updated, ensuring that every character in the string is accessed sequentially from the first to the last. You can think of this as similar to incrementing the loop variable at the end of a <code className="inline">while</code> loop, although the exact mechanism is a bit different. We'll explore that in the next section. </p>
 
-        <p>One more thing: as with regular <em>element-based</em> <code className="inline">for</code> loops, the actual name of the looping variable is arbitrary. However, it is a common convention to use the letter <code className="inline">i</code>, short for index.</p>
+        <p>One more thing: as with regular <em>element-based</em> <code className="inline">for</code> loops, the actual name of the looping variable is arbitrary. However, it is a common convention to use the letter <code className="inline">i</code>, short for index, and we will follow this convention in many of our examples.</p>
 
         <h3><code className="inline">range()</code> explained</h3>
 
@@ -175,7 +179,8 @@ for i in range(len(password)):
         print(password[i])  # Output: imamn`} />
 
         <p>While we could accomplish this in a few ways, let's compare this approach to the unnecessarily complex version of using an element-based loop to achieve the same result.</p>
-        <CodeBlock language={"python"} codeString={`password = "iAmBatman"
+        <CodeBlock language={"python"} codeString={`# Unnecessarily complicated element-based loop in lieu of an index-based loop
+password = "iAmBatman"
 is_even = True
 for char in password:
     if is_even:
@@ -193,6 +198,8 @@ while i < len(password):
         print(password[i])
     i += 1`} />
 
+        <p>To clarify, index refers to the position of an element, while the element refers to the actual value of the item at that position.</p>
+
         <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
           <p>In your code editor: use <code className="inline">range()</code> and <code className="inline">len()</code> to print out the index of each character in the string <code className="inline">"Nigeria"</code>.</p>
           <p>The last line of your output should look like this: <code className="inline">"The character at index 6 is 'a'"</code>.</p>
@@ -205,7 +212,7 @@ while i < len(password):
 while i < 3:
     print(i)`} />
 
-        <p>In this while loop, if you forget to add <code className="inline">i += 1</code> at the end of the line, you'll get an infinite loop! Rewritten as a for loop, you would avoid any possibility of getting an infinite loop:</p>
+        <p>In this while loop, if you forget to add <code className="inline">i += 1</code> at the end of the loop body, you'll get an infinite loop! Rewritten as a for loop, you would avoid any possibility of getting an infinite loop:</p>
 
         <CodeBlock language={"python"} codeString={`for i in range(3):
     print(i)`} />
@@ -239,7 +246,7 @@ for i in range(len(country)):
         <p>Generally speaking, index-based loops are commonly used if you need to manipulate the position of items or perform mathematical operations on their positions.</p>
 
         <h3>Selecting Specific Indices Mathematically</h3>
-        <p>Consider the following example, where we attempt to access and build a string of characters from indices that are divisible by 2 and 3</p>
+        <p>Consider the following example, where we attempt to access and build a string of characters from indices that are divisible by two or three.</p>
         <CodeBlock language={"python"} codeString={`description = """The United Nations (UN) is an intergovernmental organization 
 that aims to maintain international peace and security, develop friendly 
 relations among states, promote international cooperation, 
@@ -288,7 +295,7 @@ print("Characters at selected indices:", selected_chars)
         <CodeBlock language={"python"} codeString={`for i, x in enumerate("Italy"):
     print(i, x)`} />
 
-        <p><code className="inline">i</code> and <code className="inline">x</code> are fairly common conventions for the index and element looping variables.</p>
+        <p><code className="inline">x</code> is a fairly common convention for the element looping variable, though you will sometimes see <code className="inline">e</code> instead.</p>
 
         <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
           <p>In your code editor, use a for loop with <code className="inline">enumerate()</code> to display the following message for each element in the string <code className="inline">"Cambodia"</code>.</p>
@@ -298,7 +305,7 @@ print("Characters at selected indices:", selected_chars)
 
       <section>
         <h2 id="break-and-continue"><a href="#break-and-continue" className="section-link">Break and Continue</a></h2>
-        <p>As with <code className="inline">while</code> loops, we can use <code className="inline">break</code> and <code className="inline">continue</code> in the same way.</p>
+        <p>As with <code className="inline">while</code> loops, we can use <code className="inline">break</code> and <code className="inline">continue</code> in the same way. Consider the following example, which prints the numbers from zero to nine, but skips five:</p>
         <CodeBlock language={"python"} codeString={`for i in range(10):
     if i == 5:
         continue
@@ -313,7 +320,7 @@ print("Characters at selected indices:", selected_chars)
 
         <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
           <p>In your code editor, write a <code className="inline">for</code> loop that iterates over the string <code className="inline">"United States of America"</code>.</p>
-          <p>However, any time the space character comes up (<code className="inline">' '</code>), skip it.</p>
+          <p>However, any time the space character <code className="inline">' '</code> appears, skip it.</p>
           <p>Your end result should read <code className="inline">"UnitedStatesOfAmerica"</code></p>
         </Collapsible>
       </section>
