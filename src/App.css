@@ -188,3 +188,7 @@ tr {
   border-bottom-color: var(--text-color);
   border-bottom-style: solid;
 }
+
+.quiz-question {
+  padding: 2rem 0;
+}

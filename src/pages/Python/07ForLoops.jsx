@@ -508,6 +508,10 @@ else:
           <li>Write a <code className="inline">for</code> loop that prints "Middle" when it reaches the middle of a string. Consider how to handle even-length vs odd-length strings.</li>
           <li>Given an existing string, return a new string that is the reverse of the original string using a <code className="inline">for</code> loop.</li>
         </ul>
+
+        <div>
+          <button className="next-button" onClick={() => window.location.href = "/quiz?name=07ForLoops.py"}>Start Quiz</button>
+        </div>
       </section>
     </div>
   );
