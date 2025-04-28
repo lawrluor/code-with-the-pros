@@ -6,6 +6,7 @@ import './App.css';
 import { JavaInheritance, JavaObjects, JavaPolymorphism } from './pages/Java';
 import { Booleans, CaesarCipher, Conditionals, Dictionaries, ForLoops, Functions, Input, Intro, Lists, PassByReference, PigLatin, Project00, Project01, Project02A, Project02B, Project03, Project04B, Project05, Project06, Strings, Variables, WhileLoops } from './pages/Python';
 import Quiz from './pages/Quiz';
+import Page404 from './pages/Page404';
 
 function App() {
   const projects = [
@@ -83,6 +84,7 @@ function App() {
           <Route path="/javaObjects" element={<JavaObjects />} />
           <Route path="/javaInheritance" element={<JavaInheritance />} />
           <Route path="/javaPolymorphism" element={<JavaPolymorphism />} />
+          <Route path="*" element={<Page404 />} />
         </Routes>
       </div>
     </Router>

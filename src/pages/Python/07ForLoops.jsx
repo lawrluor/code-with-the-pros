@@ -496,17 +496,14 @@ else:
       <section>
         <h2 id="wrapping-up"><a href="#wrapping-up" className="section-link">Wrapping Up</a></h2>
         <p>Congratulations! You've learned how to use <code className="inline">for</code> loops in Python to iterate over a strings and perform operations on each item. You've learned multiple ways to set up looping conditions and various different applications of <code className="inline">for</code> loops.</p>
-      </section>
 
-      <section>
-        <h2 id="additional-challenges"><a href="#additional-challenges" className="section-link">Additional Challenges</a></h2>
-        <p>Try these exercises to practice what you've learned:</p>
+        <h3>Additional Exercises</h3>
+        <p>Try these additional exercises to practice what you've learned:</p>
         <ul>
-          <li>Write a <code className="inline">for</code> loop that prints out an exclamation mark <code className="inline">"!"</code> whenever it finds the letter <code className="inline">"e"</code></li>
-          <li>Write a <code className="inline">for</code> loop that prints out the total number of vowels in a string</li>
+          <li>Write a <code className="inline">for</code> loop that prints out an exclamation mark <code className="inline">"!"</code> whenever it finds the letter <code className="inline">"a"</code>.</li>
+          <li>Write a <code className="inline">for</code> loop that prints out the total number of vowels in a string.</li>
           <li>Generate a new string that contains every fourth and fifth character of the original string.</li>
           <li>Write a <code className="inline">for</code> loop that prints "Middle" when it reaches the middle of a string. Consider how to handle even-length vs odd-length strings.</li>
-          <li>Given an existing string, return a new string that is the reverse of the original string using a <code className="inline">for</code> loop.</li>
         </ul>
 
         <div>
