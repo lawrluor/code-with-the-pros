@@ -4,7 +4,9 @@ import './App.css';
 
 // Import Lessons
 import { JavaInheritance, JavaObjects, JavaPolymorphism } from './pages/Java';
-import { Booleans, CaesarCipher, Conditionals, Dictionaries, ForLoops, Functions, Input, Intro, Lists, PassByReference, PigLatin, Project00, Project01, Project02A, Project02B, Project03, Project04B, Project05, Project06, Strings, Variables, WhileLoops } from './pages/Python';
+import { Booleans, CaesarCipher, Conditionals, Dictionaries, ForLoops, Functions, Input, Intro, Lists, PassByReference, PigLatin, Project00, Project01, Project02A, Project02B, Project03, Project04B, Project05, Project06, Project07, Strings, Variables, WhileLoops } from './pages/Python';
+
+import Home from './pages/Home';
 import Quiz from './pages/Quiz';
 import Page404 from './pages/Page404';
 
@@ -18,6 +20,7 @@ function App() {
     { name: 'Project 04B', path: '/Project04B', component: Project04B },
     { name: 'Project 05', path: '/Project05', component: Project05 },
     { name: 'Project 06', path: '/Project06', component: Project06 },
+    { name: 'Project 07', path: '/Project07', component: Project07 },
   ];
 
   return (
@@ -45,6 +48,7 @@ function App() {
             <li><Link to="/whileLoops">While Loops</Link></li>
             <li><Link to="/Project06">Project 06</Link></li>
             <li><Link to="/forLoops">For Loops</Link></li>
+            <li><Link to="/Project07">Project 07</Link></li>
             <li><Link to="/caesarCipher">Caesar Cipher</Link></li>
             <li><Link to="/lists">Lists</Link></li>
             <li><Link to="/dictionaries">Dictionaries</Link></li>
@@ -66,6 +70,7 @@ function App() {
             <Route key={project.name} path={project.path} element={<project.component />} />
           ))}
 
+          <Route path="/" element={<Home />} />
           <Route path="/intro" element={<Intro />} />
           <Route path="/quiz" element={<Quiz />} />
           <Route path="/strings" element={<Strings />} />
