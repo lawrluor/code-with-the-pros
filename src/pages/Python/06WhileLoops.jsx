@@ -506,10 +506,10 @@ print(first_a_index)  # Output: 2`} />
       <section>
         <h2>Wrapping Up</h2>
         <p>Great job! You've learned about while loops and how to use them practically to repeat code.</p>
-      </section>
 
-      <section>
-        <button className="next-button" onClick={() => window.location.href = "/quiz?name=06WhileLoops.py"}>Start Quiz</button>
+        <div>
+          <a href="/quiz?name=06WhileLoops.py" target="_blank" rel="noopener noreferrer" className="button" >Start Quiz</a>
+        </div>
       </section>
 
       {/* <h3>Using <code className="inline">break</code> for random numbers</h3>

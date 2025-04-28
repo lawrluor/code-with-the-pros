@@ -42,7 +42,9 @@ fruits = []
 # Creating a list with three values and storing into a variable
 fruits = ["apple", "banana", "cherry"]`} />
 
-        <p>Below is an example of a list that contains items of different types:</p>
+        <p>Items in a list are separated by commas <code className='inline'>,</code>, and each item can also be referred to as an <em>element</em> of the list.</p>
+
+        <p>Below is an example of a list that contains items of different data types:</p>
         <CodeBlock language={"python"} codeString={`mix = [1, "two", 3.0]`} />
 
         <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
@@ -50,7 +52,7 @@ fruits = ["apple", "banana", "cherry"]`} />
         </Collapsible>
 
         <h3>Using <code className='inline'>list()</code></h3>
-        <p>You can also use the <code className='inline'>list()</code> method to create a list from other iterable objects like strings or ranges:</p>
+        <p>You can also use the <code className='inline'>list()</code> method to create a list from other <em>iterables</em> or sequences, like strings or ranges. The term <em>iterable</em> refers to a sequence of items that can be <em>iterated</em> over one by one, such as when using a <code className='inline'>for</code> or <code className='inline'>while</code> loop.</p>
         <CodeBlock language={"python"} codeString={`# From a string
 chars = list("hello")
 print(chars)  # ['h', 'e', 'l', 'l', 'o']
@@ -58,6 +60,8 @@ print(chars)  # ['h', 'e', 'l', 'l', 'o']
 # From a range
 nums = list(range(5))
 print(nums)  # [0, 1, 2, 3, 4]`} />
+
+        <p>Because a string is a type of sequence or iterable, you can use <code className='inline'>list()</code> to convert a string into a different type of sequence: a list of its characters.</p>
 
         <p>Using <code className='inline'>list()</code> is actually an example of <em>type casting</em>, in this case changing an existing data type to a list.</p>
 
@@ -170,7 +174,7 @@ print(row2[1])     # 5
 print(row2[2])     # 6`} />
 
         <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
-          <p>In your code editor, use indexing or slicing to generate the following results from the following two-dimensional list:</p>
+          <p>In your code editor, use indexing, slicing, or both to generate the following results from the following two-dimensional list:</p>
           <CodeBlock language={"python"} codeString={`numbers = [
   [0, 10, 20], 
   [30, 40, 50], 
@@ -201,6 +205,7 @@ IndexError
         <h2 id="modifying-list-items"><a href="#modifying-list-items" className="section-link">Modifying List Items</a></h2>
         <p>You can modify list items by assigning new values to them directly.</p>
         <CodeBlock language={"python"} codeString={`# Modifying the third item of the list
+fruits = ['apple', 'banana', 'cherry']
 fruits[2] = "orange"
 print(fruits)  # Output: ['apple', 'banana', 'orange']`} />
 
@@ -222,8 +227,8 @@ print(fruits)
 
 # 2.
 fruits = ["apple", "banana", "cherry"]
+fruits[1] = "orange"
 fruits[2] = "orange"
-fruits[3] = "orange"
 fruits[2] = "mango"
 print(fruits)`} />
         </Collapsible>
@@ -231,7 +236,7 @@ print(fruits)`} />
 
       <section>
         <h2 id="adding-list-items"><a href="#adding-list-items" className="section-link">Adding List Items</a></h2>
-        <p>Adding items to a list is one of the most common operations. You might have experienced this before: your mom sends you on a shopping errand, and while you're at the store, she calls to ask if you can grab one more item for her. If so, you've added an item to a list in real life!</p>
+        <p>Adding items to a list is a very common task in programming. You might have experienced this before: your mom sends you on a shopping errand, and while you're at the store, she calls to ask if you can grab one more item for her. If so, you've added an item to a list in real life!</p>
 
         <h3>Concatenation</h3>
         <p>List concatenation is the process of adding or joining one list to another. An analogy is adding one group of people to another to form a larger group.
@@ -254,7 +259,7 @@ print(combined)`} />
         </Collapsible>
 
         <h3>Using <code className="inline">.append()</code></h3>
-        <p>The <code className="inline">.append()</code> method adds an item to the <strong>end</strong> of an existing list. It modifies the list <strong>in place</strong>, which means it doesn't create a new list but alters the original list directly.
+        <p>The <code className="inline">.append()</code> method adds an item to the end of an existing list. It modifies the list <strong>in place</strong>, which means it doesn't create a new list but alters the original list directly.
           The method takes a single argument, which is the item that you want to add to the list. This item can be of any data type.</p>
         <CodeBlock language={"python"} codeString={`# Original list
 fruits = ['apple', 'banana', 'cherry']
@@ -262,16 +267,15 @@ fruits = ['apple', 'banana', 'cherry']
 # Appending a new item
 fruits.append('orange')
 print(fruits)  # Output: ['apple', 'banana', 'cherry', 'orange']`} />
-        <p>Using <code className="inline">.append()</code> is particularly useful when you need to add items to a list in a loop or during a conditional operation. It's efficient because it doesn't require the creation of a new list unlike concatenation.</p>
 
         <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
-          <p>In your code editor, create two lists of names: <code className="inline">parents</code> and <code className="inline">friends</code> and attempt to concatenate them using <code className="inline">.append()</code>. Then, print them out. Does anything unexpected happen?</p>
+          <p>In your code editor, create two lists of names: <code className="inline">parents</code> and <code className="inline">friends</code>. Then, run the code <code className="inline">parents.append(friends)</code>. Then, print out <code className="inline">parents</code>. Does anything unexpected happen?</p>
         </Collapsible>
 
         <h3>When to Use Each Strategy</h3>
         <p>Though the tradeoffs are not major, choosing whether to use concatenation or <code className="inline">.append()</code> can have some implications:</p>
         <ul>
-          <li className="multiline">Concatenation is best when you need to combine multiple lists into one and do not need to keep the original lists. It's also useful when working with immutable list-like types, such as tuples or strings.</li>
+          <li className="multiline">Concatenation is best when you need to combine multiple lists into one and do not need to keep the original lists.</li>
           <li className="multiline"><code className="inline">.append()</code> is ideal when building a single list incrementally. It's considered more efficient than concatenation because it modifies the existing list in place rather than creating a new list each time an element is added.</li>
           <li className="multiline">Using <code className="inline">.append()</code> to combine two lists will add the second list directly to the end of the first list, resulting in a nested list!</li>
         </ul>
@@ -293,7 +297,7 @@ c = [7, 8, 9]
         <p>Removing items from a list is just as important as adding them to a list. There are two primary ways to do so:</p>
 
         <h3><code className="inline">.remove()</code></h3>
-        <p>The <code className="inline">.remove()</code> method searches for the first occurrence of a given element and removes it from the list. If the element is not found, Python raises a <code className="inline">ValueError</code>. This error type is generally used to describe a situation where a value is not found in a list or collection.</p>
+        <p>The <code className="inline">.remove()</code> method searches for the first occurrence of a given element and removes it from the list. If the element is not found, Python raises a <code className="inline">ValueError</code>. This error type is generally used to describe a situation where a value is not found in a list or sequence.</p>
         <CodeBlock language={"python"} codeString={`fruits = ["apple", "banana", "cherry", "banana"]
 fruits.remove("banana")  # Removes the first 'banana' item
 print(fruits)            # Output: ['apple', 'cherry', 'banana']
@@ -320,6 +324,8 @@ print(fruits)  # Output: ['apple', 'orange', 'potato']`} />
         <CodeBlock language={"python"} codeString={`fruits = ["apple", "orange", "cherry"]
 fruits.pop(10)  # Raises IndexError, as there is no index 10`} />
 
+        <p>Like <code className="inline">.append()</code>, both <code className="inline">.pop()</code> and <code className="inline">.remove()</code> modify the original list in place, which means they don't create a new list but alter the existing one directly.</p>
+
         <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
           <p>In your code editor, use <code className="inline">.pop()</code> twice and <code className="inline">.remove()</code> once to delete items until the starting list <code className="inline">berries = ["blueberry", "blackberry", "strawberry", "raspberry", "boysenberry"]</code> looks like: <code className="inline">["blueberry", "strawberry"]</code>.</p>
         </Collapsible>
@@ -342,6 +348,22 @@ while i < len(fruits):
     print(fruits[i])
     i += 1`} />
 
+        <h3>Modifying Lists with Loops</h3>
+        <p>You can also use loops to modify the elements of a list directly, rather than returning a new list. For example, you can use a loop to subtract each element of a list by a given number, then store the calculated values back into the original list.</p>
+        <CodeBlock language={"python"} codeString={`balances = [10.00, 16.00, 13.50, 6.00]
+admission_fee = 3.00
+for i in range(len(balances)):
+    balances[i] = balances[i] - admission_fee
+print(balances)  # Output: [7.0, 13.0, 10.5, 3.0]`} />
+
+        <p>Note that this would NOT work with an element based loop:</p>
+        <CodeBlock language={"python"} codeString={`balances = [10.00, 16.00, 13.50, 6.00]
+for balance in balances:
+    balance = balance - admission_fee
+print(balances)  # Output: [10.0, 16.0, 13.5, 6.0]`} />
+
+        <p>This is because the loop variable <code className="inline">balance</code> is a <em>copy</em> of the list element, not the actual element itself. So, the modification changes the value of the copied variable <code className="inline">balance</code>, but <strong>not</strong> the original element of the list.</p>
+
         <h3>Looping through Nested Lists</h3>
         <p>Nested loops are the perfect complement to nested lists. You can use them to iterate through each item of a multi-dimensional list:</p>
         <CodeBlock language={"python"} codeString={`days = [["Monday", "Tuesday", "Wednesday"], ["Thursday", "Friday", "Saturday"], ["Sunday"]]
@@ -361,9 +383,9 @@ Saturday
 Sunday`} />
 
         <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
-          <p>Loop through the following nested list and print each item one at a time, and also print an additional exclamation mark when you reach the number <code className="inline">5</code>.</p>
+          <p>Loop through the following nested list and print each item one at a time. Print an additional exclamation mark next to the numberwhen you reach the number <code className="inline">5</code>.</p>
 
-          <CodeBlock language={"python"} codeString={`numbers = [
+          <CodeBlock language={"python"} codeString={`table = [
     [1, 2, 3],
     [4, 5, 6],
     [7, 8, 9]
@@ -608,6 +630,10 @@ print(cart)  # Output: []`} />
         <h2 id="wrapping-up"><a href="#wrapping-up" className="section-link">Wrapping Up</a></h2>
 
         <p>Congratulations! You've learned the basics of lists in Python, including how to create, modify, and access elements inside them. You've also learned about list comprehensions, which are a powerful way to create lists in a concise and readable way, and how to work with nested lists.</p>
+
+        <div>
+          <button className="next-button" onClick={() => window.location.href = "/quiz?name=08Lists.py"}>Start Quiz</button>
+        </div>
       </section>
     </div>
   );

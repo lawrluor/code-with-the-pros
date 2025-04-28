@@ -298,7 +298,7 @@ print "Hello, world!")`} />
       <section>
         <h2 id="special-arithmetic-operators"><a href="#special-arithmetic-operators" className="section-link">Special Arithmetic Operators</a></h2>
         <h3>Integer division</h3>
-        <p>This arithmetic operator <code className="inline">//</code> divides one number by another, just like the standard division operator <code className="inline">/</code>, but it returns the quotient without any remainder, effectively "flooring" or rounding down the result to the nearest whole number.</p>
+        <p>This arithmetic operator <code className="inline">&#47;&#47;</code> divides one number by another, just like the standard division operator <code className="inline">/</code>, but it returns the quotient without any remainder, effectively "flooring" or rounding down the result to the nearest whole number.</p>
         <CodeBlock language={"python"} codeString={`# Example of integer division vs normal division
 print(10 / 3)    # Outputs: 3.3333... (normal division)
 print(10 // 3)   # Outputs: 3 (integer division)
@@ -338,10 +338,10 @@ print(num_students % num_groups)  # Outputs: 1 (the last student belongs to the 
       <section>
         <h2 id="wrapping-up"><a href="#wrapping-up" className="section-link">Wrapping Up</a></h2>
         <p>Great job! You've started learning about the most fundamental building blocks of the Python language. Feel free to take the quiz to test your knowledge.</p>
-      </section>
 
-      <section>
-        <a href="/quiz?name=00Intro.py" target="_blank" rel="noopener noreferrer" className="button">Start Quiz</a>
+        <div>
+          <a href="/quiz?name=00Intro.py" target="_blank" rel="noopener noreferrer" className="button">Start Quiz</a>
+        </div>
       </section>
     </div>
   );

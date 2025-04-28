@@ -510,7 +510,7 @@ else:
         </ul>
 
         <div>
-          <button className="next-button" onClick={() => window.location.href = "/quiz?name=07ForLoops.py"}>Start Quiz</button>
+          <a href="/quiz?name=07ForLoops.py" target="_blank" rel="noopener noreferrer" className="button">Start Quiz</a>
         </div>
       </section>
     </div>
