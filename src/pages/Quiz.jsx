@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useSearchParams } from 'react-router-dom';
 
 import QuizQuestion from '../components/QuizQuestion';
@@ -10,10 +10,6 @@ const Quiz = () => {
   const name = searchParams.get('name');
 
   const { questions, loading, error } = useGetQuestionsByChapter(name);
-
-  useEffect(() => {
-    console.log(questions);
-  }, [questions])
 
   return (
     <div className="lesson-container">
