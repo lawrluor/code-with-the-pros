@@ -1,11 +1,14 @@
 import CodeBlock from "../../components/CodeBlock";
 import Collapsible from "../../components/Collapsible";
+import ProgressBar from "../../components/ProgressBar";
 import useSequentialCounter from "../../hooks/useSequentialCounter";
 
 export default function Project06() {
   const { getCurrentNumber, getCurrentNumberAndIncrement } = useSequentialCounter(0);
 
   return <div className="lesson-container">
+    <ProgressBar />
+
     <section>
       <h1>Project: Number Guessing Game</h1>
       <p>Let's create a number guessing game! In this game, the computer will choose a random number between 0 and 99, and you'll try to guess the number it chose. Each time you guess, the computer will tell you whether your guess is too high or too low until you find the right number.</p>

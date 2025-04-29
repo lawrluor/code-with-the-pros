@@ -1,4 +1,5 @@
 import React from 'react';
+import ProgressBar from "../../components/ProgressBar";
 import CodeBlock from '../../components/CodeBlock';
 import Collapsible from '../../components/Collapsible';
 import useSequentialCounter from '../../hooks/useSequentialCounter';
@@ -8,6 +9,8 @@ const ForLoops = () => {
 
   return (
     <div className="lesson-container">
+      <ProgressBar />
+
       <h1>For Loops</h1>
       <section>
         <h2 id="introduction"><a href="#introduction" className="section-link">Introduction</a></h2>

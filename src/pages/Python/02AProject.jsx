@@ -1,45 +1,48 @@
 import CodeBlock from "../../components/CodeBlock";
 import Collapsible from "../../components/Collapsible";
+import ProgressBar from "../../components/ProgressBar";
 import useSequentialCounter from "../../hooks/useSequentialCounter";
 
 const Project02A = () => {
-	const { getCurrentNumber, getCurrentNumberAndIncrement } = useSequentialCounter(0);
+  const { getCurrentNumber, getCurrentNumberAndIncrement } = useSequentialCounter(0);
 
-	return (
-		<div className="lesson-container">
-			<section>
-					<h1>Project: Mad Libs Generator</h1>
-					<p>Now that you've learned about <code className="inline">input()</code>, let's put it to use with a fun project! In this <a href="https://en.wikipedia.org/wiki/Mad_Libs" target="_blank" rel="noreferrer">Mad Libs</a> game, the user will provide a series of words, and those words will be inserted into a story of your creation.</p>
-					<h2>Tasks</h2>
-					<ol>
-							<li>Create at least five variables on separate lines.</li>
-							<li>On each line, prompt the user to enter a specific type of word on each line such as a noun, verb, adjective, and so on.</li>
-							<li>Use string formatting or string concatenation to insert the words into a short (and ideally, entertaining) story.</li>
-							<li>Display the final completed story.</li>
-					</ol>
+  return (
+    <div className="lesson-container">
+      <ProgressBar />
 
-					<h3>Example</h3>
-					<p>If the user enters the following words:</p>
-					<ul>
-							<li><code className="inline">name</code>: Maya</li>
-							<li><code className="inline">verb</code>: danced</li>
-							<li><code className="inline">adjective</code>: sparkly</li>
-							<li><code className="inline">noun</code>: pumpkin</li>
-							<li><code className="inline">place</code>: enchanted forest</li>
-							<li><code className="inline">animal</code>: unicorn</li>
-							<li><code className="inline">emotion</code>: excited</li>
-					</ul>
+      <section>
+        <h1>Project: Mad Libs Generator</h1>
+        <p>Now that you've learned about <code className="inline">input()</code>, let's put it to use with a fun project! In this <a href="https://en.wikipedia.org/wiki/Mad_Libs" target="_blank" rel="noreferrer">Mad Libs</a> game, the user will provide a series of words, and those words will be inserted into a story of your creation.</p>
+        <h2>Tasks</h2>
+        <ol>
+          <li>Create at least five variables on separate lines.</li>
+          <li>On each line, prompt the user to enter a specific type of word on each line such as a noun, verb, adjective, and so on.</li>
+          <li>Use string formatting or string concatenation to insert the words into a short (and ideally, entertaining) story.</li>
+          <li>Display the final completed story.</li>
+        </ol>
 
-					<p>The program would generate a story like this:</p>
+        <h3>Example</h3>
+        <p>If the user enters the following words:</p>
+        <ul>
+          <li><code className="inline">name</code>: Maya</li>
+          <li><code className="inline">verb</code>: danced</li>
+          <li><code className="inline">adjective</code>: sparkly</li>
+          <li><code className="inline">noun</code>: pumpkin</li>
+          <li><code className="inline">place</code>: enchanted forest</li>
+          <li><code className="inline">animal</code>: unicorn</li>
+          <li><code className="inline">emotion</code>: excited</li>
+        </ul>
 
-					<CodeBlock language={"txt"} codeString={`One day, Maya danced into a sparkly pumpkin.
+        <p>The program would generate a story like this:</p>
+
+        <CodeBlock language={"txt"} codeString={`One day, Maya danced into a sparkly pumpkin.
 It was the most surprising moment of their life!
 They ran through the enchanted forest, where they met a talking unicorn.
 The unicorn seemed excited to see Maya and asked, "Would you like to go on an adventure?"
 And so, their magical journey began...`} />
 
-					<Collapsible title="Answer">
-					<CodeBlock language={"python"} codeString={`# Example Project
+        <Collapsible title="Answer">
+          <CodeBlock language={"python"} codeString={`# Example Project
 
 print("Welcome to the Mad Libs Generator!")
 
@@ -63,31 +66,31 @@ And so, their magical journey began...""".format(name, verb, adjective, noun, pl
 print("Here is your Mad Libs story:")
 print(story)`} />
 
-					<p>Note that the <code className="inline">format()</code> method can include variables names in the curly bracket placeholders, which can help keep your code readable when there are many variables to insert.</p>
-					</Collapsible>
-			</section>
+          <p>Note that the <code className="inline">format()</code> method can include variables names in the curly bracket placeholders, which can help keep your code readable when there are many variables to insert.</p>
+        </Collapsible>
+      </section>
 
-			<section>
-					<h2 id={`step-${getCurrentNumber()}-setting-up`}><a href={`#step-${getCurrentNumber()}-setting-up`} className="section-link">Step {getCurrentNumberAndIncrement()}: Setting Up</a></h2>
-					<p>Copy and modify one of your existing projects to use <code className="inline">input()</code> instead of using hard-coded values. Reflect on how doing so might make your program more useful to others.</p>
-			</section>
+      <section>
+        <h2 id={`step-${getCurrentNumber()}-setting-up`}><a href={`#step-${getCurrentNumber()}-setting-up`} className="section-link">Step {getCurrentNumberAndIncrement()}: Setting Up</a></h2>
+        <p>Copy and modify one of your existing projects to use <code className="inline">input()</code> instead of using hard-coded values. Reflect on how doing so might make your program more useful to others.</p>
+      </section>
 
-			<section>
-					<h2 id={`step-${getCurrentNumber()}-asking-for-input`}><a href={`#step-${getCurrentNumber()}-asking-for-input`} className="section-link">Step {getCurrentNumberAndIncrement()}: Asking for Input</a></h2>
-					<p>Copy and modify one of your existing projects to use <code className="inline">input()</code> instead of using hard-coded values. Reflect on how doing so might make your program more useful to others.</p>
-			</section>
+      <section>
+        <h2 id={`step-${getCurrentNumber()}-asking-for-input`}><a href={`#step-${getCurrentNumber()}-asking-for-input`} className="section-link">Step {getCurrentNumberAndIncrement()}: Asking for Input</a></h2>
+        <p>Copy and modify one of your existing projects to use <code className="inline">input()</code> instead of using hard-coded values. Reflect on how doing so might make your program more useful to others.</p>
+      </section>
 
-			<section>
-					<h2 id={`step-${getCurrentNumber()}-calculating-and-displaying-results`}><a href={`#step-${getCurrentNumber()}-calculating-and-displaying-results`} className="section-link">Step {getCurrentNumberAndIncrement()}: Calculating and Displaying Results</a></h2>
-					<p>Copy and modify one of your existing projects to use <code className="inline">input()</code> instead of using hard-coded values. Reflect on how doing so might make your program more useful to others.</p>
-			</section>
+      <section>
+        <h2 id={`step-${getCurrentNumber()}-calculating-and-displaying-results`}><a href={`#step-${getCurrentNumber()}-calculating-and-displaying-results`} className="section-link">Step {getCurrentNumberAndIncrement()}: Calculating and Displaying Results</a></h2>
+        <p>Copy and modify one of your existing projects to use <code className="inline">input()</code> instead of using hard-coded values. Reflect on how doing so might make your program more useful to others.</p>
+      </section>
 
-			<section>
-					<h2 id={`further-projects`}><a href={`#further-projects`} className="section-link">Further Projects</a></h2>
-					<p>Copy and modify one of your existing projects to use <code className="inline">input()</code> instead of using hard-coded values. Reflect on how doing so might make your program more useful to others.</p>
-			</section>
-		</div>
-	)
+      <section>
+        <h2 id={`further-projects`}><a href={`#further-projects`} className="section-link">Further Projects</a></h2>
+        <p>Copy and modify one of your existing projects to use <code className="inline">input()</code> instead of using hard-coded values. Reflect on how doing so might make your program more useful to others.</p>
+      </section>
+    </div>
+  )
 }
 
 export default Project02A;

@@ -3,6 +3,7 @@ import { useSearchParams } from 'react-router-dom';
 
 import QuizQuestion from '../components/QuizQuestion';
 import useGetQuestionsByChapter from '../hooks/useGetQuestionsByChapter';
+import ProgressBar from '../components/ProgressBar';
 
 const Quiz = () => {
   const [searchParams] = useSearchParams();
@@ -19,6 +20,8 @@ const Quiz = () => {
       {loading ? <h2>Loading Quiz...</h2> :
         (error || questions.length < 1) ? <h2>Error occurred: Quiz may not exist</h2> :
           <>
+            <ProgressBar />
+
             <h2>Quiz</h2>
 
             <section id="quiz-questions">

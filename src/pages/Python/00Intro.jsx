@@ -1,6 +1,7 @@
 import React from 'react';
 import CodeBlock from '../../components/CodeBlock';
 import Collapsible from '../../components/Collapsible';
+import ProgressBar from '../../components/ProgressBar';
 
 import useSequentialCounter from '../../hooks/useSequentialCounter';
 
@@ -9,6 +10,8 @@ const Intro = () => {
 
   return (
     <div className="lesson-container">
+      <ProgressBar />
+
       <section>
         <h1>Intro to Python</h1>
         <p>Imagine you're learning how to cook or bake. Just as you need to understand common ingredients and tools in your kitchen, in programming, you need to understand data types and operators in order to build useful programs. This lesson introduces you to these basic "ingredients" of Python programming.</p>
@@ -200,7 +203,7 @@ print(message)  # Displays "Hello World" again`} />
         <p>In this case, the variable's name is <code className="inline">message</code> and stores the string <code className="inline">"Hello World"</code>. When defining or <strong>initializing</strong> variables, we always place the variable on the left side and the value assigned to it on the right side. In the middle is the <code className="inline">=</code> symbol. The syntax for initializing a variable is:</p>
         <CodeBlock language={"python"} codeString={`variable_name = value`} />
 
-        <p>Technically, the <code className="inline">=</code> symbol is called the <strong>assignment operator</strong> in Python - it is <bold>not</bold> called the <em>equals</em> sign. It is a special operator that is used specifically to <strong>assign</strong> a value to a variable.</p>
+        <p>Technically, the <code className="inline">=</code> symbol is called the <strong>assignment operator</strong> in Python - it is <strong>not</strong> called the <em>equals</em> sign. It is a special operator that is used specifically to <strong>assign</strong> a value to a variable.</p>
         <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
           <p>In your code editor, create a variable called <code className="inline">day</code> and assign the day of the week to it.</p>
         </Collapsible>
@@ -250,7 +253,7 @@ print(count)  # Results in 0`} />
         <p>When learning Python, you're bound to encounter errors; they're part of the learning process. Understanding common errors can help you write your code more efficiently and avoid bugs in your code. Two of the most common errors you might come across are <code className="inline">SyntaxError</code> and <code className="inline">NameError</code>.</p>
 
         <h3><code className="inline">SyntaxError</code></h3>
-        <p>A <code className="inline">SyntaxError</code> occurs when Python can't understand the written instructions that you have given it. The <bold>syntax</bold>, or grammatical rules of Python are strict, and breaking them is easy. A <code className="inline">SyntaxError</code> could arise due to missing punctuation, incorrect spacing, or misuse of the operators that Python relies on.</p>
+        <p>A <code className="inline">SyntaxError</code> occurs when Python can't understand the written instructions that you have given it. The <strong>syntax</strong>, or grammatical rules of Python are strict, and breaking them is easy. A <code className="inline">SyntaxError</code> could arise due to missing punctuation, incorrect spacing, or misuse of the operators that Python relies on.</p>
 
         <CodeBlock language={"python"} codeString={`print("Hi there"  # Missing closing parenthesis
 print("Hi there)  # Missing closing quotation mark
@@ -317,7 +320,7 @@ print(-11 // 3)  # Outputs: -4 (integer division)`} />
         </Collapsible>
 
         <h3>Modulo Operator <code className="inline">%</code></h3>
-        <p>The <strong>modulo operator</strong> returns the <strong>remainder</strong> of a division between two numbers. For example, <code className="inline">5 % 2</code> (pronounced as "5 mod 2") results in <code className="inline">1</code>. Here are some more examples:</p>
+        <p>The <strong>modulo operator</strong> returns the <strong>remainder</strong> of a division between two numbers. For example, <code className="inline">5 % 2</code> (pronounced as "five mod two") results in <code className="inline">1</code>. Here are some more examples:</p>
         <CodeBlock language={"python"} codeString={`print(10 % 3)   # Outputs: 1 (10 divided by 3 leaves a remainder of 1)
 print(18 % 4)   # Outputs: 2 (18 divided by 4 leaves a remainder of 2)
 print(20 % 2)   # Outputs: 0 (20 is even, so division by 2 has no remainder)

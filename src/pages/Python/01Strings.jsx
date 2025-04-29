@@ -1,5 +1,6 @@
 import React from 'react';
 import CodeBlock from '../../components/CodeBlock';
+import ProgressBar from '../../components/ProgressBar';
 import Collapsible from '../../components/Collapsible';
 
 import useSequentialCounter from '../../hooks/useSequentialCounter';
@@ -9,7 +10,11 @@ const StringsLesson = () => {
 
   return (
     <div className="lesson-container">
-      <h1>Strings</h1>
+      <ProgressBar />
+
+      <section>
+        <h1>Strings</h1>
+      </section>
 
       <section>
         <h2 id="introduction-to-strings"><a href="#introduction-to-strings" className="section-link">Introduction to Strings</a></h2>
@@ -122,13 +127,13 @@ print(s[-3])      # Outputs: r`} />
 
         <h2>String Slicing</h2>
         <p>What if we want to get more than just a single character from a string? String <strong>slicing</strong> is a way to conveniently get multiple characters from a string. Slicing can be used to obtain a <strong>substring</strong>, or a smaller part or subset of the string. Slicing characters from a string is analagous to slicing pieces of bread from a loaf of bread!</p>
-        <CodeBlock language={"python"} codeString={`s = 'Hello World'
-sub = s[1:5]  # The format is: s[start:stop]
+        <CodeBlock language={"python"} codeString={`phrase = 'Hello World'
+sub = phrase[1:5]  # The format is: string_name[start:stop]
 print(sub)    # Outputs: ello`} />
         <p>Note that the character at the stop index is <strong>not</strong> included, which is a common convention in Python and other programming languages.</p>
 
         <h3>String Slicing Properties</h3>
-        <p>String slicing does <strong>not</strong> modify the original string.</p>
+        <p>String slicing does <strong>not</strong> modify the original string. Instead, it creates a new copy of the string that is a subset of the original string.</p>
         <CodeBlock language={"python"} codeString={`animal = 'Jellyfish'
 print(animal[1:5])  # elly
 print(animal)       # Jellyfish`} />
@@ -141,11 +146,11 @@ print(animal)  # fish`} />
 
         <h3>Including the "Step" Value</h3>
         <p>There can also be an optional <strong>step</strong> value, which specifies how many characters to skip or "step" between characters in the slice. The syntax for this is <code className="inline">s[start:stop:step]</code>. </p>
-        <CodeBlock language={"python"} codeString={`s = 'Hello World'
-sub_step = s[0:8:2]
+        <CodeBlock language={"python"} codeString={`phrase = 'Hello World'
+sub_step = phrase[0:8:2]
 print(sub_step)  # Outputs: HloW`} />
 
-        <p>Here, "step" specifies that the slice should skip every second character, starting from the first character and ending at (but not including) the 8th index.</p>
+        <p>Here, <code className="inline">step</code> specifies that the slice should skip every second character, starting from the first character and ending at (but not including) the 8th index.</p>
 
         <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
           <p>In the above example, what would the result of <code className="inline">s[0:8:3]</code> be? What about <code className="inline">s[4:8:-1]</code>?</p>

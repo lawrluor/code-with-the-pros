@@ -1,4 +1,5 @@
 import React from 'react';
+import ProgressBar from "../../components/ProgressBar";
 import CodeBlock from '../../components/CodeBlock';
 import Collapsible from '../../components/Collapsible';
 
@@ -9,7 +10,11 @@ const Booleans = () => {
 
   return (
     <div className="lesson-container">
-      <h1>The Boolean Data Type</h1>
+      <ProgressBar />
+
+      <section>
+        <h1>The Boolean Data Type</h1>
+      </section>
 
       <section>
         <h2 id="boolean-basics"><a href="#boolean-basics" className="section-link">Boolean Basics</a></h2>

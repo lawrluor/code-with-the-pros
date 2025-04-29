@@ -1,4 +1,5 @@
 import React from 'react';
+import ProgressBar from "../../components/ProgressBar";
 import CodeBlock from '../../components/CodeBlock';
 import Collapsible from '../../components/Collapsible';
 import useSequentialCounter from "../../hooks/useSequentialCounter";
@@ -8,8 +9,12 @@ const MilestoneProject04 = () => {
 
     return (
         <div className="lesson-container">
-            <h1>A "Secret" Language: "Pig Latin"</h1>
-            <p>Pig Latin is a playful way of altering English words. In elementary or middle school, you may have even used it as a "secret code" with your friends or siblings! The idea behind Pig Latin is simple: you take a word, move the first letter to the end, and add <code className="inline">"ay"</code> to the end. In this project, you'll create your own Pig Latin encoder using conditional statements, string indexing and slicing, and the <code className="inline">.input()</code> method.</p>
+            <ProgressBar />
+
+            <section>
+              <h1>A "Secret" Language: "Pig Latin"</h1>
+              <p>Pig Latin is a playful way of altering English words. In elementary or middle school, you may have even used it as a "secret code" with your friends or siblings! The idea behind Pig Latin is simple: you take a word, move the first letter to the end, and add <code className="inline">"ay"</code> to the end. In this project, you'll create your own Pig Latin encoder using conditional statements, string indexing and slicing, and the <code className="inline">.input()</code> method.</p>
+            </section>
 
             <section>
                 <h2 id="what-is-pig-latin"><a href="#what-is-pig-latin" className="section-link">What is Pig Latin?</a></h2>

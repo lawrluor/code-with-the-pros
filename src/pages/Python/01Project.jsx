@@ -1,5 +1,6 @@
 import Collapsible from "../../components/Collapsible";
 import CodeBlock from "../../components/CodeBlock";
+import ProgressBar from "../../components/ProgressBar";
 import useSequentialCounter from "../../hooks/useSequentialCounter";
 
 const Project01 = () => {
@@ -7,6 +8,8 @@ const Project01 = () => {
 
   return (
     <div className="lesson-container">
+      <ProgressBar />
+
       <section>
         <h1>Project: Personalized ID Badge Generator</h1>
         <p>Imagine that you are the head of employee resources at a new company. The CEO has asked you to create a program that generates a digital ID (identification) badge for an employee.
@@ -88,15 +91,15 @@ company_name = "TechCorp"`}
         <h2 id={`step-${getCurrentNumber()}-displaying-results`}><a href={`#step-${getCurrentNumber()}-displaying-results`} className="section-link">Step {getCurrentNumberAndIncrement()}: Displaying Results</a></h2>
         <p>Now, let's format everything neatly into an ID badge using Python's <code className="inline">.format()</code> method and the multiline string syntax (<code className="inline">""" """</code>). Here's an example:</p>
 
-				<CodeBlock
-					language="txt"
-					codeString={`***********************
+        <CodeBlock
+          language="txt"
+          codeString={`***********************
 * Name: Alice Brown *
 * Job: Designer *
 * Company: TechCorp *
 * Email: alice.brown@techcorp.com *
 * ID: albrrp *
-***********************`}/>
+***********************`} />
 
         <p>Store your multiline string to a variable called <code className="inline">id_badge</code>. Finally, print out <code className="inline">id_badge</code>.</p>
 
@@ -122,15 +125,15 @@ print(id_badge)`}
         <h2 id={`step-${getCurrentNumber()}-formatting-output`}><a href={`#step-${getCurrentNumber()}-formatting-output`} className="section-link">Step {getCurrentNumberAndIncrement()}: Formatting Output</a></h2>
         <p>Now, let's format everything neatly into an ID badge using Python's <code className="inline">.format()</code> method and the multiline string syntax (<code className="inline">""" """</code>). Here's an example:</p>
 
-				<CodeBlock
-					language="txt"
-					codeString={`***********************
+        <CodeBlock
+          language="txt"
+          codeString={`***********************
 * Name: Alice Brown *
 * Job: Designer *
 * Company: TechCorp *
 * Email: alice.brown@techcorp.com *
 * ID: albrrp *
-***********************`}/>
+***********************`} />
 
         <p>Store your multiline string to a variable called <code className="inline">id_badge</code>. Finally, print out <code className="inline">id_badge</code>.</p>
 

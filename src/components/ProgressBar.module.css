@@ -1,0 +1,19 @@
+.progressBarOutline {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 100px;
+  height: 10px;
+  background-color: #262626;
+  border-radius: 5px;
+  border: 1px solid var(--text-color);
+  box-shadow: 1px 1px 1px 0 rgba(255, 255, 255, 0.5);
+  transition: background-color 0.25s ease, color 0.25s ease;
+}
+
+.progressBar {
+  background-color: var(--primary-color);
+  border-radius: inherit;
+  height: 100%;
+  transition: width 0.1s ease;
+}

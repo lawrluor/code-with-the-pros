@@ -1,4 +1,5 @@
 import React from 'react';
+import ProgressBar from "../../components/ProgressBar";
 import CodeBlock from '../../components/CodeBlock';
 import Collapsible from '../../components/Collapsible';
 import useSequentialCounter from '../../hooks/useSequentialCounter';
@@ -8,6 +9,8 @@ const Lists = () => {
 
   return (
     <div className="lesson-container">
+      <ProgressBar />
+
       <section>
         <h1>Lists</h1>
         <p>A list in Python is a collection of items of any data type that are stored in a specific order. A list, sometimes referred to as an <em>array</em>, is <strong>mutable</strong> or changeable, meaning that both the order of the list and its individual items can be modified.</p>

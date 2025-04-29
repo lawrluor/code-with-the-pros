@@ -1,4 +1,5 @@
 import React from 'react';
+import ProgressBar from '../../components/ProgressBar';
 import CodeBlock from '../../components/CodeBlock';
 import Collapsible from '../../components/Collapsible';
 import useSequentialCounter from '../../hooks/useSequentialCounter';
@@ -8,7 +9,11 @@ const Conditionals = () => {
 
   return (
     <div className="lesson-container">
-      <h1>Conditional Statements</h1>
+      <ProgressBar />
+
+      <section>
+        <h1>Conditional Statements</h1>
+      </section>
 
       <section>
         <h2 id="making-decisions-in-code"><a href="#making-decisions-in-code" className="section-link">Making Decisions in Code</a></h2>

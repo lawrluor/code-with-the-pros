@@ -1,4 +1,5 @@
 import React from 'react';
+import ProgressBar from "../../components/ProgressBar";
 import Collapsible from '../../components/Collapsible';
 import CodeBlock from '../../components/CodeBlock';
 
@@ -8,6 +9,8 @@ const FunctionsLesson = () => {
   const { getCurrentNumberAndIncrement } = useSequentialCounter(0);
 
   return (<div className="lesson-container">
+    <ProgressBar />
+
     <section>
       <h1>Functions</h1>
       <p>A function is a piece of code that performs a specific <em>repeatable</em> task or action. In this lesson, you'll learn about the structure of functions, how to use them, and how to create your own functions.</p>

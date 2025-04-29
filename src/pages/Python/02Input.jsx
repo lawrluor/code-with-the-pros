@@ -1,4 +1,5 @@
 import React from 'react';
+import ProgressBar from '../../components/ProgressBar';
 import CodeBlock from '../../components/CodeBlock';
 import Collapsible from '../../components/Collapsible';
 
@@ -9,7 +10,11 @@ const Input = () => {
 
   return (
     <div className="lesson-container">
-      <h1>The <code className="inline">input()</code> Function</h1>
+      <ProgressBar />
+
+      <section>
+        <h1>The <code className="inline">input()</code> Function</h1>
+      </section>
 
       <section>
         <h2 id="user-input"><a href="#user-input" className="section-link">User Input</a></h2>

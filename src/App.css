@@ -18,6 +18,15 @@ body {
   background-color: #1e1e1e;
   color: var(--text-color);
   font-family: 'Roboto', sans-serif;
+
+  /* Hide Scrollbar */
+  -ms-overflow-style: none;
+  scrollbar-width: 0;
+}
+
+/* Scrollbar styles */
+body::-webkit-scrollbar {
+  display: none;
 }
 
 a {

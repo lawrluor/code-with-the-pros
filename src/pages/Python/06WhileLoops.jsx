@@ -1,4 +1,5 @@
 import React from 'react';
+import ProgressBar from "../../components/ProgressBar";
 import CodeBlock from '../../components/CodeBlock';
 import Collapsible from '../../components/Collapsible';
 
@@ -9,7 +10,11 @@ const WhileLoops = () => {
 
   return (
     <div className="lesson-container">
-      <h1>While Loops</h1>
+      <ProgressBar />
+
+      <section>
+        <h1>While Loops</h1>
+      </section>
 
       <section>
         <h2 id="what-is-a-while-loop"><a href="#what-is-a-while-loop" className="section-link">What is a While Loop?</a></h2>
