@@ -2,6 +2,7 @@ import React from 'react';
 import CodeBlock from '../../components/CodeBlock';
 import Collapsible from '../../components/Collapsible';
 import ProgressBar from '../../components/ProgressBar';
+import TopNav from '../../components/TopNav';
 
 import useSequentialCounter from '../../hooks/useSequentialCounter';
 
@@ -10,6 +11,8 @@ const Intro = () => {
 
   return (
     <div className="lesson-container">
+      <TopNav />
+
       <ProgressBar />
 
       <section>
