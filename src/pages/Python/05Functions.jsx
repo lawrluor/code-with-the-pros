@@ -8,7 +8,8 @@ import useSequentialCounter from '../../hooks/useSequentialCounter';
 const FunctionsLesson = () => {
   const { getCurrentNumberAndIncrement } = useSequentialCounter(0);
 
-  return (<div className="lesson-container">
+  return (
+  <div className="lesson-container">
     <ProgressBar />
 
     <section>
