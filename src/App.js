@@ -4,26 +4,16 @@ import './App.css';
 
 // Import Lessons
 import { JavaInheritance, JavaObjects, JavaPolymorphism } from './pages/Java';
-import { Booleans, Conditionals, Dictionaries, ForLoops, Functions, Input, Intro, Lists, PassByReference, PigLatin, Project00, Project01, Project02A, Project02B, Project03, Project04B, Project05, Project06, Project07B, Strings, Variables, WhileLoops, Project08 } from './pages/Python';
+import { Booleans, Conditionals, Dictionaries, ForLoops, Functions, Input, Intro, Lists, PassByReference, PigLatin, Strings, Variables, WhileLoops } from './pages/Python';
 
 import Home from './pages/Home';
 import Quiz from './pages/Quiz';
 import Page404 from './pages/Page404';
 import TopNav from './components/TopNav';
 
+import { projects } from './pages/Python/projects';
+
 function App() {
-  const projects = [
-    { name: 'Project 00', path: '/project00', component: Project00 },
-    { name: 'Project 01', path: '/project01', component: Project01 },
-    { name: 'Project 02A', path: '/Project02A', component: Project02A },
-    { name: 'Project 02B', path: '/Project02B', component: Project02B },
-    { name: 'Project 03', path: '/Project03', component: Project03 },
-    { name: 'Project 04B', path: '/Project04B', component: Project04B },
-    { name: 'Project 05', path: '/Project05', component: Project05 },
-    { name: 'Project 06', path: '/Project06', component: Project06 },
-    { name: 'Project 07B', path: '/Project07B', component: Project07B },
-    { name: 'Project 08', path: '/Project08', component: Project08 },
-  ];
 
   return (
     <Router>

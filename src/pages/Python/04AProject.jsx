@@ -14,23 +14,21 @@ const Project04A = () => {
       <section>
         <h2 id={`truth-or-trick`}><a href={`#truth-or-trick`} className="section-link">Truth or Trick? A Boolean Investigation</a></h2>
         <p>
-          Welcome to "Truth or Trick?" – a challenge where you will uncover the secrets of
+          Welcome to "Truth or Trick?" - a challenge where you will uncover the secrets of
           Boolean logic and apply it in a mystery-solving scenario! You'll work with Boolean
           values, logical operators, and truthy/falsy values to determine what's really true.
         </p>
       </section>
 
       <section>
-        <h2 id={`step-${getCurrentNumber()}-set-up-the-rock-paper-scissors-game`}><a href={`#step-${getCurrentNumber()}-set-up-the-rock-paper-scissors-game`} className="section-link">Step {getCurrentNumberAndIncrement()}: Set Up the Rock-Paper-Scissors Game</a></h2>
+        <h2 id={`step-${getCurrentNumber()}-booleans-review`}><a href={`#step-${getCurrentNumber()}-booleans-review`} className="section-link">Step {getCurrentNumberAndIncrement()}: Booleans Review</a></h2>
         <p>
           Before we start solving the mystery, let's establish the basics. A Boolean can only
           be one of two values: <code>True</code> or <code>False</code>. Let's confirm this by
           printing the type of a Boolean value.
         </p>
-        <CodeBlock>
-          print(type(True))
-          print(type(False))
-        </CodeBlock>
+        <CodeBlock language="python" codeString={`print(type(True))
+print(type(False))`} />
       </section>
 
       <section>
@@ -53,11 +51,9 @@ const Project04A = () => {
           </ul>
           Let's represent these as Boolean variables:
         </p>
-        <CodeBlock>
-          has_key = True
-          knows_password = False
-          has_clearance = True
-        </CodeBlock>
+        <CodeBlock language="python" codeString={`has_key = True
+knows_password = False
+has_clearance = True`} />
         <p>What do these values tell you about the person?</p>
       </section>
 
@@ -67,10 +63,8 @@ const Project04A = () => {
           The vault will only open if the person has a key AND knows the password,
           OR if they have security clearance. Let's express this using Boolean logic:
         </p>
-        <CodeBlock>
-          can_open_vault = (has_key and knows_password) or has_clearance
-          print(can_open_vault)
-        </CodeBlock>
+        <CodeBlock language="python" codeString={`can_open_vault = (has_key and knows_password) or has_clearance
+print(can_open_vault)`} />
         <p>What do you think will print? Try changing the values and observing the results.</p>
       </section>
 
@@ -80,12 +74,10 @@ const Project04A = () => {
           Now let's analyze how different logical operators affect the vault security system.
           Modify the expressions below and see how the output changes.
         </p>
-        <CodeBlock>
-          print(has_key and knows_password)  # Should be False
-          print(has_key or knows_password)   # Should be True
-          print(not has_clearance)           # Should be False
-        </CodeBlock>
-        <p>How does <code>not</code> change the result?</p>
+        <CodeBlock language="python" codeString={`print(has_key and knows_password)  # Should be False
+print(has_key or knows_password)   # Should be True
+print(not has_clearance)           # Should be False`} />
+        <p>How does <strong>not</strong> change the result?</p>
       </section>
 
       <section>
@@ -94,11 +86,9 @@ const Project04A = () => {
           The security system sometimes uses numbers instead of Booleans. In Python,
           non-zero numbers are considered <strong>truthy</strong>, and zero is <strong>falsy</strong>.
         </p>
-        <CodeBlock>
-          print(bool(1))   # True
-          print(bool(0))   # False
-          print(bool(""))  # False
-        </CodeBlock>
+        <CodeBlock language="python" codeString={`print(bool(1))   # True
+print(bool(0))   # False
+print(bool(""))  # False`} />
         <p>How might this impact the vault security system?</p>
       </section>
 
@@ -108,15 +98,13 @@ const Project04A = () => {
           There's a security flaw! The vault is currently using a weak rule to check security
           clearance. Rewrite the following condition to make it stricter.
         </p>
-        <CodeBlock>
-          # Current rule (too weak)
-          is_authorized = has_clearance or knows_password
+        <CodeBlock language="python" codeString={`# Current rule (too weak)
+is_authorized = has_clearance or knows_password
 
-          # Make it stricter: The person must have clearance AND know the password
-          is_authorized = ______________  # Fill in the blank!
-        </CodeBlock>
+# Make it stricter: The person must have clearance AND know the password
+is_authorized = ______________  # Fill in the blank!`} />
         <Collapsible title="Hint">
-          <p>Use the <code>and</code> operator.</p>
+          <p>Use the <code className="inline">and</code> operator.</p>
         </Collapsible>
       </section>
 
@@ -126,17 +114,17 @@ const Project04A = () => {
           The vault designers have added a final layer of security. The vault will only
           open if:
         </p>
+
         <ul>
           <li>The person has a key and either knows the password OR has clearance.</li>
           <li>AND the person has not been previously banned.</li>
         </ul>
+
         <p>Write a Boolean expression that enforces this rule.</p>
-        <CodeBlock>
-          is_banned = False
-          can_open = ______________  # Fill in the blank!
-        </CodeBlock>
+        <CodeBlock language="python" codeString={`is_banned = False
+          can_open = ______________  # Fill in the blank!`} />
         <Collapsible title="Hint">
-          <p>Use a combination of <code>and</code>, <code>or</code>, and <code>not</code>.</p>
+          <p>Use a combination of <code className="inline">and</code>, <code className="inline">or</code>, and <code className="inline">not</code>.</p>
         </Collapsible>
       </section>
 
