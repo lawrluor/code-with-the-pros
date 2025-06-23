@@ -147,17 +147,16 @@ print(dict_example[0])`} />
         <CodeBlock language={"python"} codeString={`dict_example = {"a": 1, "b": 2, "c": 3}
 print(dict_example["d"])  # KeyError: 'd'. This key does not exist in the dictionary`} />
 
-        <h3><code className="inline">TypeError</code></h3>
-        <p>This error can occur if you use an <strong>unhashable type</strong> (a sequenced data type such as a list), as a dictionary key.</p>
         <p>One way to avoid this error is to use conditionals to first check if the key exists before using it. The <code className="inline">in</code> operator can check if a key exists in the dictionary.</p>
-
         <CodeBlock language={"python"} codeString={`dict_example = {"a": 1, "b": 2, "c": 3}
 if "d" in dict_example:
-    print(dict_example["d"])
+  print(dict_example["d"])
 else:
-    print("Key 'd' does not exist in the dictionary")`} />
+  print("Key 'd' does not exist in the dictionary")`} />
         <p>In this example, there is no longer danger of the code stopping as a result of a <code className="inline">KeyError</code>.</p>
 
+        <h3><code className="inline">TypeError</code></h3>
+        <p>This error can occur if you use an <strong>unhashable type</strong> (a sequenced data type such as a list), as a dictionary key.</p>
         <CodeBlock language={"python"} codeString={`# Attempting to create a dictionary with a list as a key
 dict_example = {[1, 2, 3]: "a"}  # TypeError: unhashable type: 'list'
 
