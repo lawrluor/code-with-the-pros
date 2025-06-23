@@ -116,6 +116,19 @@ print(user_profile)`} />
       </section>
 
       <section>
+        <h2>Ordering of Dictionary Items</h2>
+        <p>In Python, dictionaries historically are unordered data structures that do not keep the positions of their key-value pairs in a reliable order. In other words, adding or removing items may "shuffle" or change the entire "ordering" of the dictionary in unpredictable ways. This is why we cannot use indexes to access dictionary items, as the positions of items in dictionaries are not guaranteed.</p>
+        <p>While most common versions of Python have ordered dictionaries, dictionaries in other computer languages remain unordered, so it is best to continue to conceptually treat dictionaries as unordered for your overall learning.</p>
+
+        <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
+          <p><strong>True or False:</strong> You can reliably access the first item added to a Python dictionary using an index, like <code className="inline">my_dict[0]</code>.</p>
+          <p><strong>True or False:</strong> You can reliably access the second item added to a Python list using an index, like <code className="inline">my_list[1]</code>.</p>
+          <p><strong>True or False:</strong> You can reliably access the last item added to a Python dictionary using an index, like <code className="inline">my_dict[-1]</code>.</p>
+          <p>Hint: Think about the core difference between how lists and dictionaries store and retrieve data.</p>
+        </Collapsible>
+      </section>
+
+      <section>
         <h2>Accessing Dictionary Items</h2>
         <p>Accessing dictionary items is similar to accessing list items. You use square brackets <code className="inline">[]</code>, but instead of the index (position of the item in the list), you use the key instead.</p>
         <CodeBlock language={"python"} codeString={`dict_example = {"a": 1, "b": 2, "c": 3}
@@ -128,19 +141,14 @@ print(dict_example[0])`} />
 
         <p>In other words, the pattern for accessing dictionary values given a key is <code className="inline">DICTIONARY_NAME[KEY_NAME]</code>.</p>
 
-        <Collapsible>
-          <p>One way to avoid this error is to use conditionals to first check if the key exists in the dictionary. The <code className="inline">in</code> operator can check if a key exists in the dictionary.</p>
-        </Collapsible>
 
         <h3><code className="inline">KeyError</code></h3>
         <p>When you access dictionary values this way, the key must exist in the dictionary. If the key does not exist, Python will raise a <code className="inline">KeyError</code>.</p>
         <CodeBlock language={"python"} codeString={`dict_example = {"a": 1, "b": 2, "c": 3}
 print(dict_example["d"])  # KeyError: 'd'. This key does not exist in the dictionary`} />
 
-        <h3>Ordering of Dictionary Items</h3>
-        <p>In Python, dictionaries historically are unordered data structures that do not keep the positions of their key-value pairs in a reliable order. In other words, adding or removing items may change the entire "ordering" of the dictionary. This is why we cannot use indexes to access dictionary items, as the positions of items in dictionaries are not guaranteed.</p>
-        <p>While the most modern versions of Python have ordered dictionaries, dictionaries in other computer languages remain unordered, so it is best to continue to conceptually treat dictionaries as unordered for your overall learning.</p>
-
+        <h3><code className="inline">TypeError</code></h3>
+        <p>This error can occur if you use an <strong>unhashable type</strong> (a sequenced data type such as a list), as a dictionary key.</p>
         <p>One way to avoid this error is to use conditionals to first check if the key exists before using it. The <code className="inline">in</code> operator can check if a key exists in the dictionary.</p>
 
         <CodeBlock language={"python"} codeString={`dict_example = {"a": 1, "b": 2, "c": 3}
@@ -149,9 +157,6 @@ if "d" in dict_example:
 else:
     print("Key 'd' does not exist in the dictionary")`} />
         <p>In this example, there is no longer danger of the code stopping as a result of a <code className="inline">KeyError</code>.</p>
-
-        <h3><code className="inline">TypeError</code></h3>
-        <p>This error can occur if you use an <strong>unhashable type</strong> (a sequenced data type such as a list), as a dictionary key.</p>
 
         <CodeBlock language={"python"} codeString={`# Attempting to create a dictionary with a list as a key
 dict_example = {[1, 2, 3]: "a"}  # TypeError: unhashable type: 'list'
