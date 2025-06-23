@@ -317,24 +317,12 @@ else:
         <p>Fantastic work completing the Music Playlist Manager project! You've built a functional command-line application that handles various list manipulations, user input, and menu-driven interactions.</p>
         <p>Through this project, you've practiced:</p>
         <ul>
-          <li>
-            <strong>Python Lists</strong>: Creating them, adding items (<code className="inline">append</code>), removing items (<code className="inline">pop</code>, <code className="inline">clear</code>), inserting items (<code className="inline">insert</code>), checking their length (<code className="inline">len</code>), and iterating through them.
-          </li>
-          <li>
-            <strong>Loops</strong>: Using a <code className="inline">while</code> loop to create a continuous menu system.
-          </li>
-          <li>
-            <strong>Conditional Logic</strong>: Employing <code className="inline">if/elif/else</code> statements to make decisions based on user input.
-          </li>
-          <li>
-            <strong>User Input</strong>: Getting data from the user with <code className="inline">input()</code> and converting it when necessary.
-          </li>
-          <li>
-            <strong>String Methods</strong>: Using <code className="inline">.isnumeric()</code> for input validation.
-          </li>
-          <li>
-            <strong>Readability</strong>: Using <code className="inline">enumerate()</code> for user-friendly numbered lists.
-          </li>
+          <li><strong>Python Lists</strong>: Creating them, adding items (<code className="inline">append</code>), removing items (<code className="inline">pop</code>, <code className="inline">clear</code>), inserting items (<code className="inline">insert</code>), checking their length (<code className="inline">len</code>), and iterating through them.</li>
+          <li><strong>Loops</strong>: Using a <code className="inline">while</code> loop to create a continuous menu system.</li>
+          <li><strong>Conditional Logic</strong>: Employing <code className="inline">if/elif/else</code> statements to make decisions based on user input.</li>
+          <li><strong>User Input</strong>: Getting data from the user with <code className="inline">input()</code> and converting it when necessary.</li>
+          <li><strong>String Methods</strong>: Using <code className="inline">.isnumeric()</code> for input validation.</li>
+          <li><strong>Readability</strong>: Using <code className="inline">enumerate()</code> for user-friendly numbered lists.</li>
         </ul>
 
         <h3>Additional Challenges</h3>

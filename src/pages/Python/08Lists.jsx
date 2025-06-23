@@ -154,7 +154,6 @@ print(fruits[2:])    # ['cherry', 'date', 'elderberry']`} />
 
 # 3. Bonus
 []`} />
-
         </Collapsible>
 
         <h3>Accessing Items in Nested Lists</h3>
@@ -201,7 +200,6 @@ IndexError
 []`} />
 
         </Collapsible>
-
       </section>
 
       <section>

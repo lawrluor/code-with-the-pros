@@ -41,7 +41,7 @@ const Dictionaries = () => {
       </section>
 
       <section>
-        <h2 id="creating-a-dictionary"><a href="#creating-is-a-dictionary" className="section-link">Creating a Dictionary</a></h2>
+        <h2 id="creating-a-dictionary"><a href="#creating-a-dictionary" className="section-link">Creating a Dictionary</a></h2>
         <p>We use the "curly" braces <code className="inline">{`{}`}</code> to create a new dictionary:</p>
         <CodeBlock language={"python"} codeString={`# Creating an empty dictionary
 {}
@@ -95,7 +95,7 @@ print(user_profile)`} />
       </section>
 
       <section>
-        <h2>Rules for Keys and Values</h2>
+        <h2 id="rules-for-keys-and-values"><a href="#rules-for-keys-and-values" className="section-link">Rules for Keys and Values</a></h2>
         <p>There are two important rules about the <strong>keys</strong> of a dictionary:</p>
         <ol>
           <li>Keys must be unique. You cannot have two identical keys in the same dictionary. If you try, the last one will simply overwrite the previous one.</li>
@@ -113,10 +113,21 @@ print(user_profile)`} />
     "is_online": False
 }`} />
         </Collapsible>
+
+        <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
+          <p>What will be the end result of the following dictionary definition?</p>
+          <CodeBlock language={"python"} codeString={`animal = {
+    "type": "parrot",
+    "age": 5,
+    "color": "green",
+    "catchphrase": "Polly want a cracker"
+    "color": "blue"
+}`} />
+        </Collapsible>
       </section>
 
       <section>
-        <h2>Ordering of Dictionary Items</h2>
+        <h2 id="ordering-of-dictionary-items"><a href="#ordering-of-dictionary-items" className="section-link">Ordering of Dictionary Items</a></h2>
         <p>In Python, dictionaries historically are unordered data structures that do not keep the positions of their key-value pairs in a reliable order. In other words, adding or removing items may "shuffle" or change the entire "ordering" of the dictionary in unpredictable ways. This is why we cannot use indexes to access dictionary items, as the positions of items in dictionaries are not guaranteed.</p>
         <p>While most common versions of Python have ordered dictionaries, dictionaries in other computer languages remain unordered, so it is best to continue to conceptually treat dictionaries as unordered for your overall learning.</p>
 
@@ -129,7 +140,7 @@ print(user_profile)`} />
       </section>
 
       <section>
-        <h2>Accessing Dictionary Items</h2>
+        <h2 id="accessing-dictionary-items"><a href="#accessing-dictionary-items" className="section-link">Accessing Dictionary Items</a></h2>
         <p>Accessing dictionary items is similar to accessing list items. You use square brackets <code className="inline">[]</code>, but instead of the index (position of the item in the list), you use the key instead.</p>
         <CodeBlock language={"python"} codeString={`dict_example = {"a": 1, "b": 2, "c": 3}
 
@@ -156,39 +167,46 @@ else:
         <p>In this example, there is no longer danger of the code stopping as a result of a <code className="inline">KeyError</code>.</p>
 
         <h3><code className="inline">TypeError</code></h3>
-        <p>This error can occur if you use an <strong>unhashable type</strong> (a sequenced data type such as a list), as a dictionary key.</p>
+        <p>This error can occur if you use a <em>mutable</em> type as a dictionary key.</p>
         <CodeBlock language={"python"} codeString={`# Attempting to create a dictionary with a list as a key
 dict_example = {[1, 2, 3]: "a"}  # TypeError: unhashable type: 'list'
 
 # Accessing using a list as a key
-print(dict_example[[1, 2, 3]])  # TypeError: unhashable type: 'list")`} />
+print(dict_example[[1, 2, 3]])  # TypeError: unhashable type: 'list'`} />
 
-        <p>To avoid errors, stick to the allowed types for dictionary keys: <strong>immutable</strong> data types such as integers, strings, or floats.</p>
+        <p>To avoid a <code className="inline">TypeError</code> when accessing dictionary values, stick to the allowed types for dictionary keys: <strong>immutable</strong> data types such as integers, strings, or floats.</p>
         <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
           <p>Let's practice accessing dictionary values safely. Given the following dictionary:</p>
-          <CodeBlock language={"python"} codeString={`inventory = {
-    "apples": 10,
-    "oranges": 5,
-    "bananas": 0
+          <CodeBlock language={"python"} codeString={`garage = {
+    "toyota": 10,
+    "honda": 5,
+    "chevrolet": 0
 }`} />
-          <p>Write a small script to do the following:</p>
+          <p>Write a few lines of code that:</p>
           <ol>
-            <li>Check if the key <code className="inline">"apples"</code> exists. If it does, print how many apples are in stock.</li>
-            <li>Check if the key <code className="inline">"grapes"</code> exists. If it does, print how many grapes are in stock. If it doesn't, print a message saying "Grapes are not available."</li>
+            <li>Check if the key <code className="inline">"toyota"</code> exists. If it does, print how many Toyota cars are in the garage If it doesn't, print a message saying <code className="inline">"Toyota is not available."</code></li>
+            <li>Check if the key <code className="inline">"chevrolet"</code> exists. If it does, print how many Chevrolet cars are in the garage If it doesn't, print a message saying <code className="inline">"Chevrolet is not available."</code></li>
+            <li>Check if the key <code className="inline">"kia"</code> exists. If it does, print how many Kia cars are in the garage. If it doesn't, print a message saying <code className="inline">"Kia is not available."</code>.</li>
           </ol>
-          <p>This exercise will help you get used to using the <code className="inline">in</code> keyword to prevent errors.</p>
         </Collapsible>
       </section>
 
       <section>
-        <h2>Adding and Modifying Items</h2>
+        <h2 id="adding-and-modifying-items"><a href="#adding-and-modifying-items" className="section-link">Adding and Modifying Items</a></h2>
         <p>You can add new items or change existing items in a dictionary:</p>
-        <CodeBlock language={"python"} codeString={`# Adding a new key-value pair
-person["height"] = 175
+        <CodeBlock language={"python"} codeString={`person = {"name": "James", "age": 16, "city": "Los Angeles"}
+
+# Adding a new key-value pair
+person["height"] = 170
+print(person)  # Outputs: {'name': 'James', 'age': 16, 'city': 'Los Angeles', 'height': 170}
 
 # Modifying an existing key-value pair
 person["name"] = "Jane"
-print(person)  # Outputs: {'name': 'Jane', 'age': 30, 'city': 'New York', 'height': 175}`} />
+print(person)  # Outputs: {'name': 'Jane', 'age': 16, 'city': 'Los Angeles', 'height': 170}
+
+# Modifying a value in an existing key-value pair
+person["age"] += 1
+print(person)  # Outputs: {'name': 'Jane', 'age': 17, 'city': 'Los Angeles', 'height': 170}`} />
 
         <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
           <p>Let's practice updating a dictionary. Imagine you have a dictionary for a game character:</p>
@@ -207,7 +225,7 @@ print(person)  # Outputs: {'name': 'Jane', 'age': 30, 'city': 'New York', 'heigh
       </section>
 
       <section>
-        <h2>Removing Items</h2>
+        <h2 id="removing-items"><a href="#removing-items" className="section-link">Removing Items</a></h2>
         <p>Items can be removed from a dictionary using several methods:</p>
         <CodeBlock language={"python"} codeString={`# Removing an item with a specific key
 del person["city"]
@@ -234,7 +252,7 @@ print(person)  # Outputs: {}`} />
       </section>
 
       <section>
-        <h2>Getting the Dictionary Size</h2>
+        <h2 id="getting-the-dictionary-size"><a href="#getting-the-dictionary-size" className="section-link">Getting the Dictionary Size</a></h2>
         <p>Just like with lists, you can find out how many key-value pairs are in a dictionary by using the built-in <code className="inline">len()</code> function.</p>
         <CodeBlock language={"python"} codeString={`student_grades = {"Alice": 91, "Bob": 88, "Charlie": 95}
 number_of_students = len(student_grades)  # Get the number of key-value pairs
@@ -252,7 +270,7 @@ print(number_of_students)  # Outputs: 3`} />
       </section>
 
       <section>
-        <h2>The <code className="inline">.get()</code> Method</h2>
+        <h2 id="the-get-method"><a href="#the-get-method" className="section-link">The <code className="inline">.get()</code> Method</a></h2>
         <p>The <code className="inline">.get()</code> method provides a safer way to access values by allowing you to set a default value if the key is not found, thus avoiding <code className="inline">KeyError</code>.</p>
         <CodeBlock language={"python"} codeString={`# Accessing using get()
 print(dict_example.get("b"))  # Outputs: 2
@@ -447,6 +465,10 @@ for key, value in student_profile.items():
       <section>
         <h2 id="wrapping-up"><a href="#wrapping-up" className="section-link">Wrapping Up</a></h2>
         <p>Fantastic work! You've learned about Python dictionaries, one of the most versatile data structures in the language. They are essential for organizing data and accessing data efficiently.</p>
+
+        <div>
+          <button className="next-button" onClick={() => window.location.href = "/quiz?name=09Dictionaries.py"}>Start Quiz</button>
+        </div>
       </section>
     </div>
   );

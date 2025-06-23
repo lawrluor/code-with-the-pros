@@ -16,9 +16,7 @@ export default function Project08Solution() {
         </p>
 
         <p>Note that in addition to the core functionality of the program, there is also error handling in place to prevent the user from entering invalid input.</p>
-      </section>
 
-      <section>
         <h3>Code Output</h3>
         <CodeBlock language="txt" codeString={`Music Playlist Manager
 ============================
