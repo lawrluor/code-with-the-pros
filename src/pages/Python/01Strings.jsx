@@ -56,7 +56,7 @@ Nulla facilisi. Ut efficitur laoreet quam id scelerisque.
 '''`} />
 
         <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
-          <p>What is the result of <code className="inline">""""Multiline text""""</code>?</p>
+          <p>In your code editor, write your favorite color as a string.</p>
         </Collapsible>
       </section>
 
@@ -74,9 +74,13 @@ print(bio)`} />
 
         <p>This results in:</p>
         <CodeBlock language={"text"} codeString={`Lawrence
-        Software Developer
-        Lawrence is a software developer with a passion for building apps and websites.
-        He is based in San Francisco, California.`} />
+Software Developer
+Lawrence is a software developer with a passion for building apps and websites.
+He is based in San Francisco, California.`} />
+
+        <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
+          <p>In your code editor, create a variable called <code className="inline">my_name</code> that stores your name as a string. Then, print that variable to the console.</p>
+        </Collapsible>
       </section>
 
       <section>
@@ -99,7 +103,7 @@ print(last_char)   # Outputs: d`} />
 
         <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
           <p>In the above example, what character is printed as the result of <code className="inline">print(phrase[5])</code>? </p>
-          <p>How would you pronounce <code className="inline">word[5]</code>? </p>
+          <p>How would you read this out loud: <code className="inline">word[5]</code>? </p>
         </Collapsible>
 
         <h3>Indexes are Integers</h3>
@@ -125,13 +129,16 @@ print(s[-3])      # Outputs: r`} />
           <p>Assign a 6-character long string into a variable called <code className="inline">word</code>. Then, print the first character, the 3rd to last character, and the last character, each on a separate line.</p>
         </Collapsible>
 
-        <h2>String Slicing</h2>
+        <h2 id="string-slicing"><a href="#string-slicing" className="section-link">String Slicing</a></h2>
         <p>What if we want to get more than just a single character from a string? String <strong>slicing</strong> is a way to conveniently get multiple characters from a string. Slicing can be used to obtain a <strong>substring</strong>, or a smaller part or subset of the string. Slicing characters from a string is analagous to slicing pieces of bread from a loaf of bread!</p>
         <CodeBlock language={"python"} codeString={`phrase = 'Hello World'
 sub = phrase[1:5]  # The format is: string_name[start:stop]
-print(sub)    # Outputs: ello`} />
+print(sub)         # Outputs: ello`} />
         <p>Note that the character at the stop index is <strong>not</strong> included, which is a common convention in Python and other programming languages.</p>
 
+        <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
+          <p>Given that <code className="inline">phrase = 'Hello World'</code>, what is the result of <code className="inline">print(phrase[3:6])</code>? </p>
+        </Collapsible>
         <h3>String Slicing Properties</h3>
         <p>String slicing does <strong>not</strong> modify the original string. Instead, it creates a new copy of the string that is a subset of the original string.</p>
         <CodeBlock language={"python"} codeString={`animal = 'Jellyfish'
@@ -153,7 +160,7 @@ print(sub_step)  # Outputs: HloW`} />
         <p>Here, <code className="inline">step</code> specifies that the slice should skip every second character, starting from the first character and ending at (but not including) the 8th index.</p>
 
         <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
-          <p>In the above example, what would the result of <code className="inline">s[0:8:3]</code> be? What about <code className="inline">s[4:8:-1]</code>?</p>
+          <p>In the above example, what would the result of <code className="inline">phrase[0:8:3]</code> be? What about <code className="inline">phrase[4:8:-1]</code>?</p>
         </Collapsible>
       </section>
 
@@ -174,7 +181,7 @@ print(s[11:15])  # Outputs: ''`} />
 
           <li><strong>Overextended Stop Index:</strong> If the stop index is beyond the string length, Python acts as if the stop index is simply the string length.</li>
           <CodeBlock language={"python"} codeString={`s = "Hello World"
-print(s[0:25])   # Outputs: 'Hello World
+print(s[0:25])   # Outputs: 'Hello World'
 print(s[0:10])   # Outputs: 'Hello World'`} />
 
           <li><strong>Negative Indexing Beyond Bounds:</strong> Negative indices beyond the string's length wrap around, potentially leading to non-empty results if not calculated correctly.</li>
@@ -202,6 +209,9 @@ print(planet[-8])`} />
 print(message)  # Outputs: hithere
 
 greeting = 'Hello' + ' ' + "World"
+print(greeting)  # Outputs: Hello World
+
+greeting = "Hello " + 'World'
 print(greeting)  # Outputs: Hello World`} />
 
         <p>We can also concatenate strings to variables that have been assigned string values.</p>
@@ -219,7 +229,7 @@ greeting = 'Alice is ' + age + ' years old'  # TypeError
 # Correct
 greeting = 'Alice is ' + str(age) + ' years old'  # str(age) becomes the string '30'`} />
 
-        <p>When concatenating strings, it doesn't matter if the strings use different types of quotes. Strings with different types of quotes are still strings and are the same data type, so they can be combined together without causing <code className="inline">TypeError</code>.</p>
+        <p>When concatenating strings, it doesn't matter if the strings use different types of quotes. Strings with different types of quotes are still strings, so they can be combined together without causing a <code className="inline">TypeError</code>.</p>
 
         <CodeBlock language={"python"} codeString={`# Using different types of quotes
 greeting = 'Hello' + " there"
@@ -250,6 +260,12 @@ print("Coconut" + ' ')`} />
         <h3>Using Single Quotes</h3>
         <p>Single quotes are useful when the string contains double quotes. This can be particularly handy in strings representing spoken dialog or when quoting text.</p>
         <CodeBlock language={"python"} codeString={`'She said, "Hello, how are you?"'`} />
+
+        <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
+          <p>Identify which of the following <code className="inline">print()</code> statements will result in a <code className="inline">SyntaxError</code>.</p>
+          <CodeBlock language={"python"} codeString={`print('It's happening today.')
+print('He said, "Hello!"')`} />
+        </Collapsible>
       </section>
 
       <section>
@@ -257,6 +273,12 @@ print("Coconut" + ' ')`} />
         <p>Alternatively, you can use the escape character <code className="inline">\</code> to tell Python to interpret a quote as a literal quotation mark rather than use its default behavior of ending the string.</p>
         <CodeBlock language={"python"} codeString={`"She said, \\"It's lovely to see you!\\""`} />
         <p>This will print <code className="inline">She said, "It's lovely to see you!"</code>, including the quotation marks in the actual string itself.</p>
+
+        <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
+          <p>What is the output of the following <code className="inline">print()</code> statements?</p>
+          <CodeBlock language={"python"} codeString={`print("\"Welcome!\"")
+print('\"Hooray!"')`} />
+        </Collapsible>
       </section>
 
       <section>

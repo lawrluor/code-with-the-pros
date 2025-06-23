@@ -9,6 +9,8 @@ import Project05 from './05Project';
 import Project06 from './06Project';
 import Project07B from './07BProject';
 import Project08 from './08Project';
+import Project08B from './08BProject';
+import Project08Solution from './08Project_Solution';
 
 export const projects = [
   { name: 'Restaurant Payment System', path: '/project00', component: Project00 },
@@ -21,5 +23,7 @@ export const projects = [
   { name: 'Shipping Cost Calculator', path: '/Project05', component: Project05 },
   { name: 'Password Strength Checker', path: '/Project06', component: Project06 },
   { name: 'Caesar Cipher', path: '/Project07B', component: Project07B },
-  { name: 'Project 08', path: '/Project08', component: Project08 },
+  { name: 'Music Playlist Manager', path: '/Project08', component: Project08 },
+  { name: 'Classroom Grades', path: '/Project08B', component: Project08B },
+  { name: 'Music Playlist Manager (Solution)', path: '/Project08Solution', component: Project08Solution },
 ];

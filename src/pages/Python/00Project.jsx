@@ -38,14 +38,15 @@ dish_three_name = "Dish 3"
 dish_one_price = 10.99
 dish_two_price = 8.49
 dish_three_price = 12.99
-total = 0.00`}
-          />
+total = 0.00`} />
         </Collapsible>
       </section>
 
       <section>
         <h2 id={`step-${getCurrentNumber()}-calculating-the-total`}><a href={`#step-${getCurrentNumber()}-calculating-the-total`} className="section-link">Step {getCurrentNumberAndIncrement()}: Calculating the Total</a></h2>
         <p>Now, let's calculate the total cost of the meal by adding the prices of the three dishes to the <code className="inline">total</code> variable.</p>
+
+        <p>Print out the value of <code className="inline">total</code> to check your work.</p>
 
         <Collapsible title="Hint">
           <CodeBlock language={"python"} codeString={`total = dish_one_price + dish_two_price + dish_three_price`} />
@@ -58,10 +59,11 @@ total = 0.00`}
 
         <ul>
           <li>Create a variable <code className="inline">tax_rate</code> and assign it a value of <code className="inline">0.09</code> (9% tax).</li>
-          <li>Calculate the tax amount by multiplying <code className="inline">tax_rate</code> by <code className="inline">total</code>.</li>
-          <li>Create a variable <code className="inline">tip</code> and assign it a value of <code className="inline">0.15</code> (15% tip).</li>
-          <li>Calculate the tip amount by multiplying <code className="inline">tip</code> by <code className="inline">total</code>.</li>
-          <li>Add both the tax amount and the tip amount to the total.</li>
+          <li>Calculate the tax amount by multiplying <code className="inline">tax_rate</code> by <code className="inline">total</code>. Store this value in a variable named <code className="inline">tax_amount</code>.</li>
+          <li>Create a variable <code className="inline">tip_rate</code> and assign it a value of <code className="inline">0.15</code> (15% tip).</li>
+          <li>Calculate the tip amount by multiplying <code className="inline">tip_rate</code> by <code className="inline">total</code>. Store this value in a variable named <code className="inline">tip_amount</code>.</li>
+          <li>Create a new variable <code className="inline">grand_total</code> and assign it the value of adding <code className="inline">total</code>, <code className="inline">tax_amount</code>, and <code className="inline">tip_amount</code> together.</li>
+          <li>Print <code className="inline">grand_total</code> to the console.</li>
         </ul>
 
         <Collapsible title="Hint">
@@ -69,10 +71,9 @@ total = 0.00`}
             language={"python"}
             codeString={`tax_rate = 0.09
 tax_amount = total * tax_rate
-tip = 0.15
-tip_amount = total * tip
-total += tax_amount + tip_amount`}
-          />
+tip_rate = 0.15
+tip_amount = total * tip_rate
+grand_total = total + tax_amount + tip_amount`} />
         </Collapsible>
       </section>
 
@@ -96,8 +97,7 @@ Chocolate Cake --- $6.99
 Your meal total is $28.47
 Your tax total is $2.5623
 Your tip total is $4.2705
-Your grand total is $35.3028.`}
-          />
+Your grand total is $35.3028.`} />
 
           <p>Don't worry about the extra decimal places in your receipt for now! You'll learn how to fix this in the next lesson.</p>
         </ul>
@@ -112,15 +112,13 @@ Your grand total is $35.3028.`}
 "Your meal total is [TOTAL]."
 "Your tax total is [TAX_AMOUNT]."
 "Your tip total is [TIP_AMOUNT]."
-"Your grand total is [YOUR_GRAND_TOTAL]."`} />
+"Your grand total is [GRAND_TOTAL]."`} />
         </Collapsible>
       </section>
 
       <section>
         <h2 id={`wrapping-up`}><a href={`#wrapping-up`} className="section-link">Wrapping Up</a></h2>
-        <p>
-          Congratulations on finishing your first Python project! This project introduced you to variables, arithmetic operations, string concatenation, and printing — all essential building blocks for Python programming. Feel free to experiment and see how you can extend this program further!
-        </p>
+        <p>Congratulations on finishing your first Python project! This project introduced you to variables, arithmetic operations, string concatenation, and printing — all essential building blocks for Python programming. Feel free to experiment and see how you can extend this program further!</p>
       </section>
     </div>
   )

@@ -18,12 +18,10 @@ const Home = () => {
             <li><Link to="/variables">Variables</Link></li>
             <li><Link to="/input">Input</Link></li>
             <li><Link to="/conditionals">Conditionals</Link></li>
-            <li><Link to="/pigLatin">Pig Latin</Link></li>
             <li><Link to="/booleans">Booleans</Link></li>
             <li><Link to="/functions">Functions</Link></li>
             <li><Link to="/whileLoops">While Loops</Link></li>
             <li><Link to="/forLoops">For Loops</Link></li>
-            <li><Link to="/caesarCipher">Caesar Cipher</Link></li>
             <li><Link to="/lists">Lists</Link></li>
             <li><Link to="/dictionaries">Dictionaries</Link></li>
 

@@ -14,8 +14,7 @@ const Dictionaries = () => {
       </section>
 
       <section>
-        <h2 id="what-is-a-dictionary"><a href="#what-is-a-dictionary" className="section-link">What is a Dictionary?</a></h2>
-        <h2>Creating Dictionaries</h2>
+        <h2 id="creating-a-dictionary"><a href="#creating-is-a-dictionary" className="section-link">Creating a Dictionary</a></h2>
         <p>Use curly braces <code className="inline">{`{}`}</code> to create a new dictionary:</p>
         <CodeBlock language={"python"} codeString={`# Creating an empty dictionary
 {}
