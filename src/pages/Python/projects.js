@@ -11,6 +11,8 @@ import Project07B from './07BProject';
 import Project08 from './08Project';
 import Project08B from './08BProject';
 import Project08Solution from './08Project_Solution';
+import Project09 from './09Project';
+import Project10 from './10Project_Milestone';
 
 export const projects = [
   { name: 'Restaurant Payment System', path: '/project00', component: Project00 },
@@ -26,4 +28,6 @@ export const projects = [
   { name: 'Music Playlist Manager', path: '/Project08', component: Project08 },
   { name: 'Classroom Grades', path: '/Project08B', component: Project08B },
   { name: 'Music Playlist Manager (Solution)', path: '/Project08Solution', component: Project08Solution },
+  { name: 'Quiz Game', path: '/Project09', component: Project09 },
+  { name: 'Sentiment Analyzer', path: '/Project10', component: Project10 },
 ];

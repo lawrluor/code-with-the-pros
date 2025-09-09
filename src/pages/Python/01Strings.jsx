@@ -285,6 +285,7 @@ print('\"Hooray!"')`} />
         <h2 id="empty-strings"><a href="#empty-strings" className="section-link">Empty Strings <code className="inline">""</code></a></h2>
         <p>Empty strings are, well, strings that are empty, meaning that they contain no characters. In Python, an empty string is represented by <code className="inline">""</code>. It is analogous to the number <code className="inline">0</code> in math - just as <code className="inline">0</code> is still a number, an empty string is still a string, just one that currently holds no value.</p>
 
+        <p>Imagine a sign-up form before you've typed your email or password in. The textbox might be empty at the moment, but it expects text data to be entered later - specifically, a string!</p>
         <h3>The Purpose of Empty Strings</h3>
         <p>Empty strings are often used as placeholders for variables that have not been assigned a value yet. For example, if we wanted to create a greeting message, we could use an empty string as a placeholder for the name of the person we are greeting, then later update the name when we are ready to assign it a value.</p>
         <CodeBlock language={"python"} codeString={`name = ""
@@ -303,7 +304,7 @@ message = message + "a"  # add the letter "a" to the message`} />
 
         <p>Concatenating an empty string to another string is analagous to adding <code className="inline">0</code> to a number.</p>
         <CodeBlock language={"python"} codeString={`day = "Friday"
-print(day + "") # Outputs: Friday`} />
+print(day + "")  # Outputs: Friday`} />
 
         <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
           <p>What is the result of the following <code className="inline">print()</code> statement?</p>
@@ -331,7 +332,7 @@ print(greeting)          # Outputs: Hello, World!`} />
         <CodeBlock language={"python"} codeString={`greeting = '   Hello, World!   '
 print(greeting.strip())  # Outputs: Hello, World!`} />
 
-        <p>Some methods like <code className="inline">.isalpha()</code> does not return an altered string, but instead gets information about the string, in this case checking if the string contains only letters and does not include any numeric-like characters.</p>
+        <p>Some methods like <code className="inline">.isalpha()</code>, which stands for "is alphabetic", does not return an altered string, but instead gets information about the string, in this case checking if the string contains only letters and does not include any numeric-like characters.</p>
         <CodeBlock language={"python"} codeString={`name = 'Rachel'
 print(name.isalpha())      # Outputs: True
 
@@ -346,7 +347,7 @@ print(sentence.isalpha())  # Outputs: False`} />
       </section>
 
       <section>
-        <h2 id="format"><a href="#format" className="section-link"><code className="inline">.format()</code></a></h2>
+        <h2 id="format"><a href="#format" className="section-link"><code className="inline">The .format() Method</code></a></h2>
         <p>Concatenating strings can be a pain. As we saw in earlier examples, we had to <strong>cast</strong> integers to strings in order to properly concatenate them to other strings. Fortunately, we can use the <code className="inline">.format()</code> method to make things more convenient for us.</p>
         <CodeBlock language={"python"} codeString={`name = 'Alice'
 age = 30
@@ -361,12 +362,13 @@ print(name + ' is ' + str(age) + ' years old')  # Outputs: Alice is 30 years old
         <p><code className="inline">.format()</code> can also be used to conveniently process text that contains numbers. For example, say that we have a float variable <code className="inline">pi</code> that we want to display rounded to two decimal places.</p>
         <CodeBlock language={"python"} codeString={`pi = 3.14159
 print('Pi is {}'.format(pi))      # Normal Output: "Pi is 3.14159"
-print('Pi is {:.2f}'.format(pi))  # Rounded Output: "Pi is 3.14"`} />
+print('Pi is {:.2f}'.format(pi))   # Rounded Output: "Pi is 3.14"
+print('Pi is {:.3f}'.format(pi))   # Rounded Output: "Pi is 3.141"`} />
 
         <p>The <code className="inline">:.2f</code> inserted between the brackets is known as a <em>format specifier</em>. For three decimal places, we would write <code className="inline">:.3f</code>.</p>
 
         <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
-          <p>In your code editor, create a variable that stores the result of dividing a <code className="inline">100</code> by <code className="inline">11</code>. Then, use the <code className="inline">.format()</code> to print and display the result of this division to three decimal places.</p>
+          <p>In your code editor, create a variable that stores the result of dividing <code className="inline">100</code> by <code className="inline">11</code>. Then, use <code className="inline">.format()</code> to print and display the result of this division to four decimal places.</p>
         </Collapsible>
 
         <h3>The <code className="inline">len()</code> Function</h3>

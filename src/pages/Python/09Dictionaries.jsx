@@ -296,7 +296,6 @@ print(dict_example.get("d", "Not Found"))  # Outputs: 'Not Found'`} />
             <li>Check if the key <code className="inline">"apples"</code> exists using the <code className="inline">in</code> keyword. If it does, print how many apples are in stock.</li>
             <li>Check if the key <code className="inline">"grapes"</code> exists using the <code className="inline">.get()</code> method, then print how many grapes are in stock. The default value should be <code className="inline">0</code>.</li>
           </ol>
-          <p>This exercise will help you get used to using the <code className="inline">in</code> keyword to prevent errors.</p>
         </Collapsible>
       </section>
 
@@ -341,7 +340,7 @@ print(contact_info["email"])  # Outputs: dani@example.com`} />
         "Rotten Tomatoes": 87
     }
 }`} />
-          <p>Write a single line of code that accesses the IMDb rating and prints it to the console.</p>
+          <p>Write a single line of code that accesses the <code className="inline">IMDb</code> rating and prints it to the console.</p>
         </Collapsible>
 
         <h3>2. A List of Dictionaries</h3>
@@ -444,7 +443,7 @@ for key, value in student_profile.items():
       </section>
 
       <section>
-        <h2>Dictionaries vs. Lists</h2>
+        <h2 id="dictionaries-vs-lists"><a href="#dictionaries-vs-lists" className="section-link">Dictionaries vs. Lists</a></h2>
         <p>It's important to know when to use a dictionary and when to use a list. Here's a comparison:</p>
         <ul>
           <li>Lists are an ordered collection of items. Dictionaries are an unordered collection of key-value pairs.</li>

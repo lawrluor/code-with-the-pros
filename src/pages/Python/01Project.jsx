@@ -42,15 +42,13 @@ const Project01 = () => {
           <CodeBlock
             language="python"
             codeString={`first_name = "Alice"
-last_name = "Brown"
-job_title = "Designer"
-company_name = "TechCorp"`}
+last_name = "Brown"`}
           />
         </Collapsible>
       </section>
 
       <section>
-        <h2 id={`step-${getCurrentNumber()}-asking-for-input`}><a href={`#step-${getCurrentNumber()}-asking-for-input`} className="section-link">Step {getCurrentNumberAndIncrement()}: Asking for Input</a></h2>
+        <h2 id={`step-${getCurrentNumber()}-generate-an-email-address`}><a href={`#step-${getCurrentNumber()}-generate-an-email-address`} className="section-link">Step {getCurrentNumberAndIncrement()}: Generate an Email Address</a></h2>
         <p>Most companies provide employees with a professional email address. Rather than have each employee create their email, let's automatically generate them using string concatenation.</p>
 
         <ul>
@@ -63,13 +61,14 @@ company_name = "TechCorp"`}
         <Collapsible title="Hint">
           <CodeBlock
             language="python"
-            codeString={`email = first_name.lower() + "." + last_name.lower() + "@" + company_name.lower()`}
+            codeString={`name = "Charlie Brown"
+print(name.lower())  # Outputs: "charlie brown"`}
           />
         </Collapsible>
       </section>
 
       <section>
-        <h2 id={`step-${getCurrentNumber()}-calculating-area`}><a href={`#step-${getCurrentNumber()}-calculating-area`} className="section-link">Step {getCurrentNumberAndIncrement()}: Calculating Area</a></h2>
+        <h2 id={`step-${getCurrentNumber()}-create-an-employee-id`}><a href={`#step-${getCurrentNumber()}-create-an-employee-id`} className="section-link">Step {getCurrentNumberAndIncrement()}: Create an Employee ID</a></h2>
         <p>ID badges often include a short, unique identifier. Let's generate one using slicing or indexing.</p>
 
         <p>Create a variable <code className="inline">short_id</code> that consists of:</p>
@@ -82,13 +81,17 @@ company_name = "TechCorp"`}
         <Collapsible title="Hint">
           <CodeBlock
             language="python"
-            codeString={`short_id = first_name[:2] + last_name[:2] + company_name[-2:]`}
+            codeString={`# First four characters of first_name
+first_name[:4]
+
+# Last three characters of company_name
+company_name[-3:]`}
           />
         </Collapsible>
       </section>
 
       <section>
-        <h2 id={`step-${getCurrentNumber()}-displaying-results`}><a href={`#step-${getCurrentNumber()}-displaying-results`} className="section-link">Step {getCurrentNumberAndIncrement()}: Displaying Results</a></h2>
+        <h2 id={`step-${getCurrentNumber()}-display-the-id-badge`}><a href={`#step-${getCurrentNumber()}-display-the-id-badge`} className="section-link">Step {getCurrentNumberAndIncrement()}: Display the ID Badge</a></h2>
         <p>Now, let's format everything neatly into an ID badge using Python's <code className="inline">.format()</code> method and the multiline string syntax (<code className="inline">""" """</code>). Here's an example:</p>
 
         <CodeBlock
