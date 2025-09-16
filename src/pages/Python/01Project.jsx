@@ -125,40 +125,6 @@ print(id_badge)`}
       </section>
 
       <section>
-        <h2 id={`step-${getCurrentNumber()}-formatting-output`}><a href={`#step-${getCurrentNumber()}-formatting-output`} className="section-link">Step {getCurrentNumberAndIncrement()}: Formatting Output</a></h2>
-        <p>Now, let's format everything neatly into an ID badge using Python's <code className="inline">.format()</code> method and the multiline string syntax (<code className="inline">""" """</code>). Here's an example:</p>
-
-        <CodeBlock
-          language="txt"
-          codeString={`***********************
-* Name: Alice Brown *
-* Job: Designer *
-* Company: TechCorp *
-* Email: alice.brown@techcorp.com *
-* ID: albrrp *
-***********************`} />
-
-        <p>Store your multiline string to a variable called <code className="inline">id_badge</code>. Finally, print out <code className="inline">id_badge</code>.</p>
-
-        <Collapsible title="Hint">
-          <CodeBlock
-            language="python"
-            codeString={`id_badge = '''
-***********************
-* Name: {} *
-* Job: {} *
-* Company: {} *
-* Email: {} *
-* ID: {} *
-***********************
-'''.format(first_name + " " + last_name, job_title, company_name, email, short_id)
-
-print(id_badge)`}
-          />
-        </Collapsible>
-      </section>
-
-      <section>
         <h2 id="wrapping-up"><a href="#wrapping-up" className="section-link">Wrapping Up</a></h2>
         <p>Congratulations! You've completed the project. You've learned how to use variables and strings to format and display information about an employee.</p>
       </section>
