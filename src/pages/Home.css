@@ -1,0 +1,32 @@
+.homeIntro {
+  padding-top: 1.5rem;
+}
+
+.homeLead {
+  max-width: 70ch;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+  opacity: 0.95;
+}
+
+.homeColumns {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+.homeColumn {
+  border: 1px solid rgba(240, 233, 240, 0.18);
+  border-radius: 10px;
+  padding: 1rem;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+@media (min-width: 760px) {
+  .homeColumns {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+}

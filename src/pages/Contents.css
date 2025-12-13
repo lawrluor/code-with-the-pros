@@ -1,0 +1,34 @@
+.contents {
+  margin-top: 0.5rem;
+}
+
+.contentsList {
+  list-style: none;
+  padding-left: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.35rem;
+}
+
+.contentsList li {
+  border: 1px solid rgba(240, 233, 240, 0.14);
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 10px;
+}
+
+.contentsList a {
+  display: block;
+  padding: 0.45rem 0.6rem;
+  text-decoration: none;
+  color: var(--highlight-color);
+}
+
+.contentsList a:hover {
+  color: var(--primary-color);
+}
+
+@media (min-width: 760px) {
+  .contentsList {
+    grid-template-columns: 1fr 1fr;
+  }
+}
