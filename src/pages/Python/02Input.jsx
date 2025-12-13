@@ -34,7 +34,7 @@ const Input = () => {
         </ul>
 
         <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
-          <p>Think of a specific situation where you have entered input into your computer, a website, or an application.</p>
+          <p>Think of a specific situation where you have entered text input into your computer, a website, or a mobile application.</p>
         </Collapsible>
 
         <h3>The User</h3>
@@ -80,7 +80,8 @@ print(food)`} />
         <h3>Empty Prompt</h3>
         <p>Technically, the prompt is optional. In this case, the user will be prompted to enter text, but no prompt will be displayed. This is not recommended, however, as it can be confusing to users.</p>
         <CodeBlock language={"python"} codeString={`name = input()
-print(name)`} />
+print(name)  
+# "" an empty string`} />
       </section>
 
       <section>
@@ -106,7 +107,7 @@ Step 4: Program has finished.`} />
         <p>To summarize, when <code className="inline">input()</code> prompts the user, the Python does not continue executing other lines of code until <strong>after</strong> the user enters a response. This makes <code className="inline">input()</code> essential for interactive programs that we will explore later.</p>
 
         <Collapsible title={`Challenge ${getCurrentNumberAndIncrement()}`}>
-          <p>Why do you think it's necessary that Python pauses the program until the user provides input? Can you think of a specific error that could occur otherwise?</p>
+          <p>Why do you think it's necessary that Python pauses the program until the user provides input? Can you think of an error that could occur otherwise?</p>
         </Collapsible>
       </section>
 
@@ -134,7 +135,7 @@ total = int_num1 + int_num2
 # Assuming the user enters "5" and "10", this would correctly be the integer 15
 print(total)  `} />
 
-        <p>If you don't need to store the integer versions of the strings, this would be a simpler version of the code:</p>
+        <p>If you don't need to store the integer versions of the strings into their own variables, this would be a simpler version of the code:</p>
         <CodeBlock language={"python"} codeString={`num1 = input("Enter a number: ")
 num2 = input("Enter another number: ")
 print(int(num1) + int(num2))`} />

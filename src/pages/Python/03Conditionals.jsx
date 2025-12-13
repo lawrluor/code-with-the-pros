@@ -64,7 +64,7 @@ if number > 0
         <p>In this lesson, we will mainly use these comparison operators with integers and floats in our <code class="inline">if</code> statements. However, conditional statements can be used with any data types, as we'll learn and practice in the next lesson.</p>
 
         <CodeBlock language={"python"} codeString={`height = 50
-if height == 50:
+if height >= 50:
     print("You are tall enough to ride the roller coaster.")`} />
 
         <p>Note that <code class="inline">==</code> is used to check if two values are equal, while <code class="inline">=</code> is used to assign a value to a variable (it is known as the <strong>assignment operator</strong>). Attempting a comparison in an <code class="inline">if</code> statement with only one <code class="inline">=</code> sign will result in a <code class="inline">SyntaxError</code>.</p>
@@ -74,8 +74,9 @@ if height == 50:
           number={getCurrentNumberAndIncrement()}
         >
           <p>Try running the following code in your code editor. What happens?</p>
-          <CodeBlock language={"python"} codeString={`if height = 50:
-    print("You are tall enough to ride the roller coaster.")`} />
+          <CodeBlock language={"python"} codeString={`guess = 49
+if guess = 25:
+    print("You guessed the right number!")`} />
         </Collapsible>
       </section>
 
@@ -136,9 +137,9 @@ if battery == 0:
 else:
     print("The battery is not empty")
 
-print("Battery level: ", battery)  # This line will always print`} />
+print("Battery level: " + str(battery))  # This line will always print`} />
 
-        <p>In this example, the <code class="inline">if</code> statement is evaluated, and the code block below it is skipped as the condition is not met. The <code class="inline">else</code> block is then executed, because the <code class="inline">if</code> condition was <strong>not</strong> met. Finally, code execution continues, printing the message <code class="inline">"Battery level: 100"</code>. To be clear, the line <code class="inline">print("Battery level: ", battery)</code> will always print  regardless of the result of the preceding <code class="inline">if-else</code> statement.</p>
+        <p>In this example, the <code class="inline">if</code> statement is evaluated, and the code block below it is skipped as the condition is not met. The <code class="inline">else</code> block is then executed, because the <code class="inline">if</code> condition was <strong>not</strong> met. Finally, code execution continues, printing the message <code class="inline">"Battery level: 100"</code>. To be clear, the line <code class="inline">print("Battery level: " + str(battery))</code> will always print  regardless of the result of the preceding <code class="inline">if-else</code> statement.</p>
 
         <Collapsible
           title={`Challenge ${getCurrentNumber()}`}
@@ -169,9 +170,16 @@ elif grade >= 80:
 elif grade >= 70:
     print("Keep working! You got a C")
 else:
-    print("Keep studying, you can improve!")`}></CodeBlock>
+    print("Keep studying, you can improve!")`} />
         <p>Python processes each <code className="inline">if</code> and <code className="inline">elif</code> clause in order from <strong>top to bottom</strong> until a condition is met, after which the corresponding code block is executed, and the rest of the <code className="inline">elif</code> statements and <code className="inline">else</code> statement is skipped. In the event that the <code className="inline">if</code> condition is not met, and none of the <code className="inline">elif</code> conditions are met, the code in the <code className="inline">else</code> statement will execute.</p>
         <p>Once again, the <code className="inline">else</code> clause covers every situation not addressed by the earlier conditions, eliminating the need for an explicit condition to be defined for it.</p>
+        <Collapsible
+          title={`Challenge ${getCurrentNumber()}`}
+          section="Elif"
+          number={getCurrentNumberAndIncrement()}
+        >
+          <p>If the value of <code class="inline">grade</code> is set to <code class="inline">60</code> in the above example, what will be printed?</p>
+        </Collapsible>
       </section>
 
       <section>
