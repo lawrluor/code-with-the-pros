@@ -275,7 +275,7 @@ print("Continue driving.")`} />
         <p>In this example, there's no need for an extra <code className="inline">else</code> statement because you will continue driving no matter what the result of the <code className="inline">if</code> statement is - either continue driving after refueling or continue driving without refueling. We don't have to just choose either option.</p>
 
         <h3>Why use the <code className="inline">else</code> statement at all?</h3>
-        <p>Given that Python implicitly handles scenarios not covered by <code className="inline">if</code> through an implicit <code className="inline">else</code>, you might wonder why we need the <code className="inline">else</code> statement at all. The <code className="inline">else</code> statement is crucial for clarity and explicitness in our code. While the implicit <code className="inline">else</code> assumes a default action (or inaction) for unmet <code className="inline">if</code> conditions, explicitly using an <code className="inline">else</code> clarifies your intent to anyone reading your code—including your future self.</p>
+        <p>Given that Python implicitly handles scenarios not covered by <code className="inline">if</code> through an implicit <code className="inline">else</code>, you might wonder why we need the <code className="inline">else</code> statement at all. The <code className="inline">else</code> statement is crucial for clarity and explicitness in our code. While the implicit <code className="inline">else</code> assumes a default action (or inaction) for unmet <code className="inline">if</code> conditions, explicitly using an <code className="inline">else</code> clarifies your intent to anyone reading your code, including your future self.</p>
 
         <p>Using <code className="inline">else</code> serves two important purposes:</p>
         <ol>
@@ -292,7 +292,7 @@ if targets_hit >= 3:
     print("Great shots! Score increased.")
 else:
     score -= 5
-    print("Missed targets! Score decreased.")`} />
+    print("Did not hit enough targets! Score decreased.")`} />
 
         <p>However, in the following example without an explicit <code className="inline">else</code>, it is incorrect to subtract from the score as the default behavior, as that should only happen when the player misses their target. In other words, subtracting from the score should only happen <strong>explicitly</strong> when the user misses, not implicitly after any shot the user takes.</p>
         <CodeBlock language={"python"} codeString={`score = 100
@@ -304,7 +304,7 @@ if targets_hit >= 3:
 # Implicit else scenario: This code will always execute and the score will always decrease
 # That is illogical as it means that the score will decrease even if the player hit the target!
 score -= 5
-print("Missed shots! Score decreased.")`} />
+print("Did not hit enough targets! Score decreased.")`} />
 
         <p>This example shows that the <code className="inline">else</code> statement is not just a fallback mechanism but a vital part of controlling the flow of the program and providing specific feedback based on values in the code. Using <code className="inline">else</code> is often (but not always) necessary to handle all possible scenarios in a program.</p>
 

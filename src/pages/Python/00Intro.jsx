@@ -1,4 +1,3 @@
-import React from 'react';
 import CodeBlock from '../../components/CodeBlock';
 import Collapsible from '../../components/Collapsible';
 import ProgressBar from '../../components/ProgressBar';

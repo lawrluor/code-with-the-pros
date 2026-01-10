@@ -39,6 +39,11 @@ const Contents = () => {
         <li><Link to="/javaInheritance">Inheritance</Link></li>
         <li><Link to="/javaPolymorphism">Polymorphism</Link></li>
       </ul>
+
+      <h3>React</h3>
+      <ul className="contentsList">
+        <li><Link to="/reactActivity">Activity</Link></li>
+      </ul>
     </nav>
   );
 };

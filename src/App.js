@@ -5,7 +5,7 @@ import './App.css';
 // Import Lessons
 import { JavaInheritance, JavaObjects, JavaPolymorphism } from './pages/Java';
 import { Booleans, Conditionals, Dictionaries, ForLoops, Functions, Input, Intro, Lists, PassByReference, PigLatin, Strings, Variables, WhileLoops } from './pages/Python';
-
+import { ReactActivity } from './pages/React/ReactActivity';
 import Home from './pages/Home';
 import Quiz from './pages/Quiz';
 import Page404 from './pages/Page404';
@@ -43,6 +43,7 @@ function App() {
           <Route path="/javaObjects" element={<JavaObjects />} />
           <Route path="/javaInheritance" element={<JavaInheritance />} />
           <Route path="/javaPolymorphism" element={<JavaPolymorphism />} />
+          <Route path="/reactActivity" element={<ReactActivity />} />
           <Route path="*" element={<Page404 />} />
         </Routes>
       </div>

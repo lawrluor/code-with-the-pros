@@ -118,7 +118,7 @@ Your grand total is $35.3028.`} />
 
       <section>
         <h2 id={`wrapping-up`}><a href={`#wrapping-up`} className="section-link">Wrapping Up</a></h2>
-        <p>Congratulations on finishing your first Python project! This project introduced you to variables, arithmetic operations, string concatenation, and printing — all essential building blocks for Python programming. Feel free to experiment and see how you can extend this program further!</p>
+        <p>Congratulations on finishing your first Python project! This project introduced you to variables, arithmetic operations, string concatenation, and printing: all essential building blocks for Python programming. Feel free to experiment and see how you can extend this program further!</p>
       </section>
     </div>
   )

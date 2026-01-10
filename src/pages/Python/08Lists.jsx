@@ -20,7 +20,7 @@ const Lists = () => {
       <section>
         <h2 id="what-is-a-list"><a href="#what-is-a-list" className="section-link">What is a List?</a></h2>
         <p>Consider a playlist of music or videos: each song or video has a specific position, and you can add, remove, or change the order of items in the playlist.</p>
-        <p>Lists can contain items of any type, and can even have mixed types inside them — numbers, strings, or even other lists—and their size can grow or shrink dynamically.</p>
+        <p>Lists can contain items of any type, and can even have mixed types inside them: numbers, strings, or even other lists. Their size can grow or shrink dynamically.</p>
         <CodeBlock language={"python"} codeString={`# Example: a list of songs
 songs = ["Overjoyed", "Sir Duke", "Superstition"]
 
