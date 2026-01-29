@@ -18,12 +18,6 @@ const Contents = () => {
         <li><Link to="/forLoops">For Loops</Link></li>
         <li><Link to="/lists">Lists</Link></li>
         <li><Link to="/dictionaries">Dictionaries</Link></li>
-
-        {projects.map((project) => (
-          <li key={project.path}>
-            <Link to={project.path}>{project.name}</Link>
-          </li>
-        ))}
       </ul>
 
       <h3>Python: Intermediate Topics</h3>
@@ -33,16 +27,20 @@ const Contents = () => {
         </li>
       </ul>
 
+      <h3>Python: Projects</h3>
+      <ul className="contentsList">
+        {projects.map((project) => (
+          <li key={project.path}>
+            <Link to={project.path}>{project.name} ({project.topic})</Link>
+          </li>
+        ))}
+      </ul>
+
       <h3>Java</h3>
       <ul className="contentsList">
         <li><Link to="/javaObjects">Objects</Link></li>
         <li><Link to="/javaInheritance">Inheritance</Link></li>
         <li><Link to="/javaPolymorphism">Polymorphism</Link></li>
-      </ul>
-
-      <h3>React</h3>
-      <ul className="contentsList">
-        <li><Link to="/reactActivity">Activity</Link></li>
       </ul>
     </nav>
   );
