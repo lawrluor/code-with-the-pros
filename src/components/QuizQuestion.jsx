@@ -5,13 +5,13 @@ import Collapsible from './Collapsible';
 import ReactMarkdown from 'react-markdown';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { dark } from 'react-syntax-highlighter/dist/esm/styles/prism';
-import { generateQuestion } from '../api/functions';
+// import { generateQuestion } from '../api/functions';
 
 export default function QuizQuestion({ index, question, onAnswer, onComplete }) {
-  const { id, question: questionText, answer } = question;
-  const [additionalQuestions, setAdditionalQuestions] = React.useState([]);
+  const { question: questionText, answer } = question;
+  const [additionalQuestions] = React.useState([]);
   const [isVisible, setIsVisible] = React.useState(false);
-  const [loading, setLoading] = React.useState(false);
+  // const [loading, setLoading] = React.useState(false);
   const [hasAnswered, setHasAnswered] = React.useState(false);
 
   const handleShowAnswer = () => {
@@ -22,12 +22,12 @@ export default function QuizQuestion({ index, question, onAnswer, onComplete }) 
     }
   };
 
-  const appendQuestion = async (id) => {
-    setLoading(true);
-    let result = await generateQuestion(additionalQuestions, id);
-    setAdditionalQuestions(result);
-    setLoading(false);
-  };
+  // const appendQuestion = async (id) => {
+  //   setLoading(true);
+  //   let result = await generateQuestion(additionalQuestions, id);
+  //   setAdditionalQuestions(result);
+  //   setLoading(false);
+  // };
 
   return (
     <div className="quiz-question">

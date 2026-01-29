@@ -10,7 +10,6 @@ import Project06 from './06Project';
 import Project07B from './07BProject';
 import Project08 from './08Project';
 import Project08B from './08BProject';
-import Project08Solution from './08Project_Solution';
 import Project09 from './09Project';
 import Project10 from './10Project_Milestone';
 
@@ -27,7 +26,6 @@ export const projects = [
   { name: 'Caesar Cipher', topic: 'For Loops', path: '/Project07B', component: Project07B },
   { name: 'Music Playlist Manager', topic: 'Lists', path: '/Project08', component: Project08 },
   { name: 'Classroom Grades', topic: 'Dictionaries', path: '/Project08B', component: Project08B },
-  // { name: 'Music Playlist Manager (Solution)', path: '/Project08Solution', component: Project08Solution },
   { name: 'Quiz Game', topic: 'Dictionaries', path: '/Project09', component: Project09 },
   { name: 'Sentiment Analyzer', topic: 'Capstone', path: '/Project10', component: Project10 },
 ];
